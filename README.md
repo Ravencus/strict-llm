@@ -48,3 +48,4 @@ idea:
 
 ## Related Work
 
+Specify related work and reproduce their result. Executable script/steps should be put in /reproduce.
