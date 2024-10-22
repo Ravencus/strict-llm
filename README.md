@@ -49,3 +49,13 @@ idea:
 ## Related Work
 
 Specify related work and reproduce their result. Executable script/steps should be put in /reproduce.
+
+## General Recommendations
+
+* Create issue / comment existing issue / assign the issue to yourself before attempting a listed task.
+
+* Create a new branch with a descriptive name for the task.
+
+* Files should be well commented and documented.
+
+* Leave the finishing date when marking a task as done.
