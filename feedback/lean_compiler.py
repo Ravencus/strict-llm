@@ -2,6 +2,7 @@ import tempfile
 import subprocess
 import re
 import logging
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format="%(levelname)s:%(message)s")
@@ -128,16 +129,10 @@ def process_lean_input(input_data):
 
 
 if __name__ == "__main__":
-    # Example Lean code with intentional errors
-    lean_code_with_error = """
-theorem add_comm (a b : Nat) : a + b = b + a := by
-  induction b with
-  | zero =>
-    rw [Nat.add_zero, Nat.zero_add]
-  | succ d hd =>
-    rw [Nat.add_succ, hd, Nat.succ_add]
+    os.chdir(os.path.dirname(__file__))
+    # Use the relative path for a file in the same folder
+    lean_file_path = "test.lean"
 
-    """
-
-    result = process_lean_input(lean_code_with_error)
+    # Process the Lean file and print the result
+    result = process_lean_input(lean_file_path)
     print(result)
