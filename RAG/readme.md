@@ -21,4 +21,8 @@ need to generate specifics from mathlib4.
 
 Is it worth to build a tracable knowledge base for that?
 
+New thoughts on process: LEAN is more regular with each (*) contains a component and several (*) contribute to a natural language statement. We use CoT prompting strategy to extract correspondence.
 
+export OPENAI_API_KEY="your_api_key_here"
+
+max_tokens can be predicted
