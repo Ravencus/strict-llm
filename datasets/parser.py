@@ -11,36 +11,11 @@ class ProofNetEntry:
     goal: str
     header: Optional[str] = None
 
-def parse_proofnet(file_path: str) -> list[ProofNetEntry]:
-    """Parse proofnet.jsonl file and return list of ProofNetEntry objects.
+def parse_jsonl(file_path: str) -> list[ProofNetEntry]:
+    """Parse a .jsonl file and return list of ProofNetEntry objects.
     
     Args:
-        file_path: Path to proofnet.jsonl file
-        
-    Returns:
-        List of ProofNetEntry objects containing parsed data
-    """
-    entries = []
-    with open(file_path, 'r') as f:
-        for line in f:
-            if line.strip():  # Skip empty lines
-                data = json.loads(line)
-                entry = ProofNetEntry(
-                    name=data['name'],
-                    split=data['split'], 
-                    informal_prefix=data['informal_prefix'],
-                    formal_statement=data['formal_statement'],
-                    goal=data['goal'],
-                    header=data.get('header')  # Optional field
-                )
-                entries.append(entry)
-    return entries
-
-def parse_minif2f(file_path: str) -> list[ProofNetEntry]:
-    """Parse minif2f.jsonl file and return list of ProofNetEntry objects.
-    
-    Args:
-        file_path: Path to minif2f.jsonl file
+        file_path: Path to .jsonl file
         
     Returns:
         List of ProofNetEntry objects containing parsed data
@@ -53,13 +28,20 @@ def parse_minif2f(file_path: str) -> list[ProofNetEntry]:
                 entry = ProofNetEntry(
                     name=data['name'],
                     split=data['split'],
-                    informal_prefix=data['informal_prefix'], 
-                    formal_statement=data['formal_statement'],
+                    informal_prefix=data['informal_prefix'],
+                    formal_statement=data['formal_statement'], 
                     goal=data['goal'],
                     header=data.get('header')  # Optional field
                 )
                 entries.append(entry)
     return entries
+
+# Use the generic parse_jsonl function for both file types
+def parse_proofnet(file_path: str) -> list[ProofNetEntry]:
+    return parse_jsonl(file_path)
+
+def parse_minif2f(file_path: str) -> list[ProofNetEntry]:
+    return parse_jsonl(file_path)
 
 
 if __name__ == "__main__":
@@ -67,5 +49,15 @@ if __name__ == "__main__":
     minif2f_entries = parse_minif2f("minif2f.jsonl")
     print(proofnet_entries[2].informal_prefix)
     print(proofnet_entries[2].formal_statement)
-    # print(proofnet_entries[2].goal)
-    # print(minif2f_entries[0])
+    
+    # Export informal prefixes to txt file
+    with open("proofnet_informal_prefixes.txt", "w") as f:
+        for entry in proofnet_entries:
+            f.write(entry.informal_prefix)
+    print("Exported informal prefixes to proofnet_informal_prefixes.txt")
+
+    # Export formal statements to txt file
+    with open("proofnet_formal_statements.txt", "w") as f:
+        for entry in proofnet_entries:
+            f.write(entry.formal_statement)
+    print("Exported formal statements to proofnet_formal_statements.txt")
