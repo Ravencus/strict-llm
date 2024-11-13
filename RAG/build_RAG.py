@@ -1,3 +1,4 @@
+from atexit import register
 import json
 from openai import OpenAI
 import os
@@ -5,6 +6,23 @@ import sys
 from typing import Dict
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from datasets.parser import parse_jsonl
+
+
+# RAG database related imports
+from llama_index.core.memory import ChatMemoryBuffer
+from llama_index.core.chat_engine import CondensePlusContextChatEngine
+from llama_index.core.chat_engine import SimpleChatEngine
+from llama_index.core.chat_engine import ContextChatEngine
+from llama_index.llms.openai import OpenAI
+from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index.core import Settings, VectorStoreIndex, Document
+
+
+# Configure LLM and embedding mdoel
+llm = OpenAI(model="gpt-4o-2024-08-06")
+embed_model = OpenAIEmbedding(model="text-embedding-3-small")
+
+
 # client = OpenAI()
 
 # todo: find optimal max_tokens
@@ -97,10 +115,6 @@ example = """theorem amc12a_2008_p8 (x y : ℝ) (h₀ : 0 < x ∧ 0 < y) (h₁ :
 
 result = parse_formal_statement(example)
 print(result)
-
-
-
-
 
 
 def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 256):
@@ -209,8 +223,33 @@ def build_rag_dict(dataset_path: str) -> dict:
             
     return rag_dict
 
+def construct_rag_database(rag_dict, llm, embed_model, top_k=5):
+    """
+    Building a RAG database using OpenAI's endpoints.
 
+    Args: 
+        rag dictionary processed from the dataset
 
+    Returns:
+        a rag vectorized database using llama index RAG retriever
+    """
+    Settings.llm = llm
+    Settings.embed_model = embed_model
+    documents = []
+    for concept in rag_dict.keys():
+        # Generate embedding for the document text
+        embedding = embed_model.get_text_embedding(concept)
+        doc = Document(text=concept, embedding=embedding)
+        documents.append(doc)
+
+    # Create the VectorStoreIndex with pre-embedded documents
+    index = VectorStoreIndex.from_documents(
+        documents,
+        llm=Settings.llm,
+        embed_model=embed_model
+    )
+    query_engine = index.as_query_engine(similarity_top_k=top_k)
+    return index, query_engine
 
 
 # if __name__ == "__main__":
