@@ -7,24 +7,6 @@ from typing import Dict
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from datasets.parser import parse_jsonl
 
-
-# RAG database related imports
-from llama_index.core.memory import ChatMemoryBuffer
-from llama_index.core.chat_engine import CondensePlusContextChatEngine
-from llama_index.core.chat_engine import SimpleChatEngine
-from llama_index.core.chat_engine import ContextChatEngine
-from llama_index.llms.openai import OpenAI
-from llama_index.embeddings.openai import OpenAIEmbedding
-from llama_index.core import Settings, VectorStoreIndex, Document
-
-
-# Configure LLM and embedding mdoel
-llm = OpenAI(model="gpt-4o-2024-08-06")
-embed_model = OpenAIEmbedding(model="text-embedding-3-small")
-
-
-# client = OpenAI()
-
 # todo: find optimal max_tokens
 
 system_prompt = """You will be provided with two statements: an "informal_prefix" and a "formal_statement". The "informal_prefix" contains a natural language math statement, and the "formal_statement" contains a LEAN code representation of that statement. Each () in the LEAN code represents a math concept or expression in the natural language statement. Your task is to find all the correspondence for () in "formal_statement".
@@ -54,8 +36,9 @@ def parse_formal_statement(statement: str) -> Dict:
     """
     # Split on first space to get theorem name
     parts = statement.split(maxsplit=1)
-    if len(parts) < 2 or parts[0] != "theorem":
-        raise ValueError("Statement must start with 'theorem'")
+    if len(parts) < 2 or (parts[0] != "theorem" and parts[0] != "def"):
+        print(f"Invalid statement format: {statement}")
+        raise ValueError("Statement must start with 'theorem' or 'def'")
         
     remainder = parts[1]
 
@@ -109,12 +92,12 @@ def parse_formal_statement(statement: str) -> Dict:
         "goal": goal
     }
 
-# Example usage:
-example = """theorem amc12a_2008_p8 (x y : ℝ) (h₀ : 0 < x ∧ 0 < y) (h₁ : y ^ 3 = 1)
-  (h₂ : 6 * x ^ 2 = 2 * (6 * y ^ 2)) : x ^ 3 = 2 * Real.sqrt 2 := by"""
+# # Example usage:
+# example = """theorem amc12a_2008_p8 (x y : ℝ) (h₀ : 0 < x ∧ 0 < y) (h₁ : y ^ 3 = 1)
+#   (h₂ : 6 * x ^ 2 = 2 * (6 * y ^ 2)) : x ^ 3 = 2 * Real.sqrt 2 := by"""
 
-result = parse_formal_statement(example)
-print(result)
+# result = parse_formal_statement(example)
+# print(result)
 
 
 def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 256):
@@ -223,36 +206,35 @@ def build_rag_dict(dataset_path: str) -> dict:
             
     return rag_dict
 
-def construct_rag_database(rag_dict, llm, embed_model, top_k=5):
-    """
-    Building a RAG database using OpenAI's endpoints.
 
-    Args: 
-        rag dictionary processed from the dataset
+if __name__ == "__main__":
+    import json
+    from pathlib import Path
+    
+    # Read and parse the proofnet dataset
+    dataset_path = "../datasets/proofnet.jsonl"
+    output_path = "../datasets/proofnet_parsed.jsonl"
+    
+    parsed_statements = []
+    with open(dataset_path, 'r') as f:
+        for line in f:
+            entry = json.loads(line)
+            try:
+                parsed = parse_formal_statement(entry['formal_statement'])
+                entry['parsed_formal'] = parsed
+                parsed_statements.append(entry)
+            except Exception as e:
+                print(f"Failed to parse statement: {entry.get('id', 'unknown')}")
+                print(f"Error: {str(e)}")
+                continue
+    
+    # Save parsed results
+    with open(output_path, 'w') as f:
+        for entry in parsed_statements:
+            f.write(json.dumps(entry) + '\n')
+            
+    print(f"Successfully parsed and saved {len(parsed_statements)} statements to {output_path}")
 
-    Returns:
-        a rag vectorized database using llama index RAG retriever
-    """
-    Settings.llm = llm
-    Settings.embed_model = embed_model
-    documents = []
-    for concept in rag_dict.keys():
-        # Generate embedding for the document text
-        embedding = embed_model.get_text_embedding(concept)
-        doc = Document(text=concept, embedding=embedding)
-        documents.append(doc)
-
-    # Create the VectorStoreIndex with pre-embedded documents
-    index = VectorStoreIndex.from_documents(
-        documents,
-        llm=Settings.llm,
-        embed_model=embed_model
-    )
-    query_engine = index.as_query_engine(similarity_top_k=top_k)
-    return index, query_engine
-
-
-# if __name__ == "__main__":
 
 #     # Save RAG dictionary to pickle file
 #     import pickle
