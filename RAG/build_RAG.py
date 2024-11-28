@@ -7,7 +7,21 @@ from typing import Dict
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from datasets.parser import parse_jsonl
 
-# todo: find optimal max_tokens
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
+# Get OpenAI API key from environment variable
+api_key = os.getenv('OPENAI_API_KEY')
+if not api_key:
+    raise ValueError("OPENAI_API_KEY not found in environment variables")
+
+# Initialize OpenAI client with API key
+os.environ["OPENAI_API_KEY"] = api_key
+
+
+
+
+
 
 system_prompt = """You will be provided with two statements: an "informal_prefix" and a "formal_statement". The "informal_prefix" contains a natural language math statement, and the "formal_statement" contains a LEAN code representation of that statement. Each () in the LEAN code represents a math concept or expression in the natural language statement. Your task is to find all the correspondence for () in "formal_statement".
 An example is as follows:
