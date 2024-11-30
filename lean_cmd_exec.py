@@ -7,6 +7,24 @@
 
 # otherwise, use https://github.com/leanprover-community/mathlib4/wiki/Using-mathlib4-as-a-dependency
 
+def mathlib_runtime_prep():
+    """
+    Prepares the mathlib runtime environment by creating a Lean project if needed.
+    Creates a mathlib_runtime directory and initializes it with mathlib4 if it doesn't exist.
+    """
+    import os
+    import subprocess
+
+    if not os.path.exists('mathlib_runtime'):
+        # Create new mathlib project
+        subprocess.run(['lake', '+leanprover-community/mathlib4:lean-toolchain', 'new', 'mathlib_runtime', 'math'])
+        
+        # Get lake cache
+        os.chdir('mathlib_runtime')
+        subprocess.run(['lake', 'exe', 'cache', 'get'])
+        os.chdir('..')
+
+
 def execute_lean_files(file_paths: list[str]) -> list[tuple[str, str, int]]:
     """
     Execute multiple Lean files in parallel and return their compilation results.
@@ -22,21 +40,24 @@ def execute_lean_files(file_paths: list[str]) -> list[tuple[str, str, int]]:
     """
     import subprocess
     import shutil
-    import tempfile
     import os
+    
+    # Prepare mathlib runtime environment
+    mathlib_runtime_prep()
     
     results = []
     for file_path in file_paths:
-        # Create temp copy
-        temp_dir = tempfile.mkdtemp()
-        temp_file = os.path.join(temp_dir, os.path.basename(file_path))
-        shutil.copy2(file_path, temp_file)
+        # Copy file to mathlib runtime directory
+        runtime_file = os.path.join('mathlib_runtime', os.path.basename(file_path))
+        shutil.copy2(file_path, runtime_file)
         
         try:
-            # Execute lean on temp file
-            process = subprocess.run(['lake env lean', temp_file], 
+            # Execute lean in mathlib runtime directory
+            os.chdir('mathlib_runtime')
+            process = subprocess.run(['lake', 'env', 'lean', os.path.basename(file_path)],
                                   capture_output=True,
                                   text=True)
+            os.chdir('..')
             
             # Get output and return code
             output = process.stdout if process.stdout else process.stderr
@@ -45,8 +66,9 @@ def execute_lean_files(file_paths: list[str]) -> list[tuple[str, str, int]]:
             results.append((file_path, output.strip(), exit_code))
             
         finally:
-            # Cleanup temp files
-            shutil.rmtree(temp_dir)
+            # Cleanup copied file
+            if os.path.exists(runtime_file):
+                os.remove(runtime_file)
             
     return results
 
@@ -115,6 +137,7 @@ def test_diff_paired_lean_files():
     print(f"Second file result: {result2}")
 
 if __name__ == "__main__":
-    test_execute_lean_files()
-    test_diff_paired_lean_files()
+    # mathlib_runtime_prep()
+    # test_execute_lean_files()
+    # test_diff_paired_lean_files()
     pass
