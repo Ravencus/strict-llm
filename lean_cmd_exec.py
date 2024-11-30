@@ -1,5 +1,11 @@
 # contains api for executing lean files in parallel through CMD
 # expecting: success(no compiler errors), error with descriptions
+# to run lean with mathlib4, use:
+# lake env lean file_name.lean
+# sourced from https://proofassistants.stackexchange.com/questions/2526/how-to-run-lean4-with-mathlib-manually
+# however, this requires Mathlib in the same directory as the file to be executed, i.e., execute in mathlib4/
+
+# otherwise, use https://github.com/leanprover-community/mathlib4/wiki/Using-mathlib4-as-a-dependency
 
 def execute_lean_files(file_paths: list[str]) -> list[tuple[str, str, int]]:
     """
@@ -28,7 +34,7 @@ def execute_lean_files(file_paths: list[str]) -> list[tuple[str, str, int]]:
         
         try:
             # Execute lean on temp file
-            process = subprocess.run(['lean', temp_file], 
+            process = subprocess.run(['lake env lean', temp_file], 
                                   capture_output=True,
                                   text=True)
             
@@ -109,6 +115,6 @@ def test_diff_paired_lean_files():
     print(f"Second file result: {result2}")
 
 if __name__ == "__main__":
-    # test_execute_lean_files()
-    # test_diff_paired_lean_files()
+    test_execute_lean_files()
+    test_diff_paired_lean_files()
     pass
