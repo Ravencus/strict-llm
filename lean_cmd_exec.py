@@ -138,6 +138,6 @@ def test_diff_paired_lean_files():
 
 if __name__ == "__main__":
     # mathlib_runtime_prep()
-    # test_execute_lean_files()
+    test_execute_lean_files()
     # test_diff_paired_lean_files()
     pass
