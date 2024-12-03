@@ -123,7 +123,7 @@ def diff_paired_lean_files(file1: str, file2: str) -> tuple[str, str, tuple[tupl
 
 # tests
 def test_execute_lean_files():
-    results = execute_lean_files(["test/test_1.lean", "test/test_2.lean", "test/test_3.lean"])
+    results = execute_lean_files(["test/test_1.lean", "test/test_2.lean", "test/diff_test_src.lean"])
     for result in results:
         file_path, output, code = result
         print(f"File: {file_path}\nOutput: {output}\nExit Code: {code}\n")

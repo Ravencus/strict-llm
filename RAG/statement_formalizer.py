@@ -1,4 +1,11 @@
-from atexit import register
+"""
+statement_formalizer.py
+
+This package provides:
+- a RAG building tool extracting atomic pairs of (natural language math object, formalized LEAN code)
+- a formalizer to transform a natural language math statement into a formalized LEAN code
+"""
+
 import json
 from openai import OpenAI
 import os
@@ -17,10 +24,6 @@ if not api_key:
 
 # Initialize OpenAI client with API key
 os.environ["OPENAI_API_KEY"] = api_key
-
-
-
-
 
 
 system_prompt = """You will be provided with two statements: an "informal_prefix" and a "formal_statement". The "informal_prefix" contains a natural language math statement, and the "formal_statement" contains a LEAN code representation of that statement. Each () in the LEAN code represents a math concept or expression in the natural language statement. Your task is to find all the correspondence for () in "formal_statement".
