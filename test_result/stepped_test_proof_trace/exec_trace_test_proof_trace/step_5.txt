@@ -1,5 +1,5 @@
 Step 5:
-File: stepped_test_proof_trace/step_5.lean
+File: test_result/stepped_test_proof_trace/stepped_lean_test_proof_trace/step_5.lean
 Output:
 step_5.lean:13:2: error: unsolved goals
 case h

@@ -1,5 +1,5 @@
 Step 1:
-File: stepped_test_proof_trace/step_1.lean
+File: test_result/stepped_test_proof_trace/stepped_lean_test_proof_trace/step_1.lean
 Output:
 step_1.lean:13:2: error: unsolved goals
 ⊢ ∀ (ε : ℝ), 0 < ε → ∃ B, ∀ (n : ℕ), B ≤ n → |37 - 37| < ε

@@ -1,0 +1,5 @@
+Step 6:
+File: test_result/stepped_test_proof_trace/stepped_lean_test_proof_trace/step_6.lean
+Output:
+
+Exit Code: 0
