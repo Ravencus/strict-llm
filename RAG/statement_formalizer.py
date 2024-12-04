@@ -26,19 +26,45 @@ if not api_key:
 os.environ["OPENAI_API_KEY"] = api_key
 
 
-system_prompt = """You will be provided with two statements: an "informal_prefix" and a "formal_statement". The "informal_prefix" contains a natural language math statement, and the "formal_statement" contains a LEAN code representation of that statement. Each () in the LEAN code represents a math concept or expression in the natural language statement. Your task is to find all the correspondence for () in "formal_statement".
+# system_prompt = """You will be provided with two statements: an "informal_prefix" and a "formal_statement". The "informal_prefix" contains a natural language math statement, and the "formal_statement" contains a LEAN code representation of that statement. Each () in the LEAN code represents a math concept or expression in the natural language statement. Your task is to find all the correspondence for () in "formal_statement".
+# An example is as follows:
+# example user input:
+# {"informal_prefix": "/-- Suppose $E\\subset\\mathbb{R}^k$ is uncountable, and let $P$ be the set of condensation points of $E$. Prove that $P$ is perfect.-/\\n", "formal_statement": "theorem exercise_2_27a (k : ℕ) (E P : Set (EuclideanSpace ℝ (Fin k)))\\n  (hE : E.Nonempty ∧ ¬ Set.Countable E)\\n  (hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)}) :\\n  IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)} :="}
+# example output:
+# {"pairs": [("$E\\subset\\mathbb{R}^k$", "(E P : Set (EuclideanSpace ℝ (Fin k)))"),("uncountable", "(hE : E.Nonempty ∧ ¬ Set.Countable E)"),("let $P$ be the set of condensation points of $E$","(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)})"),("Prove that $P$ is perfect","IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)}")]}"
+# """
+
+# user_prompt = """{"informal_prefix": "/-- Let $\Omega$ be a bounded open subset of $\mathbb{C}$, and $\varphi: \Omega \rightarrow \Omega$ a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that $\varphi\left(z_{0}\right)=z_{0} \quad \text { and } \quad \varphi^{\prime}\left(z_{0}\right)=1$ then $\varphi$ is linear.-/", "formal_statement": "theorem exercise_2_9
+#   {f : ℂ → ℂ} (Ω : Set ℂ) (b : Bornology.IsBounded Ω) (h : IsOpen Ω)
+#   (hf : DifferentiableOn ℂ f Ω) (z : Ω) (hz : f z = z) (h'z : deriv f z = 1) :
+#   ∃ (f_lin : ℂ →L[ℂ] ℂ), ∀ x ∈ Ω, f x = f_lin x :="}
+# """
+
+system_prompt = """ You will first be provided with a natural language math statement. Then you will be provided with a list of hypotheses, and a goal, written in LEAN code. Your task is to find the correspondence between formal hypotheses and the components of the natural language statement, as well as the formal goal. Note that one component of the natural language statement may correspond to multiple formal hypotheses, and vice versa.
 An example is as follows:
+
 example user input:
-{"informal_prefix": "/-- Suppose $E\\subset\\mathbb{R}^k$ is uncountable, and let $P$ be the set of condensation points of $E$. Prove that $P$ is perfect.-/\\n", "formal_statement": "theorem exercise_2_27a (k : ℕ) (E P : Set (EuclideanSpace ℝ (Fin k)))\\n  (hE : E.Nonempty ∧ ¬ Set.Countable E)\\n  (hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)}) :\\n  IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)} :="}
+math statement: "/-- Suppose $E\\subset\\mathbb{R}^k$ is uncountable, and let $P$ be the set of condensation points of $E$. Prove that $P$ is perfect.-/\\n"
+hypotheses: ["(k : ℕ)", "(E P : Set (EuclideanSpace ℝ (Fin k)))", "(hE : E.Nonempty ∧ ¬ Set.Countable E)", "(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)})"]
+goal: "IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)}"
+
 example output:
-{"pairs": [("$E\\subset\\mathbb{R}^k$", "(E P : Set (EuclideanSpace ℝ (Fin k)))"),("uncountable", "(hE : E.Nonempty ∧ ¬ Set.Countable E)"),("let $P$ be the set of condensation points of $E$","(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)})"),("Prove that $P$ is perfect","IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)}")]}"
+{
+    "$E\\subset\\mathbb{R}^k$" : ["(k : ℕ)", "(E P : Set (EuclideanSpace ℝ (Fin k)))"],
+    "Suppose $E\\subset\\mathbb{R}^k$ is uncountable" : ["(hE : E.Nonempty ∧ ¬ Set.Countable E)"],
+    "let $P$ be the set of condensation points of $E$" : ["(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)})"],
+    "Prove that $P$ is perfect" : ["IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)}"]
+}
 """
 
-user_prompt = """{"informal_prefix": "/-- Let $\Omega$ be a bounded open subset of $\mathbb{C}$, and $\varphi: \Omega \rightarrow \Omega$ a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that $\varphi\left(z_{0}\right)=z_{0} \quad \text { and } \quad \varphi^{\prime}\left(z_{0}\right)=1$ then $\varphi$ is linear.-/", "formal_statement": "theorem exercise_2_9
-  {f : ℂ → ℂ} (Ω : Set ℂ) (b : Bornology.IsBounded Ω) (h : IsOpen Ω)
-  (hf : DifferentiableOn ℂ f Ω) (z : Ω) (hz : f z = z) (h'z : deriv f z = 1) :
-  ∃ (f_lin : ℂ →L[ℂ] ℂ), ∀ x ∈ Ω, f x = f_lin x :="}
+user_prompt = """
+math statement: "/-- Let $\Omega$ be a bounded open subset of $\mathbb{C}$, and $\varphi: \Omega \rightarrow \Omega$ a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that $\varphi\left(z_{0}\right)=z_{0} \quad \text { and } \quad \varphi^{\prime}\left(z_{0}\right)=1$ then $\varphi$ is linear.-/"
+hypotheses: ["{f : ℂ → ℂ}", "(Ω : Set ℂ)", "(b : Bornology.IsBounded Ω)", "(h : IsOpen Ω)", "(hf : DifferentiableOn ℂ f Ω)", "(z : Ω)", "(hz : f z = z)", "(h'z : deriv f z = 1)"]
+goal: "∃ (f_lin : ℂ →L[ℂ] ℂ), ∀ x ∈ Ω, f x = f_lin x"
 """
+
+
+
 def parse_formal_statement(statement: str) -> Dict:
     """Parse a formal statement into its components.
     
@@ -101,6 +127,8 @@ def parse_formal_statement(statement: str) -> Dict:
             goal = remainder[i:].strip()
             if goal.endswith(":= by"):
                 goal = goal[1:-6].strip()  # Remove ":" prefix and ":= by" suffix
+            elif goal.endswith(":="):
+                goal = goal[1:-2].strip()  # Remove ":" prefix and ":=" suffix
             break
             
     return {
@@ -110,14 +138,26 @@ def parse_formal_statement(statement: str) -> Dict:
     }
 
 # # Example usage:
-# example = """theorem amc12a_2008_p8 (x y : ℝ) (h₀ : 0 < x ∧ 0 < y) (h₁ : y ^ 3 = 1)
-#   (h₂ : 6 * x ^ 2 = 2 * (6 * y ^ 2)) : x ^ 3 = 2 * Real.sqrt 2 := by"""
-
+# example = "theorem exercise_1_1_16 {G : Type*} [Group G]\n  (x : G) (hx : x ^ 2 = 1) :\n  orderOf x = 1 ∨ orderOf x = 2 :="
+# example = "theorem conjugate.mul_mem (hy : y ∈ {a : G | ∃ h, h ∈ H ∧ a = x * h * x⁻¹}) (hz : z ∈ {a : G | ∃ h, h ∈ H ∧ a = x * h * x⁻¹}) : y * z ∈ {a : G | ∃ h, h ∈ H ∧ a = x * h * x⁻¹} := by"
 # result = parse_formal_statement(example)
 # print(result)
 
+def entry_to_user_prompt(informal_prefix: str, formal_statement: str) -> str:
+    """
+    Transform a formal statement into example user prompt using parse_formal_statement.
+    """
+    parsed = parse_formal_statement(formal_statement)
+    return f"math statement: {informal_prefix}\nhypotheses: {parsed['hypotheses']}\ngoal: {parsed['goal']}"
+
+def test_entry_prompt():
+    test = entry_to_user_prompt("/-- Suppose $U$ is a subspace of $V$. Prove that $U^{\\perp}=\\{0\\}$ if and only if $U=V$-/\n", "theorem exercise_6_16 {K V : Type*} [RCLike K] [NormedAddCommGroup V] [InnerProductSpace K V]\n  {U : Submodule K V} :\n  U.orthogonal = ⊥  ↔ U = ⊤ :=")
+    print(test)
+
 
 def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 256):
+
+    client = OpenAI()
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
@@ -136,20 +176,37 @@ def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 
     )
     return response
 
-def process_dataset(dataset_path: str, save_path: str):
-    entries = parse_jsonl(dataset_path)
-    total = len(entries)
-    for i, entry in enumerate(entries):
-        print(f"Processing entry {i+1}/{total}...")
-        response = get_chat_completion(system_prompt, entry.informal_prefix, max_tokens=1024)
-        with open(save_path, 'a') as f:
-            json_obj = {
-                "name": entry.name,
-                "response": response.choices[0].message.content,
-                "header": entry.header
-            }
-            f.write(json.dumps(json_obj) + "\n")
-        print(f"Completed {i+1}/{total} entries ({((i+1)/total)*100:.1f}%)")
+def print_another_chat_completion():
+    user_prompt = entry_to_user_prompt("/-- Suppose $U$ is a subspace of $V$. Prove that $U^{\\perp}=\\{0\\}$ if and only if $U=V$-/\n", "theorem exercise_6_16 {K V : Type*} [RCLike K] [NormedAddCommGroup V] [InnerProductSpace K V]\n  {U : Submodule K V} :\n  U.orthogonal = ⊥  ↔ U = ⊤ :=")
+    test = get_chat_completion(system_prompt, user_prompt)
+    print(repr(test.choices[0].message.content))
+    
+print_another_chat_completion()
+
+def print_chat_completion():
+    
+    test = get_chat_completion(system_prompt, user_prompt)
+    print(repr(test.choices[0].message.content)) # this repr prints without the unicode escape characters
+    # however, "\\" is introduced and should be further dealt with
+
+# TODO: not every trail is valid, we propose a iterative approach to find the best decomposition that can recover the original statement.
+def iterative_decomposition():
+    pass
+
+# def process_dataset(dataset_path: str, save_path: str):
+#     entries = parse_jsonl(dataset_path)
+#     total = len(entries)
+#     for i, entry in enumerate(entries):
+#         print(f"Processing entry {i+1}/{total}...")
+#         response = get_chat_completion(system_prompt, entry.informal_prefix, max_tokens=1024)
+#         with open(save_path, 'a') as f:
+#             json_obj = {
+#                 "name": entry.name,
+#                 "response": response.choices[0].message.content,
+#                 "header": entry.header
+#             }
+#             f.write(json.dumps(json_obj) + "\n")
+#         print(f"Completed {i+1}/{total} entries ({((i+1)/total)*100:.1f}%)")
 
 # process_dataset("../datasets/proofnet.jsonl", "../datasets/proofnet_RAG.jsonl")
 
@@ -225,60 +282,30 @@ def build_rag_dict(dataset_path: str) -> dict:
 
 
 if __name__ == "__main__":
-    import json
-    from pathlib import Path
+    # import json
+    # from pathlib import Path
     
-    # Read and parse the proofnet dataset
-    dataset_path = "../datasets/proofnet.jsonl"
-    output_path = "../datasets/proofnet_parsed.jsonl"
+    # # Read and parse the proofnet dataset
+    # dataset_path = "../datasets/proofnet.jsonl"
+    # output_path = "../datasets/proofnet_parsed.jsonl"
     
-    parsed_statements = []
-    with open(dataset_path, 'r') as f:
-        for line in f:
-            entry = json.loads(line)
-            try:
-                parsed = parse_formal_statement(entry['formal_statement'])
-                entry['parsed_formal'] = parsed
-                parsed_statements.append(entry)
-            except Exception as e:
-                print(f"Failed to parse statement: {entry.get('id', 'unknown')}")
-                print(f"Error: {str(e)}")
-                continue
+    # parsed_statements = []
+    # with open(dataset_path, 'r') as f:
+    #     for line in f:
+    #         entry = json.loads(line)
+    #         try:
+    #             parsed = parse_formal_statement(entry['formal_statement'])
+    #             entry['parsed_formal'] = parsed
+    #             parsed_statements.append(entry)
+    #         except Exception as e:
+    #             print(f"Failed to parse statement: {entry.get('id', 'unknown')}")
+    #             print(f"Error: {str(e)}")
+    #             continue
     
-    # Save parsed results
-    with open(output_path, 'w') as f:
-        for entry in parsed_statements:
-            f.write(json.dumps(entry) + '\n')
+    # # Save parsed results
+    # with open(output_path, 'w') as f:
+    #     for entry in parsed_statements:
+    #         f.write(json.dumps(entry) + '\n')
             
-    print(f"Successfully parsed and saved {len(parsed_statements)} statements to {output_path}")
-
-
-#     # Save RAG dictionary to pickle file
-#     import pickle
-    
-#     def save_rag_dict(rag_dict: dict, output_path: str = "rag_dict.pkl") -> None:
-#         """
-#         Save the RAG dictionary to a pickle file.
-        
-#         Args:
-#             rag_dict: Dictionary mapping exercise names to informal->formal pairs
-#             output_path: Path where pickle file should be saved
-#         """
-#         with open(output_path, 'wb') as f:
-#             pickle.dump(rag_dict, f)
-            
-#     if __name__ == "__main__":
-#         # Build and save the RAG dictionary
-#         dataset_path = "../datasets/proofnet_RAG.jsonl" 
-#         rag_dict = build_rag_dict(dataset_path)
-#         save_rag_dict(rag_dict)
-#         print(f"Saved RAG dictionary with {len(rag_dict)} entries")
-#         # Print some example entries
-#         print("\nExample entries:")
-#         for name in list(rag_dict.keys())[:3]:
-#             print(f"\nExercise: {name}")
-#             pairs = rag_dict[name]
-#             print("Pairs:")
-#             for informal, formal in pairs.items():
-#                 print(f"\nInformal: {informal}")
-#                 print(f"Formal: {formal}")
+    # print(f"Successfully parsed and saved {len(parsed_statements)} statements to {output_path}")
+    pass
