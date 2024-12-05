@@ -14,6 +14,8 @@ from typing import Dict
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from datasets.parser import parse_jsonl
 
+
+
 from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
@@ -170,7 +172,7 @@ def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 
                 "content": user_prompt
             }
         ],
-        temperature=0.7,
+        temperature=0.001,
         max_tokens=max_tokens,
         top_p=1
     )
@@ -181,13 +183,187 @@ def print_another_chat_completion():
     test = get_chat_completion(system_prompt, user_prompt)
     print(repr(test.choices[0].message.content))
     
-print_another_chat_completion()
+# print_another_chat_completion()
 
 def print_chat_completion():
     
     test = get_chat_completion(system_prompt, user_prompt)
     print(repr(test.choices[0].message.content)) # this repr prints without the unicode escape characters
     # however, "\\" is introduced and should be further dealt with
+    
+
+
+# TODO: response postprocessing
+def post_process_llm_response(response: str) -> dict:
+    """
+    Process LLM response to extract clean dictionary by manually finding matched pairs.
+    
+    Args:
+        response: Raw LLM response string containing dictionary-like structure
+        
+    Returns:
+        Clean dictionary with extracted key-value pairs
+    """
+    # Find the outermost {} pair
+    start_brace = response.find("{")
+    end_brace = response.rfind("}")
+    if start_brace == -1 or end_brace == -1:
+        raise ValueError("No valid dictionary structure found in response")
+        
+    dict_content = response[start_brace:end_brace+1]
+    result_dict = {}
+    
+    # Track position while parsing
+    pos = 1  # Skip first {
+    while pos < len(dict_content)-1:  # Stop before final }
+        # Skip whitespace
+        while pos < len(dict_content) and dict_content[pos].isspace():
+            pos += 1
+            
+        # Find key
+        if dict_content[pos] == '"':
+            key_start = pos + 1
+            pos += 1
+            while pos < len(dict_content) and dict_content[pos] != '"':
+                pos += 1
+            key = dict_content[key_start:pos]
+            pos += 1
+            
+            # Skip to colon
+            while pos < len(dict_content) and dict_content[pos] != ':':
+                pos += 1
+            pos += 1
+            
+            # Skip whitespace
+            while pos < len(dict_content) and dict_content[pos].isspace():
+                pos += 1
+                
+            # Parse value
+            if dict_content[pos] == '[':
+                # List value
+                bracket_count = 1
+                value_start = pos
+                pos += 1
+                while pos < len(dict_content) and bracket_count > 0:
+                    if dict_content[pos] == '[':
+                        bracket_count += 1
+                    elif dict_content[pos] == ']':
+                        bracket_count -= 1
+                    pos += 1
+                value = dict_content[value_start:pos]
+                # Replace \x0b with \v in key string
+                key = key.replace('\x0b', '\\v')
+                
+                result_dict[key] = value
+            
+            # Skip comma
+            while pos < len(dict_content) and dict_content[pos] != ',':
+                pos += 1
+            pos += 1
+        else:
+            pos += 1
+    
+    return result_dict
+
+# test = get_chat_completion(system_prompt, user_prompt)
+# print(repr(post_process_llm_response(test.choices[0].message.content)))
+
+def build_proofnet_doc():
+    """Build proofnet document by extracting informal_prefix and formal_statement from proofnet dataset,
+    constructing user prompts, and writing to a new jsonl file.
+    """
+    # Get absolute path relative to this file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(current_dir, "..", "datasets", "proofnet.jsonl")
+    output_path = os.path.join(current_dir, "..", "datasets", "proofnet_prompt.jsonl")
+    
+    # Read proofnet dataset
+    entries = parse_jsonl(input_path)
+    
+    # Process each entry
+    processed_entries = []
+    for entry in entries:
+
+        try:
+            # Convert entry to dict if needed
+            entry_dict = entry if isinstance(entry, dict) else entry.__dict__
+ 
+            # Extract informal_prefix and formal_statement
+            informal_prefix = entry_dict["informal_prefix"]
+            formal_statement = entry_dict["formal_statement"]
+            print(informal_prefix)
+            print(formal_statement)
+            # Construct user prompt
+            user_prompt = entry_to_user_prompt(informal_prefix, formal_statement)
+            
+            # Add prompt to entry
+            entry_dict["user_prompt"] = user_prompt
+            print(entry_dict["user_prompt"])
+            processed_entries.append(entry_dict)
+            
+        except Exception as e:
+            name = entry_dict["name"] if isinstance(entry, dict) else entry.name
+            print(f"Failed to process entry: {name}")
+            print(f"Error: {str(e)}")
+            continue
+    
+    # Write processed entries to new file
+    with open(output_path, "w") as f:
+        for entry in processed_entries:
+            f.write(json.dumps(entry) + "\n")
+            
+    print(f"Successfully processed {len(processed_entries)} entries")
+
+# build_proofnet_doc()
+
+def build_minif2f_doc():
+    """Build minif2f document by extracting informal_prefix and formal_statement from minif2f dataset,
+    constructing user prompts, and writing to a new jsonl file.
+    """
+    # Get absolute path relative to this file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(current_dir, "..", "datasets", "minif2f.jsonl") 
+    output_path = os.path.join(current_dir, "..", "datasets", "minif2f_prompt.jsonl")
+    
+    # Read minif2f dataset
+    entries = parse_jsonl(input_path)
+    
+    # Process each entry
+    processed_entries = []
+    for entry in entries:
+        try:
+            # Convert entry to dict if needed
+            entry_dict = entry if isinstance(entry, dict) else entry.__dict__
+            
+            # Extract informal_prefix and formal_statement
+            informal_prefix = entry_dict["informal_prefix"]
+            formal_statement = entry_dict["formal_statement"]
+            print(informal_prefix)
+            print(formal_statement)
+            
+            # Construct user prompt
+            user_prompt = entry_to_user_prompt(informal_prefix, formal_statement)
+            
+            # Add prompt to entry
+            entry_dict["user_prompt"] = user_prompt
+            print(entry_dict["user_prompt"])
+            processed_entries.append(entry_dict)
+            
+        except Exception as e:
+            name = entry_dict["name"] if isinstance(entry, dict) else entry.name
+            print(f"Failed to process entry: {name}")
+            print(f"Error: {str(e)}")
+            continue
+    
+    # Write processed entries to new file
+    with open(output_path, "w") as f:
+        for entry in processed_entries:
+            f.write(json.dumps(entry) + "\n")
+            
+    print(f"Successfully processed {len(processed_entries)} entries")
+
+
+build_minif2f_doc()
 
 # TODO: not every trail is valid, we propose a iterative approach to find the best decomposition that can recover the original statement.
 def iterative_decomposition():
@@ -210,75 +386,75 @@ def iterative_decomposition():
 
 # process_dataset("../datasets/proofnet.jsonl", "../datasets/proofnet_RAG.jsonl")
 
-def read_rag_dataset(dataset_path: str):
-    entries = []
-    with open(dataset_path, 'r') as f:
-        for line in f:
-            entry = json.loads(line)
-            entries.append(entry)
-    return entries
+# def read_rag_dataset(dataset_path: str):
+#     entries = []
+#     with open(dataset_path, 'r') as f:
+#         for line in f:
+#             entry = json.loads(line)
+#             entries.append(entry)
+#     return entries
 
 # print(read_rag_dataset("../datasets/proofnet_RAG.jsonl")[0]["response"])
 
-def text_to_pairs(text: str) -> dict:
-    """
-    Transform a text string containing pairs into a dictionary.
+# def text_to_pairs(text: str) -> dict:
+#     """
+#     Transform a text string containing pairs into a dictionary.
     
-    Args:
-        text: String in format {"pairs": [(informal1, formal1), (informal2, formal2), ...]}
+#     Args:
+#         text: String in format {"pairs": [(informal1, formal1), (informal2, formal2), ...]}
     
-    Returns:
-        Dictionary mapping informal statements to formal statements
-    """
-    # Extract content between square brackets
-    start = text.find("[")
-    end = text.rfind("]")
-    pairs_text = text[start+1:end]
+#     Returns:
+#         Dictionary mapping informal statements to formal statements
+#     """
+#     # Extract content between square brackets
+#     start = text.find("[")
+#     end = text.rfind("]")
+#     pairs_text = text[start+1:end]
     
-    # Split into individual pair strings
-    pair_strings = pairs_text.split("),")
+#     # Split into individual pair strings
+#     pair_strings = pairs_text.split("),")
     
-    # Parse each pair string into tuple
-    pairs_dict = {}
-    for pair in pair_strings:
-        # Clean up string and extract informal/formal parts
-        pair = pair.strip(" ()")
-        informal_end = pair.find('",')
-        informal = pair[pair.find('"')+1:informal_end].strip()
-        formal = pair[informal_end+4:-1].strip()
-        # Remove " :=" from end of formal statements if present
-        if formal.endswith(" :="):
-            formal = formal[:-3]
-        pairs_dict[informal] = formal
+#     # Parse each pair string into tuple
+#     pairs_dict = {}
+#     for pair in pair_strings:
+#         # Clean up string and extract informal/formal parts
+#         pair = pair.strip(" ()")
+#         informal_end = pair.find('",')
+#         informal = pair[pair.find('"')+1:informal_end].strip()
+#         formal = pair[informal_end+4:-1].strip()
+#         # Remove " :=" from end of formal statements if present
+#         if formal.endswith(" :="):
+#             formal = formal[:-3]
+#         pairs_dict[informal] = formal
         
 
         
-    return pairs_dict
+#     return pairs_dict
 
-def build_rag_dict(dataset_path: str) -> dict:
-    """
-    Build a dictionary mapping exercise names to their informal/formal statement pairs.
+# def build_rag_dict(dataset_path: str) -> dict:
+#     """
+#     Build a dictionary mapping exercise names to their informal/formal statement pairs.
     
-    Args:
-        dataset_path: Path to the RAG dataset JSON file
+#     Args:
+#         dataset_path: Path to the RAG dataset JSON file
         
-    Returns:
-        Dictionary mapping exercise names to dictionaries of informal->formal pairs
-    """
-    rag_dict = {}
-    entries = read_rag_dataset(dataset_path)
+#     Returns:
+#         Dictionary mapping exercise names to dictionaries of informal->formal pairs
+#     """
+#     rag_dict = {}
+#     entries = read_rag_dataset(dataset_path)
     
-    for entry in entries:
-        name = entry["name"]
-        response = entry["response"]
-        try:
-            pairs = text_to_pairs(response)
-            rag_dict[name] = pairs
-        except:
-            print(f"Failed to process entry: {name}")
-            continue
+#     for entry in entries:
+#         name = entry["name"]
+#         response = entry["response"]
+#         try:
+#             pairs = text_to_pairs(response)
+#             rag_dict[name] = pairs
+#         except:
+#             print(f"Failed to process entry: {name}")
+#             continue
             
-    return rag_dict
+#     return rag_dict
 
 
 if __name__ == "__main__":
