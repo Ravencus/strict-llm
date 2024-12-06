@@ -13,7 +13,7 @@ import sys
 from typing import Dict
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from datasets.parser import parse_jsonl
-
+import pickle
 
 
 from dotenv import load_dotenv
@@ -157,7 +157,7 @@ def test_entry_prompt():
     print(test)
 
 
-def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 256):
+def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 1024):
 
     client = OpenAI()
     response = client.chat.completions.create(
@@ -362,8 +362,146 @@ def build_minif2f_doc():
             
     print(f"Successfully processed {len(processed_entries)} entries")
 
+def build_proofnet_rag():
+    """Build RAG from proofnet dataset by extracting prompts, getting LLM responses,
+    and storing decomposed statements.
+    """
+    # Get absolute path relative to this file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(current_dir, "..", "datasets", "proofnet_prompt.jsonl")
+    output_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
 
-build_minif2f_doc()
+    # Read proofnet prompt dataset
+    with open(input_path, 'r') as f:
+        entries = [json.loads(line) for line in f if line.strip()]
+
+    total = len(entries)
+    # Store entries in a list for pickle
+    processed_entries = []
+    
+    # Process each entry
+    for i, entry in enumerate(entries):
+        try:
+
+            print(f"Processing entry {i+1}/{total}...")
+            # Convert entry to dict if needed
+            entry_dict = entry if isinstance(entry, dict) else entry.__dict__
+            # Get LLM response for the prompt
+            response = get_chat_completion(system_prompt, entry_dict["user_prompt"])
+            
+            # Post-process the response
+            decomposed = post_process_llm_response(response.choices[0].message.content)
+            
+            # Add decomposition to entry
+            entry_dict["decomposition"] = decomposed
+            
+            # Add to processed entries list
+            processed_entries.append(entry_dict)
+            
+            # Write entry to output file
+            with open(output_path, "a") as f:
+                f.write(json.dumps(entry_dict) + "\n")
+                
+            print(f"Completed {i+1}/{total} entries ({((i+1)/total)*100:.1f}%)")
+            
+        
+        except Exception as e:
+            name = entry_dict["name"] if isinstance(entry, dict) else entry.name
+            print(f"Failed to process entry: {name}")
+            print(f"Error: {str(e)}")
+            continue
+            
+    print(f"Successfully processed {total} entries")
+    # Save processed entries to pickle file
+    pickle_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.pkl")
+    with open(pickle_path, "wb") as f:
+        pickle.dump(processed_entries, f)
+    print(f"Saved processed entries to {pickle_path}")
+
+def build_minif2f_rag():
+    """Build RAG from minif2f dataset by extracting prompts, getting LLM responses,
+    and storing decomposed statements.
+    """
+    # Get absolute path relative to this file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(current_dir, "..", "datasets", "minif2f_prompt.jsonl")
+    output_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
+
+    # Read minif2f prompt dataset
+    with open(input_path, 'r') as f:
+        entries = [json.loads(line) for line in f if line.strip()]
+
+    total = len(entries)
+    # Store entries in a list for pickle
+    processed_entries = []
+    
+    # Process each entry
+    for i, entry in enumerate(entries):
+        try:
+
+            print(f"Processing entry {i+1}/{total}...")
+            # Convert entry to dict if needed
+            entry_dict = entry if isinstance(entry, dict) else entry.__dict__
+            # Get LLM response for the prompt
+            response = get_chat_completion(system_prompt, entry_dict["user_prompt"])
+            
+            # Post-process the response
+            decomposed = post_process_llm_response(response.choices[0].message.content)
+            
+            # Add decomposition to entry
+            entry_dict["decomposition"] = decomposed
+            
+            # Add to processed entries list
+            processed_entries.append(entry_dict)
+            
+            # Write entry to output file
+            with open(output_path, "a") as f:
+                f.write(json.dumps(entry_dict) + "\n")
+                
+            print(f"Completed {i+1}/{total} entries ({((i+1)/total)*100:.1f}%)")
+            
+        
+        except Exception as e:
+            name = entry_dict["name"] if isinstance(entry, dict) else entry.name
+            print(f"Failed to process entry: {name}")
+            print(f"Error: {str(e)}")
+            continue
+            
+    print(f"Successfully processed {total} entries")
+    # Save processed entries to pickle file
+    pickle_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.pkl")
+    with open(pickle_path, "wb") as f:
+        pickle.dump(processed_entries, f)
+    print(f"Saved processed entries to {pickle_path}")
+
+def read_proofnet_decomposed():
+    """
+    Read and print entries from proofnet_decomposed.pkl
+    """
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    pickle_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.pkl")
+    
+    try:
+        with open(pickle_path, "rb") as f:
+            entries = pickle.load(f)
+            
+        print(f"Found {len(entries)} entries in {pickle_path}")
+        for i, entry in enumerate(entries):
+            print(f"\nEntry {i+1}:")
+            print(f"Name: {entry['name']}")
+            print(f"Split: {entry['split']}")
+            print(f"Informal prefix: {entry['informal_prefix']}")
+            print(f"Decomposition: {entry['decomposition']}")
+            print("-" * 80)
+            
+    except FileNotFoundError:
+        print(f"File not found: {pickle_path}")
+    except Exception as e:
+        print(f"Error reading pickle file: {str(e)}")
+
+
+
+
 
 # TODO: not every trail is valid, we propose a iterative approach to find the best decomposition that can recover the original statement.
 def iterative_decomposition():
@@ -484,4 +622,5 @@ if __name__ == "__main__":
     #         f.write(json.dumps(entry) + '\n')
             
     # print(f"Successfully parsed and saved {len(parsed_statements)} statements to {output_path}")
+    build_minif2f_rag()
     pass
