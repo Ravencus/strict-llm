@@ -63,7 +63,10 @@ class multilevel_rag_builder:
 
 
 if __name__ == "__main__":
-    mrb = multilevel_rag_builder()
+    mrb_proofnet = multilevel_rag_builder()
     current_dir = os.path.dirname(os.path.abspath(__file__))
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
-    mrb.build_statement_decomposed_rag_database(state_decomposed_path)
+    mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path)
+    mrb_minif2f = multilevel_rag_builder()
+    state_decomposed_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
+    mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path)
