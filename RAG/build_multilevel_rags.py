@@ -42,7 +42,7 @@ class multilevel_rag_builder:
                 pkl.dump(self.statement_decomposed_rag_dict, f)
         return self.statement_decomposed_rag_dict
     
-    def query_statement_rag_database(self, statement, top_k=5):
+    def query_statement_rag_database(self, statement, top_k):
         if len(self.statement_decomposed_rag_dict) == 0:
             raise ValueError("Empty decomposed_rag_dict, run build_statement_decomposed_rag_database function to first build")
         if len(self.statement_decomposed_rag_dict) <= top_k:
@@ -55,11 +55,14 @@ class multilevel_rag_builder:
                 score = np.dot(source, target)/(np.linalg.norm(source)*np.linalg.norm(target))
                 score_record.append((key, score))
             score_record = sorted(score_record, key=lambda x: x[1], reverse=True)
-            topk_results = {}
+            top_k_results = {}
             for i in range(top_k):
                 key = score_record[i][0]
-                topk_results[key] = copy.deepcopy(self.statement_decomposed_rag_dict[key])
-            return topk_results
+                top_k_results[key] = {
+                        "object": copy.deepcopy(self.statement_decomposed_rag_dict[key]),
+                        "score": score_record[i][1]
+                    }
+            return top_k_results
 
 
 if __name__ == "__main__":
@@ -70,3 +73,12 @@ if __name__ == "__main__":
     mrb_minif2f = multilevel_rag_builder()
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
     mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path)
+
+    proofnet_query = "then $f$ is constant"
+    top_k_results = mrb_proofnet.query_statement_rag_database(proofnet_query, top_k=5)
+    print(top_k_results)
+
+    minif2f_query = "$a$ and $b$ be real numbers"
+    top_k_results = mrb_minif2f.query_statement_rag_database(minif2f_query, top_k=5)
+    print(top_k_results)
+
