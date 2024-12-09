@@ -252,114 +252,47 @@ class Theorem:
         self.statement_nl = statement_nl 
         self.proof_nl = proof_nl
 
-
-
-
-@deprecated
-def theorem_analyzer(proof_trace_file: str, output_path: str = '.'):
-    """Analyzes a proof trace file and creates step-by-step files showing proof progress.
+def tactic_analysis(formal_theorem: FormalTheorem):
+    """Analyze the effect of each tactic by comparing proof states before and after.
     
     Args:
-        proof_trace_file: Path to the x_proof_trace.lean file
-        output_path: Path where the stepped_ folder will be created. Defaults to current directory.
-        
-    The function:
-    1. Reads the proof trace file
-    2. Extracts background and target blocks
-    3. For the target proof, creates incremental files showing each step
-    4. Stores files in a new directory named after the theorem
+        formal_theorem: FormalTheorem instance containing tactics and proof states
     """
-    # Read the proof trace file
-    with open(proof_trace_file, 'r') as f:
-        lines = f.readlines()
+    # Get initial state
+    prev_state = formal_theorem.initial_state
     
-    # Extract background block
-    background = []
-    in_background = False
-    for line in lines:
-        if '-- begin background' in line:
-            in_background = True
-            continue
-        if '-- end background' in line:
-            in_background = False
-            continue
-        if in_background:
-            background.append(line)
-            
-    # Extract target block and proof
-    target = []
-    proof_lines = []
-    in_target = False
-    in_proof = False
-    for line in lines:
-        if '-- begin target' in line:
-            in_target = True
-            continue
-        if '-- end target' in line:
-            in_target = False
-            continue
-        if in_target:
-            target.append(line)
-            if 'by' in line:
-                in_proof = True
-                continue
-            if in_proof:
-                proof_lines.append(line)
-                
-    # Create directory for output files
+    system_prompt = """
+    You are a proof state analyzer.
+    You are given a tactic and the proof state before and after applying the tactic.
+    You need to analyze the effect of the tactic on the proof state.
+    The description of the effect should be abstract and general.
+    An example is given below.
+    user input:
+    tactic:
+    proof state before applying the tactic:
+    proof state after applying the tactic:
+    example output:
+    """
     
-    # Get base name of proof trace file without extension
-    base_name = os.path.splitext(os.path.basename(proof_trace_file))[0]
-    output_dir = os.path.join(output_path, 'stepped_' + base_name)
-    os.makedirs(output_dir, exist_ok=True)
-    # Create full.lean with original content
-    with open(os.path.join(output_dir, 'full.lean'), 'w') as f:
-        # Write background
-        f.writelines(background)
-        
-        f.write("set_option linter.unusedVariables false\n\n")
-        # Write target theorem and full proof
-        f.writelines(target)
+    user_prompt = """
+    tactic:
+    proof state before applying the tactic:
+    proof state after applying the tactic:
+    """
     
-    # Create incremental proof files
-    lean_output_dir = os.path.join(output_dir, f'stepped_lean_{base_name}')
-    os.makedirs(lean_output_dir, exist_ok=True)
-    
-    for i in range(len(proof_lines)+1):
-        with open(os.path.join(lean_output_dir, f'step_{i}.lean'), 'w') as f:
-            # Write linter option at start of file
-            
-            # Write background
-            f.writelines(background)
-            
-            f.write("set_option linter.unusedVariables false\n\n")
-            # Write target theorem
-            f.writelines([l for l in target if l not in proof_lines])
-            # Write proof steps up to current index
-            f.writelines(proof_lines[:i])
-            
-    # Execute all intermediate files and store results
-    step_files = [os.path.join(lean_output_dir, f'step_{i}.lean') for i in range(len(proof_lines)+1)]
-    results = execute_lean_files(step_files)
-    
-    # Create execution trace directory
-    exec_trace_dir = os.path.join(output_dir, f'exec_trace_{base_name}')
-    os.makedirs(exec_trace_dir, exist_ok=True)
-    
-    # Write results to individual files for each step
-    for i, (file_path, output, exit_code) in enumerate(results):
-        result_file = os.path.join(exec_trace_dir, f'step_{i}.txt')
-        with open(result_file, 'w') as f:
-            f.write(f'Step {i}:\n')
-            f.write(f'File: {file_path}\n') 
-            f.write(f'Output:\n{output}\n')
-            f.write(f'Exit Code: {exit_code}\n')
-
-
+    # For each tactic, get its proof state and previous state
+    for i, tactic in enumerate(formal_theorem.tactics):
+        current_state = formal_theorem.proof_states[i]
+        print(f"Tactic: {tactic}")
+        print(f"Previous state:\n{prev_state}")
+        print(f"Current state:\n{current_state}\n")
+        prev_state = current_state
+        # TODO: get the LLM response
 
 
 
 if __name__ == '__main__':
-    # theorem_analyzer('test/test_proof_trace.lean', 'test_result')
+
     test_theorem = FormalTheorem('test_theorem')
     test_theorem.from_lean_file('test/test_proof_trace.lean')
+    tactic_analysis(test_theorem)
