@@ -1,0 +1,289 @@
+(a b : ℝ)(h₀ : a ^ 2 + b ^ 2 = 1) : ab + |a - b| ≤ 1 := 
+V = (1 / 3) * B * h(B : ℝ) (h₀ : 0 < B)(h : ℝ)B = 30h = 6.5V = (1 / 3) * 30 * 6.5 : k = 65 := 
+(x y : ℤ) : ¬∃ (x y : ℤ), 4 * x^3 - 7 * y^3 = 2003 := 
+(x y z : ℝ) (h₀ : 1 < x ∧ 1 < y ∧ 1 < z)(w : ℝ) (h₀ : 0 < w)(h₂ : Real.logb x w = 24)(h₃ : Real.logb y w = 40)(h₄ : Real.logb (x * y * z) w = 12) : Real.logb z w = 60 := 
+(S : Finset ℕ) (h₀ : ∀ x : ℕ, x ∈ S ↔ 0 < x ∧ x < 10000 ∧ x % 2 = 1) : S.prod id = 10000.factorial / (2 ^ 5000 * 5000.factorial) := 
+(h₀ : l * w = 180)(h₁ : 2 * (l + w) = 54)(h₂ : l * l + w * w = d * d)(h₀ : ∃ l w : ℝ, l * w = 180 ∧ 2 * (l + w) = 54) : IsLeast { x : ℕ | 360 * x ≡ 42 [MOD 47] } 369 := 
+(∑ k in Finset.Icc 1 9, k ^ 2) % 10 : (∑ k in Finset.Icc 1 9, k ^ 2) % 10 = 5 := 
+(h₀ : ∀ i j, i < j → a i ≠ a j)(x : ℝ)f x = ∑ k in Finset.range n, (1 / 2 ^ k) * Real.cos (a (k + 1) + x)f x₁ = 0 ∧ f x₂ = 0 : ∃ m : ℤ, x₂ - x₁ = m * Real.pi := 
+(τ : Equiv ℝ ℝ)(h₄ : τ.2 2 = 10)(h₅ : τ.2 10 = 1)h 1 = 2 : σ.1 (σ.1 10) = 1 := 
+∃ n : ℕ, 3740 + n ≡ 0 [MOD 18]goal: n = _ : n = 4 := 
+(a b c : ℕ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : a + b > c) (h₂ : a + c > b) (h₃ : b + c > a) : a ^ 2 * b * (a - b) + b ^ 2 * c * (b - c) + c ^ 2 * a * (c - a) ≥ 0 := 
+ : (∑ k in Finset.Icc 1 100, k) % 6 = 4 := 
+(h₄ : 2 * x = 5 * y)(h₀ : 7 * y = 10 * z)z / xz / x = 7 / 25(x : ℝ)(y : ℝ) : (z : ℝ) := 
+(x : ℝ) (h₀ : x ≠ -2)x = 26 : 1 := 
+(1 * 3 * 5 * 7 * 9 * 11 * 13) % 10 : (1 * 3 * 5 * 7 * 9 * 11 * 13) % 10 = 5 := 
+-- What is the value of the following expression?((100^2 - 7^2) / (70^2 - 11^2)) * ((70 - 11) * (70 + 11) / ((100 - 7) * (100 + 7))) : S.card = 1 := 
+(a b : ℝ)(h₀ : a ^ 2 + b ^ 2 = 1) : ab + |a - b| ≤ 1 := 
+f : ℕ+ → ℕ+∀ n : ℕ+, f (n + 1) > f (f n) : ∀ n, f n = n := 
+a = -1(b y : ℝ) (h₀ : b = 5)-a - b ^ 2 + 3 * a * b : IsLeast { x : ℤ | 30 * x ≡ 42 [MOD 47] } (-39) := 
+∃! (n : ℕ), n > 0(h₂ : Real.logb 2 (Real.logb 16 n) = Real.logb 4 (Real.logb 4 n)) : nat.digits 10 n |> list.sum = 13 := 
+Real.pi / 4 ≤ x ∧ x ≤ 7 * Real.pi / 44 * x^2 / (1 - Real.sqrt (2 * x + 1))^2 < 2 * x + 9 : 4 * x^2 / (1 - Real.sqrt (2 * x + 1))^2 < 2 * x + 9 := 
+(h₂ : A = ∑ d in divisors 500, d)(h₄ : A = ∑ p in (Nat.factors A).toFinset, p) : k = 25 := 
+∀ (x y : ℤ), : x ^ 5 ≠ y ^ 2 + 4 := 
+∀ n, a n∑ n in Finset.range 100, a (n + 1) ^ 2 = 1 : ∑ n in Finset.range 99, (a (n + 1) ^ 2 * a (n + 2)) + a 100 ^ 2 * a 1 < 12 / 25 := 
+7 * ligs = 4 * lags(h₄ : 9 * lags = 20 * lugs)80 * lugs = ? * ligsu + v = 63 : (planet : Type) (h₀ : planet = Larky) := 
+ : cos (π / 7) - cos (2 * π / 7) + cos (3 * π / 7) = 1 / 2 := 
+(A B C : ℕ) (hA : 1 ≤ A ∧ A ≤ 9) (hB : 1 ≤ B ∧ B ≤ 9) (hC : 1 ≤ C ∧ C ≤ 9) (h_distinct : A ≠ B ∧ A ≠ C ∧ B ≠ C)A + B = C(h₁ : A * A - B = 2 * C)(h₂ : C * B = A * A + A) : A + B + C = 8 := 
+(h₁ : ∀ x ∈ {anna, bertram, carli, david}, x ∈ ℝ)(h₃ : b + c + d = 3 * a)(h₄ : a + c + d = 4 * b)(h₅ : a + b + d = 2 * c)(h₆ : 8 * a + 10 * b + 6 * c = 2 / 5) : d.num + d.denom = 28 := 
+(n : ℕ) : 12 ∣ 4 ^ (n + 1) + 20 := 
+(x : ℝ) (h₀ : 0 < x)(h₀ : ∀ x, f x = 2 * x^2) (h₁ : ∀ x, x ∈ s ↔ f x = 4 * x + 9)(a b c x : ℝ) (h₉ : x = (a + real.sqrt b) / c)(a b c : ℕ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)(h₁ : c = 2) : a + b + c = 26 := 
+x = 598x = last_year_enrollment * 1.04last_year_enrollment = 598 / 1.04 : n = 575 := 
+(x y : ℕ)(h₃ : x ^ (y ^ 2) = y ^ x) : (x, y) = (1, 1) ∨ (x, y) = (16, 2) ∨ (x, y) = (27, 3) := 
+(gcd m n = 6)(lcm m n = 126) : m + n ≤ 60 := 
+(X : ℕ) (h₀ : ∃ k : ℕ, X = 3 * k + 2 ∧ 0 < X)goal: a % 10 = (b + 4) % 10 : IsLeast { X : ℕ | ∃ k : ℕ, X = 3 * k + 2 ∧ 0 < X ∧ X % 10 = (4 + 4) % 10 } 14 := 
+(h₁ : ∀ j, cost j = N + x * hours j)(h₂ : cost j = 97 ∧ hours j = 1)(h₃ : cost j = 265 ∧ hours j = 5) : cost j = 139 ∧ hours j = 2 := 
+(h₁ : 40 / 1 = x / 1)(h₂ : x / 100 = 2 / 100)(h₃ : x / 1 = 100 / 100) : q * e = 2000 := 
+(expand : ∀ x, (x + 1) ^ 2 * x = (x^3 + 2*x^2 + x)) : (x + 1) ^ 2 * x = x ^ 3 + 2 * x ^ 2 + x := 
+(n : ℕ) (h₀ : 3 ≤ n) : n ! < n ^ (n - 1) := 
+real.sqrt 1000000 - real.cbrt 1000000 : x 300 + x 300 + x 300 = 900 := 
+let S := 2010 + 2011 + ... + 4018(l r : ZMod 2009) (h₂ : r = S) : h₂ = 0 := 
+(a b : ℤ) : ¬ (∀ a b : ℤ, (even a ∧ even b) ↔ 8 ∣ (a ^ 2 + b ^ 2)) := 
+(h₀ : b = a ^ 4) (h₁ : b = 5 * a ^ 2 - 6) (h₂ : d = c ^ 4) (h₃ : d = 5 * c ^ 2 - 6)(m n : ℝ) (h₀ : 0 < m ∧ 0 < n) (h₁ : m > n)(h₀ : y = x ^ 4)(h₀ : y = 5 * x ^ 2 - 6) : (h₀ : m - n = 1) := 
+Finset.card (Finset.filter (fun x => x % 20 = 0) (Finset.Icc 15 85)) : 4 = Finset.card (Finset.filter (fun x => x % 20 = 0) (Finset.Icc 15 85)) := 
+#eval (2000 + 2001 + 2002 + 2003 + 2004 + 2005 + 2006) % 7 : (2000 + 2001 + 2002 + 2003 + 2004 + 2005 + 2006) % 7 = 0 := 
+(∑ k in Finset.Icc 0 50, if k % 3 = 0 then k % 10 else 0) = 75 : f (8 ^ (1 / 3)) + f (-Real.pi) + f (Real.sqrt 50) + f (9 / 2) = 78 := 
+5 ^ 999999 % 7 : (∑ k in (f ⁻¹' {10}).toFinset, k) = 6 := 
+def is_nice (n : ℕ) : Prop :=
+  ∃ (m : ℕ), (m > 0) ∧ (∃ (d : finset ℕ), d.card = 4 ∧ ∀ x ∈ d, x > 0 ∧ x ∣ m) ∧ d.sum = nfinset.sum (finset.filter is_nice (finset.range 2020 \ finset.range 2010)) : 10 * a + b = 2016 := 
+∀ x ≥ 0let fractional_part (x : ℝ) : ℝ := x - Int.floor x(a : ℝ) (h₀ : 0 < a)fractional_part (a⁻¹) = fractional_part (a ^ 2)(h₁ : 2 < a ^ 2 ∧ a ^ 2 < 3) : a ^ 12 - 144 * a⁻¹ = 233 := 
+(a : ℝ) : a * (2 - a) ≤ 1 := 
+(m n : ℝ) (h₁ : 0 < m ∧ 0 < n)(m^3 = 2)(n : ℝ) (_ : n^3 = 4)(a b c : ℚ) (h₂ : a + b * m + c * n = 0) : a = 0 ∧ b = 0 ∧ c = 0 := 
+(f g : ℝ → ℝ) (h₀ : ∀ x, f x = 5 * x + 4) : f 1 = 9 := 
+(h₂ : ∀ m ∈ angela_family, drank m 8)(h₃ : angela_drank = total_milk / 4)(h₄ : angela_drank_coffee = total_coffee / 6) : angela_family_size = 5 := 
+(f : Equiv ℝ ℝ)f 2 = f.symm 2 = 4 : f (f 2) = 2 := 
+IsGreatest { x : ℤ | 24 * x ≡ 15 [MOD 1199] } (-50) : n = -449 := 
+∀ (n : ℕ), nat.coprime (21 * n + 4) (14 * n + 3)nat.coprime (21 * n + 4) (14 * n + 3) : (n : ℕ) := 
+nat.units_digit (2^2010) : 4 ≤ y := 
+(n : ℕ) : ∑ k in Finset.range n, k ^ 3 = (∑ k in Finset.range n, k) ^ 2 := 
+(σ : Equiv ℝ ℝ) (h₀ : ∀ x, σ.1 x = 4 ^ x + 6 ^ x + 9 ^ x)(m n : ℤ) (h₁ : 0 < m ∧ 0 < n)(h₂ : m ≤ n) : ∀ (m n : ℤ), 0 < m ∧ 0 < n ∧ m ≤ n → f (2 ^ m) ∣ f (2 ^ n) := 
+(p q r : ℤ)1 < p ∧ p < q ∧ q < r(p - 1) * (q - 1) * (r - 1) ∣ p * q * r - 1 : (p, q, r) = (2, 4, 8) ∨ (p, q, r) = (3, 5, 15) := 
+∀ n : ℕ, 0 < n → f n ∈ ℕf 2 = 0(h₂ : f 3 > 0)(h₁ : f 9999 = 3333)∀ m n : ℕ, f (m + n) - f m - f n = 0 ∨ f (m + n) - f m - f n = 1 : f 1982 = 660 := 
+(x y : ℤ)(h₁ : y ^ 2 + 3 * x ^ 2 * y ^ 2 = 30 * x ^ 2 + 517)3 * x ^ 2 * y ^ 2 : x 531 + x 753 + x 975 = 588 := 
+∀ x, f x = 2 * x - 3(f g : ℝ → ℝ) (h₁ : ∀ x, g x = x + 1)g (f 5 - 1) : p (q 2) = 7 := 
+y = x ^ 2 ∧ x + y = 1dist : ℝ : abs ((120 : ℝ) / 100 * 30 - 130 / 100 * 20) = real.sqrt 10 := 
+(x y z : ZMod 7) (h₀ : x = 29 ^ 13) (h₁ : y = 5 ^ 13) (h₂ : z = x - y) : h₂ = 3 := 
+(a₁ r₁ a₂ r₂ : ℝ) (u₁ u₂ : ℕ → ℝ) 
+(h₀₁ : ∀ k, u₁ k = 6 * a₁ * r₁ ^ k) 
+(h₀₂ : ∀ k, u₂ k = a₂ * r₂ ^ k) 
+(h₁ : 0 < 6) (h₂ : 0 < a₁) (h₃ : 0 < r₁) 
+(h₄ : 0 < a₂) (h₅ : 0 < r₂)(b a : ℝ) (h₀ : 0 < b) (h₁ : 0 < a)solve_for_a : ℝ : u 0 = 3 * Real.sqrt 2 := 
+(h₀ : ∀ x, σ.1 x = 12 * x + 7)(f g : ℝ → ℝ) (h₂ : ∀ x, g x = 5 * x + 2)(x : ℕ) (h₀ : 0 < x)(h₃ : h x = gcd (f x) (g x))(h₄ : ∑ x in (h '' (set.univ : set ℕ)), x) : Nat.gcd (12 * x + 7) (5 * x + 2) = 12 := 
+(h₂ : Real.logb 2 80 / Real.logb 40 2 - Real.logb 2 160 / Real.logb 20 2) : x ^ 3 = 125 := 
+(f : ℝ → ℝ) (h₀ : ∀ x, f x + f (x - 1) = x ^ 2)h₁ : f 19 = 94 : f 94 % 1000 = 561 := 
+(s t : ℝ) (h₀ : s = 9 - 2 * t)(t s : ℝ) (h₀ : t = 3 * s + 1)(s t : ℝ) (h₀ : s = 9 - 2 * t) (h₁ : t = 3 * s + 1) (h₂ : s = 9 - 2 * (3 * s + 1)) : (s, t) = (1, 4) := 
+(h₀ : (x + 3) ^ 2 = 121)S = {x | (x + 3) ^ 2 = 121}.card = 2x₁ + x₂ = 2 * 3 : n = -6 := 
+(a : ℕ) (h₀ : a < 10)(c : ℕ) (h₀ : c < 10)a ≡ 6 [MOD 7] ∧ (2 + a + 7) % 11 = 0 : 20_57 % 11 = 0 := 
+#eval (129^34 + 96^38) % 11 : d = 9 := 
+(h₁ : a 0 = 2/3) (h₂ : a 8 = 4/5)(a d : ℝ) (u : ℕ → ℝ) (h₀ : ∀ k, u k = a + k * d) : u 4 = 11 / 15 := 
+(h₂ : ∃ n : ℕ, n > 10 ∧ n = m * m ∧ n = k * k * k) : (h₂ : ∃ n : ℕ, n > 10 ∧ n = m * m ∧ n = k * k * k ∧ n = 64) := 
+(h₂ : 8 * 9 ^ 2 + 5 * 9 + 2) : Int.floor (h₂) = 695 := 
+#eval 54 % 6 : x = 0 := 
+(fib : ℕ → ℕ) (h₀ : ∀ n, fib (n + 2) = fib (n + 1) + fib n) : fib 100 % 4 = 3 := 
+(S : Finset ℕ) (n ∈ S) (h : (n + 1000) / 70 = nat.floor (real.sqrt n))(S : Finset ℕ) (n ∈ S) (h : (n + 1000) / 70 = nat.floor (real.sqrt n)) : (∑ k in (f ⁻¹' {10}).toFinset, k) = 6 := 
+variables (AMC10 AMC12 : ℕ) (h₀ : AMC10 + AMC12 = 123422)A + M + C = 0A + M + C = 0a / b + b / a - a * b = 14 : (A M C : ℕ) (h₂ : 0 ≤ A ∧ A ≤ 9 ∧ 0 ≤ M ∧ M ≤ 9 ∧ 0 ≤ C ∧ C ≤ 9) := 
+(a b : ℕ) (h₀ : 0 < a ∧ 0 < b)goal: a % 10 = 2goal: b % 10 = 4nat.gcd a b = 6 : let lcm_ab := nat.lcm a b
+have h₁ : lcm_ab = 108, := 
+(x : ℝ)(x : ℝ) : (3491 * 3491 - (3491 - 60) * (3491 + 60)) = 3600 := 
+(a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c)3 ≤ a * b + b * c + c * a : 3 / real.sqrt 2 ≤ a / real.sqrt (a + b) + b / real.sqrt (b + c) + c / real.sqrt (c + a) := 
+(h : f + 3 * z = 11)(h₃ : 3 * (f - 1) - 5 * z = -68) : (h₂ : f = -10 ∧ z = 7) := 
+(h₀ : 3 * n % 11 = 2)(n : ℕ) : a = 8 := 
+(n : ℕ) : (h₂ : (∏ k in finset.range n, (1 + 1 / 2^k)) < 5 / 2) := 
+(x + 4) ^ 2 + (y - 3) ^ 2 = 2525 ^ (1 / 2) : n % 17 = 5 := 
+(n : ℕ) (h₀ : 0 < n)(h₂ : nat.prime (2 ^ n - 1)) : Nat.Prime n := 
+(x y : ℝ) (h : x + y = 25)x - y = 11x > y : x = 18 := 
+(2^2014 + 2^2012) / (2^2014 - 2^2012) : q / p = 5 / 3 := 
+(u v : ℕ → ℕ) (h₀ : ∀ n, u n = (2 * n + 2) ^ 2 + (2 * n + 4) ^ 2 + (2 * n + 6) ^ 2) (h₁ : ∃ n, u n = 12296) : (p : ℕ → ℕ) (h₀ : ∀ a b c, p a b c = (a * b * c) / 8) (h₁ : ∃ a b c, p a b c = 32736) := 
+(r : ℕ) (h₁ : r = 1342 % 13)min {n : ℕ | n > 0 ∧ property₁ n ∧ property₂ n}∃ k : ℕ, n = 1342 * k(h₂ : n % 13 < r) : a 2010 = 6710 := 
+(n : ℕ) (h₀ : n ≠ 0) : (∏ k in Finset.Icc 1 n, (1 : ℝ) + 1 / k ^ 3) ≤ 3 - 1 / n := 
+(h₀ : 1 * 3 * 5 * 7 * 9 * 11)goal: b = 9 : b % 10 = 5 := 
+(h : 2 ^ a = 32)(h₁ : a ^ b = 125)b ^ a : IsGreatest { n : ℕ | 3 ^ n ∣ 729! } 243 := 
+(n : ℕ) (h₀ : (n - 1) * n * (n + 1) = 8 * ((n - 1) + n + (n + 1)))x^2 + y^2 : 77 := 
+(h : (x - 9) / (x + 1) = 2)xn = -11 : (h₁ : x ≠ -1) := 
+(n : ℕ) (h₀ : 0 < n) (h₁ : 80325 ∣ n!) : n = 17 := 
+(A M C : ℕ) (h : A + M + C = 12)max (A * M * C + A * M + M * C + A * C) : A * M * C + A * M + M * C + A * C = E := 
+let n := 3 ^ 17 + 3 ^ 1011 ∣ (n + 1)(h₂ : 0 ≤ A ∧ A ≤ 9) (h₃ : 0 ≤ B ∧ B ≤ 9) (h₄ : 0 ≤ C ∧ C ≤ 9) (h₅ : A ≠ B ∧ B ≠ C ∧ A ≠ C)A % 2 = 1 ∧ C % 2 = 1(h₁ : ¬3 ∣ B)(A B C : ℕ) (h₅ : A ≠ B ∧ B ≠ C ∧ A ≠ C) : 100 * A + 10 * B + C = 129 := 
+(x : ℝ) (h₀ : (11 ^ (1/4)) ^ (3 * x - 3) = 1/5)(11 ^ (1/4)) ^ (6 * x + 2) : 11 / 5 * d ^ 2 = 121 / 25 := 
+(h₂ : 3 * x + 4 * y - 12 * z = 10)(h₃ : -2 * x - 3 * y + 9 * z = -4)x = 26 : (x + 1) ^ 2 * (y + 5) ^ 3 % 19 = 14 := 
+(y₁ y₂ y₃ y₄ y₅ y₆ y₇ : ℝ) 
+(h₁ : y₁ ^ 3 = 1) 
+(h₂ : y₂ ^ 3 = 8) 
+(h₃ : y₃ ^ 3 = 27) 
+(h₄ : y₄ ^ 3 = 64) 
+(h₅ : y₅ ^ 3 = 125) 
+(h₆ : y₆ ^ 3 = 216) 
+(h₇ : y₇ ^ 3 = 343) : (h_stack : y₇ > y₆ ∧ y₆ > y₅ ∧ y₅ > y₄ ∧ y₄ > y₃ ∧ y₃ > y₂ ∧ y₂ > y₁) := 
+(f : ℝ → ℝ → ℝ) (h₀ : ∀ x > 0, ∀ y > 0, f x y)f 0 y = y + 1f (x + 1) 0 = f x 1(h₁ : ∀ x y, f (x + 1) (y + 1) = f x (f (x + 1) y)) : (f : ℝ → ℝ → ℝ) (h₀ : ∀ x y, f x y) := 
+(x y : ℝ)Real.sqrt (19 + 3 * y) = 7(y : ℝ) : n + 1 = 10 := 
+nat.gcd_a 9 100nat.gcd_a 9 100 % 100 : f (8 ^ (1 / 3)) + f (-Real.pi) + f (Real.sqrt 50) + f (9 / 2) = 89 := 
+(p : ℕ) (h₀ : Nat.Prime p) (h₁ : p ≥ 7)(p : ℕ) (h₀ : Nat.Prime p) (h₁ : p ≥ 7) (s : ZMod p)
+(h₂ : s = ∑ i in Finset.range (p - 1), (i⁻¹ * (i + 1)⁻¹)) : s = 2 := 
+mean scores_morning_class = 84mean scores_afternoon_class = 70students_morning_class / students_afternoon_class = 3 / 4mean_scores_all_studentsexam_given Ms_Blackwell class1 class2 : ((∑ k : ℤ in Finset.Icc 1 12, z ^ k ^ 2) * (∑ k : ℤ in Finset.Icc 1 12, 1 / z ^ k ^ 2)) = 76 := 
+∀ x : ℝ, Real.sqrt (Real.sqrt (3 - x) - Real.sqrt (x + 1)) > 1 / 2(∀ x : ℝ, 3 - x ≥ 0)(h₂ : x + 1 ≥ 0) : [-1, 1 - Real.sqrt 127 / 32) := 
+(h₀ : ∀ x, f x = abs (x - 2)) (h₁ : ∀ x, x ∈ s ↔ f x ≤ 5.6)(s : Finset ℤ) (h₁ : ∀ x, x ∈ s ↔ f x ≤ 5.6) : n = 11 := 
+(f : ℂ → ℂ) (h₀ : ∀ x, f x = (x + 3) * (2 * x - 6))(x : ℂ) : (x + 3) * (2 * x - 6) = 2 * x ^ 2 - 18 := 
+(h₂ : 4 ^ a = 5)(h₃ : 5 ^ b = 6)(h₄ : 6 ^ c = 7)(h₅ : 7 ^ d = 8)(h₂ : 4 ^ a = 5) (h₃ : 5 ^ b = 6) (h₄ : 6 ^ c = 7) (h₅ : 7 ^ d = 8) : a * b * c * d = 3 / 2 := 
+(a b : ℝ) (h₀ : 0 < a ∧ 0 < b)(h₀ : 0 < a ∧ 0 < b ∧ b ≤ a) : (a + b) / 2 - sqrt (a * b) ≤ (a - b) ^ 2 / (8 * b) := 
+(a b : ℤ) (h₀ : ∀ x, 10 * x ^ 2 - x - 24 = (a * x - 8) * (b * x + 3)) : goal: a * b + b = 12 := 
+let s1 := ∑ k in finset.range 1 21, real.log (3^(k^2)) / real.log (5^k)
+let s2 := ∑ k in finset.range 1 101, real.log (25^k) / real.log (9^k)
+s1 * s2 : ↑(a 2023).den + (a 2023).num = 21000 := 
+ : import data.real.basic
+import analysis.special_functions.sqrt
+
+example : ∑ k in finset.range 9999, (1 / real.sqrt (k + 2)) < 198 :=
+begin
+  sorry
+end := 
+(p : ℕ → ℕ) (h₁ : ∀ n, p n = n^2 - n + 41)∃ n > 0, ∃ d > 1, d ∣ p n ∧ d ∣ p (n + 1) : IsLeast { x : ℕ | 30 * x ≡ 42 [MOD 47] } 41 := 
+(a b c d : ℕ) (h₀ : 1 ≤ a ∧ a ≤ 9 ∧ b ≤ 9 ∧ c ≤ 9 ∧ d ≤ 9) (h₁ : 1000 * a + 100 * b + 10 * c + d ≥ 1000 ∧ 1000 * a + 100 * b + 10 * c + d ≤ 9999)(h₂ : b % 2 = 0 ∧ c % 2 = 0 ∧ d % 2 = 0)(h₀ : ∀ n : ℕ, n ∈ S ↔ 5 ∣ n) : s 2 6 = 100 := 
+(n : ℤ) (h₀ : n ≥ 9)((n + 2)! - (n + 1)!) / n! : ∃ m : ℤ, x * y = m^2 := 
+(h₀ : 0 < k)∀ n > 0, Nat.Coprime (6 * n + k) (6 * n + 3) ∧ Nat.Coprime (6 * n + k) (6 * n + 2) ∧ Nat.Coprime (6 * n + k) (6 * n + 1) : k = 5 := 
+∃ (a b : ℝ),¬ is_rat a¬ is_rat bis_rat (a^b) : ∃ (a b : ℝ), ¬ is_rat a ∧ ¬ is_rat b ∧ is_rat (a^b) := 
+(h₁ : 3 * x + y = 17)
+(h₂ : 5 * y + z = 14)
+(h₃ : 3 * x + 5 * z = 41)x + y + z = 15 : x + y + z = 12 := 
+(h : ∀ n, f n = if Odd n then n^2 else n^2 - 4 * n - 1)(f : ℝ → ℝ) (h₀ : ∀ x, f x = x ^ 2 - 4 * Real.sqrt x + 1) : f (f (f (f (f 4)))) = 1 := 
+(h₀ : 2 * n % 47 = 15)(n : ℕ) : ↑3! * ((2 : ℝ) ^ 3 + Real.sqrt 7) / 2 = (31 : ℝ) := 
+(x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0 < z) : 9 / (x + y + z) ≤ 2 / (x + y) + 2 / (y + z) + 2 / (z + x) := 
+(x : ZMod (11^2)) (h₀ : x = 24⁻¹)(h₂ : (24 * b) % (11^2) = 1)(b : ℤ) (0 ≤ b ∧ b ≤ 11^2 - 1) : IsGreatest { n : ℕ | 0 < n ∧ ∃! k : ℕ, (8 : ℝ) / 15 < n / (n + k) ∧ (n : ℝ) / (n + k) < 7 / 13 } 116 := 
+(a b : ℝ) : |a + b| / (1 + |a + b|) ≤ |a| / (1 + |a|) + |b| / (1 + |b|) := 
+(a b c d : ℤ) (h₀ : odd a ∧ odd b ∧ odd c ∧ odd d)(0 < a ∧ a < b ∧ b < c ∧ c < d)a * d = b * ca + d = 2 ^ k(h₁ : b + c = 2 ^ m) : have ha : a = 1, := 
+(K L M N : ℕ) (hK : K > 0) (hL : L > 0) (hM : M > 0) (hN : N > 0) (hKL : K > L) (hLM : L > M) (hMN : M > N)(g : ℕ → ℕ → ℕ → ℕ → ℕ) (h₁ : ∀ K L M N, g K L M N = (K + L - M + N) * (-K + L + M + N)) : (h₃ : ¬Nat.Prime (K * L + M * N)) := 
+(n : ℕ) (h₀ : n < 1399) (h₁ : n * 160 % 1399 = 1) : x 531 + x 753 + x 975 = 1058 := 
+(h₀ : sqrt (4 + sqrt (16 + 16 * a)) + sqrt (1 + sqrt (1 + a)) = 6) : a = 8 := 
+(N : ℚ) (_ : N = 1/3)(∑ k in Finset.Icc 1 4, Int.floor (10^k * N)) : x ^ 2 + y ^ 2 + z ^ 2 + w ^ 2 = 3702 := 
+(a b : ℝ)(h₀ : a ^ 2 + b ^ 2 = 1) : ab + (a - b) ≤ 1 := 
+(f : ℚ+ → ℝ)(h₁ : ∀ a b : ℚ+, f (a * b) = f a + f b)(h₂ : ∀ p : ℕ, Nat.Prime p → f p = p) : ((3 : ℝ) / 8 + 7 / 8) / (4 / 5) = 25 / 11 := 
+(h₁ : 3 * y = x)
+(h₂ : 2 * x + 5 * y = 11) : x + y = 4 := 
+(p : ℕ) (hp : Nat.Prime p)(a : ℕ) (h₀ : 0 < a) : p ∣ a ^ p - a := 
+(u : ℕ → ℕ) (h₀ : ∀ n, u n = (2 + 3) * (2 ^ (2 ^ n) + 3 ^ (2 ^ n))) : x = 3 ^ 128 - 2 ^ 128 := 
+(h₀ : ∀ n, a (n + 1) = a n + 1)(h₀ : ∀ n, a (n + 1) = a n + 1) (h₁ : ∑ n in finset.range 98, a n = 137)∑ n in finset.range 49, a (2 * n + 2) : x ^ 2 + y ^ 2 + z ^ 2 + w ^ 2 = 93 := 
+(h₁ : ∀ x, P x = x ^ 3 + a * x ^ 2 + b * x + c) 
+(h₂ : P (cos (2 * π / 7)) = 0) 
+(h₃ : P (cos (4 * π / 7)) = 0) 
+(h₄ : P (cos (6 * π / 7)) = 0)a * b * c : Real.log (x * y) = 1 / 32 := 
+#eval (5^30) % 7 : #eval (5^30) % 7 = 1 := 
+Nat.gcd n 40 = 10Nat.lcm n 40 = 280(n : ℕ) : f (f 4) = 70 := 
+(V : ℂ) (h₀ : V = I * Z)(V : Voltage)(I : Current)(Z : Impedance)(V : ℂ) (h₁ : V = 1 + Complex.I)(Z : ℂ) (h₀ : Z = 2 - Complex.I)(I : Current) : (h₂ : I = 1/5 + 3/5 * Complex.I) := 
+(n : ℕ) (h₀ : 0 < n)(h₁ : (2 * 3 * 7 * n) ∣ (2 * 3 * 7 * n / 2 + 2 * 3 * 7 * n / 3 + 2 * 3 * 7 * n / 7 + 2 * 3 * 7))¬ (2 ∣ n) ∨ ¬ (3 ∣ n) ∨ ¬ (6 ∣ n) ∨ ¬ (7 ∣ n) ∨ ¬ (n > 84) : n > 84 := 
+(F : Finset ℕ) (m : ℕ) (n : ℕ) : infinite := 
+(h₂ : ∀ n : ℕ, n * n ∣ Nat.factorial 1 * Nat.factorial 2 * Nat.factorial 3 * Nat.factorial 4 * Nat.factorial 5 * Nat.factorial 6 * Nat.factorial 7 * Nat.factorial 8 * Nat.factorial 9)(h₃ : Finset.card (Finset.filter (λ n, n * n ∣ Nat.factorial 1 * Nat.factorial 2 * Nat.factorial 3 * Nat.factorial 4 * Nat.factorial 5 * Nat.factorial 6 * Nat.factorial 7 * Nat.factorial 8 * Nat.factorial 9) (Finset.range (Nat.factorial 9 + 1)))) : (∏ k in Finset.Icc (1 : ℕ) 501, ((4 : ℝ) * k + 4) / (4 * k)) = 502 := 
+(h₀ : 8⁻¹ / 4⁻¹ - a⁻¹ = 1)b = -2(a : ℝ) : (h₁ : a ≠ 0) := 
+(z : ℂ)12 * |z|^2 = 2 * |z + 2|^2 + |z^2 + 1|^2 + 31 : (h₃ : z + 6 / z = -2) := 
+real.log 3 27 : σ.2 (σ.1 (σ.2 19)) = 3 := 
+#eval 1529 % 6 : n % 6 = 5 := 
+(v : ℕ) (h₀ : v = 91) : 91 ^ 2 = 8281 := 
+(D : ℕ → ℚ) (h₀ : D 0 = 0) (h₁ : D 1 = 0) (h₂ : D 2 = 1)(h₃ : ∀ n, D n = D (n - 1) + D (n - 3))(D 2021 % 2, D 2022 % 2, D 2023 % 2) : (D 2021 % 2 = 0, D 2022 % 2 = 1, D 2023 % 2 = 0) := 
+(n : ℕ) (h : 0 < n) : n ^ (1 / n) ≤ 2 - 1 / n := 
+(a b c : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c)(h₁ : a * (b + c) = 152)b * (c + a) = 162(h₂ : c * (a + b) = 170) : (h₃ : a * b * c = 720) := 
+nat_repr (5 ^ 100)nat_repr (5 ^ 100) % 1000(∑ k in Finset.range 3, k) : nat_repr (5 ^ 100) % 1000 = 13 := 
+(m n : ℕ)(h₁ : Nat.gcd m n = 8)(h₂ : Nat.lcm m n = 112) : m + n = 72 := 
+(S : Set ℝ)max_value : ℝ : f 600 = 1 / 12 := 
+∃ x, ∀ y, (x ^ 2 - 14 * x + 3) ≤ (y ^ 2 - 14 * y + 3) : p (q 2) = 7 := 
+Real.tan (2 * x) = Real.cos (x / 2)(x : ℝ) (h₀ : 0 ≤ x) (h₁ : x ≤ 2 * Real.pi)(n : ℕ) (h₀ : n = Set.card { x : ℝ | Real.tan (2 * x) = Real.cos (x / 2) ∧ 0 ≤ x ∧ x ≤ 2 * Real.pi }) : x = 5 := 
+(year : ℕ) (h₀ : year = 2001)(I M O : ℕ)(h₂ : I * M * O = 2001)(h₃ : ∀ I M O, I * M * O = 2001 → I + M + O ≤ ?) : a / b + b / a - a * b = 2 := 
+Real.sin (π / 2 * Real.cos x) = Real.cos (π / 2 * Real.sin x)(x : ℝ) (h₀ : 0 ≤ x) (h₁ : x ≤ Real.pi)(x : ℝ) (h₀ : 0 ≤ x) (h₁ : x ≤ Real.pi) : x = 2 := 
+(a b c d : ℝ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c ∧ 0 < d) : a ^ 2 / b + b ^ 2 / c + c ^ 2 / d + d ^ 2 / a ≥ a + b + c + d := 
+(16 ^ 17 * 17 ^ 18 * 18 ^ 19) % 10 : a = 8 := 
+(n : ℕ) (h₀ : n < 101)123456 % 101 = n : k = 34 := 
+father_age = 5 * son_age(h₃ : father_age - 3 + (son_age - 3) = 30)son_age(∑ k in (f ⁻¹' {10}).toFinset, k) = 6 : (today : ℕ) := 
+∀ x : ℝ(n : ℕ)(h₁ : x > -1) : (h₂ : (1 + n * x) ≤ (1 + x) ^ n) := 
+(h : ∀ x, σ.1 x = c * x ^ 3 - 9 * x + 3)(h₃ : σ.1 2 = 9)find (c : ℝ) : σ.2 (σ.1 (σ.2 19)) = 3 := 
+(h₀ : ∀ (x) (_ : x > 0 ∧ x ≠ 1), ∀ (y) (_ : y > 0 ∧ y ≠ 1), f x y)(h₂ : Real.logb 2 x = Real.logb y 16)(h₁ : x * y = 64) : (Real.logb 2 (x / y)) ^ 2 := 
+(n : ℕ) : 11 ∣ 10 ^ n - (-1) ^ n := 
+(a : ℕ → ℝ) (h₀ : ∀ n, 0 ≤ a n)Finset.sum (Finset.range n) (λ i, a (i + 1)) = n : Finset.prod (Finset.range n) (λ i, a (i + 1)) ≤ 1 := 
+(x₁ : ℝ) (x : ℕ → ℝ) (h₀ : x 1 = x₁) (h₁ : ∀ n : ℕ, 1 ≤ n → x (n + 1) = x n * (x n + 1 / n)) : ∃! x₁, ∀ n, 0 < x n ∧ x n < x (n + 1) ∧ x (n + 1) < 1 := 
+let A := {z | z^3 = 8}let B := {z | z^3 - 8*z^2 - 8*z + 64 = 0}let d := Sup {dist x y | x ∈ A, y ∈ B} : x * y = 2 * real.sqrt 21 := 
+(x y : ℝ)(∑ y in (f ⁻¹' {0}).toFinset, y) / (f ⁻¹' {0}).toFinset.card = 7(h₀ : ∀ n : ℝ, n = Real.sqrt 19) : x ^ 2 + y ^ 2 = 158 := 
+(r : ℝ)r ^ (1 / 3) + 1 / r ^ (1 / 3) = 3 : (h₁ : r ^ 3 + 1 / r ^ 3 = 5778) := 
+(h₂ : sqrt (60 * x) * sqrt (12 * x) * sqrt (63 * x))in_simplest_radical_form xsqrt (60 * x) * sqrt (12 * x) * sqrt (63 * x)k = 36 * x * sqrt (35 * x) : (x : ℝ) := 
+(h₀ : 1.5 * 3 = x)(h₁ : 1.5 / 3 = x / 10) : n % 17 = 5 := 
+s = 239w = 174z = 83(s + w + z) % 4 : (s + w + z) % 4 = 6 := 
+∃ p q : ℕ, p ≠ q ∧ p.prime ∧ q.prime ∧ 4 < p ∧ p < 18 ∧ 4 < q ∧ q < 18(x y : ℝ) (h : x * y - (x + y) = ?) : s 4 = 119 := 
+(f : ℕ × ℕ → ℝ) (h₀ : ∀ x > 0, ∀ y > 0, f (x, y) = ...)(h₁ : ∀ x, f (x, x) = x)(h₂ : ∀ x y, f (x, y) = f (y, x))(h₃ : ∀ x y, (x + y) * f (x, y) = y * f (x, x + y)) : (f : ℕ × ℕ → ℝ) (h₀ : f (14, 52) = 364) := 
+a = 8(h₁ : y = (16 * Real.cbrt (a^2))^(1/3)) : 4 ≤ y := 
+def ℤ := set_of (λ x, true)(f : ℤ → ℤ)(h₁ : ∀ a b : ℤ, f (2 * a) + 2 * f b = f (f (a + b))) : ∀ f : ℤ → ℤ, := 
+(a b : ℝ) (h : 3 * a + 2 * b = 5)(h₁ : a + b = 2)⟨a, b⟩ : a = 1 ∧ b = 1 := 
+(f g : ℝ → ℝ) (h₀ : ∀ x, f x = x + 1)(f g : ℝ → ℝ) (h₂ : ∀ x, g x = x ^ 2 + 3) : f (g 2) = 8 := 
+(a d : ℝ) (u : ℕ → ℝ) (h₀ : ∀ k, u k = a + k * d)u 6 = 30u 10 = 60 : a 21 = 135 := 
+(f : ℤ → ℤ)∀ n, n ≥ 1000 → f n = n - 3∀ n, n < 1000 → f n = f (f (n + 5)) : (f : ℤ → ℤ) (h₀ : ∀ n, n ≥ 1000 → f n = n - 3) (h₁ : ∀ n, n < 1000 → f n = f (f (n + 5))) : f 84 = 997 := 
+(h₁ : ∀ x, f x = a * x ^ 4 - b * x ^ 2 + x + 5)(h₁ : f (-3) = 2) : (h₂ : f 3 = 8) := 
+∀ x, x ^ 2 + 18 * x + 30 = 2 * Real.sqrt (x ^ 2 + 18 * x + 45)(h₀ : ∀ x, f x = x ^ 2 + 18 * x + 30 - 2 * Real.sqrt (x ^ 2 + 18 * x + 45)) (h₁ : ∀ x, f x = 0 → x ∈ ℝ)(h₂ : ∀ x, f x = 0 → x ∈ ℝ) (h₃ : ∀ x, f x = 0 → ∃ a b c : ℝ, x = a * b * c) : Real.logb 2 x ^ 2 = 20 := 
+(n : ℕ) : 3 ^ 2 ^ n - 1 ≡ 2 ^ (n + 2) [MOD 2 ^ (n + 3)] := 
+(h : my_father_age = 1 * 3^3 + 2 * 3^2 + 2 * 3^1 + 2 * 3^0) : (my_father_age = 53) := 
+(a b c d : ℕ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c ∧ 0 < d)have : (∏ i in finset.range 8, i.succ) = 8!(h₂ : a * b + a + b = 524)b * c + b + c = 146(h₃ : c * d + c + d = 104) : a - d = 10 := 
+(∑ k in Finset.Icc 1 12, k) % 4 : (∑ k in Finset.Icc 1 12, k) % 4 = 2 := 
+(f : ℂ → ℂ) (h₀ : ∀ x, f x = (3 * x - 2) * (4 * x + 1) - (3 * x - 2) * 4 * x + 1) (h₁ : x = 4) : x ^ 3 = 11 := 
+(h₂ : |2 - x| = 3)(h₃ : ∑ x in (f ⁻¹' {0}), x) : 4 ≤ y := 
+(h₁ : u 0 + u 1 + u 2 + u 3 + u 4 = 70)(h₂ : u 0 + u 1 + u 2 + u 3 + u 4 + u 5 + u 6 + u 7 + u 8 + u 9 = 210)u 0(a d : ℝ) (u : ℕ → ℝ) (h₀ : ∀ k, u k = a + k * d) : ((1 : ℚ) / 2 + 1 / 3) * (1 / 2 - 1 / 3) = 42 / 5 := 
+#eval (121 * 122 * 123) % 4 : x = 2 := 
+(x : ℝ) (a : ℕ → ℝ) (h₀ : ∀ n, a (n + 2) - a (n + 1) = a (n + 1) - a n) (h₁ : a 1 = 2 * x - 3) (h₂ : a 2 = 5 * x - 11) (h₃ : a 3 = 3 * x + 1)a n = 2009n : a * b = 502 := 
+(f g : ℝ → ℝ) (h₀ : ∀ x, f x = 1 / (x + 2))f (f 1) : x = 3 / 7 := 
+∀ z : ℤ, (z^6 - 10*z^5 + A*z^4 + B*z^3 + C*z^2 + D*z + 16 = 0) → z > 0(x B : ℝ) : a = -88 := 
+(a b : ℝ)a ^ 2 * b ^ 3 = 32 / 27(a b : ℝ) (h₁ : b ≠ 0) (h₂ : a / b ^ 3 = 27 / 4) : a + b = 8 / 3 := 
+(n : ℕ) (h₀ : 2 * n * (2 * n + 2) = 288)n + 1 = 10 : n + 1 = 18 := 
+(a b : ℤ) (h₀ : 0 < a ∧ 0 < b) (h₁ : a ≠ b)(h₂ : a - 1 = 1 / a ∧ b - 1 = 1 / b) : a + b = real.sqrt 5 := 
+(a b c : ℕ) (h₀ : 0 < a ∧ 0 < b ∧ 0 < c) (h₁ : a + b > c) (h₂ : a + c > b) (h₃ : b + c > a) : a ^ 2 * (b + c - a) + b ^ 2 * (c + a - b) + c ^ 2 * (a + b - c) ≤ 3 * a * b * c := 
+(m n k t : ℕ) (h : x^2 - m*x + n = 0) (hx : x = k ∨ x = t)(m n : ℕ) (hm : nat.prime m) (hn : nat.prime n)(h₂ : k > t) : (m n k t : ℕ) (h₃ : m^n + n^m + k^t + t^k = 20) := 
+17402 = a + b(h₂ : a % 10 = 0 ∨ b % 10 = 0)h₃ : a / 10 = b ∨ b / 10 = a : abs ((120 * 30 / 100) - (130 * 20 / 100)) := 
+(a b : ℕ → ℝ)(h₃ : ∀ n, (a (n + 1), b (n + 1)) = (real.sqrt 3 * a n - b n, real.sqrt 3 * b n + a n))(h₁₀₀ : (a 100, b 100) = (2, 4))a 1 + b 1 : x ^ 3 = 125 := 
+(a b c : ℝ)(h₁ : 0 < a ∧ 0 < b ∧ 0 < c ∧ a ≤ b ∧ b ≤ c)(h₂ : a + b + c = 2)(a * b + b * c + c * a = 1) : (h₃ : 0 ≤ a ∧ a ≤ 1/3 ∧ 1/3 ≤ b ∧ b ≤ 1 ∧ 1 ≤ c ∧ c ≤ 4/3) := 
+#eval 194 % 11 : p (q 2) = 7 := 
+(x : ℤ) (h : |x| < 3 * Real.pi)finset.card (finset.filter (λ x : ℤ, |x| < 3 * Real.pi) finset.Icc (-⌊3 * Real.pi⌋) ⌊3 * Real.pi⌋) : (S : Finset ℤ) := 
+(a b : ℝ) (h₀ : 0 < a ∧ 0 < b)(n : ℕ) (h₀ : 0 < n) : (a + b) / 2 ^ n ≤ (a ^ n + b ^ n) / 2 := 
+(a : ℝ) (h₀ : 0 < a)(f : ℝ → ℝ)(h₃ : ∀ x ∈ ℝ, f (x + a) = 1 / 2 + Real.sqrt (f x - f x ^ 2)) : ∃ (b : ℝ), 0 < b ∧ ∀ x ∈ ℝ, f (x + b) = f x := 
+∀ x y, a * x ^ 5 + b * y ^ 5(a b x y : ℝ)x 2 = 0 ∧ x 3 = 0 ∧ x 1 = 1 / abs (a 1 - a 4) ∧ x 4 = 1 / abs (a 1 - a 4) : Real.logb 2 x ^ 2 = 20 := 
+(29 * 79 + 31 * 81) % 10 : x = 2 := 
+real.sqrt (real.log 6 / real.log 2 + real.log 6 / real.log 3) : u 0 = real.sqrt (real.log 3 / real.log 2) + real.sqrt (real.log 2 / real.log 3) := 
+(θ : ℝ) (h₀ : 0 < θ) (h₁ : θ ≤ 2 * Real.pi)(S : Set ℝ) (h₀ : S = { θ : ℝ | 1 - 3 * Real.sin θ + 5 * Real.cos (3 * θ) = 0 })(S : Finset ℝ) : (∑ k in S, k.card) = 6 := 
+(a b : ℕ) (h₀ : a < 10) (h₁ : b < 10)(a b : ℕ) (h₀ : a < 10) (h₁ : b < 10)(a + b)s.card = 16 : (A B : ℕ) (hA : A < 10) (hB : B < 10) := 
+(a : ℤ) (h₀ : a % 2 = 1)(b : ℕ) (h₂ : 4 ∣ b) : (a ^ 2 + b ^ 2) % 8 = 1 := 
+example (a b : ℕ) (h : nat.lcm a b = 3720) : true := trivial(h : Nat.gcd a b = 8)(a : ℕ) (h₁ : a = 120) : b = 248 := 
+(∑ k in Finset.range 35, Real.sin (5 * (k + 1))) = Real.tan (m / n)(θ : ℝ) (h₀ : 0 ≤ θ ∧ θ ≤ 360)(m n : ℕ) (h₁ : Nat.coprime m n) (h₂ : 0 < m ∧ 0 < n)(h₃ : m / n < 90) : m + n = 177 := 
+(h₁ : y ∈ [y + 6, 12, y])d = 9 : sequence := [y + 6, 12, y] := 
+(h₁ : a 11 * x 1 + a 12 * x 2 + a 13 * x 3 = 0)
+(h₂ : a 21 * x 1 + a 22 * x 2 + a 23 * x 3 = 0)
+(h₃ : a 31 * x 1 + a 32 * x 2 + a 33 * x 3 = 0)variables (x₁ x₂ x₃ : ℝ)(a₁₁ a₂₂ a₃₃ : ℝ) (h₀ : 0 < a₁₁ ∧ 0 < a₂₂ ∧ 0 < a₃₃)(h₄ : a₁₂ < 0) (h₅ : a₁₃ < 0) (h₆ : a₂₁ < 0) (h₇ : a₂₃ < 0) (h₈ : a₃₁ < 0) (h₉ : a₃₂ < 0)(h₁₀ : 0 < a₁₁ + a₁₂ + a₁₃) (h₁₁ : 0 < a₂₁ + a₂₂ + a₂₃) (h₁₂ : 0 < a₃₁ + a₃₂ + a₃₃) : theorem unique_solution : x₁ = 0 ∧ x₂ = 0 ∧ x₃ = 0 :=
+begin
+  -- proof goes here
+end := 
+(x y : ℝ) (hx : x < 0) (hy : y < 0)|y| = 6((x - 8)^2 + (y - 3)^2) = 15^2Real.sqrt (x ^ 2 + y ^ 2) = Real.sqrt n : n = 52 := 
+#eval (finset.range 101).sum (λ n, 2^n) % 7 : σ.2 (σ.1 (σ.2 19)) = 3 := 
+∑ k in Finset.range (n + 1), (nat.choose (2 * n + 1) (2 * k + 1)) * 2 ^ (3 * k)(n : ℕ) : (h₁ : ∀ n : ℕ, n ∈ S ↔ ¬ (5 ∣ n)) := 
+(sec_x_tan_x : ℝ) (h₁ : Real.sec x + Real.tan x = 22 / 7)(csc_x_cot_x : ℝ) (h₂ : Real.csc x + Real.cot x = m / n)(sec_x_tan_x : ℝ) (h₁ : Real.sec x + Real.tan x = 22 / 7)
+(csc_x_cot_x : ℝ) (h₂ : Real.csc x + Real.cot x = m / n) (h₃ : Nat.coprime m n) : m + n = 44 := 
+(h₄ : P = 2 ^ m)(h₅ : Q = 3 ^ n)∀ (m n : ℤ) : E = P ^ (2 * n) * Q ^ m := 
+(h₁ : ∀ n : ℕ, n ∈ T ↔ ∃ k : ℤ, n = 2 * k ∧ (n + 2) = 2 * (k + 1) ∧ (n + 4) = 2 * (k + 2) ∧ (n + 6) = 2 * (k + 3) ∧ (n + 8) = 2 * (k + 4))(v : ℕ → ℕ) (h₀ : ∀ n, v n = 2 * n) (h₁ : ∀ n, ∑ i in finset.range 5, v (n + i))(u v : ℕ → ℕ) (h₁ : ∀ n, v n = 2 * n + 1) (h₂ : ∑ i in finset.range 8, v i)(u v : ℕ → ℕ) (h₁ : ∀ n, v n = 2 * n + 1) (h₂ : 4 < ∑ i in finset.range 8, v i) : let a := 8 := 
+(x : ℝ)(h : |x - 1| + |x| + |x + 1| = x + 2) : (h₁ : 0 ≤ x ∧ x ≤ 1) := 
+(f : ℂ → ℂ) (h₀ : ∀ x, f x = 1 / (x^2 - 10 * x - 29) + 1 / (x^2 - 10 * x - 45) - 2 / (x^2 - 10 * x - 69))(h₁ : 0 < x)1 / (x^2 - 10 * x - 29)(x : ℂ) (h₀ : x^2 - 10 * x - 45 ≠ 0)(2 / (x^2 - 10 * x - 69)) : 13 ≤ (9 * (x ^ 2 * Real.sin x ^ 2) + 4) / (x * Real.sin x) := 
+example (a b : ℕ) (ha : 0 < a) (hb : 0 < b) (h : a * b = 2005) : Prop := sorry(ha₀ : a ≠ 1) (hb₀ : b ≠ 1)x + y = 4 : Int.floor (100 * r) = 406 := 
+(n : ℤ) (_ : n = 11)(h₂ : (1 / 4) ^ (n + 1) * 2 ^ (2 * n)) : 1 / 4 := 
+(x y z : ℝ) (h₀ : 0 < x ∧ 0 < y ∧ 0 < z)(h₁ : x + 1 / y = 4)(h₂ : y + 1 / z = 1)(h₃ : z + 1 / x = 7 / 3) : let xyz_value := x * y * z := 
+(q : ℂ) (h : q = (Complex.I / 2) ^ 2) : k = -1 / 4 := 
+(f : ℝ → ℝ) (x p : ℝ) (h : f x = abs (x - p) + abs (x - 15) + abs (x - p - 15))(h₂ : 0 < p ∧ p < 15)(x : ℝ) (h₁ : p ≤ x ∧ x ≤ 15)∃ m, ∀ x, p ≤ x ∧ x ≤ 15 → f x ≥ m ∧ (∀ y, p ≤ y ∧ y ≤ 15 → f y ≥ f x) → f x = m : 15 ≤ (9 * (x ^ 2 * Real.sin x ^ 2) + 4) / (x * Real.sin x) := 
+(a b : ℝ) (h₀ : a ≠ b) (h₁ : b ≠ 0) (h₂ : a ≠ 0)have h₀ : (3 : ℝ) ≠ 11 := by norm_num,
+have h₁ : (11 : ℝ) ≠ 0 := by norm_num,
+have h₂ : (3 : ℝ) ≠ 0 := by norm_num,
+let result := (1 / 11 - 1 / 3) / (3 - 11), : result = (1 : ℝ) / 33 := 
+let d : ℕ → ℕ := λ n, (Finset.filter (λ x, x ∣ n) (Finset.range (n + 1))).cardlet f : ℕ → ℚ := λ n, d n / n^(1/3 : ℚ)∃! N : ℕ, ∀ n : ℕ, n ≠ N → f N > f ngoal: b = 9 : goal: b = 9 := 
+a.den + a.num(S : Finset ℝ) (h₀ : ∀ x : ℝ, x ∈ S ↔ ⌊x⌋ * (x - ⌊x⌋) = a * x^2) (h₁ : S.sum id = 420)p + q = ? : 1 / x + 1 / y = 929 := 
+(N : ℕ) (h : Nat.Prime (7 + 30 * N) = false) : N = 6 := 
+(x₁ x₂ x₃ x₄ x₅ x₆ x₇ : ℝ)(h₁₁ : x 1 + 4 * x 2 + 9 * x 3 + 16 * x 4 + 25 * x 5 + 36 * x 6 + 49 * x 7 = 1)(x₁ x₂ x₃ x₄ x₅ x₆ x₇ : ℝ) (h₀ : 4 * x₁ + 9 * x₂ + 16 * x₃ + 25 * x₄ + 36 * x₅ + 49 * x₆ + 64 * x₇ = 12)(h₂ : 9 * x₁ + 16 * x₂ + 25 * x₃ + 36 * x₄ + 49 * x₅ + 64 * x₆ + 81 * x₇ = 123)16 * x₁ + 25 * x₂ + 36 * x₃ + 49 * x₄ + 64 * x₅ + 81 * x₆ + 100 * x₇ : ↑3! * ((2 : ℝ) ^ 3 + Real.sqrt 9) / 2 = (334 : ℝ) := 
+(h₂ : ∃ n : ℕ, n > 1 ∧ ∃ m : ℕ, n = m^3 ∧ ∃ k : ℕ, n = k^4) : a * b = 4096 := 
+(ℓ : ℝ → ℝ) (h₀ : ∀ x, ℓ x = a * x + b) (h₁ : ℓ 7 = -1) (h₂ : ℓ (-1) = 7)(h₃ : ∀ x, ℓ x = m * x + b) : example : m + b = 5 :=
+begin
+  -- proof goes here
+end := 
+(a b : ℕ) (h₀ : 0 < a ∧ 0 < b)∃ k : ℕ, 0 < k ∧ 2 ^ k = (a + b ^ 2) * (b + a ^ 2) : (h₁ : a = 1) := 
+variables {x : ℝ}
+example (h : 5 + 5 * 10 = 1.1 * x) : x = 50 :=
+begin
+  linarith,
+end : (5 + 5 * 10) / 1.1 = 50 := 
+(h : (1 + sin t) * (1 + cos t) = 5 / 4)(h : (1 - sin t) * (1 - cos t) = m / n - real.sqrt k)(k m n : ℕ+)nat.coprime m n : k + m + n = 27 := 
+∀ n : ℕ, n % 5 = 3 : 2 * n % 5 = 1 := 
+(h₀ : x ≠ 0)(x : ℝ) (h₀ : x ≠ 0) : n + 1 = 10 := 
+(h₀ : ∀ n : ℕ, n ∈ S ↔ 3 ∣ n ∧ Nat.lcm 3! n = 3 * Nat.gcd 6! n)((n + 4) + (n + 6) + (n + 8)) % 9 : x = 0 := 
+3 * a + b + c = -3 ∧ a + 3 * b + c = 9 ∧ a + b + 3 * c = 19(a b c : NNReal) : n = -56 := 

@@ -507,92 +507,6 @@ def read_proofnet_decomposed():
 def iterative_decomposition():
     pass
 
-# def process_dataset(dataset_path: str, save_path: str):
-#     entries = parse_jsonl(dataset_path)
-#     total = len(entries)
-#     for i, entry in enumerate(entries):
-#         print(f"Processing entry {i+1}/{total}...")
-#         response = get_chat_completion(system_prompt, entry.informal_prefix, max_tokens=1024)
-#         with open(save_path, 'a') as f:
-#             json_obj = {
-#                 "name": entry.name,
-#                 "response": response.choices[0].message.content,
-#                 "header": entry.header
-#             }
-#             f.write(json.dumps(json_obj) + "\n")
-#         print(f"Completed {i+1}/{total} entries ({((i+1)/total)*100:.1f}%)")
-
-# process_dataset("../datasets/proofnet.jsonl", "../datasets/proofnet_RAG.jsonl")
-
-# def read_rag_dataset(dataset_path: str):
-#     entries = []
-#     with open(dataset_path, 'r') as f:
-#         for line in f:
-#             entry = json.loads(line)
-#             entries.append(entry)
-#     return entries
-
-# print(read_rag_dataset("../datasets/proofnet_RAG.jsonl")[0]["response"])
-
-# def text_to_pairs(text: str) -> dict:
-#     """
-#     Transform a text string containing pairs into a dictionary.
-    
-#     Args:
-#         text: String in format {"pairs": [(informal1, formal1), (informal2, formal2), ...]}
-    
-#     Returns:
-#         Dictionary mapping informal statements to formal statements
-#     """
-#     # Extract content between square brackets
-#     start = text.find("[")
-#     end = text.rfind("]")
-#     pairs_text = text[start+1:end]
-    
-#     # Split into individual pair strings
-#     pair_strings = pairs_text.split("),")
-    
-#     # Parse each pair string into tuple
-#     pairs_dict = {}
-#     for pair in pair_strings:
-#         # Clean up string and extract informal/formal parts
-#         pair = pair.strip(" ()")
-#         informal_end = pair.find('",')
-#         informal = pair[pair.find('"')+1:informal_end].strip()
-#         formal = pair[informal_end+4:-1].strip()
-#         # Remove " :=" from end of formal statements if present
-#         if formal.endswith(" :="):
-#             formal = formal[:-3]
-#         pairs_dict[informal] = formal
-        
-
-        
-#     return pairs_dict
-
-# def build_rag_dict(dataset_path: str) -> dict:
-#     """
-#     Build a dictionary mapping exercise names to their informal/formal statement pairs.
-    
-#     Args:
-#         dataset_path: Path to the RAG dataset JSON file
-        
-#     Returns:
-#         Dictionary mapping exercise names to dictionaries of informal->formal pairs
-#     """
-#     rag_dict = {}
-#     entries = read_rag_dataset(dataset_path)
-    
-#     for entry in entries:
-#         name = entry["name"]
-#         response = entry["response"]
-#         try:
-#             pairs = text_to_pairs(response)
-#             rag_dict[name] = pairs
-#         except:
-#             print(f"Failed to process entry: {name}")
-#             continue
-            
-#     return rag_dict
 
 
 if __name__ == "__main__":
@@ -622,5 +536,5 @@ if __name__ == "__main__":
     #         f.write(json.dumps(entry) + '\n')
             
     # print(f"Successfully parsed and saved {len(parsed_statements)} statements to {output_path}")
-    build_minif2f_rag()
+    # build_minif2f_rag()
     pass

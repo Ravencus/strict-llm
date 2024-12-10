@@ -14,7 +14,7 @@ class multilevel_rag_builder:
         self.embed_model = OpenAIEmbedding(model=embed_model)
         self.statement_decomposed_rag_dict = {}
 
-    def get_text_emgeddings(self, text):
+    def get_text_embeddings(self, text):
         embedding = self.embed_model.get_text_embedding(text)
         return embedding
     
@@ -32,7 +32,7 @@ class multilevel_rag_builder:
                 decomposition = entry.decomposition
                 object = entry
                 for key, value in decomposition.items():
-                    embedding = np.array(self.get_text_emgeddings(key))
+                    embedding = np.array(self.get_text_embeddings(key))
                     self.statement_decomposed_rag_dict[key] = {
                         "object": object,
                         "key_embeddings": embedding,
@@ -50,7 +50,7 @@ class multilevel_rag_builder:
             return copy.deepcopy(self.statement_decomposed_rag_dict)
         else:
             score_record = []
-            target = self.get_text_emgeddings(statement)
+            target = self.get_text_embeddings(statement)
             for key in self.statement_decomposed_rag_dict:
                 source = self.statement_decomposed_rag_dict[key]["key_embeddings"]
                 score = np.dot(source, target)/(np.linalg.norm(source)*np.linalg.norm(target))
