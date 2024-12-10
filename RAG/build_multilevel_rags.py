@@ -18,7 +18,7 @@ class multilevel_rag_builder:
         embedding = self.embed_model.get_text_embedding(text)
         return embedding
     
-    def build_statement_decomposed_rag_database(self, statement_decomposed_jsonl, save_to_disk=True, overwrite=False):
+    def build_statement_decomposed_rag_database(self, statement_decomposed_jsonl, split, save_to_disk=True, overwrite=False):
         state_decomposed_rag_path = statement_decomposed_jsonl.replace(".jsonl", "_statement_rag.pkl")
         if not overwrite and os.path.exists(state_decomposed_rag_path):
             with open(state_decomposed_rag_path, "rb") as f:
@@ -28,15 +28,16 @@ class multilevel_rag_builder:
         print("Start processing {} decomposition.".format(statement_decomposed_jsonl))
         entries = parse_jsonl_decomposed(statement_decomposed_jsonl)
         for entry in tqdm(entries):
-            decomposition = entry.decomposition
-            object = entry
-            for key, value in decomposition.items():
-                embedding = np.array(self.get_text_emgeddings(key))
-                self.statement_decomposed_rag_dict[key] = {
-                    "object": object,
-                    "key_embeddings": embedding,
-                    "value": value
-                }
+            if entry.split == split:
+                decomposition = entry.decomposition
+                object = entry
+                for key, value in decomposition.items():
+                    embedding = np.array(self.get_text_emgeddings(key))
+                    self.statement_decomposed_rag_dict[key] = {
+                        "object": object,
+                        "key_embeddings": embedding,
+                        "value": value
+                    }
         if save_to_disk:
             with open(state_decomposed_rag_path, "wb") as f:
                 pkl.dump(self.statement_decomposed_rag_dict, f)
@@ -55,30 +56,59 @@ class multilevel_rag_builder:
                 score = np.dot(source, target)/(np.linalg.norm(source)*np.linalg.norm(target))
                 score_record.append((key, score))
             score_record = sorted(score_record, key=lambda x: x[1], reverse=True)
-            top_k_results = {}
+            top_k_results = []
             for i in range(top_k):
                 key = score_record[i][0]
-                top_k_results[key] = {
-                        "object": copy.deepcopy(self.statement_decomposed_rag_dict[key]),
-                        "score": score_record[i][1]
-                    }
+                top_k_results.append({
+                    "score": score_record[i][1],
+                    "matched_key": key,
+                    "object": copy.deepcopy(self.statement_decomposed_rag_dict[key]['object'].decomposition)
+                })
             return top_k_results
+    
+    def test_dataset_split(self, statement_decomposed_jsonl, split, top_k):
+        print("Start testing {} decomposition.".format(statement_decomposed_jsonl))
+        entries = parse_jsonl_decomposed(statement_decomposed_jsonl)
+        test_result_list = []
+        for entry in tqdm(entries):
+            if entry.split == split:
+                decomposition = entry.decomposition
+                object = entry
+                test_result_decomp_dict = {}
+                for key in decomposition:
+                    top_k_results = self.query_statement_rag_database(key, top_k=top_k)
+                    test_result_single = {
+                        "top_k_results": top_k_results,
+                        "k": top_k
+                    }
+                    test_result_decomp_dict[key] = test_result_single
+                test_result_list.append(
+                    {
+                        "object": object,
+                        "decomposition_result": test_result_decomp_dict
+                    }
+                )
+                break
+            break
 
 
 if __name__ == "__main__":
     mrb_proofnet = multilevel_rag_builder()
     current_dir = os.path.dirname(os.path.abspath(__file__))
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
-    mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path)
+    mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
+    mrb_proofnet.test_dataset_split(state_decomposed_path, split="test", top_k=5)
+
     mrb_minif2f = multilevel_rag_builder()
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
-    mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path)
+    mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
+    mrb_minif2f.test_dataset_split(state_decomposed_path, split="test", top_k=5)
 
-    proofnet_query = "then $f$ is constant"
-    top_k_results = mrb_proofnet.query_statement_rag_database(proofnet_query, top_k=5)
-    print(top_k_results)
+    # proofnet_query = "then $f$ is constant"
+    # top_k_results = mrb_proofnet.query_statement_rag_database(proofnet_query, top_k=5)
+    # print(top_k_results)
 
-    minif2f_query = "$a$ and $b$ be real numbers"
-    top_k_results = mrb_minif2f.query_statement_rag_database(minif2f_query, top_k=5)
-    print(top_k_results)
+    # minif2f_query = "$a$ and $b$ be real numbers"
+    # top_k_results = mrb_minif2f.query_statement_rag_database(minif2f_query, top_k=5)
+    # print(top_k_results)
 
