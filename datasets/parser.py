@@ -11,7 +11,18 @@ class ProofNetEntry:
     goal: str
     header: Optional[str] = None
 
-def parse_jsonl(file_path: str) -> list[ProofNetEntry]:
+@dataclass
+class ProofNetEntryDecomposed:
+    name: str
+    split: str
+    informal_prefix: str
+    formal_statement: str
+    goal: str
+    user_prompt: str
+    decomposition: dict
+    header: Optional[str] = None
+
+def parse_jsonl(file_path: str):
     """Parse a .jsonl file and return list of ProofNetEntry objects.
     
     Args:
@@ -36,11 +47,38 @@ def parse_jsonl(file_path: str) -> list[ProofNetEntry]:
                 entries.append(entry)
     return entries
 
+def parse_jsonl_decomposed(file_path: str):
+    """Parse a .jsonl file and return list of ProofNetEntry objects.
+    
+    Args:
+        file_path: Path to .jsonl file
+        
+    Returns:
+        List of ProofNetEntry objects containing parsed data
+    """
+    entries = []
+    with open(file_path, 'r') as f:
+        for line in f:
+            if line.strip():  # Skip empty lines
+                data = json.loads(line)
+                entry = ProofNetEntryDecomposed(
+                    name=data['name'],
+                    split=data['split'],
+                    informal_prefix=data['informal_prefix'],
+                    formal_statement=data['formal_statement'], 
+                    goal=data['goal'],
+                    user_prompt=data['user_prompt'],
+                    decomposition=data['decomposition'],
+                    header=data.get('header')  # Optional field
+                )
+                entries.append(entry)
+    return entries
+
 # Use the generic parse_jsonl function for both file types
-def parse_proofnet(file_path: str) -> list[ProofNetEntry]:
+def parse_proofnet(file_path: str):
     return parse_jsonl(file_path)
 
-def parse_minif2f(file_path: str) -> list[ProofNetEntry]:
+def parse_minif2f(file_path: str):
     return parse_jsonl(file_path)
 
 
