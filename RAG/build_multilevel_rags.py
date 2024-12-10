@@ -62,11 +62,12 @@ class multilevel_rag_builder:
                 top_k_results.append({
                     "score": score_record[i][1],
                     "matched_key": key,
-                    "object": copy.deepcopy(self.statement_decomposed_rag_dict[key]['object'].decomposition)
+                    "matched_decompose": copy.deepcopy(self.statement_decomposed_rag_dict[key]['object'].decomposition[key])
                 })
             return top_k_results
     
-    def test_dataset_split(self, statement_decomposed_jsonl, split, top_k):
+    def test_dataset_split(self, statement_decomposed_jsonl, split, top_k, save_to_disk):
+        state_decomposed_test_path = statement_decomposed_jsonl.replace(".jsonl", "_statement_test.pkl")
         print("Start testing {} decomposition.".format(statement_decomposed_jsonl))
         entries = parse_jsonl_decomposed(statement_decomposed_jsonl)
         test_result_list = []
@@ -88,8 +89,14 @@ class multilevel_rag_builder:
                         "decomposition_result": test_result_decomp_dict
                     }
                 )
-                break
-            break
+            else:
+                print("Skipping not in split.", entry)
+        if save_to_disk:
+            with open(state_decomposed_test_path, "wb") as f:
+                print("Saving test results to: {}".format(state_decomposed_test_path))
+                pkl.dump(test_result_list, f)
+        return test_result_list
+        
 
 
 if __name__ == "__main__":
@@ -97,12 +104,12 @@ if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
     mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
-    mrb_proofnet.test_dataset_split(state_decomposed_path, split="test", top_k=5)
+    mrb_proofnet.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
 
     mrb_minif2f = multilevel_rag_builder()
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
     mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
-    mrb_minif2f.test_dataset_split(state_decomposed_path, split="test", top_k=5)
+    mrb_minif2f.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
 
     # proofnet_query = "then $f$ is constant"
     # top_k_results = mrb_proofnet.query_statement_rag_database(proofnet_query, top_k=5)
