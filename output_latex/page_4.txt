@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+Put 
+\[
+\gamma_n = a_0 \beta_n + a_1 \beta_{n-1} + \cdots + a_n \beta_0.
+\]
+We wish to show that \( C_n \to AB \). Since \( A_n, B \to AB \), it suffices to show that
+\begin{equation}
+\lim_{n \to \infty} \gamma_n = 0.
+\end{equation}
+
+Put 
+\[
+\alpha = \sum_{n=0}^{\infty} |a_n|.
+\]
+
+[It is here that we use \( (a_n) \). Let \( \varepsilon > 0 \) be given. By (c), \( \beta_n \to 0 \). Hence we can choose \( N \) such that \( |\beta_n| \leq \varepsilon \) for \( n \geq N \), in which case
+\[
+|\gamma_n| \leq |\beta_0 a_0| + \cdots + |\beta_{n-1} a_{n-1}| + |\beta_n a_n| + |\beta_{n+1}a_{n-1}| + \cdots + |\beta_n a_0| \leq |\beta_0 a_n| + \cdots + |\beta_{N} a_{n-N}| + \varepsilon.
+\]
+Keeping \( N \) fixed, and letting \( n \to \infty \), we get
+\[
+\limsup_{n \to \infty} |\gamma_n| \leq \varepsilon,
+\]
+since \( a_k \to 0 \) as \( k \to \infty \). Since \( \varepsilon \) is arbitrary, (21) follows.
+
+Another question which may be asked is whether the series \( \sum C_k \), if convergent, must have the sum \( AB \). Abel showed that the answer is in the affirmative.
+
+\begin{theorem} \label{theorem1}
+If the series \( \sum A_n, \sum B_n, \sum C_n \) converge to \( A, B, C \) and 
+\[
+c_n = a_0 b_0 + \cdots + a_n b_n, \text{ then } C = AB.
+\]
+\end{theorem}
+Here no assumption is made concerning absolute convergence. We shall give a simple proof (which depends on the continuity of power series) after Theorem 8.2.
+
+\section*{REARRANGEMENTS}
+\begin{definition}
+Let \( \{ k_n \}_{n=1}^{\infty} \) be a sequence in which every positive integer appears once and only once (that is, \( \{ k_n \} \) is a 1-1 function from \( J \) onto \( J \), in the notation of Definition 2.2). Putting 
+\[
+a'_n = a_{k_n} \quad (n = 1, 2, 3, \ldots),
+\]
+we say that \( \{ a'_n \} \) is a rearrangement of \( \sum a_n.
+\]
+\end{definition}
+
+\end{document}

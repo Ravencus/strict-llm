@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+\section*{9.35 Theorem}
+If $[A]$ and $[B]$ are $n \times n$ matrices, then
+\[
+\det([B][A]) = \det[B] \det[A].
+\]
+
+\textbf{Proof} If $x_1, \ldots, x_k$ are the columns of $[A]$, define
+\[
+\Delta_k(x_1, \ldots, x_k) = \Delta_k[A] = \det([B][A]).
+\]
+The columns of $[B][A]$ are the vectors $Bx_1, \ldots, Bx_k$. Thus,
+\[
+\Delta_k(x_1, \ldots, x_k) = \det(Bx_1, \ldots, Bx_k).
+\]
+By (86) and Theorem 9.34, $\Delta_k$ also has properties 9.34 (b) to (d). By (b) and (84),
+\[
+\Delta_B[A] = \Delta_B\left(\sum a_i \, \mathbf{e}_1, x_2, \ldots, x_k\right) = \sum a_i \Delta_B(e_1, x_2, \ldots, x_k).
+\]
+Repeating this process with $x_2, \ldots, x_k$, we obtain
+\[
+\Delta_B[A] = \sum a_{i(1)} \ldots a_{i(2)} \cdots a_{i(n)} \Delta_B(e_{i_1}, \ldots, e_{i_n}),
+\]
+the sum being extended over all ordered $n$-tuples $(i_1, \ldots, i_n)$ with $1 \leq i_s \leq m$. By (c) and (d),
+\[
+\Delta_B(e_{i_1}, \ldots, e_i) = (i_1, \ldots, i_n) \Delta_B(e_1, \ldots, e_n),
+\]
+where $r = 1, 0$ or $-1$, and since $[B][I] = [B]$, (85) shows that
+\[
+\Delta_k(e_1, \ldots, e_k) = \det[B].
+\]
+Substituting (89) and (88) into (87), we obtain
+\[
+\det([B][A]) = \sum a_{i(1)} \cdots a_{i(n)} n_{h}(i_1, \ldots, i_k) \det[B],
+\]
+for all $n \times n$ matrices $[A]$ and $[B]$. Taking $B = I$, we see that the above sum in braces is $\det[A]$. This proves the theorem.
+
+\section*{9.36 Theorem}
+A linear operator $A$ on $\mathbb{R}^n$ is invertible if and only if $\det[A] \neq 0$.
+
+\textbf{Proof} If $A$ is invertible, Theorem 9.35 shows that
+\[
+\det[A] \det[A^{-1}] = \det[AA^{-1}] = \det[I] = 1,
+\]
+so that $\det[A] \neq 0$.
+
+If $A$ is not invertible, the columns $x_1, \ldots, x_k$ of $[A]$ are dependent (Theorem 9.5); hence there is one, say $x_k$, such that
+\[
+x_k + \sum_{j} c_j x_j = 0
+\]
+for certain scalars $c_j$. By 9.34 (b) and (d), $x_k$ can be replaced by $x_k + c_j x_j$ without altering the determinant, if $j \neq k$. Repeating, we see that $x_k$ can ...
+\end{document}

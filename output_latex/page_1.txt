@@ -1,0 +1,49 @@
+\documentclass{article}
+\begin{document}
+
+\section*{THE REAL AND COMPLEX NUMBER SYSTEMS}
+
+\noindent
+Proof (a), (b), and (c) are obvious, and (d) is an immediate consequence of the Schwarz inequality. By (d) we have
+\[
+|x + y|^2 = (x + y) \cdot (x + y) = x \cdot x + 2x \cdot y + y \cdot y
+\]
+\[
+\leq |x|^2 + 2|x||y| + |y|^2 = (|x| + |y|)^2,
+\]
+so that (e) is proved. Finally, (f) follows from (e) if we replace \( x \) by \( x - y \) and \( y \) by \( y - z \).
+
+\subsection*{Remarks}
+Theorem 1.37 (a), (b), and (f) will allow us (see Chap. 2) to regard \( \mathbb{R}^4 \) as a metric space. 
+
+\noindent
+\( \mathbb{R}^1 \) (the set of all real numbers) is usually called the line, or the real line. Likewise, \( \mathbb{R}^2 \) is called the plane, or the complex plane (compare Definitions 1.24 and 1.36). In these two cases the norm is just the absolute value of the corresponding real or complex number.
+
+\section*{APPENDIX}
+Theorem 1.19 will be proved in this appendix by constructing \( R \) from \( Q \). We shall divide the construction into several steps.
+
+\subsection*{Step 1}
+The members of \( R \) will be certain subsets of \( Q \), called cuts. A cut is, by definition, any set \( \alpha \subset Q \) with the following three properties:
+\begin{enumerate}
+    \item[(I)] \( \alpha \) is not empty, and \( \alpha \neq \emptyset \).
+    \item[(II)] If \( p \in \alpha, q \in Q, \) and \( q < p\), then \( q \in \alpha \).
+    \item[(III)] If \( p \in \alpha, \) then \( p < r < \alpha \) for some \( r \in \alpha \).
+\end{enumerate}
+
+\noindent
+The letters \( p, q, r, \ldots \) will always denote rational numbers, and \( \alpha, \beta, \gamma, \ldots \) will denote cuts.
+
+\noindent
+Note that (III) simply says that \( \alpha \) has no largest member; (II) implies two facts which will be used freely:
+\begin{quote}
+If \( p \in \alpha \) and \( q \notin \alpha \) then \( p < q \).\\
+If \( r \in \alpha \) and \( r < s \) then \( s \notin \alpha \).
+\end{quote}
+
+\subsection*{Step 2}
+Define “\( \alpha < \beta \)” to mean: \( \alpha \) is a proper subset of \( \beta \). Let us check that this meets the requirements of Definition 1.5. If \( \alpha < \beta \) and \( \beta < \gamma \) it is clear that \( \alpha < \gamma \). (A proper subset of a proper subset is a proper subset.) It is also clear that at most one of the three relations holds:
+\[
+\alpha < \beta, \quad \alpha = \beta, \quad \beta < \alpha.
+\]
+
+\end{document}

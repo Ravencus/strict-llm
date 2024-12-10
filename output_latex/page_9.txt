@@ -1,0 +1,53 @@
+\section{PRINCIPLES OF MATHEMATICAL ANALYSIS}
+
+Here, as in Sec. 9.16, $\{e_1, \ldots, e_n\}$ and $\{u_1, \ldots, u_n\}$ are the standard bases of $\mathbb{R}^n$ and $\mathbb{R}^m$.
+
+\textbf{Proof} Fix $j$. Since $f$ is differentiable at $x$,
+
+\[
+f(x + te_j) - f(x) = f'(x)(te_j) + r(te_j)
+\]
+
+where $\lvert r(te_j)\rvert/t \to 0$ as $t \to 0$. The linearity of $f'(x)$ shows therefore that
+
+\begin{equation}
+\lim_{t \to 0} \frac{f(x + te_j) - f(x)}{t} = f'(x)e_j.
+\end{equation}
+
+If we now represent $f$ in terms of its components, as in (24), then (28) becomes
+
+\begin{equation}
+\lim_{t \to 0} \sum_{i=1}^m \frac{f(x + te_j) - f(x)}{t} = u_j = f'(x)e_j.
+\end{equation}
+
+It follows that each quotient in this sum has a limit, as $t \to 0$ (see Theorem 4.10), so that each $(D_j f)(x)$ exists, and then (27) follows from (29).
+
+Here are some consequences of Theorem 9.17: Let $f'(x')$ be the matrix that represents $f'(x)$ with respect to our standard bases, as in Sec. 9.9.
+
+Then $f'(x)e_j$ is the $j$th column vector of $[f'(x)]$, and (27) shows therefore that the number $(D_j f)(x)$ occupies the spot in the $r$th row and $j$th column of $[f'(x)]$. Thus
+
+\[
+[f'(x)] = \begin{bmatrix}
+(D_1 f)(x) & \cdots & (D_n f)(x) \\
+\vdots & \ddots & \vdots \\
+(D_1 f_m)(x) & \cdots & (D_m f_n)(x)
+\end{bmatrix}.
+\]
+
+If $h = \sum_{j=1}^n h_j e_j$ is any vector in $\mathbb{R}^n$, then (27) implies that
+
+\begin{equation}
+f'(xh) = \sum_{i=1}^n \left(\sum_{j=1}^m (D_j f)(x)h_j\right) u_j.
+\end{equation}
+
+\textbf{Example 9.18} Let $\gamma$ be a differentiable mapping of the segment $(a,b) \subset \mathbb{R}^1$ into an open set $E \subset \mathbb{R}^n$, in other words, $\gamma$ is a differentiable curve in $E$. Let $f$ be a real-valued differentiable function with domain $E$. Thus $f$ is a differentiable mapping of $E$ into $\mathbb{R}^1$. Define
+
+\begin{equation}
+g(t) = f(\gamma(t)) \quad (a < t < b).
+\end{equation}
+
+The chain rule asserts then that
+
+\begin{equation}
+g'(t) = f'(\gamma(t))\gamma'(t) \quad (a < t < b).
+\end{equation}

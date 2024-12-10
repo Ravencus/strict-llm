@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+\section*{Numerical Sequences and Series}
+
+\textbf{Proof} The monotonicity of the logarithmic function (which will be discussed in more detail in Chap. 8) implies that $\{ \frac{1}{n \log n} \}$ decreases, and we can apply Theorem 3.27 to (10); this leads us to the series
+
+\begin{align}
+    \sum_{k=1}^{\infty} \frac{2^k}{2^{(\log 2)^k}} &= \sum_{k=1}^{\infty} \frac{1}{k \log 2} = \frac{1}{(\log 2)^2} \sum_{k=1}^{\infty} k^{-p} 
+\end{align}
+
+and Theorem 3.29 follows from Theorem 3.28.
+
+This procedure may evidently be continued. For instance, we have
+
+\begin{align}
+    \sum_{n=3}^{\infty} \frac{1}{n \log n \log n} \text{ diverges, whereas } \sum_{n=3}^{\infty} \frac{1}{n \log n (\log \log n)^2} \text{ converges.}
+\end{align}
+
+We may now observe that the terms of the series (12) differ very little from those of (13). Still, one diverges, the other converges. If we continue the process which led us from Theorem 3.28 to Theorem 3.29, and then to (12) and (13), we get pairs of convergent and divergent series whose terms differ even less than those of (12) and (13). One might thus be led to the conjecture that there is a limiting situation of some sort, a ``boundary'' with all convergent series on one side, all divergent series on the other side—at least as far as series with monotonic coefficients are concerned. This notion of ``boundary'' is of course quite vague. The point we wish to make is this: No matter how we make this notion precise, the conjecture is false. Exercises 11(b) and 12(b) may serve as illustrations.
+
+We do not wish to go any deeper into this aspect of convergence theory, and refer the reader to Knopp's ``Theory and Application of Infinite Series,'' Chap. IX, particularly Sec. 41.
+
+\subsection*{The Number $e$}
+\subsubsection*{3.30 Definition}
+\begin{equation}
+    e = \sum_{n=0}^{\infty} \frac{1}{n!}
+\end{equation}
+Here $n! = 1 \cdot 2 \cdots n$ if $n \geq 1$, and $0! = 1$.
+
+\end{document}

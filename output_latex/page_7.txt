@@ -1,0 +1,40 @@
+\section{Some Special Functions}
+\subsection{Theorem 8.1}
+Suppose the series
+\begin{equation}
+\sum_{n=0}^{\infty} c_n x^n
+\end{equation}
+converges for \(|x| < R\), and define
+\begin{equation}
+f(x) = \sum_{n=0}^{\infty} c_n x^n \quad (|x| < R).
+\end{equation}
+Then (3) converges uniformly on \([-R + \epsilon, R - \epsilon]\), no matter which \(\epsilon > 0\) is chosen. The function \(f\) is continuous and differentiable in \((-R, R)\), and
+\begin{equation}
+f'(x) = \sum_{n=1}^{\infty} n c_n x^{n-1} \quad (|x| < R).
+\end{equation}
+
+\textbf{Proof} Let \(\epsilon > 0\) be given. For \(|x| \leq R - \epsilon\), we have
+\[
+|c_n x^n| \leq |c_n(R - \epsilon)^n|,
+\]
+and since 
+\[
+\sum_{n=0}^{\infty} c_n(R - \epsilon)^n
+\]
+converges absolutely (every power series converges absolutely in the interior of its interval of convergence, by the root test), Theorem 7.10 shows the uniform convergence of (3) on \([-R + \epsilon, R - \epsilon]\).
+
+Since \(\sqrt[n]{n} \to 1\) as \(n \to \infty\), we have
+\[
+\limsup_{n \to \infty} \sqrt[n]{|c_n|} = \limsup_{n \to \infty} \sqrt[n]{|c_n|},
+\]
+so that the series (4) and (5) have the same interval of convergence. Since (5) is a power series, it converges uniformly in \([-R + \epsilon, R - \epsilon]\) for every \(\epsilon > 0\), and we can apply Theorem 7.17 (for series instead of sequences). It follows that (5) holds if \(|x| \leq R - \epsilon\). But, given any \(x\) such that \(|x| < R\), we can find an \(\epsilon > 0\) such that \(|x| < R - \epsilon\). This shows that (5) holds for \(|x| < R\). Continuity of \(f\) follows from the existence of \(f'\) (Theorem 5.2).
+
+\textbf{Corollary} Under the hypotheses of Theorem 8.1, \(f\) has derivatives of all orders in \((-R, R)\), which are given by
+\begin{equation}
+f^{(k)}(x) = \sum_{n=k}^{\infty} n(n-1) \cdots (n-k+1)c_n x^{n-k}.
+\end{equation}
+In particular,
+\begin{equation}
+f^{(0)}(x) = k c_k \quad (k = 0, 1, 2, \ldots).
+\end{equation}
+(Here \(f^{(0)}\) means \(f\), and \(f^{(k)}\) is the \(k\)th derivative of \(f\), for \(k = 1, 2, 3, \ldots\).)

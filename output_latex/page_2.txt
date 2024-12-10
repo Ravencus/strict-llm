@@ -1,0 +1,29 @@
+\section{Examples}
+\begin{enumerate}
+    \item[2.25] Examples In parts (c) and (d) of the preceding theorem, the finiteness of the collections is essential. For let $G_n$ be the segment $\left(-\frac{1}{n}, \frac{1}{n}\right)$ $(n = 1, 2, 3, \ldots)$. Then $G_n$ is an open subset of $\mathbb{R}$. Put $G = \bigcap_{n=1}^{\infty} G_n$. Then $G$ consists of a single point (namely, $x = 0$) and is therefore not an open subset of $\mathbb{R}$. Thus the intersection of an infinite collection of open sets need not be open. Similarly, the union of an infinite collection of closed sets need not be closed.
+    
+    \item[2.26] \textbf{Definition} If $X$ is a metric space, if $E \subseteq X$, and if $E'$ denotes the set of all limit points of $E$ in $X$, then the closure of $E$ is the set $E = E \cup E'$.
+    
+    \item[2.27] \textbf{Theorem} If $X$ is a metric space and $E \subseteq X$, then
+    \begin{enumerate}
+        \item[(a)] $E$ is closed,
+        \item[(b)] $E = E'$ if and only if $E$ is closed,
+        \item[(c)] $E \subseteq F$ for every closed set $F \subseteq X$ such that $E \subseteq F$.
+    \end{enumerate}
+    
+    By (a) and (c), $E$ is the smallest closed subset of $X$ that contains $E$.
+    
+    \textbf{Proof} (a) If $p \in E$ and $p \notin E'$ then $p$ is neither a point of $E$ nor a limit point of $E$. Hence $p$ has a neighborhood which does not intersect $E$. The complement of $E$ is therefore open. Hence $E$ is closed. 
+    \\
+    (b) If $E = E'$, (a) implies that $E$ is closed. If $E$ is closed, then $E' = E$ by Definitions 2.18(d) and 2.26, hence $E = E$. 
+    \\
+    (c) If $F$ is closed and $F \supseteq E$, then $F \supseteq F'$, hence $F \supseteq E$.
+    
+    \item[2.28] \textbf{Theorem} Let $E$ be a nonempty set of real numbers which is bounded above. Let $y = \sup E$. Then $y \in E$ if $E$ is closed.
+    
+    Compare this with the examples in Sec. 1.9.
+    
+    \textbf{Proof} If $y \in E$ then $y \in E$. Assume $y \notin E$. For every $h > 0$ there exists then a point $x \in E$ such that $y - h < x < y$, for otherwise $y - h$ would be an upper bound of $E$. Thus $y$ is a limit point of $E$. Hence $y \in E$.
+    
+    \item[2.29] \textbf{Remark} Suppose $E \subseteq Y \subseteq X$, where $X$ is a metric space. To say that $E$ is an open subset of $X$ means that to each point $p \in E$ there is associated a positive number $r$ such that the conditions $d(p, q) < r$, $q \in X$ imply that $q \in E$. But we have already observed (Sec. 2.16) that $Y$ is also a metric space, so that our definitions may equally well be made within $Y$. To be quite explicit, let us say that $E$ is open relative to $Y$ if to each $p \in E$ there is associated an $r > 0$ such that $q \in E$ whenever $d(p, q) < r$ and $q \in Y$. Example 2.21(g) showed that a set $q \in E$ whenever $d(p, q) < r$ and $q \in E$.
+\end{enumerate}

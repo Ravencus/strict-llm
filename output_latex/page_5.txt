@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section*{Corollary}
+If $f$ is differentiable on $[a, b]$, then $f'$ cannot have any simple discontinuities on $[a, b]$.
+
+But $f'$ may very well have discontinuities of the second kind.
+
+\section*{L'HOSPITAL'S RULE}
+
+The following theorem is frequently useful in the evaluation of limits.
+
+\subsection*{Theorem 5.13}
+Suppose $f$ and $g$ are real and differentiable in $(a, b)$, and $g'(x) \neq 0$ for all $x \in (a, b)$, where $-\infty \leq a < b \leq +\infty$. Suppose
+\begin{equation} 
+\frac{f'(x)}{g'(x)} \to A \quad \text{as } x \to a. 
+\end{equation}
+
+If
+\begin{equation} 
+f(x) \to 0 \text{ and } g(x) \to 0 \text{ as } x \to a,
+\end{equation}
+or if 
+\begin{equation} 
+g(x) \to +\infty \text{ as } x \to a,
+\end{equation}
+then
+\begin{equation} 
+\frac{f(x)}{g(x)} \to A \quad \text{as } x \to a.
+\end{equation}
+
+The analogous statement is of course also true if $x \to b$, or if $g(x) \to -\infty$ in (15). Let us note that we now use the limit concept in the extended sense of Definition 4.33.
+
+\subsection*{Proof}
+We first consider the case in which $-\infty \leq A < q < +\infty$. Choose a real number $r$ such that $A < q$, and then choose $r$ such that $A < r < q$. By (13) there is a point $c \in (a, b)$ such that $a < c < b$ implies
+\begin{equation} 
+\frac{f'(x)}{g'(x)} < r.
+\end{equation}
+
+If $a < x < y < c$, then Theorem 5.9 shows that there is a point $t \in (x, y)$ such that
+\begin{equation} 
+\frac{f(x) - f(y)}{g(x) - g(y)} \frac{f'(t)}{g'(t)} < r.
+\end{equation}
+
+Suppose (14) holds. Letting $x \to a$ in (18), we see that
+\begin{equation} 
+\frac{f(y)}{g(y)} \leq r < q \quad (a < y < c).
+\end{equation}
+
+\end{document}

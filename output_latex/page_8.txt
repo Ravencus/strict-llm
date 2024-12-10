@@ -1,0 +1,49 @@
+\section{8.16 Parseval's theorem}
+Suppose \( f \) and \( g \) are Riemann-integrable functions with period \( 2\pi \), and
+\[
+f(x) \sim \sum_{n=-\infty}^{\infty} c_n e^{inx}, \quad g(x) \sim \sum_{n=-\infty}^{\infty} d_n e^{inx}.
+\]
+
+Then
+\[
+\lim_{N \to \infty} \frac{1}{2\pi} \int_{-\pi}^{\pi} |f(x) - S_N(f;x)|^2 \, dx = 0,
+\]
+\[
+\frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) g(x) \, dx = \sum_{n=-\infty}^{\infty} c_n \overline{d_n},
+\]
+\[
+\frac{1}{2\pi} \int_{-\pi}^{\pi} |f(x)|^2 \, dx = \sum_{n=-\infty}^{\infty} |c_n|^2.
+\]
+
+\textbf{Proof} Let us use the notation
+\[
+\|h\|_{L^2} = \left( \frac{1}{2\pi} \int_{-\pi}^{\pi} |h(x)|^2 \, dx \right)^{1/2}.
+\]
+Let \( \varepsilon > 0 \) be given. Since \( f \in L^2 \) and \( f(c_n) = f(-n) \), the construction described in Exercise 12 of Chap. 6 yields a continuous \( 2\pi \)-periodic function \( h \) with
+\[
+\|f - h\|_{L^2} < \varepsilon.
+\]
+By Theorem 8.15, there is a trigonometric polynomial \( P \) such that 
+\[
+|h(x) - P(x)| < \varepsilon \text{ for all } x. 
+\]
+Hence \( \|h - P\|_{L^2} < \varepsilon \). If \( P \) has degree \( N_0 \), Theorem 8.11 shows that
+\[
+\|h - S_N(h)\|_{L^2} \leq \|h - P\|_{L^2} < \varepsilon
+\]
+for all \( N \geq N_0 \). By (72), with \( h - f \) in place of \( f \),
+\[
+\|S_N(h) - S_N(f)\|_{L^2} = \|S_N(h) - S_N(f)\|_{L^2} \leq \|h - f\|_{L^2} < \varepsilon.
+\]
+Now the triangle inequality (Exercise 11, Chap. 6), combined with (87), (88), and (89), shows that
+\[
+\|f - S_N(f)\|_{L^2} < 3\varepsilon \quad (N \geq N_0).
+\]
+This proves (83). Next,
+\[
+\frac{1}{2\pi} \int_{-\pi}^{\pi} S_N(f) g \, dx = \sum_{n=-N}^{N} c_n \frac{1}{2\pi} \int_{-\pi}^{\pi} g(x) \, dx = \sum_{n=-N}^{N} c_n \overline{d_n},
+\]
+and the Schwarz inequality shows that
+\[
+\left| \int_{-\pi}^{\pi} S_N(f) g \, dx \right| \leq \|f - S_N f\|_{L^2} \left( \frac{1}{2} \|f - S_N f\|_{L^2} \right)^{1/2}.
+\]

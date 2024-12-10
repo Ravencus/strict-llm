@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+where \( M = \sup |f(x)| \). Since \( \alpha = \alpha_1 + \alpha_2 \), it follows from (24) and (25) that
+\[
+\left| \int_a^b f \, dx - \sum_{i=1}^N c_n f(s_i) \right| \leq M e.
+\]
+If we let \( N \to \infty \), we obtain (23).
+
+\section{Theorem}
+Assume \( \alpha \) increases monotonically and \( \alpha' \in \mathbb{R} \) on \([a,b]\). Let \( f \) be a bounded real function on \([a,b]\). Then \( f \in \mathcal{R}(\alpha) \) if and only if \( f' \in \mathbb{R} \). In that case,
+\[
+\int_a^b f \, dx = \int_a^b f'(x) \alpha'(x) \, dx.
+\]
+
+Proof: Let \( \epsilon > 0 \) be given and apply Theorem 6.6 to \( \alpha' \): There is a partition \( P = \{x_0, \ldots, x_k\} \) of \([a,b]\) such that
+\[
+U(P, \alpha') - L(P, \alpha') < \epsilon.
+\]
+The mean value theorem furnishes points \( t_i \in [x_{i-1}, x_i] \) such that \( \Delta \alpha_i = \alpha'(t_i) \Delta x_i \) for \( i = 1, \ldots, n \). If \( s_i \in [x_{i-1}, x_i] \), then
+\[
+\sum_{i=1}^n |\alpha(s_i) - \alpha'(t_i)| \Delta x_i < \epsilon,
+\]
+by (28) and Theorem 6.7(b). Put \( M = \sup |f(x)| \). Since
+\[
+\sum_{i=1}^n f(s_i) \Delta \alpha_i = \sum_{i=1}^n f(s_i) \alpha'(t_i) \Delta x_i,
+\]
+it follows from (29) that
+\[
+\left| \sum_{i=1}^n f(s_i) \Delta \alpha_i - \sum_{i=1}^n f(s_i) \alpha'(t_i) \Delta x_i \right| \leq M e.
+\]
+In particular,
+\[
+\sum_{i=1}^n f(s_i) \Delta \alpha_i \leq U(P, f') + M e,
+\]
+for all choices of \( s_i \in [x_{i-1}, x_i] \), so that
+\[
+U(P, f, \alpha) \leq U(P, f') + M e.
+\]
+The same argument leads from (30) to
+\[
+U(P, f, \alpha) \geq U(P, f') + M e.
+\]
+Thus
+\[
+|U(P, f, \alpha) - U(P, f')| \leq M e.
+\]
+
+\end{document}
