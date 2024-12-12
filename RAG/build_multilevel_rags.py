@@ -220,11 +220,11 @@ class multilevel_rag_builder:
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    # mrb_proofnet = multilevel_rag_builder()
-    # state_decomposed_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
-    # mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
-    # mrb_proofnet.test_full_statement(state_decomposed_path, split="test", top_k=5, save_to_disk=True, method="sliding_window")
-    # mrb_proofnet.test_full_statement(state_decomposed_path, split="test", top_k=5, save_to_disk=True, method="embedding")
+    mrb_proofnet = multilevel_rag_builder()
+    state_decomposed_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
+    mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
+    mrb_proofnet.test_full_statement(state_decomposed_path, split="test", top_k=10, save_to_disk=True, method="sliding_window")
+    mrb_proofnet.test_full_statement(state_decomposed_path, split="test", top_k=10, save_to_disk=True, method="embedding")
     
     # mrb_proofnet.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
     # top_k_scores_proofnet = mrb_proofnet.return_test_scores(state_decomposed_path, top_k=1)
@@ -232,8 +232,8 @@ if __name__ == "__main__":
     mrb_minif2f = multilevel_rag_builder()
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
     mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
-    mrb_minif2f.test_full_statement(state_decomposed_path, split="test", top_k=5, save_to_disk=True, method="sliding_window")
-    mrb_minif2f.test_full_statement(state_decomposed_path, split="test", top_k=5, save_to_disk=True, method="embedding")
+    mrb_minif2f.test_full_statement(state_decomposed_path, split="test", top_k=10, save_to_disk=True, method="sliding_window")
+    mrb_minif2f.test_full_statement(state_decomposed_path, split="test", top_k=10, save_to_disk=True, method="embedding")
     # mrb_minif2f.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
     # top_k_scores_minif2f = mrb_minif2f.return_test_scores(state_decomposed_path, top_k=1)
 
