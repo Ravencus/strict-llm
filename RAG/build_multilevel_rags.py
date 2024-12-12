@@ -183,21 +183,57 @@ class multilevel_rag_builder:
                     "matched_decompose": copy.deepcopy(self.statement_decomposed_rag_dict[key]['object'].decomposition[key])
                 })
             return top_k_results
+    
+    def test_full_statement(self, statement_decomposed_jsonl, split, top_k, save_to_disk, method):
+        state_decomposed_test_path = statement_decomposed_jsonl.replace(".jsonl", "_full_statement_test_{}.pkl".format(method))
+        print("Start testing {} decomposition.".format(statement_decomposed_jsonl))
+        entries = parse_jsonl_decomposed(statement_decomposed_jsonl)
+        test_result_list = []
+        for entry in tqdm(entries):
+            if entry.split == split:
+                full_statement = entry.informal_prefix
+                object = entry
+                if method == "sliding_window":
+                    top_k_results = self.query_statement_rag_database_full_statement_window(full_statement, top_k=top_k)
+                elif method == "embedding":
+                    top_k_results = self.query_statement_rag_database_full_statement_embedding(full_statement, top_k=top_k)
+                else:
+                    raise NotImplementedError
+                test_result_single = {
+                    "top_k_results": top_k_results,
+                    "k": top_k
+                }
+                test_result_list.append(
+                    {
+                        "object": object,
+                        "full_statement_result": test_result_single
+                    }
+                )
+            else:
+                print("Skipping not in split.")
+        if save_to_disk:
+            with open(state_decomposed_test_path, "wb") as f:
+                print("Saving test results to: {}".format(state_decomposed_test_path))
+                pkl.dump(test_result_list, f)
+        return test_result_list
 
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    mrb_proofnet = multilevel_rag_builder()
-    state_decomposed_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
-    mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
-    top_k_results = mrb_proofnet.query_statement_rag_database_full_statement_window("/-- Suppose that $f$ is holomorphic in an open set $\\Omega$. Prove that if $\\text{Im}(f)$ is constant, then $f$ is constant.-/\n", top_k=5)
-    print(top_k_results)
+    # mrb_proofnet = multilevel_rag_builder()
+    # state_decomposed_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
+    # mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
+    # mrb_proofnet.test_full_statement(state_decomposed_path, split="test", top_k=5, save_to_disk=True, method="sliding_window")
+    # mrb_proofnet.test_full_statement(state_decomposed_path, split="test", top_k=5, save_to_disk=True, method="embedding")
+    
     # mrb_proofnet.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
     # top_k_scores_proofnet = mrb_proofnet.return_test_scores(state_decomposed_path, top_k=1)
 
-    # mrb_minif2f = multilevel_rag_builder()
-    # state_decomposed_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
-    # mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
+    mrb_minif2f = multilevel_rag_builder()
+    state_decomposed_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
+    mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
+    mrb_minif2f.test_full_statement(state_decomposed_path, split="test", top_k=5, save_to_disk=True, method="sliding_window")
+    mrb_minif2f.test_full_statement(state_decomposed_path, split="test", top_k=5, save_to_disk=True, method="embedding")
     # mrb_minif2f.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
     # top_k_scores_minif2f = mrb_minif2f.return_test_scores(state_decomposed_path, top_k=1)
 
