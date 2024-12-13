@@ -1,0 +1,1 @@
+{f : ℂ → ℂ} (Ω : Set ℂ) (h : IsOpen Ω) (hf : DifferentiableOn ℂ f Ω)(hi : ∃ (c : ℝ), ∀ z ∈ Ω, (f z).im = c) : ∀ a b, f a = f b := 

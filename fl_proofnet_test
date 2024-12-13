@@ -1,0 +1,6 @@
+theorem alpha_le_beta {E : Set α} [Preorder α] (hE : E.Nonempty) {α β : α} 
+  (hα : ∀ x ∈ E, α ≤ x) (hβ : ∀ x ∈ E, x ≤ β) : α ≤ β :=
+begin
+  obtain ⟨x, hx⟩ := hE,
+  exact le_trans (hα x hx) (hβ x hx),
+end
