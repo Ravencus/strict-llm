@@ -1,1105 +1,1105 @@
 [
     {
         "name": "exercise_1_13b",
-        "file_path": "lean_files/test_1.lean",
+        "file_path": "proofnet_lean_files/test_1.lean",
         "output": "test_1.lean:8:148: error: unexpected token '\u2208'; expected ','",
         "exit_code": 1
     },
     {
         "name": "exercise_1_13b",
-        "file_path": "lean_files/test_2.lean",
+        "file_path": "proofnet_lean_files/test_2.lean",
         "output": "test_2.lean:8:148: error: unexpected token '\u2208'; expected ','",
         "exit_code": 1
     },
     {
         "name": "exercise_1_13b",
-        "file_path": "lean_files/test_3.lean",
+        "file_path": "proofnet_lean_files/test_3.lean",
         "output": "test_3.lean:11:7: error: unexpected token '\u2208'; expected ','",
         "exit_code": 1
     },
     {
         "name": "exercise_1_19a",
-        "file_path": "lean_files/test_4.lean",
+        "file_path": "proofnet_lean_files/test_4.lean",
         "output": "test_4.lean:9:44: error: unexpected token ','; expected '\u21a6', '=>'",
         "exit_code": 1
     },
     {
         "name": "exercise_1_19c",
-        "file_path": "lean_files/test_5.lean",
+        "file_path": "proofnet_lean_files/test_5.lean",
         "output": "test_5.lean:9:50: error: unexpected token ','; expected '\u21a6', '=>'",
         "exit_code": 1
     },
     {
         "name": "exercise_2_2",
-        "file_path": "lean_files/test_6.lean",
+        "file_path": "proofnet_lean_files/test_6.lean",
         "output": "test_6.lean:8:47: error: expected token",
         "exit_code": 1
     },
     {
         "name": "exercise_2_13",
-        "file_path": "lean_files/test_7.lean",
+        "file_path": "proofnet_lean_files/test_7.lean",
         "output": "test_7.lean:13:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_7.lean:9:21: error: function expected at\n  analytic_at\nterm has type\n  ?m.11\ntest_7.lean:10:38: error: invalid field notation, type is not of the form (C ...) where C is a constant\n  f\nhas type\n  \u2102 \u2192 \u2102\ntest_7.lean:11:8: error: function expected at\n  polynomial\nterm has type\n  ?m.84",
         "exit_code": 1
     },
     {
         "name": "exercise_3_4",
-        "file_path": "lean_files/test_8.lean",
+        "file_path": "proofnet_lean_files/test_8.lean",
         "output": "test_8.lean:9:26: error: function expected at\n  Tendsto\nterm has type\n  ?m.53\ntest_8.lean:11:0: error: unsolved goals\nx\u271d : Sort u_1\nTendsto : x\u271d\n\u22a2 (a : \u211d) \u2192 0 < a \u2192 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_3_14",
-        "file_path": "lean_files/test_9.lean",
+        "file_path": "proofnet_lean_files/test_9.lean",
         "output": "test_9.lean:9:17: error: type expected, got\n  (?m.733 ?m.760 : ?m.734 \u2208 Filter.map (fun x => (f x.1, f x.2)) (uniformity \u2102))\ntest_9.lean:9:50: error: function expected at\n  Injective\nterm has type\n  ?m.386",
         "exit_code": 1
     },
     {
         "name": "exercise_5_1",
-        "file_path": "lean_files/test_10.lean",
+        "file_path": "proofnet_lean_files/test_10.lean",
         "output": "test_10.lean:11:21: error: expected token",
         "exit_code": 1
     },
     {
         "name": "exercise_1_1b",
-        "file_path": "lean_files/test_11.lean",
+        "file_path": "proofnet_lean_files/test_11.lean",
         "output": "test_11.lean:10:0: error: unsolved goals\ny : \u211a\nhy : y \u2260 0\nx : \u211d\nhx : Irrational x\n\u22a2 Irrational (\u2191y * x)",
         "exit_code": 1
     },
     {
         "name": "exercise_1_4",
-        "file_path": "lean_files/test_12.lean",
+        "file_path": "proofnet_lean_files/test_12.lean",
         "output": "test_12.lean:8:48: error: invalid binder annotation, type is not a class instance\n  ?m.12\nuse the command `set_option checkBinderAnnotations false` to disable the check\ntest_12.lean:11:17: error: unexpected token ':='; expected command\ntest_12.lean:13:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_1_8",
-        "file_path": "lean_files/test_13.lean",
+        "file_path": "proofnet_lean_files/test_13.lean",
         "output": "test_13.lean:8:50: error: unexpected token '['; expected ','",
         "exit_code": 1
     },
     {
         "name": "exercise_1_12",
-        "file_path": "lean_files/test_14.lean",
+        "file_path": "proofnet_lean_files/test_14.lean",
         "output": "test_14.lean:9:2: error: failed to synthesize\n  Lattice \u2102\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_14.lean:9:20: error: failed to synthesize\n  Lattice \u2102\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_14.lean:9:2: error: failed to synthesize\n  LE \u2102\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_14.lean:11:0: error: unsolved goals\nn : \u2115\nz : Fin n \u2192 \u2102\n\u22a2 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_1_14",
-        "file_path": "lean_files/test_15.lean",
+        "file_path": "proofnet_lean_files/test_15.lean",
         "output": "test_15.lean:10:0: error: unsolved goals\nz : \u2102\nhz : Complex.abs z = 1\n\u22a2 Complex.abs (1 + z) ^ 2 + Complex.abs (1 - z) ^ 2 = 4",
         "exit_code": 1
     },
     {
         "name": "exercise_1_17",
-        "file_path": "lean_files/test_16.lean",
+        "file_path": "proofnet_lean_files/test_16.lean",
         "output": "test_16.lean:9:2: error: expected token",
         "exit_code": 1
     },
     {
         "name": "exercise_1_18b",
-        "file_path": "lean_files/test_17.lean",
+        "file_path": "proofnet_lean_files/test_17.lean",
         "output": "test_17.lean:10:0: error: unsolved goals\nx : EuclideanSpace \u211d (Fin 1)\n\u22a2 \u00ac\u2203 y, y \u2260 0 \u2227 inner x y = 0",
         "exit_code": 1
     },
     {
         "name": "exercise_2_19a",
-        "file_path": "lean_files/test_18.lean",
+        "file_path": "proofnet_lean_files/test_18.lean",
         "output": "test_18.lean:12:0: error: unsolved goals\nX : Type u_1\ninst\u271d : MetricSpace X\nA B : Set X\nhA : IsClosed A\nhB : IsClosed B\nhAB : Disjoint A B\n\u22a2 SeparableSpace X",
         "exit_code": 1
     },
     {
         "name": "exercise_2_27b",
-        "file_path": "lean_files/test_19.lean",
+        "file_path": "proofnet_lean_files/test_19.lean",
         "output": "test_19.lean:14:0: error: unsolved goals\nk : \u2115\nE P : Set (EuclideanSpace \u211d (Fin k))\nhE : E.Nonempty \u2227 \u00acE.Countable\nhP : P = {x | \u2200 U \u2208 \ud835\udcdd x, \u00ac(P \u2229 E).Countable}\n\u22a2 (E \\ P).Countable",
         "exit_code": 1
     },
     {
         "name": "exercise_2_29",
-        "file_path": "lean_files/test_20.lean",
+        "file_path": "proofnet_lean_files/test_20.lean",
         "output": "test_20.lean:11:0: error: unsolved goals\nX : Type u_1\ninst\u271d : TopologicalSpace X\n\u22a2 \u2200 (U : Set X), IsOpen U \u2192 \u2203 P\u2081 P\u2082, U = P\u2081 \u222a P\u2082 \u2227 IsClosed P\u2081 \u2227 P\u2081 = {x | ClusterPt x (\ud835\udcdf P\u2081)} \u2227 P\u2082.Countable",
         "exit_code": 1
     },
     {
         "name": "exercise_3_2a",
-        "file_path": "lean_files/test_21.lean",
+        "file_path": "proofnet_lean_files/test_21.lean",
         "output": "test_21.lean:8:51: error: unexpected token ','; expected '\u21a6', '=>'",
         "exit_code": 1
     },
     {
         "name": "exercise_3_5",
-        "file_path": "lean_files/test_22.lean",
+        "file_path": "proofnet_lean_files/test_22.lean",
         "output": "test_22.lean:8:0: error: unexpected token '`'; expected command\ntest_22.lean:82:4: error: unexpected end of input; expected ':=', 'where' or '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_3_7",
-        "file_path": "lean_files/test_23.lean",
+        "file_path": "proofnet_lean_files/test_23.lean",
         "output": "test_23.lean:13:0: error: unsolved goals\na : \u2115 \u2192 \u211d\nh1 : \u2203 y, Tendsto (fun n => \u2211 i \u2208 range n, a i) atTop (\ud835\udcdd y)\nha : \u2200 (n : \u2115), 0 \u2264 a n\n\u22a2 \u2203 y, Tendsto (fun n => \u2211 i \u2208 range n, \u221a(a i) / \u2191i) atTop (\ud835\udcdd y)",
         "exit_code": 1
     },
     {
         "name": "exercise_3_13",
-        "file_path": "lean_files/test_24.lean",
+        "file_path": "proofnet_lean_files/test_24.lean",
         "output": "test_24.lean:10:13: error: overloaded, errors \n  10:25 unknown identifier 'finset.range'\n  \n  10:25 unknown identifier 'finset.range'\ntest_24.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (a b : \u2115 \u2192 \u2102),\n    (\u2203 L, \u2211' (n : \u2115), Complex.abs (a n) < L) \u2192\n      (\u2203 M, \u2211' (n : \u2115), Complex.abs (b n) < M) \u2192 \u2203 N, \u2211' (n : ?m.3622 a b N), sorry < N",
         "exit_code": 1
     },
     {
         "name": "exercise_3_21",
-        "file_path": "lean_files/test_25.lean",
+        "file_path": "proofnet_lean_files/test_25.lean",
         "output": "test_25.lean:11:23: error: unexpected token ','; expected '\u21a6', '=>'",
         "exit_code": 1
     },
     {
         "name": "exercise_4_1a",
-        "file_path": "lean_files/test_26.lean",
+        "file_path": "proofnet_lean_files/test_26.lean",
         "output": "test_26.lean:8:83: error: unexpected token ','; expected '\u21a6', '=>'",
         "exit_code": 1
     },
     {
         "name": "exercise_4_3",
-        "file_path": "lean_files/test_27.lean",
+        "file_path": "proofnet_lean_files/test_27.lean",
         "output": "test_27.lean:11:0: error: unsolved goals\n\u03b1 : Type\ninst\u271d : MetricSpace \u03b1\nf : \u03b1 \u2192 \u211d\nhf : Continuous f\n\u22a2 IsClosed {p | f p = 0}",
         "exit_code": 1
     },
     {
         "name": "exercise_4_4b",
-        "file_path": "lean_files/test_28.lean",
+        "file_path": "proofnet_lean_files/test_28.lean",
         "output": "test_28.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_28.lean:10:41: error: function expected at\n  f p\nterm has type\n  \u03b2",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5b",
-        "file_path": "lean_files/test_29.lean",
+        "file_path": "proofnet_lean_files/test_29.lean",
         "output": "test_29.lean:11:0: error: unsolved goals\n\u22a2 \u2203 E f, IsClosed E \u2227 ContinuousOn f E \u2227 \u00ac\u2203 g, Continuous g \u2227 \u2200 x \u2208 E, f x = g x",
         "exit_code": 1
     },
     {
         "name": "exercise_4_8a",
-        "file_path": "lean_files/test_30.lean",
+        "file_path": "proofnet_lean_files/test_30.lean",
         "output": "test_30.lean:11:0: error: unsolved goals\nf : \u211d \u2192 \u211d\nE : Set \u211d\nh\u2081 : IsClosed E\nh\u2082 : ContinuousOn f E\n\u22a2 UniformContinuousOn f E \u2192 Bornology.IsBounded (f '' E)",
         "exit_code": 1
     },
     {
         "name": "exercise_4_11a",
-        "file_path": "lean_files/test_31.lean",
+        "file_path": "proofnet_lean_files/test_31.lean",
         "output": "test_31.lean:12:0: error: unknown identifier 'begin'\ntest_31.lean:14:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_4_15",
-        "file_path": "lean_files/test_32.lean",
+        "file_path": "proofnet_lean_files/test_32.lean",
         "output": "test_32.lean:8:102: error: function expected at\n  Monotonic\nterm has type\n  ?m.743\ntest_32.lean:10:0: error: unsolved goals\nx\u271d : Sort u_1\nMonotonic : x\u271d\nf : \u2191(Metric.sphere 0 1) \u2192 \u211d\nhf : Continuous f\n\u22a2 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_4_21a",
-        "file_path": "lean_files/test_33.lean",
+        "file_path": "proofnet_lean_files/test_33.lean",
         "output": "test_33.lean:13:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_33.lean:11:40: error: function expected at\n  \u03b4\nterm has type\n  \u2115",
         "exit_code": 1
     },
     {
         "name": "exercise_5_1",
-        "file_path": "lean_files/test_34.lean",
+        "file_path": "proofnet_lean_files/test_34.lean",
         "output": "test_34.lean:10:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_34.lean:8:98: error: function expected at\n  f y\nterm has type\n  \u211d",
         "exit_code": 1
     },
     {
         "name": "exercise_5_5",
-        "file_path": "lean_files/test_35.lean",
+        "file_path": "proofnet_lean_files/test_35.lean",
         "output": "test_35.lean:10:36: error: expected token\ntest_35.lean:14:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_5_7",
-        "file_path": "lean_files/test_36.lean",
+        "file_path": "proofnet_lean_files/test_36.lean",
         "output": "test_36.lean:14:14: error: unexpected token ','; expected '\u21a6', '=>'",
         "exit_code": 1
     },
     {
         "name": "exercise_5_17",
-        "file_path": "lean_files/test_37.lean",
+        "file_path": "proofnet_lean_files/test_37.lean",
         "output": "test_37.lean:18:0: error: unknown identifier 'begin'\ntest_37.lean:20:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_2_1_18",
-        "file_path": "lean_files/test_38.lean",
+        "file_path": "proofnet_lean_files/test_38.lean",
         "output": "test_38.lean:11:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_38.lean:9:23: error: function expected at\n  a\u207b\u00b9\nterm has type\n  G",
         "exit_code": 1
     },
     {
         "name": "exercise_2_1_26",
-        "file_path": "lean_files/test_39.lean",
+        "file_path": "proofnet_lean_files/test_39.lean",
         "output": "test_39.lean:11:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Group G\ninst\u271d : Fintype G\na : G\n\u22a2 \u2203 n, 0 < n \u2227 a ^ n = 1",
         "exit_code": 1
     },
     {
         "name": "exercise_2_2_3",
-        "file_path": "lean_files/test_40.lean",
+        "file_path": "proofnet_lean_files/test_40.lean",
         "output": "test_40.lean:14:0: error: unsolved goals\n\u22a2 {G : Type u_1} \u2192\n    [inst : Group G] \u2192\n      (\u2200 (a b : G), (a * b) ^ 3 = a ^ 3 * b ^ 3 \u2227 (a * b) ^ 4 = a ^ 4 * b ^ 4 \u2227 (a * b) ^ 5 = a ^ 5 * b ^ 5) \u2192\n        CommGroup G\ntest_40.lean:8:0: error: type of theorem 'group_abelian_if_power_property' is not a proposition\n  {G : Type u_1} \u2192\n    [inst : Group G] \u2192\n      (\u2200 (a b : G), (a * b) ^ 3 = a ^ 3 * b ^ 3 \u2227 (a * b) ^ 4 = a ^ 4 * b ^ 4 \u2227 (a * b) ^ 5 = a ^ 5 * b ^ 5) \u2192\n        CommGroup G",
         "exit_code": 1
     },
     {
         "name": "exercise_2_2_6c",
-        "file_path": "lean_files/test_41.lean",
+        "file_path": "proofnet_lean_files/test_41.lean",
         "output": "test_41.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_2_3_16",
-        "file_path": "lean_files/test_42.lean",
+        "file_path": "proofnet_lean_files/test_42.lean",
         "output": "test_42.lean:12:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b2 : Group G\ninst\u271d\u00b9 : Fintype G\nH : Subgroup G\ninst\u271d : Fintype \u21a5H\n\u22a2 IsSimpleGroup G \u2192 false = true",
         "exit_code": 1
     },
     {
         "name": "exercise_2_5_23",
-        "file_path": "lean_files/test_43.lean",
+        "file_path": "proofnet_lean_files/test_43.lean",
         "output": "test_43.lean:11:0: error: unsolved goals\n\u22a2 \u2200 {G : Type u_1} [inst : Group G], (\u2200 (K : Subgroup G), K.Normal) \u2192 \u2200 (a b : G), \u2203 j, b * a = a ^ j * b",
         "exit_code": 1
     },
     {
         "name": "exercise_2_5_31",
-        "file_path": "lean_files/test_44.lean",
+        "file_path": "proofnet_lean_files/test_44.lean",
         "output": "test_44.lean:11:8: error: failed to synthesize\n  Fintype G\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_44.lean:13:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b2 : CommGroup G\np n m : \u2115\nhp : Nat.Prime p\nhpm : p \u2223 m \u2192 False\nH : Subgroup G\ninst\u271d\u00b9 : Fintype \u21a5H\ninst\u271d : H.Normal\nhH : card \u21a5H = p ^ n\nhG : sorry = p ^ n * m\n\u22a2 H.Characteristic",
         "exit_code": 1
     },
     {
         "name": "exercise_2_5_43",
-        "file_path": "lean_files/test_45.lean",
+        "file_path": "proofnet_lean_files/test_45.lean",
         "output": "test_45.lean:10:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Group G\ninst\u271d : Fintype G\nhG : card G = 9\n\u22a2 CommGroup G\ntest_45.lean:8:0: error: type of theorem 'group_of_order_9_abelian' is not a proposition\n  (G : Type u_1) \u2192 [inst : Group G] \u2192 [inst : Fintype G] \u2192 card G = 9 \u2192 CommGroup G",
         "exit_code": 1
     },
     {
         "name": "exercise_2_5_52",
-        "file_path": "lean_files/test_46.lean",
+        "file_path": "proofnet_lean_files/test_46.lean",
         "output": "test_46.lean:11:0: error: unknown identifier 'begin'\ntest_46.lean:13:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_2_7_7",
-        "file_path": "lean_files/test_47.lean",
+        "file_path": "proofnet_lean_files/test_47.lean",
         "output": "test_47.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_2_8_15",
-        "file_path": "lean_files/test_48.lean",
+        "file_path": "proofnet_lean_files/test_48.lean",
         "output": "test_48.lean:12:0: error: unsolved goals\np q : \u2115\ninst\u271d\u2075 : Fact (Nat.Prime p)\ninst\u271d\u2074 : Fact (Nat.Prime q)\nhpq : p > q\nhq : q \u2223 p - 1\nG : Type u_1\nH : Type u_2\ninst\u271d\u00b3 : Fintype G\ninst\u271d\u00b2 : Fintype H\ninst\u271d\u00b9 : Group G\ninst\u271d : Group H\nhG : card G = p * q\nhH : card H = p * q\nhG1 : IsEmpty (CommGroup G)\nhH1 : IsEmpty (CommGroup H)\n\u22a2 G \u2243* H\ntest_48.lean:8:0: error: type of theorem 'nonabelian_groups_isomorphic' is not a proposition\n  {p q : \u2115} \u2192\n    [inst : Fact (Nat.Prime p)] \u2192\n      [inst : Fact (Nat.Prime q)] \u2192\n        p > q \u2192\n          q \u2223 p - 1 \u2192\n            {G : Type u_1} \u2192\n              {H : Type u_2} \u2192\n                [inst : Fintype G] \u2192\n                  [inst_1 : Fintype H] \u2192\n                    [inst_2 : Group G] \u2192\n                      [inst_3 : Group H] \u2192\n                        card G = p * q \u2192 card H = p * q \u2192 IsEmpty (CommGroup G) \u2192 IsEmpty (CommGroup H) \u2192 G \u2243* H",
         "exit_code": 1
     },
     {
         "name": "exercise_2_10_1",
-        "file_path": "lean_files/test_49.lean",
+        "file_path": "proofnet_lean_files/test_49.lean",
         "output": "test_49.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_2_11_7",
-        "file_path": "lean_files/test_50.lean",
+        "file_path": "proofnet_lean_files/test_50.lean",
         "output": "test_50.lean:11:18: error: invalid field 'to_monoid_hom', the environment does not contain 'MulEquiv.to_monoid_hom'\n  \u03c6\nhas type\n  G \u2243* G\ntest_50.lean:11:41: error: type mismatch\n  P\nhas type\n  Sylow p G : Type u_1\nbut is expected to have type\n  Set (?m.1519 \u03c6) : Type ?u.729",
         "exit_code": 1
     },
     {
         "name": "exercise_3_2_21",
-        "file_path": "lean_files/test_51.lean",
+        "file_path": "proofnet_lean_files/test_51.lean",
         "output": "test_51.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_51.lean:8:56: error: function expected at\n  fintype\nterm has type\n  Fintype (Set ?m.6)",
         "exit_code": 1
     },
     {
         "name": "exercise_4_1_34",
-        "file_path": "lean_files/test_52.lean",
+        "file_path": "proofnet_lean_files/test_52.lean",
         "output": "test_52.lean:9:62: error: expected ';' or line break",
         "exit_code": 1
     },
     {
         "name": "exercise_4_2_6",
-        "file_path": "lean_files/test_53.lean",
+        "file_path": "proofnet_lean_files/test_53.lean",
         "output": "test_53.lean:8:37: error: function expected at\n  ring\nterm has type\n  Ring ?m.6[X]\ntest_53.lean:11:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_4_3_1",
-        "file_path": "lean_files/test_54.lean",
+        "file_path": "proofnet_lean_files/test_54.lean",
         "output": "test_54.lean:12:25: error: unexpected token ','; expected '\u21a6', '=>'",
         "exit_code": 1
     },
     {
         "name": "exercise_4_4_9",
-        "file_path": "lean_files/test_55.lean",
+        "file_path": "proofnet_lean_files/test_55.lean",
         "output": "test_55.lean:12:0: error: unsolved goals\np : \u2115\nhp : Nat.Prime p\n\u22a2 (\u2203 s, s.card = (p - 1) / 2 \u2227 \u2200 x \u2208 s, \u2203 y, y ^ 2 \u2261 x [MOD p]) \u2227\n    \u2203 t, t.card = (p - 1) / 2 \u2227 \u2200 x \u2208 t, \u00ac\u2203 y, y ^ 2 \u2261 x [MOD p]",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5_23",
-        "file_path": "lean_files/test_56.lean",
+        "file_path": "proofnet_lean_files/test_56.lean",
         "output": "test_56.lean:14:0: error: unsolved goals\n\u22a2 let F := ZMod 7;\n  let p := X ^ 3 - 2;\n  let q := X ^ 3 + 2;\n  Irreducible p \u2227 Irreducible q \u2227 Nonempty (F[X] \u29f8 span {p} \u2243+* F[X] \u29f8 span {q})",
         "exit_code": 1
     },
     {
         "name": "exercise_4_6_2",
-        "file_path": "lean_files/test_57.lean",
+        "file_path": "proofnet_lean_files/test_57.lean",
         "output": "test_57.lean:10:0: error: unsolved goals\n\u22a2 Irreducible (12 + 6 * X + X ^ 3)",
         "exit_code": 1
     },
     {
         "name": "exercise_5_1_8",
-        "file_path": "lean_files/test_58.lean",
+        "file_path": "proofnet_lean_files/test_58.lean",
         "output": "test_58.lean:9:32: error: unexpected token '}'; expected '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_5_3_7",
-        "file_path": "lean_files/test_59.lean",
+        "file_path": "proofnet_lean_files/test_59.lean",
         "output": "test_59.lean:11:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_59.lean:8:51: error: function expected at\n  field\nterm has type\n  Field \u211d",
         "exit_code": 1
     },
     {
         "name": "exercise_5_4_3",
-        "file_path": "lean_files/test_60.lean",
+        "file_path": "proofnet_lean_files/test_60.lean",
         "output": "test_60.lean:8:57: error: unexpected token ','; expected '\u21a6', '=>'\ntest_60.lean:12:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_5_6_14",
-        "file_path": "lean_files/test_61.lean",
+        "file_path": "proofnet_lean_files/test_61.lean",
         "output": "test_61.lean:11:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_61.lean:8:55: error: function expected at\n  field\nterm has type\n  Field \u211d",
         "exit_code": 1
     },
     {
         "name": "exercise_2_26",
-        "file_path": "lean_files/test_62.lean",
+        "file_path": "proofnet_lean_files/test_62.lean",
         "output": "test_62.lean:11:0: error: unsolved goals\nM : Type u_1\ninst\u271d : TopologicalSpace M\nU : Set M\n\u22a2 IsOpen U \u2194 \u2200 x \u2208 U, x \u2209 closure U\u1d9c",
         "exit_code": 1
     },
     {
         "name": "exercise_2_32a",
-        "file_path": "lean_files/test_63.lean",
+        "file_path": "proofnet_lean_files/test_63.lean",
         "output": "test_63.lean:8:47: error: type expected, got\n  (set \u2115 : ?m.6 PUnit.{2})\ntest_63.lean:10:0: error: unsolved goals\n\u22a2 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_2_46",
-        "file_path": "lean_files/test_64.lean",
+        "file_path": "proofnet_lean_files/test_64.lean",
         "output": "test_64.lean:12:0: error: unsolved goals\nM : Type u_1\ninst\u271d : MetricSpace M\nA B : Set M\nhAc : IsCompact A\nhBc : IsCompact B\nhAd : A.Nonempty\nhBd : B.Nonempty\nhAB : Disjoint A B\n\u22a2 \u2203 a\u2080 \u2208 A, \u2203 b\u2080 \u2208 B, \u2200 a \u2208 A, \u2200 b \u2208 B, dist a\u2080 b\u2080 \u2264 dist a b",
         "exit_code": 1
     },
     {
         "name": "exercise_2_92",
-        "file_path": "lean_files/test_65.lean",
+        "file_path": "proofnet_lean_files/test_65.lean",
         "output": "test_65.lean:10:0: error: unknown identifier 'begin'\ntest_65.lean:11:12: error: unexpected token ','; expected command\ntest_65.lean:17:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_3_1",
-        "file_path": "lean_files/test_66.lean",
+        "file_path": "proofnet_lean_files/test_66.lean",
         "output": "test_66.lean:10:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_66.lean:8:98: error: function expected at\n  f b\nterm has type\n  \u211d",
         "exit_code": 1
     },
     {
         "name": "exercise_3_63a",
-        "file_path": "lean_files/test_67.lean",
+        "file_path": "proofnet_lean_files/test_67.lean",
         "output": "test_67.lean:9:51: error: unexpected token ','; expected '\u21a6', '=>'",
         "exit_code": 1
     },
     {
         "name": "exercise_4_15a",
-        "file_path": "lean_files/test_68.lean",
+        "file_path": "proofnet_lean_files/test_68.lean",
         "output": "test_68.lean:9:13: error: expected token",
         "exit_code": 1
     },
     {
         "name": "exercise_2_3_2",
-        "file_path": "lean_files/test_69.lean",
+        "file_path": "proofnet_lean_files/test_69.lean",
         "output": "test_69.lean:10:0: error: unsolved goals\nG : Type u_1\ninst\u271d : Group G\na b : G\n\u22a2 \u2203 g, g * (a * b) * g\u207b\u00b9 = b * a",
         "exit_code": 1
     },
     {
         "name": "exercise_3_2_7",
-        "file_path": "lean_files/test_70.lean",
+        "file_path": "proofnet_lean_files/test_70.lean",
         "output": "test_70.lean:9:43: error: invalid binder annotation, type is not a class instance\n  ?m.18\nuse the command `set_option checkBinderAnnotations false` to disable the check\ntest_70.lean:11:14: error: unexpected token ','; expected command\ntest_70.lean:15:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_3_7_2",
-        "file_path": "lean_files/test_71.lean",
+        "file_path": "proofnet_lean_files/test_71.lean",
         "output": "test_71.lean:13:0: error: unsolved goals\nF : Type u_1\nV : Type u_2\n\u03b9 : Type u_3\ninst\u271d\u00b3 : Infinite F\ninst\u271d\u00b2 : Field F\ninst\u271d\u00b9 : AddCommGroup V\ninst\u271d : Module F V\nu : \u03b9 \u2192 Submodule F V\nhu : \u2200 (i : \u03b9), u i \u2260 \u22a4\n\u22a2 \u22c3 i, \u2191(u i) \u2260 \u22a4",
         "exit_code": 1
     },
     {
         "name": "exercise_6_4_2",
-        "file_path": "lean_files/test_72.lean",
+        "file_path": "proofnet_lean_files/test_72.lean",
         "output": "test_72.lean:10:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Group G\ninst\u271d : Fintype G\np q : \u2115\nhp : Prime p\nhq : Prime q\nhG : card G = p * q\n\u22a2 IsSimpleGroup G \u2192 false = true",
         "exit_code": 1
     },
     {
         "name": "exercise_6_4_12",
-        "file_path": "lean_files/test_73.lean",
+        "file_path": "proofnet_lean_files/test_73.lean",
         "output": "test_73.lean:8:54: error: unexpected token '['; expected ','",
         "exit_code": 1
     },
     {
         "name": "exercise_10_1_13",
-        "file_path": "lean_files/test_74.lean",
+        "file_path": "proofnet_lean_files/test_74.lean",
         "output": "test_74.lean:8:48: error: function expected at\n  ring\nterm has type\n  Ring ?m.6[X]\ntest_74.lean:10:17: error: unexpected token ':='; expected command\ntest_74.lean:21:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_10_6_7",
-        "file_path": "lean_files/test_75.lean",
+        "file_path": "proofnet_lean_files/test_75.lean",
         "output": "test_75.lean:10:19: error: failed to synthesize\n  Membership \u2124 (Ideal R)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_75.lean:12:0: error: unsolved goals\nR : Type u_1\ninst\u271d : CommRing R\nI : Ideal R\nhI : I \u2260 \u22a5\n\u22a2 \u2203 n, n \u2260 0 \u2227 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_10_4_7a",
-        "file_path": "lean_files/test_76.lean",
+        "file_path": "proofnet_lean_files/test_76.lean",
         "output": "test_76.lean:10:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_76.lean:8:106: error: function expected at\n  J\nterm has type\n  Ideal R",
         "exit_code": 1
     },
     {
         "name": "exercise_11_2_13",
-        "file_path": "lean_files/test_77.lean",
+        "file_path": "proofnet_lean_files/test_77.lean",
         "output": "test_77.lean:10:0: error: unsolved goals\na b : \u2124\nh : a \u2223 b\n\u22a2 a \u2223 b",
         "exit_code": 1
     },
     {
         "name": "exercise_11_4_6a",
-        "file_path": "lean_files/test_78.lean",
+        "file_path": "proofnet_lean_files/test_78.lean",
         "output": "test_78.lean:10:0: error: unsolved goals\n\u22a2 Irreducible (X ^ 2 + X + 1)",
         "exit_code": 1
     },
     {
         "name": "exercise_11_4_6c",
-        "file_path": "lean_files/test_79.lean",
+        "file_path": "proofnet_lean_files/test_79.lean",
         "output": "test_79.lean:10:0: error: unsolved goals\n\u22a2 Irreducible (X ^ 3 - 9)",
         "exit_code": 1
     },
     {
         "name": "exercise_11_13_3",
-        "file_path": "lean_files/test_80.lean",
+        "file_path": "proofnet_lean_files/test_80.lean",
         "output": "test_80.lean:10:0: error: unsolved goals\n\u22a2 Infinite { p // \u2191\u2191p \u2261 -1 [ZMOD 4] }",
         "exit_code": 1
     },
     {
         "name": "exercise_13_6_10",
-        "file_path": "lean_files/test_81.lean",
+        "file_path": "proofnet_lean_files/test_81.lean",
         "output": "test_81.lean:9:10: error: function expected at\n  zmod\nterm has type\n  ?m.18\ntest_81.lean:11:0: error: unsolved goals\nx\u271d : Sort u_1\nzmod : x\u271d\np n : \u2115\nhp : Nat.Prime p\n\u22a2 \u220f x : sorry\u02e3, x = -1",
         "exit_code": 1
     },
     {
         "name": "exercise_1_2",
-        "file_path": "lean_files/test_82.lean",
+        "file_path": "proofnet_lean_files/test_82.lean",
         "output": "test_82.lean:10:30: error: unknown identifier 'complex.mk'\ntest_82.lean:12:0: error: unsolved goals\n\u22a2 sorry ^ 3 = 1",
         "exit_code": 1
     },
     {
         "name": "exercise_1_4",
-        "file_path": "lean_files/test_83.lean",
+        "file_path": "proofnet_lean_files/test_83.lean",
         "output": "test_83.lean:8:50: error: invalid binder annotation, type is not a class instance\n  ?m.12\nuse the command `set_option checkBinderAnnotations false` to disable the check\ntest_83.lean:11:14: error: unexpected token ':'; expected command\ntest_83.lean:14:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_1_7",
-        "file_path": "lean_files/test_84.lean",
+        "file_path": "proofnet_lean_files/test_84.lean",
         "output": "test_84.lean:11:0: error: unsolved goals\n\u22a2 \u2203 U, U \u2260 \u2205 \u2227 (\u2200 (c : \u211d), \u2200 u \u2208 U, c \u2022 u \u2208 U) \u2227 \u2200 (U' : Submodule \u211d (\u211d \u00d7 \u211d)), U \u2260 \u2191U'",
         "exit_code": 1
     },
     {
         "name": "exercise_1_9",
-        "file_path": "lean_files/test_85.lean",
+        "file_path": "proofnet_lean_files/test_85.lean",
         "output": "test_85.lean:9:15: error: invalid binder annotation, type is not a class instance\n  ?m.12\nuse the command `set_option checkBinderAnnotations false` to disable the check\ntest_85.lean:13:7: error: unexpected token ','; expected command\ntest_85.lean:28:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_3_8",
-        "file_path": "lean_files/test_86.lean",
+        "file_path": "proofnet_lean_files/test_86.lean",
         "output": "test_86.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_86.lean:10:29: error: invalid field notation, function 'ker' does not have argument with type (LinearMap ...) that can be used, it must be explicit or implicit with a unique name\ntest_86.lean:10:41: error: invalid field notation, function 'range' does not have argument with type (LinearMap ...) that can be used, it must be explicit or implicit with a unique name\ntest_86.lean:10:51: error: function expected at\n  Submodule.map T U\nterm has type\n  Submodule \u2102 W",
         "exit_code": 1
     },
     {
         "name": "exercise_5_1",
-        "file_path": "lean_files/test_87.lean",
+        "file_path": "proofnet_lean_files/test_87.lean",
         "output": "test_87.lean:12:0: error: unknown identifier 'begin'\ntest_87.lean:13:13: error: unexpected token ','; expected command\ntest_87.lean:18:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_5_11",
-        "file_path": "lean_files/test_88.lean",
+        "file_path": "proofnet_lean_files/test_88.lean",
         "output": "test_88.lean:9:39: error: unexpected token '\u03bb'; expected '(', '[', '_', '{', '\u2983' or identifier",
         "exit_code": 1
     },
     {
         "name": "exercise_5_13",
-        "file_path": "lean_files/test_89.lean",
+        "file_path": "proofnet_lean_files/test_89.lean",
         "output": "test_89.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_89.lean:9:44: error: invalid field 'dim', the environment does not contain 'Submodule.dim'\n  U\nhas type\n  Submodule F V\ntest_89.lean:9:52: error: failed to synthesize\n  HSub Cardinal.{u_2} \u2115 Cardinal.{u_2}\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_89.lean:9:7: error: function expected at\n  End\nterm has type\n  ?m.740",
         "exit_code": 1
     },
     {
         "name": "exercise_5_24",
-        "file_path": "lean_files/test_90.lean",
+        "file_path": "proofnet_lean_files/test_90.lean",
         "output": "test_90.lean:12:28: error: invalid field notation, function 'range' does not have argument with type (LinearMap ...) that can be used, it must be explicit or implicit with a unique name\ntest_90.lean:15:0: error: unsolved goals\nK : Type u_1\nV : Type u_2\ninst\u271d\u00b2 : Field K\ninst\u271d\u00b9 : AddCommGroup V\ninst\u271d : Module K V\nT : End K V\nhT : \u2200 (v : V), \u2203 c, v \u2208 T.eigenspace c \u2194 \u2203 c, v \u2208 T.eigenspace c\n\u22a2 \u2200 U \u2264 sorry, \u2203 n, finrank K \u21a5U = 2 * n",
         "exit_code": 1
     },
     {
         "name": "exercise_6_3",
-        "file_path": "lean_files/test_91.lean",
+        "file_path": "proofnet_lean_files/test_91.lean",
         "output": "test_91.lean:9:10: error: unknown identifier 'finset.range'\ntest_91.lean:10:10: error: unknown identifier 'finset.range'\ntest_91.lean:11:10: error: unknown identifier 'finset.range'\ntest_91.lean:13:0: error: unsolved goals\nn : \u2115\na b : \u2115 \u2192 \u211d\n\u22a2 (\u2211 j \u2208 sorry, a j * b j) ^ 2 \u2264 (\u2211 j \u2208 sorry, \u2191j * a j ^ 2) * \u2211 j \u2208 sorry, b j ^ 2 / \u2191j",
         "exit_code": 1
     },
     {
         "name": "exercise_6_13",
-        "file_path": "lean_files/test_92.lean",
+        "file_path": "proofnet_lean_files/test_92.lean",
         "output": "test_92.lean:10:23: error: expected token",
         "exit_code": 1
     },
     {
         "name": "exercise_7_5",
-        "file_path": "lean_files/test_93.lean",
+        "file_path": "proofnet_lean_files/test_93.lean",
         "output": "test_93.lean:10:11: error: failed to synthesize\n  Module \u2102 V\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_93.lean:10:70: error: failed to synthesize\n  HSMul \u2102 \u2115 ?m.19455\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.",
         "exit_code": 1
     },
     {
         "name": "exercise_7_9",
-        "file_path": "lean_files/test_94.lean",
+        "file_path": "proofnet_lean_files/test_94.lean",
         "output": "test_94.lean:11:21: error: unexpected token '\u03bb'; expected '(', '[', '_', '{', '\u2983' or identifier",
         "exit_code": 1
     },
     {
         "name": "exercise_7_11",
-        "file_path": "lean_files/test_95.lean",
+        "file_path": "proofnet_lean_files/test_95.lean",
         "output": "test_95.lean:10:26: error: failed to synthesize\n  FiniteDimensional \u2102 V\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_95.lean:10:38: error: failed to synthesize\n  FiniteDimensional \u2102 V\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_95.lean:13:0: error: unsolved goals\nV : Type u_1\ninst\u271d\u00b9 : NormedAddCommGroup V\ninst\u271d : InnerProductSpace \u2102 V\nT : End \u2102 V\nhT : T * sorry = sorry * T\n\u22a2 \u2203 S, S * S = T",
         "exit_code": 1
     },
     {
         "name": "exercise_1_1_2a",
-        "file_path": "lean_files/test_96.lean",
+        "file_path": "proofnet_lean_files/test_96.lean",
         "output": "test_96.lean:10:0: error: unsolved goals\n\u22a2 \u00ac\u2200 (a b : \u2124), a - b = b - a",
         "exit_code": 1
     },
     {
         "name": "exercise_1_1_4",
-        "file_path": "lean_files/test_97.lean",
+        "file_path": "proofnet_lean_files/test_97.lean",
         "output": "test_97.lean:10:0: error: unsolved goals\nn : \u2124\n\u22a2 \u2200 (a b c : \u2124), a * b * c \u2261 a * (b * c) [ZMOD n]",
         "exit_code": 1
     },
     {
         "name": "exercise_1_1_15",
-        "file_path": "lean_files/test_98.lean",
+        "file_path": "proofnet_lean_files/test_98.lean",
         "output": "test_98.lean:8:40: error: invalid binder annotation, type is not a class instance\n  ?m.12\nuse the command `set_option checkBinderAnnotations false` to disable the check\ntest_98.lean:8:40: error: function expected at\n  group\nterm has type\n  ?m.6\ntest_98.lean:10:0: error: unsolved goals\nx\u271d : Sort u_1\ngroup : x\u271d\n\u22a2 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_1_1_17",
-        "file_path": "lean_files/test_99.lean",
+        "file_path": "proofnet_lean_files/test_99.lean",
         "output": "test_99.lean:8:0: error: unexpected token '`'; expected command\ntest_99.lean:10:0: error: unknown identifier 'begin'\ntest_99.lean:11:2: error: unexpected token 'have'; expected command",
         "exit_code": 1
     },
     {
         "name": "exercise_1_1_20",
-        "file_path": "lean_files/test_100.lean",
+        "file_path": "proofnet_lean_files/test_100.lean",
         "output": "test_100.lean:10:0: error: unsolved goals\nG : Type u_1\ninst\u271d : Group G\nx : G\n\u22a2 orderOf x = orderOf x\u207b\u00b9",
         "exit_code": 1
     },
     {
         "name": "exercise_1_1_22b",
-        "file_path": "lean_files/test_101.lean",
+        "file_path": "proofnet_lean_files/test_101.lean",
         "output": "test_101.lean:8:33: error: failed to synthesize\n  HMul G G ?m.25\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_101.lean:8:43: error: failed to synthesize\n  HMul G G ?m.2331\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_101.lean:10:0: error: unsolved goals\nG : Type u_1\n\u22a2 \u2200 (a b : G), |sorry| = |sorry|",
         "exit_code": 1
     },
     {
         "name": "exercise_1_1_29",
-        "file_path": "lean_files/test_102.lean",
+        "file_path": "proofnet_lean_files/test_102.lean",
         "output": "test_102.lean:9:2: error: application type mismatch\n  Iff (CommGroup (A \u00d7 B))\nargument\n  CommGroup (A \u00d7 B)\nhas type\n  Type (max u_2 u_1) : Type ((max u_2 u_1) + 1)\nbut is expected to have type\n  Prop : Type\ntest_102.lean:9:22: error: application type mismatch\n  And (CommGroup A)\nargument\n  CommGroup A\nhas type\n  Type u_1 : Type (u_1 + 1)\nbut is expected to have type\n  Prop : Type\ntest_102.lean:11:0: error: unsolved goals\nA : Type u_1\nB : Type u_2\ninst\u271d\u00b9 : CommGroup A\ninst\u271d : CommGroup B\n\u22a2 sorry \u2194 sorry \u2227 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_1_3_8",
-        "file_path": "lean_files/test_103.lean",
+        "file_path": "proofnet_lean_files/test_103.lean",
         "output": "test_103.lean:9:14: error: application type mismatch\n  \u03a9 h\nargument\n  h\nhas type\n  \u03a9 = {n | n \u2265 1} : Prop\nbut is expected to have type\n  \u2115 : Type\ntest_103.lean:9:52: error: function expected at\n  SymmetricGroup\nterm has type\n  ?m.747\ntest_103.lean:11:0: error: unsolved goals\n\u03a9 : Set \u2115\nh : \u03a9 = {n | n \u2265 1}\nx\u271d : Sort u_1\nSymmetricGroup : x\u271d\n\u22a2 \u03a9 sorry \u2192 Infinite sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_1_6_23",
-        "file_path": "lean_files/test_104.lean",
+        "file_path": "proofnet_lean_files/test_104.lean",
         "output": "test_104.lean:12:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Group G\ninst\u271d : Fintype G\n\u03c3 : G \u2243 G\nh\u03c3 : \u2200 (g : G), \u03c3 g = g \u2194 g = 1\nh\u03c32 : \u03c3.trans \u03c3 = Equiv.refl G\n\u22a2 CommGroup G\ntest_104.lean:8:0: error: type of theorem 'finite_group_abelian' is not a proposition\n  {G : Type u_1} \u2192\n    [inst : Group G] \u2192\n      [inst_1 : Fintype G] \u2192 (\u03c3 : G \u2243 G) \u2192 (\u2200 (g : G), \u03c3 g = g \u2194 g = 1) \u2192 \u03c3.trans \u03c3 = Equiv.refl G \u2192 CommGroup G",
         "exit_code": 1
     },
     {
         "name": "exercise_2_1_13",
-        "file_path": "lean_files/test_105.lean",
+        "file_path": "proofnet_lean_files/test_105.lean",
         "output": "test_105.lean:8:35: error: function expected at\n  add_subgroup\nterm has type\n  ?m.3\ntest_105.lean:10:0: error: unsolved goals\nx\u271d : Sort u_1\nadd_subgroup : x\u271d\nH : sorry\nh : \u2200 x \u2208 H, x \u2260 0 \u2192 1 / x \u2208 H\n\u22a2 H = \u22a5 \u2228 H = \u22a4",
         "exit_code": 1
     },
     {
         "name": "exercise_2_4_16a",
-        "file_path": "lean_files/test_106.lean",
+        "file_path": "proofnet_lean_files/test_106.lean",
         "output": "test_106.lean:8:45: error: invalid binder annotation, type is not a class instance\n  ?m.12\nuse the command `set_option checkBinderAnnotations false` to disable the check\ntest_106.lean:12:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_2_4_16c",
-        "file_path": "lean_files/test_107.lean",
+        "file_path": "proofnet_lean_files/test_107.lean",
         "output": "test_107.lean:10:25: error: typeclass instance problem is stuck, it is often due to metavariables\n  HPow ?m.1192 \u2115 G",
         "exit_code": 1
     },
     {
         "name": "exercise_3_1_22a",
-        "file_path": "lean_files/test_108.lean",
+        "file_path": "proofnet_lean_files/test_108.lean",
         "output": "test_108.lean:11:4: error: unexpected end of input; expected ':=', 'where' or '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_3_2_8",
-        "file_path": "lean_files/test_109.lean",
+        "file_path": "proofnet_lean_files/test_109.lean",
         "output": "test_109.lean:9:49: error: failed to synthesize\n  Fintype \u21a5H\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_109.lean:9:66: error: failed to synthesize\n  Fintype \u21a5K\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_109.lean:12:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Group G\ninst\u271d : Fintype G\nH K : Subgroup G\nh_rel_prime : sorry.Coprime sorry\n\u22a2 H \u2293 K = \u22a5",
         "exit_code": 1
     },
     {
         "name": "exercise_3_2_16",
-        "file_path": "lean_files/test_110.lean",
+        "file_path": "proofnet_lean_files/test_110.lean",
         "output": "test_110.lean:10:0: error: unsolved goals\np : \u2115\nhp : Nat.Prime p\na : \u2124\n\u22a2 a ^ p \u2261 a [ZMOD \u2191p]",
         "exit_code": 1
     },
     {
         "name": "exercise_3_3_3",
-        "file_path": "lean_files/test_111.lean",
+        "file_path": "proofnet_lean_files/test_111.lean",
         "output": "test_111.lean:9:48: error: failed to synthesize\n  Fintype (G \u29f8 H)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_111.lean:10:49: error: failed to synthesize\n  HasQuotient (\u21a5K) (Subgroup G)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_111.lean:12:0: error: unsolved goals\n\u03b1\u271d : Sort u_2\np : \u03b1\u271d\nG : Type u_1\ninst\u271d\u00b3 : Group G\ninst\u271d\u00b2 : Fintype G\nH : Subgroup G\ninst\u271d\u00b9 : Fintype \u21a5H\ninst\u271d : H.Normal\nhH : sorry = p\n\u22a2 \u2200 {K : Subgroup G}, K \u2264 H \u2228 G = \u21a5(H \u2294 K) \u2227 sorry = p",
         "exit_code": 1
     },
     {
         "name": "exercise_3_4_4",
-        "file_path": "lean_files/test_112.lean",
+        "file_path": "proofnet_lean_files/test_112.lean",
         "output": "test_112.lean:11:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : CommGroup G\ninst\u271d : Fintype G\n\u22a2 \u2200 (n : \u2115), n \u2223 card G \u2192 \u2203 H fH, card \u21a5H = n",
         "exit_code": 1
     },
     {
         "name": "exercise_3_4_5b",
-        "file_path": "lean_files/test_113.lean",
+        "file_path": "proofnet_lean_files/test_113.lean",
         "output": "test_113.lean:8:103: error: failed to synthesize\n  Group (G \u29f8 H)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_113.lean:10:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Group G\nH : Subgroup G\ninst\u271d : IsSolvable G\n\u22a2 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_4_2_8",
-        "file_path": "lean_files/test_114.lean",
+        "file_path": "proofnet_lean_files/test_114.lean",
         "output": "test_114.lean:8:50: error: function expected at\n  fintype\nterm has type\n  Fintype (Set ?m.6)",
         "exit_code": 1
     },
     {
         "name": "exercise_4_2_9a",
-        "file_path": "lean_files/test_115.lean",
+        "file_path": "proofnet_lean_files/test_115.lean",
         "output": "test_115.lean:15:0: error: unsolved goals\np : \u2115\nhp : Nat.Prime p\nG : Type u_1\ninst\u271d\u00b2 : Group G\ninst\u271d\u00b9 : Fintype G\n\u03b1 : \u2115\nh\u03b1 : \u03b1 > 0\nhG : card G = p ^ \u03b1\nH : Subgroup G\ninst\u271d : Fintype \u21a5H\nhH : card \u21a5H = card G / p\n\u22a2 H.Normal",
         "exit_code": 1
     },
     {
         "name": "exercise_4_4_2",
-        "file_path": "lean_files/test_116.lean",
+        "file_path": "proofnet_lean_files/test_116.lean",
         "output": "test_116.lean:11:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_116.lean:9:37: error: function expected at\n  n\nterm has type\n  \u2115",
         "exit_code": 1
     },
     {
         "name": "exercise_4_4_6b",
-        "file_path": "lean_files/test_117.lean",
+        "file_path": "proofnet_lean_files/test_117.lean",
         "output": "test_117.lean:8:50: error: failed to synthesize\n  Group G\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_117.lean:10:0: error: unsolved goals\nG : Type u_1\n\u22a2 \u2203 N, sorry \u2227 \u00acsorry",
         "exit_code": 1
     },
     {
         "name": "exercise_4_4_8a",
-        "file_path": "lean_files/test_118.lean",
+        "file_path": "proofnet_lean_files/test_118.lean",
         "output": "test_118.lean:11:0: error: unsolved goals\nG : Type u_1\ninst\u271d : Group G\nH K : Subgroup G\nhHK : H \u2264 K\nhH_char : H.Characteristic\nhK_norm : K.Normal\n\u22a2 H.Normal",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5_13",
-        "file_path": "lean_files/test_119.lean",
+        "file_path": "proofnet_lean_files/test_119.lean",
         "output": "test_119.lean:9:15: error: unexpected token '['; expected ','",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5_15",
-        "file_path": "lean_files/test_120.lean",
+        "file_path": "proofnet_lean_files/test_120.lean",
         "output": "test_120.lean:9:15: error: unexpected token '['; expected ','",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5_17",
-        "file_path": "lean_files/test_121.lean",
+        "file_path": "proofnet_lean_files/test_121.lean",
         "output": "test_121.lean:11:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Fintype G\ninst\u271d : Group G\nhG : card G = 105\n\u22a2 \u2203 N5, (\u2191N5).Normal \u2227 \u2203 N7, (\u2191N7).Normal",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5_19",
-        "file_path": "lean_files/test_122.lean",
+        "file_path": "proofnet_lean_files/test_122.lean",
         "output": "test_122.lean:10:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Fintype G\ninst\u271d : Group G\nhG : card G = 6545\n\u22a2 \u00acIsSimpleGroup G",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5_21",
-        "file_path": "lean_files/test_123.lean",
+        "file_path": "proofnet_lean_files/test_123.lean",
         "output": "test_123.lean:8:61: error: failed to synthesize\n  Fintype G\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_123.lean:10:0: error: unsolved goals\nG : Type u_1\ninst\u271d : Group G\nhG : sorry = 2907\n\u22a2 \u00acIsSimpleGroup G",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5_23",
-        "file_path": "lean_files/test_124.lean",
+        "file_path": "proofnet_lean_files/test_124.lean",
         "output": "test_124.lean:10:0: error: unsolved goals\nG : Type u_1\ninst\u271d\u00b9 : Fintype G\ninst\u271d : Group G\nhG : card G = 462\n\u22a2 \u00acIsSimpleGroup G",
         "exit_code": 1
     },
     {
         "name": "exercise_4_5_33",
-        "file_path": "lean_files/test_125.lean",
+        "file_path": "proofnet_lean_files/test_125.lean",
         "output": "test_125.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_125.lean:10:34: error: function expected at\n  H\nterm has type\n  Subgroup G",
         "exit_code": 1
     },
     {
         "name": "exercise_7_1_2",
-        "file_path": "lean_files/test_126.lean",
+        "file_path": "proofnet_lean_files/test_126.lean",
         "output": "test_126.lean:8:35: error: function expected at\n  ring\nterm has type\n  Ring ?m.6[X]\ntest_126.lean:10:18: error: unexpected token ':='; expected command\ntest_126.lean:13:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_7_1_12",
-        "file_path": "lean_files/test_127.lean",
+        "file_path": "proofnet_lean_files/test_127.lean",
         "output": "test_127.lean:10:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_127.lean:8:102: error: function expected at\n  IsDomain \u21a5S\nterm has type\n  Prop",
         "exit_code": 1
     },
     {
         "name": "exercise_7_2_2",
-        "file_path": "lean_files/test_128.lean",
+        "file_path": "proofnet_lean_files/test_128.lean",
         "output": "test_128.lean:11:4: error: unexpected end of input; expected ':=', 'where' or '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_7_3_16",
-        "file_path": "lean_files/test_129.lean",
+        "file_path": "proofnet_lean_files/test_129.lean",
         "output": "test_129.lean:8:38: error: type expected, got\n  (CommRing : Type ?u.2 \u2192 Type ?u.2)\ntest_129.lean:11:13: error: unexpected token ','; expected command\ntest_129.lean:16:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_7_4_27",
-        "file_path": "lean_files/test_130.lean",
+        "file_path": "proofnet_lean_files/test_130.lean",
         "output": "test_130.lean:11:4: error: unexpected end of input; expected ':=', 'where' or '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_8_2_4",
-        "file_path": "lean_files/test_131.lean",
+        "file_path": "proofnet_lean_files/test_131.lean",
         "output": "test_131.lean:13:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_131.lean:10:70: error: failed to synthesize\n  HDiv R R ?m.2357\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_131.lean:11:2: error: function expected at\n  IsPrincipalIdealRing R\nterm has type\n  Prop",
         "exit_code": 1
     },
     {
         "name": "exercise_8_3_5a",
-        "file_path": "lean_files/test_132.lean",
+        "file_path": "proofnet_lean_files/test_132.lean",
         "output": "test_132.lean:9:22: error: unexpected token at this precedence level; consider parenthesizing the term",
         "exit_code": 1
     },
     {
         "name": "exercise_8_3_6b",
-        "file_path": "lean_files/test_133.lean",
+        "file_path": "proofnet_lean_files/test_133.lean",
         "output": "test_133.lean:10:61: error: expected ';' or line break",
         "exit_code": 1
     },
     {
         "name": "exercise_9_1_10",
-        "file_path": "lean_files/test_134.lean",
+        "file_path": "proofnet_lean_files/test_134.lean",
         "output": "test_134.lean:9:9: error: function expected at\n  ideal\nterm has type\n  ?m.6\ntest_134.lean:9:52: error: function expected at\n  ideal\nterm has type\n  ?m.6\ntest_134.lean:10:0: error: unknown identifier 'begin'\ntest_134.lean:12:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_9_4_2a",
-        "file_path": "lean_files/test_135.lean",
+        "file_path": "proofnet_lean_files/test_135.lean",
         "output": "test_135.lean:10:0: error: unsolved goals\n\u22a2 Irreducible (X ^ 4 - 4 * X ^ 3 + 6)",
         "exit_code": 1
     },
     {
         "name": "exercise_9_4_2c",
-        "file_path": "lean_files/test_136.lean",
+        "file_path": "proofnet_lean_files/test_136.lean",
         "output": "test_136.lean:10:0: error: unsolved goals\n\u22a2 Irreducible (X ^ 4 + 4 * X ^ 3 + 6 * X ^ 2 + 2 * X + 1)",
         "exit_code": 1
     },
     {
         "name": "exercise_9_4_9",
-        "file_path": "lean_files/test_137.lean",
+        "file_path": "proofnet_lean_files/test_137.lean",
         "output": "test_137.lean:8:77: error: failed to synthesize\n  GetElem Type \u211d ?m.912 ?m.913\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_137.lean:8:55: error: function expected at\n  sqrt\nterm has type\n  ?m.749\ntest_137.lean:10:0: error: unsolved goals\nx\u271d : outParam (Type \u2192 \u211d \u2192 Prop)\nsqrt : x\u271d \u2124 \u221a2\n\u22a2 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_11_1_13",
-        "file_path": "lean_files/test_138.lean",
+        "file_path": "proofnet_lean_files/test_138.lean",
         "output": "test_138.lean:8:46: error: failed to synthesize\n  HPow Type \u2115 ?m.324\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_138.lean:10:0: error: unsolved goals\n\u22a2 \u2115 \u2192 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_13_3b",
-        "file_path": "lean_files/test_139.lean",
+        "file_path": "proofnet_lean_files/test_139.lean",
         "output": "test_139.lean:8:30: error: invalid {...} notation, expected type is not of the form (C ...)\n  Type u_1\ntest_139.lean:10:0: error: unsolved goals\n\u22a2 \u00acsorry\ntest_139.lean:8:0: error: unused universe parameter 'u_1'",
         "exit_code": 1
     },
     {
         "name": "exercise_13_4a2",
-        "file_path": "lean_files/test_140.lean",
+        "file_path": "proofnet_lean_files/test_140.lean",
         "output": "test_140.lean:13:59: error: type expected, got\n  (set (set X) : ?m.815 PUnit.{?u.834 + 1})\ntest_140.lean:15:0: error: unsolved goals\nX : Type u_1\nI : Type u_2\nT : sorry\nh : ?m.1321 T \u2192 is_topology X sorry\n\u22a2 \u00acis_topology X (\u22c3 i, sorry)",
         "exit_code": 1
     },
     {
         "name": "exercise_13_4b2",
-        "file_path": "lean_files/test_141.lean",
+        "file_path": "proofnet_lean_files/test_141.lean",
         "output": "test_141.lean:17:0: error: unsolved goals\nX : Type u_1\nI : Type u_2\nT : I \u2192 Set (Set X)\nh : \u2200 (i : I), is_topology X (T i)\n\u22a2 \u2203! T',\n    is_topology X T' \u2227\n      (\u2200 (i : I), T i \u2286 T') \u2227 \u2200 (T'' : Set (Set X)), is_topology X T'' \u2192 (\u2200 (i : I), T i \u2286 T'') \u2192 T'' \u2286 T'",
         "exit_code": 1
     },
     {
         "name": "exercise_13_5b",
-        "file_path": "lean_files/test_142.lean",
+        "file_path": "proofnet_lean_files/test_142.lean",
         "output": "test_142.lean:13:72: error: failed to synthesize\n  TopologicalSpace X\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_142.lean:16:0: error: unsolved goals\nX : Type u_1\nA : Set (Set X)\nhA : sorry\n\u22a2 generateFrom A = generateFrom (\u22c2\u2080 {T | is_topology X T \u2227 A \u2286 T})",
         "exit_code": 1
     },
     {
         "name": "exercise_13_8a",
-        "file_path": "lean_files/test_143.lean",
+        "file_path": "proofnet_lean_files/test_143.lean",
         "output": "test_143.lean:9:74: error: unknown identifier 'topological_space.generate_from'\ntest_143.lean:11:0: error: unsolved goals\n\u22a2 TopologicalSpace.IsOpen = sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_16_1",
-        "file_path": "lean_files/test_144.lean",
+        "file_path": "proofnet_lean_files/test_144.lean",
         "output": "test_144.lean:9:12: error: application type mismatch\n  Y \u2286 X\nargument\n  X\nhas type\n  Type u_1 : Type (u_1 + 1)\nbut is expected to have type\n  Type u_2 : Type (u_2 + 1)\ntest_144.lean:9:8: error: failed to synthesize\n  HasSubset (Type u_2)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_144.lean:10:3: error: function expected at\n  subspace_topology\nterm has type\n  ?m.840\ntest_144.lean:10:29: error: function expected at\n  subspace_topology\nterm has type\n  ?m.840\ntest_144.lean:12:0: error: unsolved goals\nx\u271d : Sort u_3\nsubspace_topology : x\u271d\nX : Type u_1\nY : Type u_2\ninst\u271d\u00b9 : TopologicalSpace X\ninst\u271d : TopologicalSpace Y\nhY : sorry\nA : Set Y\n\u22a2 sorry = sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_16_6",
-        "file_path": "lean_files/test_145.lean",
+        "file_path": "proofnet_lean_files/test_145.lean",
         "output": "test_145.lean:11:2: error: type expected, got\n  (TopologicalSpace.IsOpen : Set (\u211d \u00d7 \u211d) \u2192 Prop)",
         "exit_code": 1
     },
     {
         "name": "exercise_18_8a",
-        "file_path": "lean_files/test_146.lean",
+        "file_path": "proofnet_lean_files/test_146.lean",
         "output": "test_146.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_146.lean:8:77: error: failed to synthesize\n  TopologicalSpace Y\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.",
         "exit_code": 1
     },
     {
         "name": "exercise_18_13",
-        "file_path": "lean_files/test_147.lean",
+        "file_path": "proofnet_lean_files/test_147.lean",
         "output": "test_147.lean:8:83: error: failed to synthesize\n  TopologicalSpace \u2191A\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_147.lean:9:11: error: failed to synthesize\n  TopologicalSpace X\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_147.lean:9:11: error: failed to synthesize\n  TopologicalSpace X\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_147.lean:9:75: error: application type mismatch\n  f x\nargument\n  x\nhas type\n  X : Type ?u.7\nbut is expected to have type\n  \u2191A : Type ?u.7\ntest_147.lean:9:99: error: application type mismatch\n  f x\nargument\n  x\nhas type\n  X : Type ?u.7\nbut is expected to have type\n  \u2191A : Type ?u.7\ntest_147.lean:11:0: error: unsolved goals\nX : Type u_2\nA : Set X\nY : Type u_1\ninst\u271d : MetricSpace Y\nf : \u2191A \u2192 Y\nhf : sorry\n\u22a2 \u2200 (g g' : sorry \u2192 Y), sorry \u2192 sorry \u2192 (\u2200 x \u2208 A, g sorry = f sorry) \u2192 (\u2200 x \u2208 A, g' sorry = f sorry) \u2192 g = g'",
         "exit_code": 1
     },
     {
         "name": "exercise_20_2",
-        "file_path": "lean_files/test_148.lean",
+        "file_path": "proofnet_lean_files/test_148.lean",
         "output": "test_148.lean:8:42: error: invalid {...} notation, expected type is not of the form (C ...)\n  Type u_1\ntest_148.lean:10:0: error: unsolved goals\n\u22a2 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_21_6b",
-        "file_path": "lean_files/test_149.lean",
+        "file_path": "proofnet_lean_files/test_149.lean",
         "output": "test_149.lean:13:0: error: unsolved goals\n\u22a2 \u2200 (f : \u2115 \u2192 \u2191I \u2192 \u211d), (\u2200 (x : \u2191I) (n : \u2115), f n x = \u2191x ^ n) \u2192 \u00ac\u2203 f\u2080, TendstoUniformly f f\u2080 atTop",
         "exit_code": 1
     },
     {
         "name": "exercise_22_2a",
-        "file_path": "lean_files/test_150.lean",
+        "file_path": "proofnet_lean_files/test_150.lean",
         "output": "test_150.lean:13:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_150.lean:11:29: error: function expected at\n  QuotientMap\nterm has type\n  ?m.849",
         "exit_code": 1
     },
     {
         "name": "exercise_22_5",
-        "file_path": "lean_files/test_151.lean",
+        "file_path": "proofnet_lean_files/test_151.lean",
         "output": "test_151.lean:10:13: error: invalid field notation, type is not of the form (C ...) where C is a constant\n  p\nhas type\n  X \u2192 Y\ntest_151.lean:12:0: error: unsolved goals\nX : Type u_1\nY : Type u_2\ninst\u271d\u00b9 : TopologicalSpace X\ninst\u271d : TopologicalSpace Y\np : X \u2192 Y\nhp : IsOpenMap p\nA : Set X\nhA : IsOpen A\n\u22a2 IsOpenMap sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_23_3",
-        "file_path": "lean_files/test_152.lean",
+        "file_path": "proofnet_lean_files/test_152.lean",
         "output": "test_152.lean:15:0: error: unsolved goals\nX : Type u_1\ninst\u271d : TopologicalSpace X\nA : Set X\nhA : IsConnected A\nA\u03b1 : \u2115 \u2192 Set X\nhA\u03b1 : \u2200 (n : \u2115), IsConnected (A\u03b1 n)\nhAn : \u2200 (n : \u2115), A \u2229 A\u03b1 n \u2260 \u2205\n\u22a2 IsConnected (A \u222a \u22c3 n, A\u03b1 n)",
         "exit_code": 1
     },
     {
         "name": "exercise_23_6",
-        "file_path": "lean_files/test_153.lean",
+        "file_path": "proofnet_lean_files/test_153.lean",
         "output": "test_153.lean:9:12: error: application type mismatch\n  A \u2286 X\nargument\n  X\nhas type\n  Type u_1 : Type (u_1 + 1)\nbut is expected to have type\n  Set X : Type u_1\ntest_153.lean:9:67: error: application type mismatch\n  sdiff X\nargument\n  X\nhas type\n  Type u_1 : Type (u_1 + 1)\nbut is expected to have type\n  Set X : Type u_1\ntest_153.lean:10:7: error: unknown constant 'TopologicalSpace.Bd'\ntest_153.lean:12:0: error: unsolved goals\nX : Type u_1\ninst\u271d : TopologicalSpace X\nA C : Set X\nhA : A \u2286 sorry\nhC : IsConnected C\nhCA : C \u2229 A \u2260 \u2205\nhCXA : C \u2229 (sorry \\ A) \u2260 \u2205\n\u22a2 C \u2229 sorry \u2260 \u2205",
         "exit_code": 1
     },
     {
         "name": "exercise_23_11",
-        "file_path": "lean_files/test_154.lean",
+        "file_path": "proofnet_lean_files/test_154.lean",
         "output": "test_154.lean:9:13: error: failed to synthesize\n  TopologicalSpace X\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_154.lean:8:49: error: function expected at\n  IsQuotientMap\nterm has type\n  ?m.18\ntest_154.lean:9:73: error: application type mismatch\n  IsConnected X\nargument\n  X\nhas type\n  Type ?u.231 : Type (?u.231 + 1)\nbut is expected to have type\n  Set ?m.1494 : Type ?u.1493",
         "exit_code": 1
     },
     {
         "name": "exercise_24_3a",
-        "file_path": "lean_files/test_155.lean",
+        "file_path": "proofnet_lean_files/test_155.lean",
         "output": "test_155.lean:8:103: error: invalid field notation, type is not of the form (C ...) where C is a constant\n  set\nhas type\n  ?m.424 \u2192 ?m.425 PUnit.{?u.423 + 1}\ntest_155.lean:11:0: error: unsolved goals\nX : Type u_1\ninst\u271d : TopologicalSpace X\nf : X \u2192 X\nhf : Continuous f\nhX : X = sorry\n\u22a2 \u2203 x, f x = x",
         "exit_code": 1
     },
     {
         "name": "exercise_25_9",
-        "file_path": "lean_files/test_156.lean",
+        "file_path": "proofnet_lean_files/test_156.lean",
         "output": "test_156.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'",
         "exit_code": 1
     },
     {
         "name": "exercise_26_12",
-        "file_path": "lean_files/test_157.lean",
+        "file_path": "proofnet_lean_files/test_157.lean",
         "output": "test_157.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_157.lean:10:64: error: function expected at\n  CompactSpace X\nterm has type\n  Prop",
         "exit_code": 1
     },
     {
         "name": "exercise_28_4",
-        "file_path": "lean_files/test_158.lean",
+        "file_path": "proofnet_lean_files/test_158.lean",
         "output": "test_158.lean:19:0: error: unsolved goals\nX : Type u_1\ninst\u271d\u00b9 : TopologicalSpace X\ninst\u271d : T1Space X\n\u22a2 countably_compact X \u2194 \u2200 (A : Set X), Infinite \u2191A \u2192 \u2203 x, x \u2208 closure A",
         "exit_code": 1
     },
     {
         "name": "exercise_28_6",
-        "file_path": "lean_files/test_159.lean",
+        "file_path": "proofnet_lean_files/test_159.lean",
         "output": "test_159.lean:10:52: error: failed to synthesize\n  Inv (X \u2192 X)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_159.lean:11:0: error: unknown identifier 'begin'\ntest_159.lean:13:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_29_4",
-        "file_path": "lean_files/test_160.lean",
+        "file_path": "proofnet_lean_files/test_160.lean",
         "output": "test_160.lean:12:0: error: unsolved goals\n\u22a2 \u00acLocallyCompactSpace \u2191(Icc 0 1)",
         "exit_code": 1
     },
     {
         "name": "exercise_30_10",
-        "file_path": "lean_files/test_161.lean",
+        "file_path": "proofnet_lean_files/test_161.lean",
         "output": "test_161.lean:8:75: error: function expected at\n  X\nterm has type\n  Type u_1\ntest_161.lean:8:52: error: invalid parametric local instance, parameter with type\n  ?m.6\ndoes not have forward dependencies, type class resolution cannot use this kind of local instance because it will not be able to infer a value for this parameter.",
         "exit_code": 1
     },
     {
         "name": "exercise_31_1",
-        "file_path": "lean_files/test_162.lean",
+        "file_path": "proofnet_lean_files/test_162.lean",
         "output": "test_162.lean:12:0: error: unsolved goals\nX : Type u_1\ninst\u271d\u00b9 : TopologicalSpace X\ninst\u271d : RegularSpace X\n\u22a2 \u2200 (x y : X), x \u2260 y \u2192 \u2203 U V, IsOpen U \u2227 IsOpen V \u2227 x \u2208 U \u2227 y \u2208 V \u2227 closure U \u2229 closure V = \u2205",
         "exit_code": 1
     },
     {
         "name": "exercise_31_3",
-        "file_path": "lean_files/test_163.lean",
+        "file_path": "proofnet_lean_files/test_163.lean",
         "output": "test_163.lean:8:40: error: type expected, got\n  (set \u03b1 : ?m.33 PUnit.{?u.31 + 1})\ntest_163.lean:10:0: error: unsolved goals\nx\u271d : Type u_1\n\u03b1 : x\u271d\n\u22a2 sorry",
         "exit_code": 1
     },
     {
         "name": "exercise_32_2a",
-        "file_path": "lean_files/test_164.lean",
+        "file_path": "proofnet_lean_files/test_164.lean",
         "output": "test_164.lean:11:0: error: unsolved goals\n\u03b9 : Type u_2\nX : \u03b9 \u2192 Type u_1\ninst\u271d : (i : \u03b9) \u2192 TopologicalSpace (X i)\nh : \u2200 (i : \u03b9), Nonempty (X i)\nh2 : RegularSpace ((i : \u03b9) \u2192 X i)\n\u22a2 \u2200 (i : \u03b9), RegularSpace (X i)",
         "exit_code": 1
     },
     {
         "name": "exercise_32_2c",
-        "file_path": "lean_files/test_165.lean",
+        "file_path": "proofnet_lean_files/test_165.lean",
         "output": "test_165.lean:8:94: error: function expected at\n  X\nterm has type\n  Type u_1\ntest_165.lean:8:71: error: invalid parametric local instance, parameter with type\n  ?m.6\ndoes not have forward dependencies, type class resolution cannot use this kind of local instance because it will not be able to infer a value for this parameter.",
         "exit_code": 1
     },
     {
         "name": "exercise_33_7",
-        "file_path": "lean_files/test_166.lean",
+        "file_path": "proofnet_lean_files/test_166.lean",
         "output": "test_166.lean:12:0: error: unsolved goals\nX : Type u_1\ninst\u271d : TopologicalSpace X\nhX : LocallyCompactSpace X\nhX' : T2Space X\n\u22a2 RegularSpace X",
         "exit_code": 1
     },
     {
         "name": "exercise_34_9",
-        "file_path": "lean_files/test_167.lean",
+        "file_path": "proofnet_lean_files/test_167.lean",
         "output": "test_167.lean:11:22: error: unknown constant 'Set.Univ'\ntest_167.lean:15:0: error: unsolved goals\nX : Type u_1\ninst\u271d\u2074 : TopologicalSpace X\ninst\u271d\u00b3 : CompactSpace X\ninst\u271d\u00b2 : T2Space X\nX1 X2 : Set X\nhX1 : IsClosed X1\nhX2 : IsClosed X2\nhUnion : X1 \u222a X2 = sorry\ninst\u271d\u00b9 : MetricSpace \u2191X1\ninst\u271d : MetricSpace \u2191X2\n\u22a2 MetrizableSpace X",
         "exit_code": 1
     },
     {
         "name": "exercise_43_2",
-        "file_path": "lean_files/test_168.lean",
+        "file_path": "proofnet_lean_files/test_168.lean",
         "output": "test_168.lean:11:78: error: application type mismatch\n  f x\nargument\n  x\nhas type\n  X : Type u_1\nbut is expected to have type\n  \u2191A : Type u_1\ntest_168.lean:11:9: error: function expected at\n  Closure\nterm has type\n  ?m.867",
         "exit_code": 1
     },
     {
         "name": "exercise_1_30",
-        "file_path": "lean_files/test_169.lean",
+        "file_path": "proofnet_lean_files/test_169.lean",
         "output": "test_169.lean:8:70: error: unknown identifier 'finset.range'\ntest_169.lean:10:0: error: unsolved goals\nn : \u2115\nhn : 1 < n\n\u22a2 \u00ac\u2203 k, \u2211 i \u2208 sorry, 1 / (i + 1) = \u2191k",
         "exit_code": 1
     },
     {
         "name": "exercise_2_4",
-        "file_path": "lean_files/test_170.lean",
+        "file_path": "proofnet_lean_files/test_170.lean",
         "output": "test_170.lean:11:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_170.lean:9:39: error: function expected at\n  even\nterm has type\n  ?m.563\ntest_170.lean:9:58: error: function expected at\n  1\nterm has type\n  ?m.7602",
         "exit_code": 1
     },
     {
         "name": "exercise_2_27a",
-        "file_path": "lean_files/test_171.lean",
+        "file_path": "proofnet_lean_files/test_171.lean",
         "output": "test_171.lean:10:0: error: unsolved goals\n\u22a2 \u2200 (N : \u2115), \u2203 n > N, \u2203 i, n = i 0 ^ 2 + i 1 ^ 2 \u2227 n + 1 = i 2 ^ 2 + i 3 ^ 2 \u2227 n + 2 = i 4 ^ 2 + i 5 ^ 2",
         "exit_code": 1
     },
     {
         "name": "exercise_3_4",
-        "file_path": "lean_files/test_172.lean",
+        "file_path": "proofnet_lean_files/test_172.lean",
         "output": "test_172.lean:10:0: error: unsolved goals\n\u22a2 \u00ac\u2203 x y, 3 * x ^ 2 + 2 = y ^ 2",
         "exit_code": 1
     },
     {
         "name": "exercise_3_10",
-        "file_path": "lean_files/test_173.lean",
+        "file_path": "proofnet_lean_files/test_173.lean",
         "output": "test_173.lean:8:90: error: unexpected token '!'; expected ':=', 'where' or '|'\ntest_173.lean:8:84: error: failed to synthesize\n  HSub \u2115 \u2115 (Sort ?u.19)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.",
         "exit_code": 1
     },
     {
         "name": "exercise_4_4",
-        "file_path": "lean_files/test_174.lean",
+        "file_path": "proofnet_lean_files/test_174.lean",
         "output": "test_174.lean:11:0: error: unsolved goals\np t : \u2115\nhp0 : Nat.Prime p\nhp1 : p = 4 * t + 1\na : \u2124\n\u22a2 IsPrimitiveRoot a p \u2194 IsPrimitiveRoot (-a) p",
         "exit_code": 1
     },
     {
         "name": "exercise_4_6",
-        "file_path": "lean_files/test_175.lean",
+        "file_path": "proofnet_lean_files/test_175.lean",
         "output": "test_175.lean:10:0: error: unsolved goals\np : \u2115\nhp : Nat.Prime p \u2227 p > 2\n\u22a2 IsPrimitiveRoot 3 p",
         "exit_code": 1
     },
     {
         "name": "exercise_4_11",
-        "file_path": "lean_files/test_176.lean",
+        "file_path": "proofnet_lean_files/test_176.lean",
         "output": "test_176.lean:9:10: error: unknown identifier 'finset.range'\ntest_176.lean:9:59: error: failed to synthesize\n  Neg \u2115\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_176.lean:11:0: error: unsolved goals\np k : \u2115\nhp : Nat.Prime p\n\u22a2 \u2211 i \u2208 sorry, i ^ k \u2261 if p - 1 \u2223 k then sorry else 0 [MOD p]",
         "exit_code": 1
     },
     {
         "name": "exercise_5_28",
-        "file_path": "lean_files/test_177.lean",
+        "file_path": "proofnet_lean_files/test_177.lean",
         "output": "test_177.lean:10:0: error: unknown identifier 'begin'\ntest_177.lean:12:0: error: invalid 'end', insufficient scopes",
         "exit_code": 1
     },
     {
         "name": "exercise_12_12",
-        "file_path": "lean_files/test_178.lean",
+        "file_path": "proofnet_lean_files/test_178.lean",
         "output": "test_178.lean:10:0: error: unsolved goals\n\u22a2 IsAlgebraic \u211a (sin (\u03c0 / 12))",
         "exit_code": 1
     },
     {
         "name": "exercise_2018_a5",
-        "file_path": "lean_files/test_179.lean",
+        "file_path": "proofnet_lean_files/test_179.lean",
         "output": "test_179.lean:8:48: error: function expected at\n  iterated_deriv\nterm has type\n  ?m.21\ntest_179.lean:10:20: error: function expected at\n  iterated_deriv\nterm has type\n  ?m.21\ntest_179.lean:13:0: error: unsolved goals\nx\u271d : Sort u_1\niterated_deriv : x\u271d\nf : \u211d \u2192 \u211d\nhf_diff : \u2200 (n : ?m.5935), Differentiable \u211d ?m.42\nhf0 : f 0 = 0\nhf1 : f 1 = 1\nhf_nonneg : \u2200 (x : \u211d), 0 \u2264 f x\n\u22a2 \u2203 n x, sorry < 0",
         "exit_code": 1
     },
     {
         "name": "exercise_2018_b4",
-        "file_path": "lean_files/test_180.lean",
+        "file_path": "proofnet_lean_files/test_180.lean",
         "output": "test_180.lean:12:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_180.lean:10:41: error: function expected at\n  x n\nterm has type\n  \u211d",
         "exit_code": 1
     },
     {
         "name": "exercise_2014_a5",
-        "file_path": "lean_files/test_181.lean",
+        "file_path": "proofnet_lean_files/test_181.lean",
         "output": "test_181.lean:7:15: error: type expected, got\n  (\"{p q r : \u2115} {G : Type*} [Group G] [Fintype G]\" : String)",
         "exit_code": 1
     },
     {
         "name": "exercise_2001_a5",
-        "file_path": "lean_files/test_182.lean",
+        "file_path": "proofnet_lean_files/test_182.lean",
         "output": "test_182.lean:7:44: error: The `ExistsUnique` notation should not be used with more than one binder.\n\nThe reason for this is that `\u2203! (x : \u03b1), \u2203! (y : \u03b2), p x y` has a completely different meaning from `\u2203! q : \u03b1 \u00d7 \u03b2, p q.1 q.2`. To prevent confusion, this notation requires that you be explicit and use one with the correct interpretation.",
         "exit_code": 1
     },
     {
         "name": "exercise_1999_b4",
-        "file_path": "lean_files/test_183.lean",
+        "file_path": "proofnet_lean_files/test_183.lean",
         "output": "test_183.lean:14:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_183.lean:12:23: error: function expected at\n  f x\nterm has type\n  \u211d",
         "exit_code": 1
     },
     {
         "name": "exercise_1998_b6",
-        "file_path": "lean_files/test_184.lean",
+        "file_path": "proofnet_lean_files/test_184.lean",
         "output": "test_184.lean:9:0: error: unsolved goals\na b c : \u2124\n\u22a2 \u2203 n > 0, \u00ac\u2203 k, k ^ 2 = \u2191n ^ 3 + a * \u2191n ^ 2 + b * \u2191n + c",
         "exit_code": 1
     }
