@@ -15,9 +15,11 @@ def load_headers(jsonl_file):
 
 def main():
     # 文件路径
-    extracted_file = "/Users/zhongkaiwen/Desktop/strict-llm/datasets/proofnet_log_with_extracted.json"
+    extracted_file = (
+        "/Users/zhongkaiwen/Desktop/strict-llm/datasets/minif2f_log_with_extracted.json"
+    )
     decomposed_file = (
-        "/Users/zhongkaiwen/Desktop/strict-llm/datasets/proofnet_decomposed.jsonl"
+        "/Users/zhongkaiwen/Desktop/strict-llm/datasets/minif2f_decomposed.jsonl"
     )
 
     # 加载 JSON 数据
@@ -53,7 +55,7 @@ def main():
     results = execute_lean_files(file_paths)
 
     # 保存结果
-    output_file = "lean_results.json"
+    output_file = "minif2f_lean_results.json"
     results_data = []
     for i, (file_path, output, exit_code) in enumerate(results):
         results_data.append(

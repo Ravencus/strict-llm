@@ -15,9 +15,11 @@ def load_headers(jsonl_file):
 
 def main():
     # 文件路径
-    extracted_file = "/Users/zhongkaiwen/Desktop/strict-llm/datasets/proofnet_log_with_extracted.json"
+    extracted_file = (
+        "/Users/zhongkaiwen/Desktop/strict-llm/datasets/minif2f_log_with_extracted.json"
+    )
     decomposed_file = (
-        "/Users/zhongkaiwen/Desktop/strict-llm/datasets/proofnet_decomposed.jsonl"
+        "/Users/zhongkaiwen/Desktop/strict-llm/datasets/minif2f_decomposed.jsonl"
     )
 
     # 加载 JSON 数据
@@ -28,7 +30,7 @@ def main():
     headers = load_headers(decomposed_file)
 
     # 创建存放 Lean 文件的目录
-    lean_dir = "lean_files_sol"
+    lean_dir = "minif2f_lean_files_sol"
     os.makedirs(lean_dir, exist_ok=True)
 
     # 保存每条 extracted_lean 加 header 后到临时文件
@@ -41,7 +43,7 @@ def main():
         header = headers.get(name, "")
 
         # 合并 header 和 extracted_lean
-        full_code = f"{header}\n\n{lean_code}by\n\ndone"
+        full_code = f"{header}\n\n{lean_code}\n\ndone"
 
         # 保存到文件
         file_name = os.path.join(lean_dir, f"test_{i+1}.lean")
@@ -53,7 +55,7 @@ def main():
     results = execute_lean_files(file_paths)
 
     # 保存结果
-    output_file = "lean_results_sol.json"
+    output_file = "minif2f_lean_results_sol.json"
     results_data = []
     for i, (file_path, output, exit_code) in enumerate(results):
         results_data.append(
