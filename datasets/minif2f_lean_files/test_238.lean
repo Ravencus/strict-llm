@@ -1,0 +1,19 @@
+import Mathlib
+import Aesop
+
+set_option maxHeartbeats 0
+
+open BigOperators Real Nat Topology Rat
+
+
+
+theorem unique_N_sum_of_digits : 
+  /-- Let $d(n)$ denote the number of positive integers that divide $n$, including $1$ and $n$. 
+  For example, $d(1)=1,d(2)=2,$ and $d(12)=6$. (This function is known as the divisor function.) 
+  Let $f(n)=\frac{d(n)}{\sqrt [3]n}.$ There is a unique positive integer $N$ such that $f(N)>f(n)$ 
+  for all positive integers $n\ne N$. What is the sum of the digits of $N?$ 
+
+  $\textbf{(A) }5 \qquad \textbf{(B) }6 \qquad \textbf{(C) }7 \qquad \textbf{(D) }8\qquad \textbf{(E) }9$ 
+  Show that it is \textbf{(E) }9.-/ := by
+
+done

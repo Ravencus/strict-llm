@@ -1,0 +1,1502 @@
+[
+    {
+        "name": "algebra_sqineq_unitcircatbpabsamblt1",
+        "file_path": "lean_files/test_1.lean",
+        "output": "test_1.lean:12:0: error: unsolved goals\nab a b : \u211d\nh\u2080 : a ^ 2 + b ^ 2 = 1\n\u22a2 ab + |a - b| \u2264 1",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_478",
+        "file_path": "lean_files/test_2.lean",
+        "output": "test_2.lean:11:14: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_4x3m7y3neq2003",
+        "file_path": "lean_files/test_3.lean",
+        "output": "test_3.lean:12:0: error: unsolved goals\n\u22a2 \u00ac\u2203 x y, 4 * x ^ 3 - 7 * y ^ 3 = 2003",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1983_p1",
+        "file_path": "lean_files/test_4.lean",
+        "output": "test_4.lean:20:0: error: unsolved goals\n\u22a2 \u2200 (x y z w : \u211d),\n    1 < x \u2227 1 < y \u2227 1 < z \u2192 0 < w \u2192 logb x w = 24 \u2192 logb y w = 40 \u2192 logb (x * y * z) w = 12 \u2192 logb z w = 60",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12_2001_p5",
+        "file_path": "lean_files/test_5.lean",
+        "output": "test_5.lean:11:2: error: function expected at\n  S\nterm has type\n  Finset \u2115\ntest_5.lean:14:0: error: unsolved goals\nS : Finset \u2115\n\u22a2 sorry \u2192 \u220f x \u2208 S, x = 10000! / (2 ^ 5000 * 5000!)",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_sqineq_unitcircatbpabsamblt1",
+        "file_path": "lean_files/test_6.lean",
+        "output": "test_6.lean:12:0: error: unsolved goals\nab a b : \u211d\nh\u2080 : a ^ 2 + b ^ 2 = 1\n\u22a2 ab + |a - b| \u2264 1",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_478",
+        "file_path": "lean_files/test_7.lean",
+        "output": "test_7.lean:11:14: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_4x3m7y3neq2003",
+        "file_path": "lean_files/test_8.lean",
+        "output": "test_8.lean:12:0: error: unsolved goals\n\u22a2 \u00ac\u2203 x y, 4 * x ^ 3 - 7 * y ^ 3 = 2003",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1983_p1",
+        "file_path": "lean_files/test_9.lean",
+        "output": "test_9.lean:20:0: error: unsolved goals\n\u22a2 \u2200 (x y z w : \u211d),\n    1 < x \u2227 1 < y \u2227 1 < z \u2192 0 < w \u2192 logb x w = 24 \u2192 logb y w = 40 \u2192 logb (x * y * z) w = 12 \u2192 logb z w = 60",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12_2001_p5",
+        "file_path": "lean_files/test_10.lean",
+        "output": "test_10.lean:11:2: error: function expected at\n  S\nterm has type\n  Finset \u2115\ntest_10.lean:14:0: error: unsolved goals\nS : Finset \u2115\n\u22a2 sorry \u2192 S.prod id = 10000! / (2 ^ 5000 * 5000!)",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_141",
+        "file_path": "lean_files/test_11.lean",
+        "output": "test_11.lean:13:0: error: unsolved goals\n\u22a2 \u2203 l w, l * w = 180 \u2227 2 * (l + w) = 54 \u2227 l ^ 2 + w ^ 2 = 369",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_3",
+        "file_path": "lean_files/test_12.lean",
+        "output": "test_12.lean:13:0: error: unsolved goals\n\u22a2 (\u2211 k \u2208 Finset.Icc 1 9, k ^ 2) % 10 = 5",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1969_p2",
+        "file_path": "lean_files/test_13.lean",
+        "output": "test_13.lean:10:79: error: failed to synthesize\n  Membership \u211d Type\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_13.lean:11:9: error: function expected at\n  f\nterm has type\n  ?m.974\ntest_13.lean:11:26: error: function expected at\n  f\nterm has type\n  ?m.974\ntest_13.lean:12:0: error: unknown identifier 'begin'\ntest_13.lean:14:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_209",
+        "file_path": "lean_files/test_14.lean",
+        "output": "test_14.lean:11:70: error: unexpected token ':'; expected ':=', 'where' or '|'\ntest_14.lean:11:18: error: application type mismatch\n  \u03c3 h\u2081\nargument\n  h\u2081\nhas type\n  \u03c3.invFun 2 = 10 : Prop\nbut is expected to have type\n  \u211d : Type",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_1124",
+        "file_path": "lean_files/test_15.lean",
+        "output": "test_15.lean:10:53: error: invalid hexadecimal numeral",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1983_p6",
+        "file_path": "lean_files/test_16.lean",
+        "output": "test_16.lean:12:0: error: unknown identifier 'begin'\ntest_16.lean:14:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_237",
+        "file_path": "lean_files/test_17.lean",
+        "output": "test_17.lean:12:0: error: unsolved goals\n\u22a2 (\u2211 k \u2208 Finset.Icc 1 100, k) % 6 = 4",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_33",
+        "file_path": "lean_files/test_18.lean",
+        "output": "test_18.lean:14:16: error: unknown tactic\ntest_18.lean:12:0: error: unsolved goals\ncase intro\nx y z : \u211d\nleft\u271d : 2 * x = 5 * y\nright\u271d : 7 * y = 10 * z\n\u22a2 z / x = 7 / 25",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2021_p3",
+        "file_path": "lean_files/test_19.lean",
+        "output": "test_19.lean:10:20: error: unexpected token '/--'; expected term\ntest_19.lean:13:182: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_299",
+        "file_path": "lean_files/test_20.lean",
+        "output": "test_20.lean:13:0: error: unexpected identifier; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2020_p2",
+        "file_path": "lean_files/test_21.lean",
+        "output": "test_21.lean:13:0: error: unsolved goals\n\u22a2 (100 ^ 2 - 7 ^ 2) / (70 ^ 2 - 11 ^ 2) * ((70 - 11) * (70 + 11)) / ((100 - 7) * (100 + 7)) = 1",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_sqineq_unitcircatbpabsamblt1",
+        "file_path": "lean_files/test_22.lean",
+        "output": "test_22.lean:12:0: error: unsolved goals\nab a b : \u211d\nh\u2080 : a ^ 2 + b ^ 2 = 1\n\u22a2 ab + |a - b| \u2264 1",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1977_p6",
+        "file_path": "lean_files/test_23.lean",
+        "output": "test_23.lean:12:0: error: unsolved goals\nf : \u2115+ \u2192 \u2115+\nh : \u2200 (n : \u2115+), f (n + 1) > f (f n)\n\u22a2 \u2200 (n : \u2115+), f n = n",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_419",
+        "file_path": "lean_files/test_24.lean",
+        "output": "test_24.lean:11:13: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2020_p10",
+        "file_path": "lean_files/test_25.lean",
+        "output": "test_25.lean:11:76: error: invalid field notation, type is not of the form (C ...) where C is a constant\n  n.digits\nhas type\n  \u2115 \u2192 List \u2115\ntest_25.lean:13:0: error: unsolved goals\n\u22a2 \u2203! n, logb 2 (logb 16 \u2191n) = logb 4 (logb 4 \u2191n) \u2227 sorry = 13",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1960_p2",
+        "file_path": "lean_files/test_26.lean",
+        "output": "test_26.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (x : \u211d), 4 * x ^ 2 / (1 - \u221a(2 * x + 1)) ^ 2 < 2 * x + 9",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_427",
+        "file_path": "lean_files/test_27.lean",
+        "output": "test_27.lean:12:2: error: function expected at\n  ?m.153\nterm has type\n  \u2115\ntest_27.lean:11:8: error: function expected at\n  f\nterm has type\n  ?m.5\ntest_27.lean:12:3: error: function expected at\n  a\nterm has type\n  ?m.40\ntest_27.lean:15:0: error: unsolved goals\nx\u271d\u00b9 : Sort u_1\nf : x\u271d\u00b9\nx\u271d : Sort u_2\na : x\u271d\nk : \u2115\n\u22a2 sorry = 3 \u2192 sorry \u2192 k = 25",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_x5neqy2p4",
+        "file_path": "lean_files/test_28.lean",
+        "output": "test_28.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (x y : \u2124), x ^ 5 \u2260 y ^ 2 + 4",
+        "exit_code": 1
+    },
+    {
+        "name": "imosl_2007_algebra_p6",
+        "file_path": "lean_files/test_29.lean",
+        "output": "test_29.lean:10:66: error: unknown identifier 'finset.range'\ntest_29.lean:11:9: error: unknown identifier 'finset.range'\ntest_29.lean:13:0: error: unsolved goals\na : \u2115 \u2192 \u211d\nh\u2080 : a 0 = 1\nh\u2081 : \u2211 n \u2208 sorry, a (n + 1) ^ 2 = 1\n\u22a2 \u2211 n \u2208 sorry, a (n + 1) ^ 2 * a (n + 2) + a 100 ^ 2 * a 1 < 12 / 25",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_398",
+        "file_path": "lean_files/test_30.lean",
+        "output": "test_30.lean:11:2: error: function expected at\n  ?m.10\nterm has type\n  \u211d\ntest_30.lean:11:3: error: function expected at\n  a\nterm has type\n  ?m.5\ntest_30.lean:11:72: error: function expected at\n  2\nterm has type\n  ?m.1802\ntest_30.lean:20:0: error: unexpected identifier; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1963_p5",
+        "file_path": "lean_files/test_31.lean",
+        "output": "test_31.lean:12:0: error: unsolved goals\n\u22a2 cos (\u03c0 / 7) - cos (2 * \u03c0 / 7) + cos (3 * \u03c0 / 7) = 1 / 2",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_430",
+        "file_path": "lean_files/test_32.lean",
+        "output": "test_32.lean:20:0: error: unknown identifier 'begin'\ntest_32.lean:22:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_459",
+        "file_path": "lean_files/test_33.lean",
+        "output": "test_33.lean:16:21: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "induction_12dvd4expnp1p20",
+        "file_path": "lean_files/test_34.lean",
+        "output": "test_34.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (n : \u2115), 12 \u2223 4 ^ (n + 1) + 20",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_320",
+        "file_path": "lean_files/test_35.lean",
+        "output": "test_35.lean:12:11: error: unknown identifier 'real.sqrt'\ntest_35.lean:13:0: error: unknown identifier 'begin'\ntest_35.lean:15:2: error: unexpected token 'let'; expected command\ntest_35.lean:40:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_137",
+        "file_path": "lean_files/test_36.lean",
+        "output": "test_36.lean:10:30: error: unexpected token '/--'; expected term\ntest_36.lean:10:252: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1997_p5",
+        "file_path": "lean_files/test_37.lean",
+        "output": "test_37.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (x y : \u2115), x > 0 \u2227 y > 0 \u2227 x ^ y ^ 2 = y ^ x \u2192 (x, y) = (1, 1) \u2228 (x, y) = (16, 2) \u2228 (x, y) = (27, 3)",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_277",
+        "file_path": "lean_files/test_38.lean",
+        "output": "test_38.lean:11:15: error: ambiguous, possible interpretations \n  m.gcd n : \u2115\n  \n  GCDMonoid.gcd m n : \u2115\ntest_38.lean:11:29: error: ambiguous, possible interpretations \n  m.lcm n : \u2115\n  \n  GCDMonoid.lcm m n : \u2115\ntest_38.lean:13:0: error: unsolved goals\n\u22a2 \u2200 (m n : \u2115), sorry = 6 \u2227 sorry = 126 \u2192 m + n = 60",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_559",
+        "file_path": "lean_files/test_39.lean",
+        "output": "test_39.lean:13:0: error: unsolved goals\n\u22a2 \u2203 X, 0 < X \u2227 (\u2203 k, X = 3 * k + 2) \u2227 (\u2203 m, X % 10 = (5 * m + 4) % 10) \u2227 X = 14",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_160",
+        "file_path": "lean_files/test_40.lean",
+        "output": "test_40.lean:12:0: error: unknown identifier 'begin'\ntest_40.lean:13:14: error: unexpected token ','; expected command\ntest_40.lean:22:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_24",
+        "file_path": "lean_files/test_41.lean",
+        "output": "test_41.lean:14:4: error: unexpected identifier; expected '['\ntest_41.lean:12:0: error: unsolved goals\ndaily_requirement calories : \u2115\nh\u2081 : calories = 40\nh\u2082 : calories = 2 * daily_requirement / 100\n\u22a2 daily_requirement = 2000",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_176",
+        "file_path": "lean_files/test_42.lean",
+        "output": "test_42.lean:13:0: error: unexpected identifier; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "induction_nfactltnexpnm1ngt3",
+        "file_path": "lean_files/test_43.lean",
+        "output": "test_43.lean:12:0: error: unsolved goals\nn! : \u2115\n\u22a2 \u2200 n \u2265 3, n! < n ^ (n - 1)",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_208",
+        "file_path": "lean_files/test_44.lean",
+        "output": "test_44.lean:10:26: error: ambiguous, possible interpretations \n  Rat.sqrt 1000000 : \u211a\n  \n  Nat.sqrt 1000000 : \u2115\n  \n  \u221a1000000 : \u211d\ntest_44.lean:10:41: error: function expected at\n  cbrt\nterm has type\n  ?m.43\ntest_44.lean:12:0: error: unsolved goals\nx\u271d : Sort u_1\ncbrt : x\u271d\n\u22a2 sorry - sorry = 900",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_353",
+        "file_path": "lean_files/test_45.lean",
+        "output": "test_45.lean:11:7: error: unexpected token '='; expected ':=' or '|'",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_notequiv2i2jasqbsqdiv8",
+        "file_path": "lean_files/test_46.lean",
+        "output": "test_46.lean:10:41: error: function expected at\n  even\nterm has type\n  ?m.8\ntest_46.lean:10:50: error: function expected at\n  even\nterm has type\n  ?m.8\ntest_46.lean:12:0: error: unsolved goals\nx\u271d : Sort u_1\neven : x\u271d\n\u22a2 \u00ac\u2200 (a b : \u2124), sorry \u2227 sorry \u2194 8 \u2223 a ^ 2 + b ^ 2",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_156",
+        "file_path": "lean_files/test_47.lean",
+        "output": "test_47.lean:10:29: error: unexpected token '/--'; expected term\ntest_47.lean:11:174: error: unexpected token ':='; expected 'lemma'\ntest_47.lean:44:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_12",
+        "file_path": "lean_files/test_48.lean",
+        "output": "test_48.lean:13:0: error: unsolved goals\n\u22a2 (Finset.filter (fun x => x % 20 = 0) (Finset.Icc 15 85)).card = 4",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_345",
+        "file_path": "lean_files/test_49.lean",
+        "output": "test_49.lean:12:0: error: unsolved goals\n\u22a2 (2000 + 2001 + 2002 + 2003 + 2004 + 2005 + 2006) % 7 = 0",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_447",
+        "file_path": "lean_files/test_50.lean",
+        "output": "test_50.lean:13:0: error: unsolved goals\n\u22a2 \u2211 k \u2208 Finset.Icc 0 16, 3 * k % 10 = 78",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_328",
+        "file_path": "lean_files/test_51.lean",
+        "output": "test_51.lean:12:0: error: unsolved goals\n\u22a2 5 ^ 999999 % 7 = 6",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_451",
+        "file_path": "lean_files/test_52.lean",
+        "output": "test_52.lean:15:22: error: typeclass instance problem is stuck, it is often due to metavariables\n  Insert \u2115 (?m.16558 n\u271d n m d1 d2 d3 d4)",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1997_p9",
+        "file_path": "lean_files/test_53.lean",
+        "output": "test_53.lean:14:0: error: unsolved goals\n\u22a2 \u2200 (a : \u211d), 0 < a \u2227 a\u207b\u00b9 - \u2191\u230aa\u207b\u00b9\u230b = a ^ 2 - \u2191\u230aa ^ 2\u230b \u2227 2 < a ^ 2 \u2227 a ^ 2 < 3 \u2192 a ^ 12 - 144 * a\u207b\u00b9 = 233",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_sqineq_at2malt1",
+        "file_path": "lean_files/test_54.lean",
+        "output": "test_54.lean:12:0: error: unsolved goals\na : \u211d\n\u22a2 a * (2 - a) \u2264 1",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_apbmpcneq0_aeq0anbeq0anceq0",
+        "file_path": "lean_files/test_55.lean",
+        "output": "test_55.lean:19:0: error: unsolved goals\n\u22a2 \u2200 (m n : \u211d) (a b c : \u211a), 0 < m \u2227 0 < n \u2192 m ^ 3 = 2 \u2192 n ^ 3 = 4 \u2192 \u2191a + \u2191b * m + \u2191c * n = 0 \u2192 a = 0 \u2227 b = 0 \u2227 c = 0",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_171",
+        "file_path": "lean_files/test_56.lean",
+        "output": "test_56.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (f : \u211d \u2192 \u211d), (\u2200 (x : \u211d), f x = 5 * x + 4) \u2192 f 1 = 9",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_227",
+        "file_path": "lean_files/test_57.lean",
+        "output": "test_57.lean:13:0: error: unsolved goals\n\u22a2 \u2200 (n a b : \u2115), a + b = 8 * n \u2192 a = 1 / 4 * b \u2192 b = 1 / 6 * a \u2192 n = 5",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_188",
+        "file_path": "lean_files/test_58.lean",
+        "output": "test_58.lean:13:0: error: unsolved goals\n\u22a2 \u2200 (\u03c3 : \u211d \u2243 \u211d), \u03c3 2 = 4 \u2227 \u03c3.symm 2 = 4 \u2192 \u03c3 (\u03c3 2) = 2",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_765",
+        "file_path": "lean_files/test_59.lean",
+        "output": "test_59.lean:10:53: error: type mismatch\n  24 * x\nhas type\n  \u2124 : outParam Type\nbut is expected to have type\n  \u2115 : Type\ntest_59.lean:12:0: error: unsolved goals\n\u22a2 IsLeast {x | sorry \u2261 15 [MOD 1199]} (-449)",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1959_p1",
+        "file_path": "lean_files/test_60.lean",
+        "output": "test_60.lean:10:42: error: unknown identifier 'nat.coprime'\ntest_60.lean:12:0: error: unsolved goals\n\u22a2 \u2115 \u2192 sorry",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_175",
+        "file_path": "lean_files/test_61.lean",
+        "output": "test_61.lean:10:36: error: unknown identifier 'nat.units_digit'\ntest_61.lean:12:0: error: unsolved goals\n\u22a2 sorry = 4",
+        "exit_code": 1
+    },
+    {
+        "name": "induction_sumkexp3eqsumksq",
+        "file_path": "lean_files/test_62.lean",
+        "output": "test_62.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (n : \u2115), \u2211 k \u2208 Finset.range n, k ^ 3 = (\u2211 k \u2208 Finset.range n, k) ^ 2",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+        "file_path": "lean_files/test_63.lean",
+        "output": "test_63.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (m n : \u2115), 0 < m \u2192 0 < n \u2192 m \u2264 n \u2192 4 ^ 2 ^ m + 6 ^ 2 ^ m + 9 ^ 2 ^ m \u2223 4 ^ 2 ^ n + 6 ^ 2 ^ n + 9 ^ 2 ^ n",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1992_p1",
+        "file_path": "lean_files/test_64.lean",
+        "output": "test_64.lean:14:0: error: unsolved goals\n\u22a2 \u2200 (p q r : \u2124),\n    1 < p \u2227 p < q \u2227 q < r \u2192 (p - 1) * (q - 1) * (r - 1) \u2223 p * q * r - 1 \u2192 p = 2 \u2227 q = 4 \u2227 r = 8 \u2228 p = 3 \u2227 q = 5 \u2227 r = 15",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1982_p1",
+        "file_path": "lean_files/test_65.lean",
+        "output": "test_65.lean:19:0: error: unsolved goals\n\u22a2 \u2200 (f : \u2115 \u2192 \u2115),\n    f 2 = 0 \u2192\n      f 3 > 0 \u2192 f 9999 = 3333 \u2192 (\u2200 (m n : \u2115), f (m + n) - f m - f n = 0 \u2228 f (m + n) - f m - f n = 1) \u2192 f 1982 = 660",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1987_p5",
+        "file_path": "lean_files/test_66.lean",
+        "output": "test_66.lean:12:0: error: unsolved goals\n\u22a2 \u2203 x y, y ^ 2 + 3 * x ^ 2 * y ^ 2 = 30 * x ^ 2 + 517 \u2227 3 * x ^ 2 * y ^ 2 = 588",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_346",
+        "file_path": "lean_files/test_67.lean",
+        "output": "test_67.lean:11:28: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_487",
+        "file_path": "lean_files/test_68.lean",
+        "output": "test_68.lean:11:65: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_728",
+        "file_path": "lean_files/test_69.lean",
+        "output": "test_69.lean:12:0: error: unsolved goals\n\u22a2 29 ^ 13 - 5 ^ 13 = 3",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_184",
+        "file_path": "lean_files/test_70.lean",
+        "output": "test_70.lean:12:24: error: unexpected token ','; expected '\u21a6', '=>'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_552",
+        "file_path": "lean_files/test_71.lean",
+        "output": "test_71.lean:11:29: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2021_p9",
+        "file_path": "lean_files/test_72.lean",
+        "output": "test_72.lean:12:0: error: unsolved goals\n\u22a2 logb 2 80 / logb 40 2 - logb 2 160 / logb 20 2 = 2",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1994_p3",
+        "file_path": "lean_files/test_73.lean",
+        "output": "test_73.lean:13:18: error: unexpected token ':'; expected ':=', 'where' or '|'\ntest_73.lean:12:2: error: application type mismatch\n  f h\u2080\nargument\n  h\u2080\nhas type\n  \u2200 (x : \u211d), f x + f (x - 1) = x ^ 2 : Prop\nbut is expected to have type\n  \u211d : Type",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_44",
+        "file_path": "lean_files/test_74.lean",
+        "output": "test_74.lean:12:0: error: unsolved goals\n\u22a2 \u2203 s t, s = 9 - 2 * t \u2227 t = 3 * s + 1 \u2227 s = 1 \u2227 t = 4",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_215",
+        "file_path": "lean_files/test_75.lean",
+        "output": "test_75.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (x : \u2124), (x + 3) ^ 2 = 121 \u2192 \u2203 a b, a \u2260 b \u2227 (x = a \u2228 x = b) \u2227 a + b = -6",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_293",
+        "file_path": "lean_files/test_76.lean",
+        "output": "test_76.lean:12:0: error: unsolved goals\n\u22a2 \u2203 b < 10, (207 + b * 10) % 11 = 0 \u2227 b = 5",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_769",
+        "file_path": "lean_files/test_77.lean",
+        "output": "test_77.lean:12:0: error: unsolved goals\n\u22a2 129 ^ 34 + 96 ^ 38 \u2261 9 [MOD 11]",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_452",
+        "file_path": "lean_files/test_78.lean",
+        "output": "test_78.lean:11:21: error: function expected at\n  u\nterm has type\n  ?m.16\ntest_78.lean:11:40: error: function expected at\n  u\nterm has type\n  ?m.16\ntest_78.lean:11:52: error: function expected at\n  u\nterm has type\n  ?m.16\ntest_78.lean:11:64: error: function expected at\n  u\nterm has type\n  ?m.16\ntest_78.lean:12:0: error: unknown identifier 'begin'\ntest_78.lean:14:2: error: unexpected token 'let'; expected command\ntest_78.lean:31:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_5",
+        "file_path": "lean_files/test_79.lean",
+        "output": "test_79.lean:16:5: error: unknown tactic",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_207",
+        "file_path": "lean_files/test_80.lean",
+        "output": "test_80.lean:13:0: error: unexpected identifier; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_342",
+        "file_path": "lean_files/test_81.lean",
+        "output": "test_81.lean:12:0: error: unsolved goals\n\u22a2 54 % 6 = 0",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_483",
+        "file_path": "lean_files/test_82.lean",
+        "output": "test_82.lean:10:0: error: unexpected token '`'; expected command\ntest_82.lean:11:36: error: unexpected token '/--'; expected term\ntest_82.lean:12:232: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2020_p21",
+        "file_path": "lean_files/test_83.lean",
+        "output": "test_83.lean:11:2: error: function expected at\n  S\nterm has type\n  Finset \u2115\ntest_83.lean:13:0: error: unsolved goals\nS : Finset \u2115\n\u22a2 sorry = 6",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2003_p5",
+        "file_path": "lean_files/test_84.lean",
+        "output": "test_84.lean:15:0: error: unknown identifier 'begin'\ntest_84.lean:17:2: error: unexpected token 'let'; expected command\ntest_84.lean:48:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_495",
+        "file_path": "lean_files/test_85.lean",
+        "output": "test_85.lean:11:57: error: ambiguous, possible interpretations \n  a.gcd b : \u2115\n  \n  GCDMonoid.gcd a b : \u2115\ntest_85.lean:11:71: error: ambiguous, possible interpretations \n  a.lcm b : \u2115\n  \n  GCDMonoid.lcm a b : \u2115\ntest_85.lean:12:0: error: unknown identifier 'begin'\ntest_85.lean:13:14: error: unexpected token ','; expected command\ntest_85.lean:25:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_296",
+        "file_path": "lean_files/test_86.lean",
+        "output": "test_86.lean:11:34: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2",
+        "file_path": "lean_files/test_87.lean",
+        "output": "test_87.lean:15:0: error: unsolved goals\na b c : \u211d\nh\u2080 : 0 < a \u2227 0 < b \u2227 0 < c\nh\u2081 : 3 \u2264 a * b + b * c + c * a\n\u22a2 3 / \u221a2 \u2264 a / \u221a(a + b) + b / \u221a(b + c) + c / \u221a(c + a)",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_2varlineareq_fp3zeq11_3tfm1m5zeqn68_feqn10_zeq7",
+        "file_path": "lean_files/test_88.lean",
+        "output": "test_88.lean:13:0: error: unsolved goals\n\u22a2 \u2200 (f z : \u2124), f + 3 * z = 11 \u2227 3 * (f - 1) - 5 * z = -68 \u2192 f = -10 \u2227 z = 7",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_247",
+        "file_path": "lean_files/test_89.lean",
+        "output": "test_89.lean:12:0: error: unsolved goals\n\u22a2 \u2203 n, 3 * n % 11 = 2 \u2227 n = 8",
+        "exit_code": 1
+    },
+    {
+        "name": "induction_pord1p1on2powklt5on2",
+        "file_path": "lean_files/test_90.lean",
+        "output": "test_90.lean:10:42: error: unknown identifier 'finset.range'\ntest_90.lean:12:0: error: unsolved goals\nn : \u2115\n\u22a2 \u220f k \u2208 sorry, (1 + 1 / 2 ^ k) < 5 / 2",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_107",
+        "file_path": "lean_files/test_91.lean",
+        "output": "test_91.lean:10:31: error: unexpected token '/--'; expected term\ntest_91.lean:10:127: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_2pownm1prime_nprime",
+        "file_path": "lean_files/test_92.lean",
+        "output": "test_92.lean:12:0: error: unsolved goals\nn : \u2115\nh\u2080 : 0 < n\nh\u2081 : Nat.Prime (2 ^ n - 1)\n\u22a2 Nat.Prime n",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_412",
+        "file_path": "lean_files/test_93.lean",
+        "output": "test_93.lean:12:0: error: unknown identifier 'begin'\ntest_93.lean:13:13: error: unexpected token ','; expected command\ntest_93.lean:22:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2013_p4",
+        "file_path": "lean_files/test_94.lean",
+        "output": "test_94.lean:12:0: error: unsolved goals\n\u22a2 (2 ^ 2014 + 2 ^ 2012) / (2 ^ 2014 - 2 ^ 2012) = 5 / 3",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_392",
+        "file_path": "lean_files/test_95.lean",
+        "output": "test_95.lean:13:0: error: unknown identifier 'begin'\ntest_95.lean:15:2: error: unexpected token 'let'; expected command\ntest_95.lean:34:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_314",
+        "file_path": "lean_files/test_96.lean",
+        "output": "test_96.lean:11:21: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "induction_prod1p1onk3le3m1onn",
+        "file_path": "lean_files/test_97.lean",
+        "output": "test_97.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (n : \u2115), n \u2260 0 \u2192 \u220f k \u2208 Finset.range n, (1 + 1 / (\u2191k + 1) ^ 3) \u2264 3 - 1 / \u2191n",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_343",
+        "file_path": "lean_files/test_98.lean",
+        "output": "test_98.lean:10:40: error: unexpected token '/--'; expected term\ntest_98.lean:11:110: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_756",
+        "file_path": "lean_files/test_99.lean",
+        "output": "test_99.lean:12:0: error: unsolved goals\n\u22a2 \u2203 a b, 2 ^ a = 32 \u2227 a ^ b = 125 \u2227 b ^ a = 243",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2002_p7",
+        "file_path": "lean_files/test_100.lean",
+        "output": "test_100.lean:12:0: error: unknown identifier 'begin'\ntest_100.lean:13:7: error: unexpected token ','; expected command\ntest_100.lean:23:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_80",
+        "file_path": "lean_files/test_101.lean",
+        "output": "test_101.lean:12:0: error: unsolved goals\nx : \u2124\n\u22a2 (x - 9) / (x + 1) = 2 \u2192 x = -11",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_457",
+        "file_path": "lean_files/test_102.lean",
+        "output": "test_102.lean:13:0: error: unsolved goals\nn! : \u2115\n\u22a2 \u2203 n, 0 < n \u2227 80325 \u2223 n! \u2227 n = 17",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12_2000_p12",
+        "file_path": "lean_files/test_103.lean",
+        "output": "test_103.lean:13:0: error: unknown identifier 'begin'\ntest_103.lean:14:16: error: unexpected token ','; expected command\ntest_103.lean:32:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_135",
+        "file_path": "lean_files/test_104.lean",
+        "output": "test_104.lean:11:23: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_275",
+        "file_path": "lean_files/test_105.lean",
+        "output": "test_105.lean:11:19: error: unknown identifier 'real.sqrt'\ntest_105.lean:12:3: error: unknown identifier 'real.sqrt'\ntest_105.lean:14:0: error: unsolved goals\n\u22a2 \u2200 (x : \u211d) (h\u2080 : sorry ^ (3 * x - 3) = 1 / 5), sorry ^ (6 * x + 2) = 121 / 25",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_388",
+        "file_path": "lean_files/test_106.lean",
+        "output": "test_106.lean:13:16: error: unknown tactic\ntest_106.lean:11:76: error: unsolved goals\ncase intro\nx y z : \u2124\nleft\u271d : 3 * x + 4 * y - 12 * z = 10\nright\u271d : -2 * x - 3 * y + 9 * z = -4\n\u22a2 x = 14",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2020_p7",
+        "file_path": "lean_files/test_107.lean",
+        "output": "test_107.lean:10:37: error: unexpected token '/--'; expected term\ntest_107.lean:13:149: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1981_p6",
+        "file_path": "lean_files/test_108.lean",
+        "output": "test_108.lean:16:0: error: unknown identifier 'begin'\ntest_108.lean:18:2: error: unexpected token 'let'; expected command\ntest_108.lean:35:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_263",
+        "file_path": "lean_files/test_109.lean",
+        "output": "test_109.lean:12:0: error: unsolved goals\n\u22a2 \u2203 y, \u221a(19 + 3 * y) = 7 \u2227 y = 10",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_34",
+        "file_path": "lean_files/test_110.lean",
+        "output": "test_110.lean:10:30: error: unexpected token '/--'; expected term\ntest_110.lean:10:154: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_764",
+        "file_path": "lean_files/test_111.lean",
+        "output": "test_111.lean:13:0: error: unsolved goals\np : \u2115\nh\u2080 : Nat.Prime p\nh\u2081 : 7 \u2264 p\n\u22a2 \u2211 i \u2208 Finset.range (p - 1), (\u2191i)\u207b\u00b9 * (\u2191i + 1)\u207b\u00b9 = 2",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2021_p4",
+        "file_path": "lean_files/test_112.lean",
+        "output": "test_112.lean:10:30: error: unexpected token '/--'; expected term\ntest_112.lean:13:143: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1962_p2",
+        "file_path": "lean_files/test_113.lean",
+        "output": "test_113.lean:12:2: error: function expected at\n  Icc\nterm has type\n  ?m.297\ntest_113.lean:14:0: error: unsolved goals\nx\u271d : Sort u_1\nIcc : x\u271d\n\u22a2 {x | \u221a(\u221a(3 - x) - \u221a(x + 1)) > 1 / 2} = sorry",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_170",
+        "file_path": "lean_files/test_114.lean",
+        "output": "test_114.lean:10:32: error: unexpected token '/--'; expected term\ntest_114.lean:11:89: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_432",
+        "file_path": "lean_files/test_115.lean",
+        "output": "test_115.lean:12:0: error: unsolved goals\nx : \u2115\n\u22a2 (x + 3) * (2 * x - 6) = 2 * x ^ 2 - 18",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_598",
+        "file_path": "lean_files/test_116.lean",
+        "output": "test_116.lean:11:18: error: failed to synthesize\n  HPow \u2115 \u211d (?m.832 a b c d)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_116.lean:11:28: error: failed to synthesize\n  HPow \u2115 \u211d (?m.837 a b c d)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_116.lean:11:38: error: failed to synthesize\n  HPow \u2115 \u211d (?m.842 a b c d)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_116.lean:11:48: error: failed to synthesize\n  HPow \u2115 \u211d (?m.847 a b c d)\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_116.lean:14:16: error: unknown identifier 'real.log'\ntest_116.lean:14:29: error: unknown identifier 'real.log'\ntest_116.lean:14:52: error: unknown identifier 'real.rpow_eq_log_rpow'\ntest_116.lean:14:50: error: tactic 'rewrite' failed, equality or iff proof expected\n  ?m.6135\na b c d : \u211d\nh : 4 ^ a = 5 \u2227 5 ^ b = 6 \u2227 6 ^ c = 7 \u2227 7 ^ d = 8\n\u22a2 a = sorry / sorry\ntest_116.lean:15:16: error: unknown identifier 'real.log'\ntest_116.lean:15:29: error: unknown identifier 'real.log'\ntest_116.lean:15:52: error: unknown identifier 'real.rpow_eq_log_rpow'\ntest_116.lean:15:50: error: tactic 'rewrite' failed, equality or iff proof expected\n  ?m.6178\na b c d : \u211d\nh : 4 ^ a = 5 \u2227 5 ^ b = 6 \u2227 6 ^ c = 7 \u2227 7 ^ d = 8\nh\u2081 : a = sorry / sorry\n\u22a2 b = sorry / sorry\ntest_116.lean:16:16: error: unknown identifier 'real.log'\ntest_116.lean:16:29: error: unknown identifier 'real.log'\ntest_116.lean:16:52: error: unknown identifier 'real.rpow_eq_log_rpow'\ntest_116.lean:16:50: error: tactic 'rewrite' failed, equality or iff proof expected\n  ?m.6221\na b c d : \u211d\nh : 4 ^ a = 5 \u2227 5 ^ b = 6 \u2227 6 ^ c = 7 \u2227 7 ^ d = 8\nh\u2081 : a = sorry / sorry\nh\u2082 : b = sorry / sorry\n\u22a2 c = sorry / sorry\ntest_116.lean:17:16: error: unknown identifier 'real.log'\ntest_116.lean:17:29: error: unknown identifier 'real.log'\ntest_116.lean:17:52: error: unknown identifier 'real.rpow_eq_log_rpow'\ntest_116.lean:17:50: error: tactic 'rewrite' failed, equality or iff proof expected\n  ?m.6264\na b c d : \u211d\nh : 4 ^ a = 5 \u2227 5 ^ b = 6 \u2227 6 ^ c = 7 \u2227 7 ^ d = 8\nh\u2081 : a = sorry / sorry\nh\u2082 : b = sorry / sorry\nh\u2083 : c = sorry / sorry\n\u22a2 d = sorry / sorry\ntest_116.lean:20:8: error: unknown identifier 'real.log_mul'\ntest_116.lean:20:6: error: tactic 'rewrite' failed, equality or iff proof expected\n  ?m.74697\na b c d : \u211d\nh : 4 ^ a = 5 \u2227 5 ^ b = 6 \u2227 6 ^ c = 7 \u2227 7 ^ d = 8\nh\u2081 : a = sorry / sorry\nh\u2082 : b = sorry / sorry\nh\u2083 : c = sorry / sorry\nh\u2084 : d = sorry / sorry\n\u22a2 sorry * 2 / sorry = 3\ntest_116.lean:23:0: error: unexpected identifier; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_bleqa_apbon2msqrtableqambsqon8b",
+        "file_path": "lean_files/test_117.lean",
+        "output": "test_117.lean:11:16: error: unknown identifier 'real.sqrt'\ntest_117.lean:13:0: error: unsolved goals\na b : \u211d\nh\u2080 : 0 < a \u2227 0 < b \u2227 b \u2264 a\n\u22a2 (a + b) / 2 - sorry \u2264 (a - b) ^ 2 / (8 * b)",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_276",
+        "file_path": "lean_files/test_118.lean",
+        "output": "test_118.lean:13:0: error: unsolved goals\nx : \u2124\n\u22a2 \u2203 A B, 10 * x ^ 2 - x - 24 = (A * x - 8) * (B * x + 3) \u2227 A * B + B = 12",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p14",
+        "file_path": "lean_files/test_119.lean",
+        "output": "test_119.lean:10:38: error: unknown identifier 'finset.range'\ntest_119.lean:10:55: error: unknown identifier 'real.log'\ntest_119.lean:10:78: error: unknown identifier 'real.log'\ntest_119.lean:11:38: error: unknown identifier 'finset.range'\ntest_119.lean:11:56: error: unknown identifier 'real.log'\ntest_119.lean:11:74: error: unknown identifier 'real.log'\ntest_119.lean:13:0: error: unsolved goals\n\u22a2 (\u2211 k \u2208 sorry, sorry / sorry) * \u2211 k \u2208 sorry, sorry / sorry = 21000",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+        "file_path": "lean_files/test_120.lean",
+        "output": "test_120.lean:10:41: error: unknown identifier 'finset.range'\ntest_120.lean:10:65: error: unknown identifier 'real.sqrt'\ntest_120.lean:12:0: error: unsolved goals\n\u22a2 \u2211 k \u2208 sorry, 1 / sorry < 198",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_618",
+        "file_path": "lean_files/test_121.lean",
+        "output": "test_121.lean:11:19: error: ambiguous, possible interpretations \n  (n ^ 2 - n + 41).gcd ((n + 1) ^ 2 - (n + 1) + 41) : \u2115\n  \n  GCDMonoid.gcd (n ^ 2 - n + 41) ((n + 1) ^ 2 - (n + 1) + 41) : ?m.476\ntest_121.lean:14:0: error: unsolved goals\n\u22a2 \u2203 n > 0, sorry > 1 \u2227 n = 41",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2020_p4",
+        "file_path": "lean_files/test_122.lean",
+        "output": "test_122.lean:11:141: error: unknown identifier 'finset.range'\ntest_122.lean:12:0: error: unknown identifier 'begin'\ntest_122.lean:14:2: error: unexpected token 'let'; expected command\ntest_122.lean:41:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2020_p6",
+        "file_path": "lean_files/test_123.lean",
+        "output": "test_123.lean:11:0: error: unknown identifier 'begin'\ntest_123.lean:12:13: error: unexpected token ','; expected command\ntest_123.lean:16:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_435",
+        "file_path": "lean_files/test_124.lean",
+        "output": "test_124.lean:10:44: error: unknown constant 'Nat.coprime'\ntest_124.lean:10:82: error: unknown constant 'Nat.coprime'\ntest_124.lean:10:120: error: unknown constant 'Nat.coprime'\ntest_124.lean:11:0: error: unknown identifier 'begin'\ntest_124.lean:12:7: error: unexpected token ','; expected command\ntest_124.lean:40:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_others_exirrpowirrrat",
+        "file_path": "lean_files/test_125.lean",
+        "output": "test_125.lean:10:53: error: function expected at\n  irrational\nterm has type\n  ?m.11\ntest_125.lean:10:68: error: function expected at\n  irrational\nterm has type\n  ?m.11\ntest_125.lean:12:0: error: unsolved goals\nx\u271d : Sort u_1\nirrational : x\u271d\n\u22a2 \u2203 a b, sorry \u2227 sorry \u2227 \u2203 q, a ^ b = \u2191q",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_427",
+        "file_path": "lean_files/test_126.lean",
+        "output": "test_126.lean:12:0: error: unknown identifier 'begin'\ntest_126.lean:13:15: error: unexpected token ','; expected command\ntest_126.lean:25:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_76",
+        "file_path": "lean_files/test_127.lean",
+        "output": "test_127.lean:11:22: error: unexpected token ','; expected '\u21a6', '=>'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_99",
+        "file_path": "lean_files/test_128.lean",
+        "output": "test_128.lean:12:0: error: unsolved goals\n\u22a2 \u2203 n, 2 * n % 47 = 15 \u2227 n < 47",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_9onxpypzleqsum2onxpy",
+        "file_path": "lean_files/test_129.lean",
+        "output": "test_129.lean:13:0: error: unsolved goals\nx y z : \u211d\nh\u2080 : 0 < x \u2227 0 < y \u2227 0 < z\n\u22a2 9 / (x + y + z) \u2264 2 / (x + y) + 2 / (y + z) + 2 / (z + x)",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_233",
+        "file_path": "lean_files/test_130.lean",
+        "output": "test_130.lean:17:62: error: unexpected token ','; expected '}'\ntest_130.lean:10:55: error: type mismatch\n  24 * b\nhas type\n  \u2124 : outParam Type\nbut is expected to have type\n  \u2115 : Type",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_absapbon1pabsapbleqsumabsaon1pabsa",
+        "file_path": "lean_files/test_131.lean",
+        "output": "test_131.lean:13:0: error: unsolved goals\na b : \u211d\n\u22a2 |a + b| / (1 + |a + b|) \u2264 |a| / (1 + |a|) + |b| / (1 + |b|)",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1984_p6",
+        "file_path": "lean_files/test_132.lean",
+        "output": "test_132.lean:15:25: error: failed to synthesize\n  HPow \u2124 \u2124 ?m.491\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_132.lean:16:25: error: failed to synthesize\n  HPow \u2124 \u2124 ?m.774\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_132.lean:20:0: error: unsolved goals\na b c d : \u2124\nh\u2080 : a % 2 = 1 \u2227 b % 2 = 1 \u2227 c % 2 = 1 \u2227 d % 2 = 1\nh\u2081 : 0 < a \u2227 a < b \u2227 b < c \u2227 c < d\nh\u2082 : a * d = b * c\nh\u2083 h\u2084 : \u2203 m, sorry\n\u22a2 a = 1",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_2001_p6",
+        "file_path": "lean_files/test_133.lean",
+        "output": "test_133.lean:10:112: error: failed to synthesize\n  Neg \u2115\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_133.lean:12:0: error: unsolved goals\nKM LN KL MN K L M N : \u2115\nh\u2080 : K > L\nh\u2081 : L > M\nh\u2082 : M > N\nh\u2083 : sorry\n\u22a2 \u00acNat.Prime (KL + MN)",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_321",
+        "file_path": "lean_files/test_134.lean",
+        "output": "test_134.lean:12:0: error: unsolved goals\n\u22a2 \u2203 n, 0 \u2264 n \u2227 n < 1399 \u2227 n * 160 % 1399 = 1",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_17",
+        "file_path": "lean_files/test_135.lean",
+        "output": "test_135.lean:10:36: error: failed to synthesize\n  AddGroup \u2115\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_135.lean:12:0: error: unsolved goals\na : \u2115\n\u22a2 1 / 5 * |9 + 2 * a| < 1 \u2192 a = 8",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_153",
+        "file_path": "lean_files/test_136.lean",
+        "output": "test_136.lean:11:17: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_sqineq_unitcircatbpamblt1",
+        "file_path": "lean_files/test_137.lean",
+        "output": "test_137.lean:12:0: error: unsolved goals\nab a b : \u211d\nh\u2080 : a ^ 2 + b ^ 2 = 1\n\u22a2 ab + (a - b) \u2264 1",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p18",
+        "file_path": "lean_files/test_138.lean",
+        "output": "test_138.lean:14:0: error: unknown identifier 'begin'\ntest_138.lean:15:16: error: unexpected token ','; expected command\ntest_138.lean:24:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_329",
+        "file_path": "lean_files/test_139.lean",
+        "output": "test_139.lean:13:0: error: unsolved goals\n\u22a2 \u2203 A, 3 * A.2 = A.1 \u2227 2 * A.1 + 5 * A.2 = 11 \u2227 A.1 + A.2 = 4",
+        "exit_code": 1
+    },
+    {
+        "name": "induction_pprime_pdvdapowpma",
+        "file_path": "lean_files/test_140.lean",
+        "output": "test_140.lean:12:0: error: unsolved goals\np a : \u2115\nhp : Nat.Prime p\nha : 0 < a\n\u22a2 p \u2223 a ^ p - a",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p9",
+        "file_path": "lean_files/test_141.lean",
+        "output": "test_141.lean:13:0: error: unsolved goals\n\u22a2 (2 + 3) * (2 ^ 2 + 3 ^ 2) * (2 ^ 4 + 3 ^ 4) * (2 ^ 8 + 3 ^ 8) * (2 ^ 16 + 3 ^ 16) * (2 ^ 32 + 3 ^ 32) *\n      (2 ^ 64 + 3 ^ 64) =\n    3 ^ 128 - 2 ^ 128",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1984_p1",
+        "file_path": "lean_files/test_142.lean",
+        "output": "test_142.lean:13:26: error: unexpected token '...'; expected term",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p22",
+        "file_path": "lean_files/test_143.lean",
+        "output": "test_143.lean:11:9: error: function expected at\n  polynomial\nterm has type\n  ?m.4\ntest_143.lean:19:0: error: unsolved goals\nx\u271d : Sort u_1\npolynomial : x\u271d\n\u22a2 sorry \u2192\n    \u2200 (a b c : \u211d),\n      (\u2200 (x : \u211d), sorry = x ^ 3 + a * x ^ 2 + b * x + c) \u2227 sorry = 0 \u2227 sorry = 0 \u2227 sorry = 0 \u2192 a * b * c = 1 / 32",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_229",
+        "file_path": "lean_files/test_144.lean",
+        "output": "test_144.lean:12:0: error: unsolved goals\n\u22a2 5 ^ 30 % 7 = 1",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_100",
+        "file_path": "lean_files/test_145.lean",
+        "output": "test_145.lean:12:0: error: unsolved goals\n\u22a2 \u2203 n, n.gcd 40 = 10 \u2227 n.lcm 40 = 280 \u2227 n = 70",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_313",
+        "file_path": "lean_files/test_146.lean",
+        "output": "test_146.lean:11:28: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2002_p4",
+        "file_path": "lean_files/test_147.lean",
+        "output": "test_147.lean:12:0: error: unknown identifier 'begin'\ntest_147.lean:13:16: error: unexpected token ','; expected command\ntest_147.lean:27:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2002_p6",
+        "file_path": "lean_files/test_148.lean",
+        "output": "test_148.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (m : \u2115), \u2203 n, m * n \u2264 m + n",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2003_p23",
+        "file_path": "lean_files/test_149.lean",
+        "output": "test_149.lean:12:27: error: unknown identifier 'finset.range'\ntest_149.lean:12:44: error: invalid field notation, type is not of the form (C ...) where C is a constant\n  i\nhas type\n  ?m.261 n m\ntest_149.lean:13:0: error: unknown identifier 'begin'\ntest_149.lean:15:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_129",
+        "file_path": "lean_files/test_150.lean",
+        "output": "test_150.lean:10:36: error: failed to synthesize\n  AddGroup \u2115\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_150.lean:12:0: error: unsolved goals\na : \u2115\nb : \u2124\n\u22a2 1 / 5 * |9 + 2 * a| < 1 \u2192 b = -2",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2021_p18",
+        "file_path": "lean_files/test_151.lean",
+        "output": "test_151.lean:11:18: error: unknown identifier 'complex.abs'\ntest_151.lean:11:42: error: unknown identifier 'complex.abs'\ntest_151.lean:11:68: error: unknown identifier 'complex.abs'\ntest_151.lean:12:0: error: unknown identifier 'begin'\ntest_151.lean:13:12: error: unexpected token ','; expected command\ntest_151.lean:15:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_484",
+        "file_path": "lean_files/test_152.lean",
+        "output": "test_152.lean:12:0: error: unsolved goals\n\u22a2 Nat.log 3 27 = 3",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_551",
+        "file_path": "lean_files/test_153.lean",
+        "output": "test_153.lean:12:0: error: unsolved goals\n\u22a2 1529 % 6 = 5",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_304",
+        "file_path": "lean_files/test_154.lean",
+        "output": "test_154.lean:12:0: error: unsolved goals\n\u22a2 91 ^ 2 = 8281",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p8",
+        "file_path": "lean_files/test_155.lean",
+        "output": "test_155.lean:10:25: error: unexpected token '/--'; expected term\ntest_155.lean:16:41: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_ineq_nto1onlt2m1on",
+        "file_path": "lean_files/test_156.lean",
+        "output": "test_156.lean:12:0: error: unsolved goals\nn : \u2115\nh : 0 < n\n\u22a2 n ^ (1 / n) \u2264 2 - 1 / n",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2002_p19",
+        "file_path": "lean_files/test_157.lean",
+        "output": "test_157.lean:16:0: error: unsolved goals\n\u22a2 \u2200 (a b c : \u211d), 0 < a \u2227 0 < b \u2227 0 < c \u2227 a * (b + c) = 152 \u2227 b * (c + a) = 162 \u2227 c * (a + b) = 170 \u2192 a * b * c = 720",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_341",
+        "file_path": "lean_files/test_158.lean",
+        "output": "test_158.lean:13:0: error: unsolved goals\n\u22a2 \u2203 n, n = 5 ^ 100 % 1000 \u2227 n / 100 + n / 10 % 10 + n % 10 = 13",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_711",
+        "file_path": "lean_files/test_159.lean",
+        "output": "test_159.lean:10:39: error: unknown identifier 'nat.gcd'\ntest_159.lean:10:57: error: unknown identifier 'nat.lcm'\ntest_159.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (m n : \u2115), sorry = 8 \u2227 sorry = 112 \u2192 m + n = 72",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2020_p22",
+        "file_path": "lean_files/test_160.lean",
+        "output": "test_160.lean:13:0: error: unsolved goals\n\u22a2 \u2200 (t : \u211d), (2 ^ t - 3 * t) * t / 4 ^ t \u2264 1 / 12",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_113",
+        "file_path": "lean_files/test_161.lean",
+        "output": "test_161.lean:12:0: error: unsolved goals\n\u22a2 \u2203 x, x = 7 \u2227 \u2200 (y : \u2115), (y - 7) ^ 2 + 3 \u2265 (x - 7) ^ 2 + 3",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2020_p9",
+        "file_path": "lean_files/test_162.lean",
+        "output": "test_162.lean:14:0: error: unsolved goals\n\u22a2 \u2200 (x : \u211d), 0 \u2264 x \u2227 x \u2264 2 * \u03c0 \u2192 \u2203! x, tan (2 * x) = cos (x / 2)",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12_2000_p1",
+        "file_path": "lean_files/test_163.lean",
+        "output": "test_163.lean:13:0: error: unsolved goals\n\u22a2 \u2203 I M O, I \u2260 M \u2227 M \u2260 O \u2227 I \u2260 O \u2227 I * M * O = 2001 \u2227 I + M + O = 671",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p19",
+        "file_path": "lean_files/test_164.lean",
+        "output": "test_164.lean:14:4: error: unexpected end of input; expected ':=', 'where' or '|'\ntest_164.lean:12:42: error: function expected at\n  cos (\u03c0 / 2 * sin x)\nterm has type\n  \u211d",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_amgm_sumasqdivbgeqsuma",
+        "file_path": "lean_files/test_165.lean",
+        "output": "test_165.lean:15:0: error: unsolved goals\n\u22a2 \u2200 (a b c d : \u211d), 0 < a \u2227 0 < b \u2227 0 < c \u2227 0 < d \u2192 a ^ 2 / b + b ^ 2 / c + c ^ 2 / d + d ^ 2 / a \u2265 a + b + c + d",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_212",
+        "file_path": "lean_files/test_166.lean",
+        "output": "test_166.lean:12:0: error: unsolved goals\n\u22a2 16 ^ 17 * 17 ^ 18 * 18 ^ 19 % 10 = 8",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_320",
+        "file_path": "lean_files/test_167.lean",
+        "output": "test_167.lean:13:0: error: unsolved goals\n\u22a2 \u2203 n, 0 \u2264 n \u2227 n < 101 \u2227 123456 \u2261 n [MOD 101] \u2227 n = 34",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_125",
+        "file_path": "lean_files/test_168.lean",
+        "output": "test_168.lean:10:23: error: unexpected token '/--'; expected term\ntest_168.lean:10:179: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "induction_1pxpownlt1pnx",
+        "file_path": "lean_files/test_169.lean",
+        "output": "test_169.lean:12:0: error: unsolved goals\nx : \u211d\nn : \u2115\nh : x > -1\n\u22a2 1 + \u2191n * x \u2264 (1 + x) ^ n",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_148",
+        "file_path": "lean_files/test_170.lean",
+        "output": "test_170.lean:11:17: error: function expected at\n  f\nterm has type\n  ?m.12\ntest_170.lean:11:46: error: function expected at\n  f\nterm has type\n  ?m.12\ntest_170.lean:14:0: error: unsolved goals\nx\u271d : Sort u_1\nf : x\u271d\n\u22a2 \u2203 c, (\u2200 (x : \u211d), sorry = c * x ^ 3 - 9 * x + 3) \u2227 sorry = 9 \u2227 c = 3",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2019_p12",
+        "file_path": "lean_files/test_171.lean",
+        "output": "test_171.lean:14:0: error: unsolved goals\n\u22a2 \u2200 (x y : \u211d), x \u2260 1 \u2227 y \u2260 1 \u2227 logb 2 x = logb y 16 \u2227 x * y = 64 \u2192 logb 2 (x / y) ^ 2 = 20",
+        "exit_code": 1
+    },
+    {
+        "name": "induction_11div10tonmn1ton",
+        "file_path": "lean_files/test_172.lean",
+        "output": "test_172.lean:12:0: error: unsolved goals\nn : \u2115\n\u22a2 11 \u2223 10 ^ n - (-1) ^ n",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_amgm_sum1toneqn_prod1tonleq1",
+        "file_path": "lean_files/test_173.lean",
+        "output": "test_173.lean:14:0: error: unsolved goals\nn : \u2115\na : \u2115 \u2192 \u211d\nh\u2080 : \u2200 (i : \u2115), 1 \u2264 i \u2227 i \u2264 n \u2192 0 \u2264 a i\nh\u2081 : (Finset.range n).sum a = \u2191n\n\u22a2 (Finset.range n).prod a \u2264 1",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1985_p6",
+        "file_path": "lean_files/test_174.lean",
+        "output": "test_174.lean:11:60: error: unexpected token ','; expected '\u21a6', '=>'",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2020_p15",
+        "file_path": "lean_files/test_175.lean",
+        "output": "test_175.lean:10:43: error: unexpected token '/--'; expected term\ntest_175.lean:13:181: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_332",
+        "file_path": "lean_files/test_176.lean",
+        "output": "test_176.lean:12:8: error: unknown identifier 'real.sqrt'\ntest_176.lean:12:28: error: unknown identifier 'real.sqrt'\ntest_176.lean:16:34: error: unknown identifier 'real.sqrt_inj'\ntest_176.lean:16:33: error: tactic 'rewrite' failed, equality or iff proof expected\n  ?m.2104\nx y : \u211d\nh\u2081 : (x + y) / 2 = 7\nh\u2082 : sorry = sorry\nh\u2083 : x + y = 14\n\u22a2 x * y = 19\ntest_176.lean:18:10: error: tactic 'rewrite' failed, did not find instance of the pattern in the target expression\n  x * y\nx y : \u211d\nh\u2081 : (x + y) / 2 = 7\nh\u2082 : sorry = sorry\nh\u2083 : x + y = 14\nh\u2084 : x * y = 19\nh\u2085 : 14 ^ 2 = x ^ 2 + 2 * x * y + y ^ 2\n\u22a2 x ^ 2 + y ^ 2 = 158\ntest_176.lean:21:0: error: unexpected identifier; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_cubrtrp1oncubrtreq3_rcubp1onrcubeq5778",
+        "file_path": "lean_files/test_177.lean",
+        "output": "test_177.lean:12:0: error: unsolved goals\nr : \u211d\nh : r ^ (1 / 3) + 1 / r ^ (1 / 3) = 3\n\u22a2 r ^ 3 + 1 / r ^ 3 = 5778",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_293",
+        "file_path": "lean_files/test_178.lean",
+        "output": "test_178.lean:11:18: error: unexpected token '('; expected ')', ',' or ':'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_440",
+        "file_path": "lean_files/test_179.lean",
+        "output": "test_179.lean:10:35: error: unexpected token '/--'; expected term\ntest_179.lean:11:186: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_254",
+        "file_path": "lean_files/test_180.lean",
+        "output": "test_180.lean:11:38: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12_2000_p6",
+        "file_path": "lean_files/test_181.lean",
+        "output": "test_181.lean:11:15: error: function expected at\n  prime\nterm has type\n  ?m.11\ntest_181.lean:11:25: error: function expected at\n  prime\nterm has type\n  ?m.11\ntest_181.lean:11:104: error: unsolved goals\ncase h\nx\u271d : Sort u_1\nprime : x\u271d\nprimes : List \u2115 := [5, 7, 11, 13, 17]\n\u22a2 \u2203 x y, x \u2208 primes \u2227 y \u2208 primes \u2227 x \u2260 y \u2227 x * y - (x + y) = 119\n\nx\u271d : Sort u_1\nprime : x\u271d\nprimes : List \u2115 := [5, 7, 11, 13, 17]\nh : \u2203 x y, x \u2208 primes \u2227 y \u2208 primes \u2227 x \u2260 y \u2227 x * y - (x + y) = 119\n\u22a2 \u2203 x y, sorry \u2227 sorry \u2227 4 < x \u2227 x < 18 \u2227 4 < y \u2227 y < 18 \u2227 x \u2260 y \u2227 x * y - (x + y) = 119\ntest_181.lean:15:81: error: unexpected token ','; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1988_p8",
+        "file_path": "lean_files/test_182.lean",
+        "output": "test_182.lean:16:0: error: unknown identifier 'begin'\ntest_182.lean:17:2: error: unexpected token 'let'; expected command\ntest_182.lean:32:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_114",
+        "file_path": "lean_files/test_183.lean",
+        "output": "test_183.lean:10:44: error: unknown identifier 'real.cbrt'\ntest_183.lean:12:0: error: unsolved goals\na : \u2115\n\u22a2 a = 8 \u2192 (16 * sorry) ^ (1 / 3) = 4",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_2019_p1",
+        "file_path": "lean_files/test_184.lean",
+        "output": "test_184.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (f : \u2124 \u2192 \u2124) (a b : \u2124), f (2 * a) + 2 * f b = f (f (a + b))",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_513",
+        "file_path": "lean_files/test_185.lean",
+        "output": "test_185.lean:12:0: error: unsolved goals\n\u22a2 \u2203 a b, 3 * a + 2 * b = 5 \u2227 a + b = 2 \u2227 a = 1 \u2227 b = 1",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_143",
+        "file_path": "lean_files/test_186.lean",
+        "output": "test_186.lean:11:67: error: unexpected token ':'; expected ':=', 'where' or '|'\ntest_186.lean:11:16: error: application type mismatch\n  ?m.438 ?m.1073\nargument\n  ?m.1073\nhas type\n  \u2200 (x : \u2115), ?m.447 = x + 1 : Prop\nbut is expected to have type\n  \u211d : Type\ntest_186.lean:11:3: error: function expected at\n  f\nterm has type\n  ?m.6\ntest_186.lean:11:27: error: function expected at\n  f\nterm has type\n  ?m.6",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_354",
+        "file_path": "lean_files/test_187.lean",
+        "output": "test_187.lean:11:25: error: function expected at\n  u\nterm has type\n  ?m.15\ntest_187.lean:11:44: error: function expected at\n  u\nterm has type\n  ?m.15\ntest_187.lean:11:55: error: function expected at\n  u\nterm has type\n  ?m.15\ntest_187.lean:11:67: error: function expected at\n  u\nterm has type\n  ?m.15\ntest_187.lean:12:0: error: unknown identifier 'begin'\ntest_187.lean:13:15: error: unexpected token ','; expected command\ntest_187.lean:25:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1984_p7",
+        "file_path": "lean_files/test_188.lean",
+        "output": "test_188.lean:10:109: error: unexpected token ':'; expected ':=', 'where' or '|'\ntest_188.lean:10:32: error: application type mismatch\n  f h\u2081\nargument\n  h\u2081\nhas type\n  \u2200 n \u2265 1000, f n = n - 3 : Prop\nbut is expected to have type\n  \u2124 : Type",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_246",
+        "file_path": "lean_files/test_189.lean",
+        "output": "test_189.lean:11:8: error: function expected at\n  f\nterm has type\n  ?m.9\ntest_189.lean:11:47: error: function expected at\n  f\nterm has type\n  ?m.9\ntest_189.lean:11:60: error: function expected at\n  f\nterm has type\n  ?m.9\ntest_189.lean:14:0: error: unsolved goals\nx\u271d : Sort u_1\nf : x\u271d\na b : \u2115\n\u22a2 (\u2200 (x : \u2115), sorry = a * x ^ 4 - b * x ^ 2 + x + 5) \u2192 sorry = 2 \u2192 sorry = 8",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1983_p3",
+        "file_path": "lean_files/test_190.lean",
+        "output": "test_190.lean:15:0: error: unsolved goals\n\u22a2 \u2200 (x : \u211d), x ^ 2 + 18 * x + 30 = 2 * \u221a(x ^ 2 + 18 * x + 45) \u2192 \u2203 a b, a \u2260 b \u2227 (x = a \u2228 x = b) \u2227 a * b = 20",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+        "file_path": "lean_files/test_191.lean",
+        "output": "test_191.lean:12:0: error: unsolved goals\n\u22a2 \u2200 (n : \u2115), 3 ^ 2 ^ n - 1 \u2261 2 ^ (n + 2) [MOD 2 ^ (n + 3)]",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_85",
+        "file_path": "lean_files/test_192.lean",
+        "output": "test_192.lean:10:34: error: unexpected token '/--'; expected term\ntest_192.lean:11:159: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12_2001_p21",
+        "file_path": "lean_files/test_193.lean",
+        "output": "test_193.lean:12:24: error: unknown identifier 'nat.factorial'\ntest_193.lean:13:0: error: unknown identifier 'begin'\ntest_193.lean:17:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_239",
+        "file_path": "lean_files/test_194.lean",
+        "output": "test_194.lean:12:0: error: unsolved goals\n\u22a2 (\u2211 k \u2208 Finset.Icc 1 12, k) % 4 = 2",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2002_p2",
+        "file_path": "lean_files/test_195.lean",
+        "output": "test_195.lean:13:0: error: unexpected identifier; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_196",
+        "file_path": "lean_files/test_196.lean",
+        "output": "test_196.lean:10:39: error: failed to synthesize\n  AddGroup \u2115\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_196.lean:10:34: error: failed to synthesize\n  Fintype \u2115\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_196.lean:12:0: error: unsolved goals\n\u22a2 \u2211 x \u2208 Finset.filter (fun x => |2 - x| = 3) Finset.univ, x = 4",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_342",
+        "file_path": "lean_files/test_197.lean",
+        "output": "test_197.lean:11:23: error: unknown identifier 'finset.range'\ntest_197.lean:12:23: error: unknown identifier 'finset.range'\ntest_197.lean:14:0: error: unknown identifier 'begin'\ntest_197.lean:19:2: error: unexpected token 'let'; expected command\ntest_197.lean:47:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_517",
+        "file_path": "lean_files/test_198.lean",
+        "output": "test_198.lean:12:0: error: unsolved goals\n\u22a2 121 * 122 * 123 % 4 = 2",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2009_p7",
+        "file_path": "lean_files/test_199.lean",
+        "output": "test_199.lean:13:19: error: unexpected token ','; expected ':=', 'where' or '|'\ntest_199.lean:11:27: error: application type mismatch\n  a h\u2080\nargument\n  h\u2080\nhas type\n  \u2200 (n : \u2115), a (n + 2) - a (n + 1) = a (n + 1) - a n : Prop\nbut is expected to have type\n  \u2115 : Type",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_270",
+        "file_path": "lean_files/test_200.lean",
+        "output": "test_200.lean:11:14: error: application type mismatch\n  f h\u2080\nargument\n  h\u2080\nhas type\n  \u2200 (x : \u211d), f x = 1 / (x + 2) : Prop\nbut is expected to have type\n  \u211d : Type\ntest_200.lean:13:0: error: unsolved goals\nf : \u211d \u2192 \u211d\nh\u2080 : \u2200 (x : \u211d), f x = 1 / (x + 2)\n\u22a2 sorry",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p12",
+        "file_path": "lean_files/test_201.lean",
+        "output": "test_201.lean:10:34: error: unexpected token '/--'; expected term\ntest_201.lean:13:163: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_362",
+        "file_path": "lean_files/test_202.lean",
+        "output": "test_202.lean:14:0: error: unsolved goals\n\u22a2 \u2200 (a b : \u211d), a ^ 2 * b ^ 3 = 32 / 27 \u2227 a / b ^ 3 = 27 / 4 \u2192 a + b = 8 / 3",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_521",
+        "file_path": "lean_files/test_203.lean",
+        "output": "test_203.lean:13:0: error: unsolved goals\n\u22a2 \u2203 n, n * (n + 2) = 288 \u2227 n + 2 = 18",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2002_p13",
+        "file_path": "lean_files/test_204.lean",
+        "output": "test_204.lean:11:79: error: unknown identifier 'real.sqrt'\ntest_204.lean:12:0: error: unknown identifier 'begin'\ntest_204.lean:14:2: error: unexpected token 'let'; expected command\ntest_204.lean:66:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1964_p2",
+        "file_path": "lean_files/test_205.lean",
+        "output": "test_205.lean:13:0: error: unsolved goals\na b c : \u211d\nh\u2080 : a + b > c\nh\u2081 : b + c > a\nh\u2082 : c + a > b\n\u22a2 a ^ 2 * (b + c - a) + b ^ 2 * (c + a - b) + c ^ 2 * (a + b - c) \u2264 3 * a * b * c",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_289",
+        "file_path": "lean_files/test_206.lean",
+        "output": "test_206.lean:12:2: error: function expected at\n  prime\nterm has type\n  ?m.13\ntest_206.lean:12:12: error: function expected at\n  prime\nterm has type\n  ?m.13\ntest_206.lean:17:0: error: unsolved goals\nx\u271d : Sort u_1\nprime : x\u271d\n\u22a2 \u2200 (m n k t : \u2115),\n    (sorry \u2227 sorry \u2227 k > t \u2227 \u2200 (x : \u2115), x ^ 2 - m * x + n = 0 \u2192 x = k \u2228 x = t) \u2192 m ^ n + n ^ m + k ^ t + t ^ k = 20",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p3",
+        "file_path": "lean_files/test_207.lean",
+        "output": "test_207.lean:10:31: error: unexpected token '/--'; expected term\ntest_207.lean:13:169: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2008_p25",
+        "file_path": "lean_files/test_208.lean",
+        "output": "test_208.lean:12:9: error: function expected at\n  a\nterm has type\n  \u211d\ntest_208.lean:12:20: error: function expected at\n  b\nterm has type\n  \u211d\ntest_208.lean:12:34: error: ambiguous, possible interpretations \n  Rat.sqrt 3 : \u211a\n  \n  Nat.sqrt 3 : \u2115\n  \n  \u221a3 : \u211d\ntest_208.lean:12:43: error: function expected at\n  a\nterm has type\n  \u211d\ntest_208.lean:12:49: error: function expected at\n  b\nterm has type\n  \u211d\ntest_208.lean:12:54: error: ambiguous, possible interpretations \n  Rat.sqrt 3 : \u211a\n  \n  Nat.sqrt 3 : \u2115\n  \n  \u221a3 : \u211d\ntest_208.lean:12:63: error: function expected at\n  b\nterm has type\n  \u211d\ntest_208.lean:12:69: error: function expected at\n  a\nterm has type\n  \u211d\ntest_208.lean:13:3: error: function expected at\n  a\nterm has type\n  \u211d\ntest_208.lean:13:10: error: function expected at\n  b\nterm has type\n  \u211d\ntest_208.lean:14:2: error: function expected at\n  a\nterm has type\n  \u211d\ntest_208.lean:14:8: error: function expected at\n  b\nterm has type\n  \u211d\ntest_208.lean:17:0: error: unsolved goals\n\u22a2 \u2200 (a b : \u211d),\n    (\u2200 (n : ?m.4502 a b), (sorry, sorry) = (sorry * sorry - sorry, sorry * sorry + sorry)) \u2192\n      (sorry, sorry) = (2, 4) \u2192 sorry + sorry = 1 / 2 ^ 98",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3",
+        "file_path": "lean_files/test_209.lean",
+        "output": "test_209.lean:16:0: error: unsolved goals\na b c : \u211d\nh\u2080 : a \u2264 b \u2227 b \u2264 c\nh\u2081 : a + b + c = 2\nh\u2082 : a * b + b * c + c * a = 1\n\u22a2 0 \u2264 a \u2227 a \u2264 1 / 3 \u2227 1 / 3 \u2264 b \u2227 b \u2264 1 \u2227 1 \u2264 c \u2227 c \u2264 4 / 3",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_66",
+        "file_path": "lean_files/test_210.lean",
+        "output": "test_210.lean:12:0: error: unsolved goals\n\u22a2 194 % 11 = 7",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2021_p1",
+        "file_path": "lean_files/test_211.lean",
+        "output": "test_211.lean:13:0: error: unsolved goals\n\u22a2 \u2203 S, S.card = 19 \u2227 \u2200 x \u2208 S, \u2191|x| < 3 * \u03c0",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_apbon2pownleqapownpbpowon2",
+        "file_path": "lean_files/test_212.lean",
+        "output": "test_212.lean:13:0: error: unsolved goals\na b : \u211d\nn : \u2115\nh\u2080 : 0 < a \u2227 0 < b\nh\u2081 : 0 < n\n\u22a2 ((a + b) / 2) ^ n \u2264 (a ^ n + b ^ n) / 2",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1968_p5_1",
+        "file_path": "lean_files/test_213.lean",
+        "output": "test_213.lean:11:30: error: function expected at\n  f\nterm has type\n  ?m.56\ntest_213.lean:11:42: error: function expected at\n  f\nterm has type\n  ?m.56\ntest_213.lean:12:0: error: unknown identifier 'begin'\ntest_213.lean:14:2: error: unexpected token 'let'; expected command\ntest_213.lean:23:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1990_p15",
+        "file_path": "lean_files/test_214.lean",
+        "output": "test_214.lean:11:15: error: unexpected token '='; expected '{' or tactic\ntest_214.lean:11:13: error: unsolved goals\nax : ?m.925\na b x y : \u211d\n\u22a2 ?m.922",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_235",
+        "file_path": "lean_files/test_215.lean",
+        "output": "test_215.lean:12:0: error: unsolved goals\n\u22a2 (29 * 79 + 31 * 81) % 10 = 2",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2020_p13",
+        "file_path": "lean_files/test_216.lean",
+        "output": "test_216.lean:14:0: error: unsolved goals\n\u22a2 \u221a(Real.log 6 / Real.log 2 + Real.log 6 / Real.log 3) = \u221a(Real.log 3 / Real.log 2) + \u221a(Real.log 2 / Real.log 3)",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12b_2021_p13",
+        "file_path": "lean_files/test_217.lean",
+        "output": "test_217.lean:16:0: error: unsolved goals\n\u22a2 \u2203 S, (\u2200 (x : \u211d), x \u2208 S \u2194 (0 < x \u2227 x \u2264 2 * \u03c0) \u2227 1 - 3 * sin x + 5 * cos (3 * x) = 0) \u2227 S.card = 6",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_234",
+        "file_path": "lean_files/test_218.lean",
+        "output": "test_218.lean:12:0: error: unknown identifier 'begin'\ntest_218.lean:13:12: error: unexpected token ','; expected command\ntest_218.lean:21:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_aoddbdiv4asqpbsqmod8eq1",
+        "file_path": "lean_files/test_219.lean",
+        "output": "test_219.lean:10:83: error: type mismatch\n  a ^ 2 + b ^ 2\nhas type\n  \u2124 : outParam Type\nbut is expected to have type\n  \u2115 : Type\ntest_219.lean:12:0: error: unsolved goals\na b : \u2124\nh\u2080 : a % 2 = 1\nh\u2081 : 4 \u2223 b\n\u22a2 sorry \u2261 1 [MOD 8]",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_222",
+        "file_path": "lean_files/test_220.lean",
+        "output": "test_220.lean:15:6: error: unexpected identifier; expected '['",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1999_p11",
+        "file_path": "lean_files/test_221.lean",
+        "output": "test_221.lean:11:40: error: unknown identifier 'real.sin'\ntest_221.lean:11:60: error: unknown identifier 'real.tan'\ntest_221.lean:12:2: error: unknown identifier 'nat.coprime'\ntest_221.lean:14:0: error: unsolved goals\n\u22a2 \u2203 m n, \u2211 k \u2208 Finset.range 35, sorry = sorry \u2227 sorry \u2227 m / n < 90 \u2227 m + n = 177",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_359",
+        "file_path": "lean_files/test_222.lean",
+        "output": "test_222.lean:11:7: error: function expected at\n  (y + 6, 12, y)\nterm has type\n  ?m.9 \u00d7 ?m.46 \u00d7 ?m.34\ntest_222.lean:13:0: error: unsolved goals\n\u22a2 \u2200 (y : \u2115), sorry \u2192 y = 9",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1965_p2",
+        "file_path": "lean_files/test_223.lean",
+        "output": "test_223.lean:19:0: error: unknown identifier 'begin'\ntest_223.lean:20:68: error: unexpected token ','; expected command\ntest_223.lean:27:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_288",
+        "file_path": "lean_files/test_224.lean",
+        "output": "test_224.lean:12:0: error: unknown identifier 'begin'\ntest_224.lean:13:15: error: unexpected token ','; expected command\ntest_224.lean:19:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_127",
+        "file_path": "lean_files/test_225.lean",
+        "output": "test_225.lean:10:42: error: unexpected token '/--'; expected term\ntest_225.lean:11:105: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "imo_1974_p3",
+        "file_path": "lean_files/test_226.lean",
+        "output": "test_226.lean:12:0: error: unsolved goals\nn : \u2115\nh\u2080 : n \u2265 0\n\u22a2 \u00ac5 \u2223 \u2211 k \u2208 Finset.range (n + 1), (2 * n + 1).choose (2 * k + 1) * 2 ^ (3 * k)",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1991_p9",
+        "file_path": "lean_files/test_227.lean",
+        "output": "test_227.lean:14:37: error: unexpected token ':'; expected ':=', 'where' or '|'\ntest_227.lean:11:2: error: function expected at\n  x\nterm has type\n  \u211d",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2009_p6",
+        "file_path": "lean_files/test_228.lean",
+        "output": "test_228.lean:10:32: error: failed to synthesize\n  HPow \u2124 \u2124 ?m.187\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_228.lean:12:0: error: unsolved goals\n\u22a2 \u2124 \u2192 \u2124 \u2192 sorry",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_158",
+        "file_path": "lean_files/test_229.lean",
+        "output": "test_229.lean:11:44: error: unexpected token ','; expected '\u21a6', '=>'\ntest_229.lean:30:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "algebra_absxm1pabsxpabsxp1eqxp2_0leqxleq1",
+        "file_path": "lean_files/test_230.lean",
+        "output": "test_230.lean:12:0: error: unsolved goals\nx : \u211d\nh : |x - 1| + |x| + |x + 1| = x + 2\n\u22a2 0 \u2264 x \u2227 x \u2264 1",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1990_p4",
+        "file_path": "lean_files/test_231.lean",
+        "output": "test_231.lean:16:0: error: unsolved goals\n\u22a2 \u2203 x, 0 < x \u2227 1 / (x ^ 2 - 10 * x - 29) + 1 / (x ^ 2 - 10 * x - 45) - 2 / (x ^ 2 - 10 * x - 69) = 0 \u2227 x = 13",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_541",
+        "file_path": "lean_files/test_232.lean",
+        "output": "test_232.lean:12:0: error: unsolved goals\n\u22a2 \u2203 x y, x * y = 2005 \u2227 x \u2260 1 \u2227 y \u2260 1 \u2227 x + y = 406",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_314",
+        "file_path": "lean_files/test_233.lean",
+        "output": "test_233.lean:10:22: error: function expected at\n  n\nterm has type\n  \u2124\ntest_233.lean:10:45: error: failed to synthesize\n  HPow \u2115 \u2124 ?m.522\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_233.lean:10:65: error: failed to synthesize\n  HPow \u2115 \u2124 ?m.523\nAdditional diagnostic information may be available using the `set_option diagnostics true` command.\ntest_233.lean:12:0: error: unsolved goals\nn : \u2124\n\u22a2 sorry \u2192 (1 / 4) ^ (n + 1) * 2 ^ (2 * n) = 1 / 4",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12_2000_p20",
+        "file_path": "lean_files/test_234.lean",
+        "output": "test_234.lean:18:0: error: unsolved goals\n\u22a2 \u2200 (x y z : \u211d), 0 < x \u2227 0 < y \u2227 0 < z \u2227 x + 1 / y = 4 \u2227 y + 1 / z = 1 \u2227 z + 1 / x = 7 / 3 \u2192 x * y * z = 1",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_302",
+        "file_path": "lean_files/test_235.lean",
+        "output": "test_235.lean:12:0: error: unsolved goals\n\u22a2 (Complex.I / 2) ^ 2 = -1 / 4",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1983_p2",
+        "file_path": "lean_files/test_236.lean",
+        "output": "test_236.lean:12:14: error: unexpected token ','; expected '\u21a6', '=>'",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_139",
+        "file_path": "lean_files/test_237.lean",
+        "output": "test_237.lean:10:52: error: expected token\ntest_237.lean:10:44: error: type expected, got\n  (3 : \u211d)",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2021_p25",
+        "file_path": "lean_files/test_238.lean",
+        "output": "test_238.lean:10:32: error: unexpected token '/--'; expected term\ntest_238.lean:17:35: error: unexpected token ':='; expected 'lemma'",
+        "exit_code": 1
+    },
+    {
+        "name": "amc12a_2020_p25",
+        "file_path": "lean_files/test_239.lean",
+        "output": "test_239.lean:11:29: error: expected ';' or line break",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_150",
+        "file_path": "lean_files/test_240.lean",
+        "output": "test_240.lean:11:21: error: unknown constant 'Nat.prime'\ntest_240.lean:11:71: error: unknown constant 'Nat.prime'\ntest_240.lean:12:0: error: unknown identifier 'begin'\ntest_240.lean:13:7: error: unexpected token ','; expected command\ntest_240.lean:36:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1989_p8",
+        "file_path": "lean_files/test_241.lean",
+        "output": "test_241.lean:18:0: error: unsolved goals\n\u22a2 \u2200 (x1 x2 x3 x4 x5 x6 x7 : \u211d),\n    x1 + 4 * x2 + 9 * x3 + 16 * x4 + 25 * x5 + 36 * x6 + 49 * x7 = 1 \u2192\n      4 * x1 + 9 * x2 + 16 * x3 + 25 * x4 + 36 * x5 + 49 * x6 + 64 * x7 = 12 \u2192\n        9 * x1 + 16 * x2 + 25 * x3 + 36 * x4 + 49 * x5 + 64 * x6 + 81 * x7 = 123 \u2192\n          16 * x1 + 25 * x2 + 36 * x3 + 49 * x4 + 64 * x5 + 81 * x6 + 100 * x7 = 334",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_296",
+        "file_path": "lean_files/test_242.lean",
+        "output": "test_242.lean:12:0: error: unsolved goals\n\u22a2 \u2203 n > 1, n = 4096 \u2227 \u2203 a b, n = a ^ 3 \u2227 n = b ^ 4",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_142",
+        "file_path": "lean_files/test_243.lean",
+        "output": "test_243.lean:12:0: error: unknown identifier 'begin'\ntest_243.lean:13:2: error: unexpected token 'let'; expected command\ntest_243.lean:23:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "numbertheory_exk2powkeqapb2mulbpa2_aeq1",
+        "file_path": "lean_files/test_244.lean",
+        "output": "test_244.lean:12:0: error: unsolved goals\na b : \u2115\nh\u2080 : 0 < a \u2227 0 < b\nh\u2081 : \u2203 k, 0 < k \u2227 2 ^ k = (a + b ^ 2) * (b + a ^ 2)\n\u22a2 a = 1",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_400",
+        "file_path": "lean_files/test_245.lean",
+        "output": "test_245.lean:11:45: error: unsolved goals\n\u22a2 False\ntest_245.lean:14:0: error: unexpected identifier; expected command",
+        "exit_code": 1
+    },
+    {
+        "name": "aime_1995_p7",
+        "file_path": "lean_files/test_246.lean",
+        "output": "test_246.lean:12:38: error: unknown identifier 'real.sqrt'\ntest_246.lean:13:2: error: unknown identifier 'nat.coprime'\ntest_246.lean:17:0: error: unsolved goals\nt : \u211d\n\u22a2 \u2203 k m n, (1 + sin t) * (1 + cos t) = 5 / 4 \u2227 (1 - sin t) * (1 - cos t) = \u2191m / \u2191n - sorry \u2227 sorry \u2227 k + m + n = 27",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_185",
+        "file_path": "lean_files/test_247.lean",
+        "output": "test_247.lean:12:0: error: unknown identifier 'begin'\ntest_247.lean:13:12: error: unexpected token ','; expected command\ntest_247.lean:17:0: error: invalid 'end', insufficient scopes",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_441",
+        "file_path": "lean_files/test_248.lean",
+        "output": "test_248.lean:14:0: error: unsolved goals\n\u22a2 \u2200 (x : \u211d), x \u2260 0 \u2192 12 / (x * x) * (x ^ 4 / (14 * x)) * (35 / (3 * x)) = 10",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_numbertheory_582",
+        "file_path": "lean_files/test_249.lean",
+        "output": "test_249.lean:12:0: error: unsolved goals\nn : \u2115\nh\u2080 : 3 \u2223 n\n\u22a2 (n + 4 + (n + 6) + (n + 8)) % 9 = 0",
+        "exit_code": 1
+    },
+    {
+        "name": "mathd_algebra_338",
+        "file_path": "lean_files/test_250.lean",
+        "output": "test_250.lean:12:0: error: unsolved goals\na b c abc : \u2124\n\u22a2 3 * a + b + c = -3 \u2227 a + 3 * b + c = 9 \u2227 a + b + 3 * c = 19 \u2192 abc = -56",
+        "exit_code": 1
+    }
+]
