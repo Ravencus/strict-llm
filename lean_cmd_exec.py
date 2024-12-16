@@ -139,7 +139,9 @@ def diff_paired_lean_files(
 # tests
 def test_execute_lean_files():
     results = execute_lean_files(
-        ["lean_files_sol/test_1.lean", "lean_files/test_2.lean"]
+        [
+            "proofnet_lean_files/test_24.lean",
+        ]
     )
     for result in results:
         file_path, output, code = result
