@@ -96,20 +96,146 @@ class multilevel_rag_builder:
                 print("Saving test results to: {}".format(state_decomposed_test_path))
                 pkl.dump(test_result_list, f)
         return test_result_list
-        
+
+    def return_test_scores(self, statement_decomposed_jsonl, top_k):
+        state_decomposed_test_path = statement_decomposed_jsonl.replace(".jsonl", "_statement_test.pkl")
+        f = open(state_decomposed_test_path, "rb")
+        test_result_dict = pkl.load(f)
+        f.close()
+        top_k_scores = []    
+        for test_entry in test_result_dict:
+            decomposition_result = test_entry["decomposition_result"]
+            for key in decomposition_result:
+                top_k_results = decomposition_result[key]["top_k_results"]
+                for i in range(top_k):
+                    top_k_scores.append(top_k_results[i]['score'])
+        state_decomposed_score_path = statement_decomposed_jsonl.replace(".jsonl", "_statement_testscores.pkl")
+        with open(state_decomposed_score_path, "wb") as f:
+            print("Saving test scores to: {}".format(state_decomposed_score_path))
+            pkl.dump(top_k_scores, f)
+        return top_k_scores
+    
+    def highest_similarity_normalized(self, s1, s2):
+        max_score = 0
+        best_position = -1
+
+        # Slide s2 over s1
+        for i in range(len(s1) - len(s2) + 1):
+            # Extract substring of s1
+            substring = s1[i:i + len(s2)]
+            # Calculate similarity score (number of matching characters)
+            score = sum(1 for a, b in zip(substring, s2) if a == b)
+            # Normalize the score by dividing by the length of s2
+            normalized_score = score / len(s2)
+            # Update max_score and position
+            if normalized_score > max_score:
+                max_score = normalized_score
+                best_position = i
+        return max_score, best_position
+
+    def query_statement_rag_database_full_statement_embedding(self, full_statement, top_k):
+        # sliding window matching, assume full statement is longer than key
+        if len(self.statement_decomposed_rag_dict) == 0:
+            raise ValueError("Empty decomposed_rag_dict, run build_statement_decomposed_rag_database function to first build")
+        if len(self.statement_decomposed_rag_dict) <= top_k:
+            return copy.deepcopy(self.statement_decomposed_rag_dict)
+        else:
+            score_record = []
+            target = self.get_text_emgeddings(full_statement)
+            for key in self.statement_decomposed_rag_dict:
+                source = self.statement_decomposed_rag_dict[key]["key_embeddings"]
+                score = np.dot(source, target)/(np.linalg.norm(source)*np.linalg.norm(target))
+                score_record.append((key, score))
+            score_record = sorted(score_record, key=lambda x: x[1], reverse=True)
+            top_k_results = []
+            for i in range(top_k):
+                key = score_record[i][0]
+                top_k_results.append({
+                    "score": score_record[i][1],
+                    "matched_key": key,
+                    "matched_decompose": copy.deepcopy(self.statement_decomposed_rag_dict[key]['object'].decomposition[key])
+                })
+            return top_k_results
+
+    def query_statement_rag_database_full_statement_window(self, full_statement, top_k):
+        # sliding window matching, assume full statement is longer than key
+        if len(self.statement_decomposed_rag_dict) == 0:
+            raise ValueError("Empty decomposed_rag_dict, run build_statement_decomposed_rag_database function to first build")
+        if len(self.statement_decomposed_rag_dict) <= top_k:
+            return copy.deepcopy(self.statement_decomposed_rag_dict)
+        else:
+            score_record = []
+            target = full_statement
+            for key in self.statement_decomposed_rag_dict:
+                source = key
+                if len(target) < len(source):
+                    score = 0.0 
+                else:
+                    score, _ = self.highest_similarity_normalized(target, source)
+                score_record.append((key, score))
+            score_record = sorted(score_record, key=lambda x: x[1], reverse=True)
+            top_k_results = []
+            for i in range(top_k):
+                key = score_record[i][0]
+                top_k_results.append({
+                    "score": score_record[i][1],
+                    "matched_key": key,
+                    "matched_decompose": copy.deepcopy(self.statement_decomposed_rag_dict[key]['object'].decomposition[key])
+                })
+            return top_k_results
+    
+    def test_full_statement(self, statement_decomposed_jsonl, split, top_k, save_to_disk, method):
+        state_decomposed_test_path = statement_decomposed_jsonl.replace(".jsonl", "_full_statement_test_{}.pkl".format(method))
+        print("Start testing {} decomposition.".format(statement_decomposed_jsonl))
+        entries = parse_jsonl_decomposed(statement_decomposed_jsonl)
+        test_result_list = []
+        for entry in tqdm(entries):
+            if entry.split == split:
+                full_statement = entry.informal_prefix
+                object = entry
+                if method == "sliding_window":
+                    top_k_results = self.query_statement_rag_database_full_statement_window(full_statement, top_k=top_k)
+                elif method == "embedding":
+                    top_k_results = self.query_statement_rag_database_full_statement_embedding(full_statement, top_k=top_k)
+                else:
+                    raise NotImplementedError
+                test_result_single = {
+                    "top_k_results": top_k_results,
+                    "k": top_k
+                }
+                test_result_list.append(
+                    {
+                        "object": object,
+                        "full_statement_result": test_result_single
+                    }
+                )
+            else:
+                print("Skipping not in split.")
+        if save_to_disk:
+            with open(state_decomposed_test_path, "wb") as f:
+                print("Saving test results to: {}".format(state_decomposed_test_path))
+                pkl.dump(test_result_list, f)
+        return test_result_list
 
 
 if __name__ == "__main__":
-    mrb_proofnet = multilevel_rag_builder()
     current_dir = os.path.dirname(os.path.abspath(__file__))
+    mrb_proofnet = multilevel_rag_builder()
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
     mrb_proofnet.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
-    mrb_proofnet.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
+    mrb_proofnet.test_full_statement(state_decomposed_path, split="test", top_k=10, save_to_disk=True, method="sliding_window")
+    mrb_proofnet.test_full_statement(state_decomposed_path, split="test", top_k=10, save_to_disk=True, method="embedding")
+    
+    # mrb_proofnet.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
+    # top_k_scores_proofnet = mrb_proofnet.return_test_scores(state_decomposed_path, top_k=1)
 
     mrb_minif2f = multilevel_rag_builder()
     state_decomposed_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
     mrb_minif2f.build_statement_decomposed_rag_database(state_decomposed_path, split="valid")
-    mrb_minif2f.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
+    mrb_minif2f.test_full_statement(state_decomposed_path, split="test", top_k=10, save_to_disk=True, method="sliding_window")
+    mrb_minif2f.test_full_statement(state_decomposed_path, split="test", top_k=10, save_to_disk=True, method="embedding")
+    # mrb_minif2f.test_dataset_split(state_decomposed_path, split="test", top_k=5, save_to_disk=True)
+    # top_k_scores_minif2f = mrb_minif2f.return_test_scores(state_decomposed_path, top_k=1)
 
     # proofnet_query = "then $f$ is constant"
     # top_k_results = mrb_proofnet.query_statement_rag_database(proofnet_query, top_k=5)
