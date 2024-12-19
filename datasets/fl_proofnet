@@ -1,0 +1,231 @@
+{f : ℂ → ℂ} (Ω : Set ℂ) (h : IsOpen Ω) (hf : DifferentiableOn ℂ f Ω)(hi : ∃ (c : ℝ), ∀ z ∈ Ω, (f z).im = c) : ∀ a b, f a = f b := 
+{f : ℂ → ℂ} (Ω : Set ℂ) (h : IsOpen Ω) (hf : DifferentiableOn ℂ f Ω)(hi : ∃ (c : ℝ), ∀ z ∈ Ω, (f z).im = c) : ∀ a b, f a = f b := 
+{f : ℂ → ℂ} (Ω : Set ℂ) (h : IsOpen Ω) (hf : DifferentiableOn ℂ f Ω)(hi : ∃ (c : ℝ), ∀ z ∈ Ω, (f z).im = c) : ∀ a b, f a = f b := 
+(s : ℕ → ℂ) (h : s = (λ n => ∑ i in (range n), i * z ^ i)) : (z : ℂ) (hz : abs z = 1) ¬∃ y, Tendsto s atTop (𝓝 y) := 
+(s : ℕ → ℂ) (h : s = (λ n => ∑ i in (range n), i * z / i))(z : ℂ) (hz : abs z = 1 ∧ z ≠ 1) ∃ y, Tendsto s atTop (𝓝 y)(hz1 : z ≠ 1) : (z : ℂ) (hz : abs z = 1) := 
+ : ∫ x in (0 : ℝ)..∞, Real.sin x / x = Real.pi / 2 := 
+(f : ℂ → ℂ) [analytic_on ℂ f]∀ z0 : ℂ, ∃ n : ℕ, (c n : ℂ) (f z0 = ∑' n, c n * (z - z0) ^ n) ∧ c n = 0 : ∃ p : polynomial ℂ, ∀ z : ℂ, f z = polynomial.eval z p := 
+(a : ℝ) (ha : 0 < a) : Tendsto (λ y => ∫ x in -y..y, x * Real.sin x / (x ^ 2 + a ^ 2)) atTop (𝓝 (Real.pi * Real.exp (-a))) := 
+(he : Entire f) (hg : Entire g)(h : Injective h) : (f : ℂ → ℂ) (a b : ℂ) (h : f = λ z, a * z + b) (ha : a ≠ 0) := 
+{f : ℂ → ℂ} (h : DifferentiableOn ℂ f (Metric.ball 0 1))(hf : ∃ M, ∀ x, abs (f x) ≤ M)(hf4 : ¬∀ z, f z = 0)(hz : ∀ k, f z k = 0 ∧ ‖z k‖ < 1) : lemma tsum_lt_infty : ∑' n, (1 - |z n|) < ∞ := := 
+(r : ℚ)¬ ∃ (a b : ℤ), b ≠ 0 ∧ x = a / b : (Irrational x) -> Irrational (r * x) := 
+{E : Set α} [PartialOrder α] (hE : E.Nonempty)(hlb : ∀ x ∈ E, α ≤ x)(hub : ∀ x ∈ E, x ≤ β) : α ≤ β := 
+ : ¬∃ (R : Type) [IsField R] [LinearOrder R], R = ℂ := 
+(z : Fin n → ℂ) : abs (∑ i, z i) ≤ ∑ i, abs (z i) := 
+(z : ℂ)(hz : ‖z‖ = 1)(hz1 : z * conj z = 1) : ‖1 + z‖^2 + ‖1 - z‖^2 := 
+(x y : EuclideanSpace ℝ (Fin n)) : abs (x + y) ^ 2 + abs (x - y) ^ 2 = 2 * abs x ^ 2 + 2 * abs y ^ 2 := 
+if h : k = 1 then (x : EuclideanSpace ℝ (Fin k)) : ¬ ∃ (y : EuclideanSpace ℝ (Fin k)), y ≠ 0 ∧ (inner x y) = (0 : ℝ) := 
+(A B : Set X) (hA : IsClosed A) (hB : IsClosed B) (hAB : Disjoint A B) : Separated A B := 
+(k : ℕ) (E : Set (EuclideanSpace ℝ (Fin k)))(hE : E.Nonempty ∧ ¬ Set.Countable E)(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (U ∩ E)}) : (h : ∃ C : Set (EuclideanSpace ℝ (Fin k)), Set.Countable C ∧ E \ P ⊆ C) := 
+(U : Set ℝ) (hU : IsOpen U) : ∃ (S : Set (Set ℝ)), (∀ s ∈ S, ∃ a b : ℝ, s = Ioo a b) ∧ Set.Countable S ∧ (∀ s₁ s₂ ∈ S, s₁ ≠ s₂ → Disjoint s₁ s₂) := 
+ : Tendsto (λ n => (sqrt (n^2 + n) - n)) atTop (𝓝 (1/2)) := 
+(∀ (a b : ℕ → ℝ), true)∀ (a b : ℕ → ℝ), limsup (λ n, a n + b n) ≤ limsup a + limsup b : ¬(limsup a = ⊤ ∧ limsup b = ⊤) := 
+(h2 : ∃ y, (Tendsto (λ n => (∑ i in (range n), a i)) atTop (𝓝 y)))(a_n : ℝ) (h_an : 0 ≤ a_n) : (h_converges : ∃ y, Tendsto (λ n => (∑ i in (range n), a i)) atTop (𝓝 y)) →
+∃ z, Tendsto (λ n => (∑ i in (range n), (sqrt (a i)) / n)) atTop (𝓝 z) := 
+∀ (a b : ℕ → ℝ), Summable a → Summable b → Summable (λ n, ∑ i in finset.range (n+1), a i * b (n - i)) : ∀ (n : ℕ), Summable (λ n, abs (a n)) := 
+(E : ℕ → Set X) (hE : ∀ n, IsClosed (E n) ∧ Nonempty (E n) ∧ Bounded (E n))(hEn : ∀ n, E n ⊇ E (n + 1))(lim : tendsto (λ n, diam (E n)) at_top (𝓝 0)) : ∃! x, x ∈ ⋂ n, E n := 
+(f : ℝ → ℝ)∀ x : ℝ, tendsto (λ h, f (x + h) - f (x - h)) (𝓝 0) (𝓝 0) : {f : ℝ → ℝ} := 
+{α : Type} [MetricSpace α] (f : α → ℝ) (h₁ : Continuous f)Zf := {p ∈ X | f p = 0} : is_closed Zf := 
+{X : Type} [MetricSpace X] {Y : Type} [MetricSpace Y] (f g : X → Y) (hf : Continuous f) (hg : Continuous g)(E : Set X) (hE : Dense E)(h : ∀ p ∈ P, g p = f p) : ∀ p ∈ X, g p = f p := 
+∃ E : Set ℝ, E ⊆ Set.univ(f : ℝ → ℝ) (E : Set ℝ) (h : ContinuousOn f E) : ¬∃ (g : ℝ → ℝ), Continuous g ∧ ∀ x ∈ E, f x = g x := 
+(f : ℝ → ℝ) (E : Set ℝ) (h₁ : IsBounded E) (h₂ : UniformContinuousOn f E) : Bornology.IsBounded (Set.image f E) := 
+{α : Type} [MetricSpace α] {β : Type} [MetricSpace β] (f : α → β) (h₁ : UniformContinuous f)∀ (x : ℕ → X) (hx : CauchySeq x) : ∀ ε > 0, ∃ N, ∀ m n ≥ N, dist (f (x m)) (f (x n)) < ε := 
+∀ (f : ℝ → ℝ) (hf : Continuous f) (ho : IsOpenMap f) : ∀ (f : ℝ → ℝ) (hf : Continuous f) (ho : IsOpenMap f), Monotone f := 
+(K F : Set X) [MetricSpace X] (h_disjoint : Disjoint K F)(hKc : IsCompact K)(F : Set X) (hF : IsClosed F) : (∃ δ > 0, ∀ p q, p ∈ K → q ∈ F → d p q > δ) := 
+∀ x : ℝ, f x(h : ∀ x y : ℝ, |f x - f y| ≤ (x - y) ^ 2) : ∀ a b : ℝ, f a = f b := 
+{g : ℝ → ℝ}(hg' : ∀ x, |g' x| ≤ M)let ε > 0 in λ x => x + ε * g x : theorem f_one_to_one_if_epsilon_small (hε : ε > 0) (hε_small : ε < δ) : function.injective f := := 
+{f : ℝ → ℝ} (hf : DifferentiableOn ℝ f (Set.Ioi 0))(hf3 : Tendsto (fun x => f' x) atTop (nhds 0))λ x => f (x + 1) - f x : Tendsto (λ x => g x) atTop (nhds 0) := 
+(hf : ∀ x, DifferentiableAt ℝ f x) (hg : ∀ x, DifferentiableAt ℝ g x)∀ x, deriv g x ≠ 0(hfg : ∀ x, f x = 0 ∧ g x = 0) : ∀ x, Tendsto (λ t, f t / g t) (𝓝 x) (𝓝 (deriv f x / deriv g x)) := 
+{f : ℝ → ℝ} (hf' : DifferentiableOn ℝ f (Set.Icc (-1) 1)) (hf'' : DifferentiableOn ℝ (deriv f) (Set.Icc (-1) 1)) (hf''' : DifferentiableOn ℝ (deriv (deriv f)) (Set.Icc (-1) 1))(hf4 : f (-1) = 0)(hf3 : f 0 = 0)(hf5 : f 1 = 1)(hf'0 : deriv f 0 = 0) : ∃ x ∈ Set.Ioo (-1 : ℝ) 1, deriv (deriv (deriv f)) x ≥ 3 := 
+{G : Type*} [Group G] [Fintype G] [Even (Fintype.card G)] : ∃ (a : G), a ≠ 1 ∧ a = a⁻¹ := 
+{G : Type*} [Group G] [Fintype G](a : G) : ∃ (n : ℕ), 0 < n ∧ a ^ n = 1 := 
+{G : Type*} [Mul G] [Group G](h : ∃ (i : ℤ), ∀ (a b : G), (a * b) ^ i = a ^ i * b ^ i ∧ (a * b) ^ (i + 1) = a ^ (i + 1) * b ^ (i + 1) ∧ (a * b) ^ (i + 2) = a ^ (i + 2) * b ^ (i + 2)) : CommGroup G := 
+{G : Type*} [Group G](h : ∃ n : ℤ, n > 1 ∧ ∀ (a b : G), (a * b) ^ n = a ^ n * b ^ n) : (h : ∀ (a b : G), (a * b * a⁻¹ * b⁻¹) ^ (n * (n - 1)) = 1) := 
+{G : Type*} [Group G] (H : Subgroup G) (h : H ≠ ⊥) (h' : H ≠ ⊤) : IsCyclic G ∧ Fintype.card G = p := 
+{G : Type*} [Group G]∀ (H : Subgroup G), H.Normal(a b : G) : ∃ (j : ℤ), b * a = a ^ j * b := 
+{G : Type*} [CommGroup G] [Fintype G] (p : ℕ) [hp : Fact p.Prime] (n m : ℕ) (hG : Fintype.card G = p^n * m) (hpm : p ∣ m → False){H : Subgroup G} [Fintype H] (hH : card H = p^n) : H.Characteristic := 
+(G : Type*) [Group G] [Fintype G] (hG : card G = 9) : CommGroup G := 
+{G : Type*} [Group G] [Fintype G]{φ : G → G} (hφ : IsGroupHom φ) (hbij : Bijective φ)(hφ_inv : ∃ S : Finset G, S.card > 3 * (Fintype.card G) / 4 ∧ ∀ x ∈ S, φ x = x⁻¹) : ∀ y : G, φ y = y⁻¹ ∧ CommGroup G := 
+{φ : G → G'} (hφ : Function.Surjective φ ∧ ∀ x y : G, φ (x * y) = φ x * φ y)(hN : N.Normal) : ∀ x y : G, φ x * φ y = φ (x * y) ∧ Function.Surjective φ ∧ N.Normal → (∀ n : N, ∀ g' : G', ∃ n' : N, φ n' = g' * φ n * g'⁻¹) := 
+[p > q] [Fact (p.Prime)] [Fact (q.Prime)](hq : q ∣ p - 1){G H : Type*} [Fintype G] [Fintype H] [Group G] [Group H] (hG : card G = p * q) (hH : card H = p * q) (hG1 : IsEmpty (CommGroup G)) (hH1 : IsEmpty (CommGroup H)) : G ≃* H := 
+(A : NormalSubgroup G)(b : G) (hb : orderOf b = p) [Fact (Nat.Prime p)](b ∉ A) : show : A ⊓ subgroup.closure {b} = ⊥ := 
+(hP : P.Normal){P : Sylow p G}{p : ℕ} (hp : Nat.Prime p){G : Type*} [Fintype G] [Group G] : ∀ (φ : G ≃* G), φ '' P = P := 
+(σ τ : Equiv.Perm α)∀ x, σ x ≠ τ x(hστ : σ ∘ τ = Equiv.refl α) : σ = Equiv.refl α ∧ τ = Equiv.refl α := 
+def T : group (matrix (fin 2) (fin 2) (zmod 2)) :=
+{ carrier := {A | det A ≠ 0},
+  one_mem' := by simp,
+  mul_mem' := by simp [det_mul],
+  inv_mem' := by simp [det_inv] } : T ≃* Equiv.Perm (Fin 3) := 
+{a : R} (ha : a^2 = 0){a : R} (ha : a^2 = 0) → : ∀ a x : R, a * x + x * a ∈ centralizer {a} := 
+{R : Type*} [CommRing R]a : RL : R → set R := λ a, {x | x * a = 0} : Ideal R (L a) := 
+∃ (s : Finset ℕ), s.card = (p - 1) / 2 ∧ ∀ x ∈ s, ∃ y, y^2 ≡ x [MOD p]∃ (s : Finset ℕ), s.card = (p - 1) / 2 ∧ ∀ x ∈ s, ¬ ∃ y, y^2 ≡ x [MOD p]∃ (s₁ s₂ : Finset ℕ), s₁.card = (p - 1) / 2 ∧ s₂.card = (p - 1) / 2 ∧
+(s₁ ∪ s₂ = Finset.range (p - 1) ∧ s₁ ∩ s₂ = ∅) ∧
+(∀ x ∈ s₁, ∃ y, y^2 ≡ x [MOD p]) ∧
+(∀ x ∈ s₂, ¬ ∃ y, y^2 ≡ x [MOD p]){p : ℕ} (hp : Nat.Prime p) : {p : ℕ} (hp : Nat.Prime p) := 
+{p : ℕ} (hp : p = 7)X ^ 3 - 2 : Polynomial Fx ^ 3 + 2 : Polynomial FIrreducible (X ^ 3 - 2 : Polynomial (ZMod 7)) ∧ Irreducible (X ^ 3 + 2 : Polynomial (ZMod 7)) : ∃ (e : (Polynomial (ZMod 7) ⧸ span ({X ^ 3 - 2} : Set (Polynomial (ZMod 7)))) ≃+* (Polynomial (ZMod 7) ⧸ span ({X ^ 3 + 2} : Set (Polynomial (ZMod 7)))), true := 
+2 + 3 * X + X ^ 3 : Polynomial FIrreducible (2 + 3 * X + X ^ 3 : Polynomial Q) : Irreducible (2 + 3 * X + X ^ 3 : Polynomial Q) := 
+{p : ℕ} (hp : p ≠ 0)(h : (a + b) ^ m = a ^ m + b ^ m)(m : ℕ) (h : m = p ^ n)∀ a b : F, : (n : ℕ) := 
+(a : K)IsAlgebraic F (a ^ 2)(a : K) (h : IsAlgebraic F (a ^ 2)) : IsAlgebraic F a := 
+(a : C){p : ℕ}(hp : p a = 0) : IsAlgebraic ℚ a ∧ degree (minpoly ℚ a) ≤ 80 := 
+(char_p F p)(m : ℕ) (h : m = p ^ n) : ∀ i j, i ≠ j → x ^ i ≠ x ^ j := 
+{U : Set M}{U : Set M}(hU : ∀ (x : X), x ∈ U ↔ ∀ (y : X), y ∈ closure (M \ U) → y ≠ x)(hU : IsOpen U) : (h : ∀ (x : X), x ∈ U → x ∉ closure (M \ U)) := 
+∀ (s : set ℕ) : ∀ (s : set ℕ), is_clopen s := 
+(hAc : IsCompact A) (hBc : IsCompact B)(hAB : Disjoint A B)(hA : A.Nonempty) (hB : B.Nonempty)(hSub : ∀ S, S ⊆ M) : (ha0 : a0 ∈ A) (hb0 : b0 ∈ B) (h : ∀ a ∈ A, ∀ b ∈ B, d a0 b0 ≤ d a b) := 
+∀ (C : ℕ → Set X), (∀ n, IsCompact (C n)) ∧ (∀ n, C n ≠ ∅) ∧ (∀ n, C (n + 1) ⊆ C n) → ∃ x, ∀ n, x ∈ C nNonempty X : ∀ x, x ∈ P → ∃ y, y ∈ P ∧ y ≠ x := 
+(f : ℝ → ℝ)(h : ∀ t x : ℝ, |f t - f x| ≤ |t - x|^2) : ∀ a b : ℝ, f a = f b := 
+(f : ℕ → ℝ) (h : f = λ (k : ℕ) => (1 : ℝ) / (k * (log k) ^ p))∃ l, Tendsto f atTop (𝓝 l) : (p : ℝ) (hp : 1 < p) := 
+(hμ : Continuous μ) (hμ_strict : StrictMono μ) (hμ_modulus : ∀ ε > 0, ∃ δ > 0, ∀ s, 0 < s < δ → μ s < ε){f : ℝ → ℝ} {a b : ℝ} (hab : a ≤ b) {μ : ℝ → ℝ} (hmodulus : ∀ s t ∈ set.Icc a b, |f s - f t| ≤ μ (|s - t|)) : theorem uniformly_continuous_iff_modulus_of_continuity {f : ℝ → ℝ} :
+  UniformContinuous f ↔ ∃ μ : ℝ → ℝ, (Continuous μ) ∧ (StrictMono μ) ∧ (∀ ε > 0, ∃ δ > 0, ∀ s, 0 < s < δ → μ s < ε) ∧ (∀ s t, |f s - f t| ≤ μ (|s - t|)) := := 
+{G : Type*} [Group G] (a b : G) : IsConjugate G (a * b) (b * a){G : Type*} [Group G] : (a * b) (b * a) := 
+∀ (F K : Type*) [field F] [field K] (f : F →+* K), ∀ x y : F, f (x * y) = f x * f y{F K : Type*} [field F] [field K]Injective f : ∀ (F K : Type*) [field F] [field K] (f : F →+* K), Function.Injective f := 
+{F V : Type*} [Infinite F] [Field F] [AddCommGroup V] [Module F V]{F : Type*} [Infinite F] [Field F]{ι : Type*} [Fintype ι] {u : ι → Submodule F V} (hu : ∀ i : ι, u i ≠ ⊤) (⋃ i : ι, (u i : Set V)) ≠ ⊤{ι : Type*} [Fintype ι] {u : ι → Submodule F V} (hu : ∀ i : ι, u i ≠ ⊤) : theorem not_union_of_finitely_many_proper_subspaces {ι : Type*} [Fintype ι] {u : ι → Submodule F V} (hu : ∀ i : ι, u i ≠ ⊤) : (⋃ i : ι, (u i : Set V)) ≠ ⊤ :=
+begin
+  -- proof goes here
+end := 
+{G : Type*} [Group G] [Fintype G] {p q : ℕ} (hp : Prime p) (hq : Prime q) (hG : card G = p * q) : IsSimpleGroup G → false := 
+{G : Type*} [Fintype G] [Group G] (hG : card G = 224) : {G : Type*} [Fintype G] [Group G] (hG : card G = 224) : ¬SimpleGroup G := 
+IsNilpotent x ↔ ∃ n : ℕ, x^n = 0(h : IsNilpotent x) : {u : R} (hu : is_unit (1 + u)) := 
+{I : Ideal ℤ[i]} (hI : I ≠ ⊥) : {n : ℤ} (hn : n ≠ 0) := 
+{R : Type*} [CommRing R] (I J : Ideal R)I ⊔ J = ⊤ : I * J = I ⊓ J := 
+(a b : ℤ)(a b : ℤ[i]) (h : a ∣ b) : (h : a ∣ b) := 
+Irreducible ((Polynomial.X)^2 + Polynomial.X + 1 : Polynomial (ZMod 2))ZMod 2 : Irreducible (X ^ 2 + X + 1 : Polynomial F) := 
+Irreducible (X^3 - 9 : Polynomial (ZMod 31)) : Irreducible (X^3 - 9 : Polynomial (ZMod 31)) := 
+ : Infinite {p : Nat.Primes // p ≡ -1 [ZMOD 4]} := 
+{K : Type*} [Field K] [Fintype K] : ∏ (x : K) in (finset.univ \ {0}), x = -1 := 
+(-1 + complex.I * real.sqrt 3) / 2 : {x : ℂ} (h : x^3 = 1) := 
+{a : 𝕜}{v : V}(hav : a * v = 0)(ha_or_hv : a = 0 ∨ v = 0)∀ (a : 𝕜) (v : V), a • v = 0 → a = 0 ∨ v = 0[𝕜 : field] : {𝕜 V : Type*} [Field 𝕜] [AddCommGroup V] [Module 𝕜 V] := 
+∃ U : Set (ℝ × ℝ), U ≠ ∅∀ (c : ℝ) (u : ℝ × ℝ), u ∈ U → c • u ∈ U : ∀ U' : Submodule ℝ (ℝ × ℝ), U ≠ ↑U' := 
+(u₁ u₂ : Submodule F V)∃ U : Submodule F V, (u₁ ⊔ u₂).carrier = ↑U(u₁ u₂ : Submodule F V) (h : u₁ ≤ u₂ ∨ u₂ ≤ u₁) : (u₁ u₂ : Submodule F V) (h : u₁ ⊔ u₂ = u₁ ∨ u₁ ⊔ u₂ = u₂) := 
+{V : Type*} [FiniteDimensional ℂ V](T : V →ₗ[F] W) : ∃ (U : Submodule K V), U ⊓ T.ker = ⊥ ∧ T.range = ⊤.map U.subtype := 
+{T : End F V}{U : ℕ → Submodule K V // ∀ i, U i ≤ T (U i)} : Submodule.map T (⨆ i, U i) = ⨆ i, U i := 
+(S T : V →ₗ[F] V) : (S * T).eigenvalues = (T * S).eigenvalues := 
+{T : End F V}∀ (U : Submodule F V), finite_dimensional.finrank F U = finite_dimensional.finrank F V - 1 → ∀ (v ∈ U), T v ∈ U(hT : ∀ (U : Submodule F V), finite_dimensional.finrank F U = finite_dimensional.finrank F V - 1 → ∀ (v ∈ U), T v ∈ U) : ∃ c : F, T = c • LinearMap.id := 
+{V : Type*} [AddCommGroup V] [Module ℝ V](h : ∀ c : F, eigenspace T c = ⊥)∀ (U : Submodule ℝ V), (∀ v ∈ U, T v ∈ U) : [FiniteDimensional F V] (hT : even (finrank F V)) := 
+∀ (n : ℕ) (a b : ℕ → ℝ), (∑ j in finset.range n, a j * b j) ^ 2 ≤ (∑ j in finset.range n, j * (a j) ^ 2) * (∑ j in finset.range n, (b j) ^ 2 / j) : theorem sum_inequality (n : ℕ) (a b : ℕ → ℝ) :
+  (∑ j in finset.range n, a j * b j) ^ 2 ≤
+  (∑ j in finset.range n, j * (a j) ^ 2) * (∑ j in finset.range n, (b j) ^ 2 / j) := := 
+{m : ℕ} (e : Fin m → V) (h_orthonormal : OrthonormalBasis (Fin m) K V e)(v : V) → : ‖v‖^2 = (∑ i, ‖⟪v, e i⟫_ℂ‖^2) ↔ v ∈ Submodule.span K (Set.range e) := 
+(hT : 2 ≤ finrank F V){T : End ℂ V | T * adjoint T = adjoint T * T}¬ submodule ℂ (End ℂ V) {T : End ℂ V | T * adjoint T = adjoint T * T} : {K V : Type*} [RCLike K] [NormedAddCommGroup V] [InnerProductSpace K V] := 
+{T : V → V} [NormalOperator ℂ V](hT : IsSelfAdjoint T)(h2 : ∀ λ ∈ T.Eigenvalues, λ ∈ ℝ) : ∀ {T : V → V} [NormalOperator ℂ V], IsSelfAdjoint T ↔ ∀ λ ∈ T.Eigenvalues, λ ∈ ℝ := 
+{V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V]∀ (T : End ℂ V), T * adjoint T = adjoint T * T∃ (x : ℝ), x^2 = _{V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℂ V] : ∀ (T : End ℂ V) (hT : T * adjoint T = adjoint T * T), ∃ (S : End ℂ V), S * S = T := 
+(h : ∀ a b : ℤ, a ⬝ b = a - b) : ¬CommRing (ℤ, ⬝) := 
+∀ (a b c : ℤ), (a*b)*c ≡ a*(b*c) [ZMOD n] : (n : ℤ) := 
+(h : ∀ (n : ℕ) (a : fin n → G), (∏ i in finset.range n, a i)⁻¹ = ∏ i in finset.range n.reverse, (a i)⁻¹)(a : fin n → G) : ∀ (n : ℕ) (a : fin n → G), (∏ i in finset.range n, a i)⁻¹ = ∏ i in finset.range n.reverse, (a i)⁻¹ := 
+{G : Type*} [Group G] (x : G)∃ (n : ℕ), |x| = n : x⁻¹ = x^(n - 1) := 
+{G : Type*} [Group G] (x : G) : orderOf x = orderOf x⁻¹ := 
+(a b : G) : (h : ∀ (a b : G), |a * b| = |b * a|) := 
+variables {A B : Type*} [CommGroup A] [CommGroup B]
+example : CommGroup (A × B) ↔ CommGroup A ∧ CommGroup B :=
+⟨λ h, ⟨by apply_instance, by apply_instance⟩, λ ⟨hA, hB⟩, by apply_instance⟩variables {A B : Type*} [CommGroup A] [CommGroup B]variables {A B : Type*} [CommGroup A] [CommGroup B]
+example : CommGroup (A × B) :=
+by apply_instance∀ a b : A, a * b = b * a ∧ ∀ a b : B, a * b = b * avariables {A B : Type*} [Group A] [Group B]
+
+example : CommGroup (A × B) ↔ CommGroup A ∧ CommGroup B :=
+⟨λ h, ⟨by apply_instance, by apply_instance⟩, λ ⟨hA, hB⟩, by apply_instance⟩(A B : Set X){A : Type*} [Group A] : {B : Type*} [Mul B] [Group B] := 
+(Ω : Set ℂ) (h : Ω = {1, 2, 3, ...}) : (SΩ : Group) (h : Infinite SΩ) := 
+{G : Type*} [Group G] [Fintype G]∃ σ : Aut Gσ g = g ↔ g = 1(σ : Aut G) (hσ : σ ^ 2 = 1) : CommGroup G := 
+(H : AddSubgroup ℚ)∀ x ∈ H, x ≠ 0 → 1 / x ∈ H : H = ⊥ ∨ H = ⊤ := 
+{G : Type*} [Group G] (M : Subgroup G) : Prop :=
+M ≠ ⊤ ∧ ∀ (H : Subgroup G), M ≤ H → H = M ∨ H = ⊤{G : Type*} [Group G] [Fintype G] (H : Subgroup G) (H ≠ ⊤) : ∃ (M : Subgroup G), M ≠ ⊤ ∧ ∀ (K : Subgroup G), M ≤ K → K = M ∨ K = ⊤ ∧ H ≤ M := 
+{R G : Type*} [Group G] [IsCyclic G] [Fintype G] (x : G) (hx : G = Subgroup.closure {x}) (hn : Fintype.card G = n) (hn_pos : 1 ≤ n){G : Type*} [Group G] (H : Subgroup G) [IsMaximalSubgroup H](p : ℕ) [Fact p.Prime] (hp : p ∣ n) (H : Subgroup G) (hx_p : H = Subgroup.closure {x ^ p}) : show (if ... then ...) ↔ ... := 
+{G : Type*} [Group G] (H K : NormalSubgroup G) : (N : NormalSubgroup G) (hN : N = H ⊓ K) := 
+{G : Type*} [Group G] (H K : Subgroup G) [Fintype H] [Fintype K](Coprime (card H) (card K)) : {G : Type*} [Group G] {H K : Subgroup G} (hHK : H ⊓ K = ⊥) := 
+{p : ℕ} (hp : Nat.Prime p)(a : ℤ) : ∀ a : ℤ, Nat.Prime p → a^p ≡ a [MOD p] := 
+{H : Subgroup G} [H.Normal] (hH : card (G ⧸ H) = p) : ∀ K : Subgroup G, K ≤ H ∨ (G = H ⊔ K ∧ K.relindex (K ⊓ H) = p) := 
+Fintype (CommGroup G){G : Type*} [Fintype G] [Group G] {n : ℕ} (hn : n ∣ card G) {H : Subgroup G} [Fintype H] (hH : card H = n)begin
+  apply cauchy_theorem,
+  induction,
+end : (hG2 : ∀ n : ℕ, n ∣ card G →
+  ∃ (H : Subgroup G) (fH : Fintype H), @card H fH = n) := 
+(N : QuotientGroup G) [IsSolvable G] : IsSolvable K := 
+index H = n∃ (K : Subgroup G), K.Normal ∧ K ≤ H ∧ index G K ≤ n!{G : Type*} [Fintype G] [Group G] : (n : ℕ) := 
+{p : ℕ} (hp : Nat.Prime p){G : Type*} [Mul G] [Group G] {p : ℕ} (hp : Nat.Prime p) {α : ℕ} [Fintype G] (hG : Fintype.card G = p ^ α){α : ℕ} (hα : α > 0) : ∀ {H : Subgroup G} [Fintype H], Fintype.card (G ⧸ H) = p → H.Normal := 
+{G : Type*} [CommGroup G] [Fintype G] (hpq : Fintype.card G = p * q) (hp : Nat.Prime p) (hq : Nat.Prime q) (hpq_distinct : p ≠ q) : IsCyclic G := 
+ : ∃ (N : Subgroup G), N.Normal ∧ ¬N.Characteristic := 
+{G : Type*} [Group G]{G : Type*} [Group G] (H K : Subgroup G) (hHK : H ≤ K)H.Characteristic_in KK.Normal_in G : H.Normal := 
+(G : Type*) [Group G] [Fintype G] (hG : card G = 56) : ∃ (p : ℕ) (P : Sylow p G), P.Normal := 
+{G : Type*} [Group G] [Fintype G] (hG : card G = 351) : ∃ (p : ℕ) (P : Sylow p G), P.Normal := 
+(hG : card G = 105)(hG : card G = 105) → (∃ N₅ : Sylow 5 G, N₅.Normal) ∧ (∃ N₇ : Sylow 7 G, N₇.Normal) : {G : Type*} [Fintype G] [Group G] := 
+(hG : card G = 6545)¬ IsSimpleGroup G¬ IsSimpleGroup G¬ IsSimpleGroup G : {G : Type*} [Fintype G] [Group G] := 
+(hG : card G = 2907)¬ IsSimpleGroup G : ¬ IsSimpleGroup G := 
+(hG : card G = 462)¬ IsSimpleGroup G{G : Type*} [Fintype G] [Group G] : ¬ IsSimpleGroup G := 
+{P : Sylow p G} (hP : P.normal){G : Type*} [Group G] (H : Subgroup G)∀ (Q : Sylow p H), P ⊓ H = Q{G : Type*} [Fintype G] [Group G]H : {p : ℕ} (hp : Nat.Prime p) := 
+is_unit u : ∀ (u : R), u ∈ U → -u ∈ U := 
+∀ (R : Type*) [Ring R] (F : Type*) [Field F] [Algebra R F], ∀ (S : Subring F), (1 : F) ∈ S : theorem subring_of_field_is_domain {F : Type*} [Field F] (S : Subring F) (hS : (1 : F) ∈ S) : IsDomain S :=
+begin
+  haveI : Nontrivial S := Subring.nontrivial_of_one_mem S hS,
+  exact Subring.is_domain_of_field S,
+end := 
+variables {R : Type*} [comm_ring R] (a : ℕ → R) (n : ℕ)
+def p : polynomial R := ∑ i in finset.range (n + 1), a i * X^i : theorem zero_divisor_iff_exists_nonzero_b (p : polynomial R) :
+  (∃ q : polynomial R, q ≠ 0 ∧ p * q = 0) ↔ ∃ b : R, b ≠ 0 ∧ b • p = 0 := := 
+{φ : R →+* S} (hφ : Function.Surjective φ) : map_center_subset_center φ := 
+{R : Type*} [CommRing R] [Nontrivial R]IsNilpotent ab : R : (h₄ : IsUnit (1 - a * b)) := 
+{R : Type*} [Ring R] [IsDomain R]∀ {a b : R} (ha : a ≠ 0) (hb : b ≠ 0), ∃ (gcd : R) (r s : R), gcd = r * a + s * b∀ (a : ℕ → R) (h : ∀ i, a (i + 1) ∣ a i) (hnz : ∀ i, a i ≠ 0), ∃ N : ℕ, ∀ n ≥ N, ∃ u : R, IsUnit u ∧ a n = u * a N : IsPrincipalIdealRing R := 
+def R (n : ℤ) [squarefree n] (h : n > 3) : Type := ℤ[√(-n)] : Irreducible (2 : R) ∧ Irreducible (√(-n) : R) ∧ Irreducible (1 + √(-n) : R) := 
+[Fact (q.Prime)]{q : ℕ} (h0 : q ≡ 3 [ZMOD 4])(hR : R = (GaussianInt ⧸ span ({⟨q, 0⟩} : Set GaussianInt))) : IsField R ∧ ∃ finR : Fintype R, @card R finR = q^2 := 
+Polynomial ℤ ⧸ Ideal.span ({X 1 * X 2, X 3 * X 4, X 5 * X 6} : Set (Polynomial ℤ)) : let R := Polynomial ℤ ⧸ Ideal.span ({X 1 * X 2, X 3 * X 4, X 5 * X 6} : Set (Polynomial ℤ))
+example : ∃ (P : Ideal R), P.is_prime ∧ ∀ (Q : Ideal R), Q.is_prime → P ≤ Q → P = Q :=
+begin
+  -- proof goes here
+end := 
+ : Irreducible (X^4 - 4*X^3 + 6 : Polynomial ℤ) := 
+1 + 2 * X + 6 * X ^ 2 + 4 * X ^ 3 + X ^ 4 : Polynomial FIrreducible (∑ n in (f.support \ {0}), (f.coeff n : Polynomial ℤ) * X ^ (n-1) : Polynomial ℤ) : Irreducible (X^4 + 4*X^3 + 6*X^2 + 2*X + 1 : Polynomial ℤ) := 
+(x : ℝ)Irreducible (x ^ 2 - sqrt 2 : Polynomial (ℤ[√2])) : assume (hUFD : UniqueFactorizationDomain (ℤ[√2])) := 
+variables (n : ℕ) (h : n > 0)
+example : (ℝ^n) ≃ₗ[ℚ] ℝ := sorry : variables (n : ℕ) (h : n > 0)
+example : (ℝ^n) ≃ₗ[ℚ] ℝ := sorry := 
+{X : Type*} (𝒯_∞ : Set (Set X)) := {U | X \ U = ∅ ∨ X \ U = X ∨ ∃ (s : Set X), X \ U = s ∧ s.infinite} : ¬TopologicalSpace X := 
+(X I : Type*) (T : I → Set (Set X)) (h : ∀ i, is_topology X (T i)) : ¬ is_topology X (⋃ i : I, T i) := 
+variables (X I : Type*) (T : I → Set (Set X)) (h : ∀ i, is_topology X (T i)) : ∃! T', is_topology X T' ∧ (∀ i, T' ⊆ T i) ∧ ∀ T'', is_topology X T'' → (∀ i, T'' ⊆ T i) → T' ⊆ T'' := 
+{X : Type*} (A : Set (Set X)) (hA : IsTopologicalSubbasis A)generateFrom A : = generateFrom (sInter {T | is_topology X T ∧ A ⊆ T}) := 
+{S : Set ℝ | ∃ a b : ℚ, a < b ∧ S = Ico ↑a ↑b} : is_basis (λ S, ∃ a b : ℝ, a < b ∧ S = Ioo a b) (𝓤 ℝ) := 
+{Y : Submodule K X}(A : Set Y) : theorem subspace_topology_inheritance {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] (A : Set X) (h : A ⊆ Y) :
+  SubspaceTopology A Y = SubspaceTopology A X := := 
+generateFrom {S : Set (ℝ × ℝ) | ∃ a b c d : ℚ, a < b ∧ c < d ∧ S = Ico (↑a, ↑c) (↑b, ↑d)} : is_basis (𝓝 (0 : ℝ × ℝ)) := 
+{Y : Type*} [LinearOrder Y] [OrderTopology Y]{f g : X → Y} (hf : Continuous f) (hg : Continuous g)is_closed {x | f x ≤ g x} : {X : Type*} [TopologicalSpace X] := 
+{A : Set X}(f : A → Y){f : A → Y} (hf : Continuous f){Y : Type*} [T2Space Y](∃ g : Closure A → Y, Continuous g){A : Set X} : (∀ g₁ g₂ : Closure A → Y, Continuous g₁ → Continuous g₂ → (∀ x ∈ A, g₁ x = f x) → (∀ x ∈ A, g₂ x = f x) → g₁ = g₂) := 
+{R : Type*} [LinearOrder R] [OrderTopology R] (R × R) [OrderTopology (R × R)] : {R : Type*} [LinearOrder R] [OrderTopology R] [MetrizableSpace (R × R)] := 
+(f : ℕ → I → ℝ ) (h : ∀ x n, f n x = x ^ n) : (hh : ¬ TendstoUniformly f f₀ atTop) := 
+{p : X → Y} (hp : Continuous p)(p : X → Y){f : Y → X} (hf : Continuous f) (h₂ : ∀ y : Y, p (f y) = y) : QuotientMap p := 
+open_map p(U A : Set X) (hA : IsOpen A)(q : A → p(A)) (hq : OpenMap q) : {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] := 
+{X : Type*} [TopologicalSpace X] {A : ι → Set X} (hA : ∀ α, IsConnected (A α))(A : Set X) (hA : IsConnected A)(hAα : ∀ α, A ∩ A α ≠ ∅) : IsConnected (A ∪ ⋃ α, A α) := 
+{A : Set X}[TopologicalSpace X] [ConnectedSpace C] [Subspace C X](hCA : C ∩ A ≠ ∅) (hCXA : C ∩ (X \ A) ≠ ∅) : (hCBA : C ∩ (Closure A \ Interior A) ≠ ∅) := 
+(p : X → Y) (h₁ : quotient_map p)IsConnected (p ⁻¹' {y})(hY : IsConnected Y) : hX : IsConnected X := 
+{f : X → X} (hf : Continuous f){X : Set ℝ} (hX : X = Set.Icc 0 1) : ∃ x, f x = x := 
+{G : Type*} [TopologicalGroup G]{G : Type*} [TopologicalGroup G] (e : G) (C : set G) [ConnectedComponent C e] : C.Normal := 
+(p : X → Y)(hf : Continuous f) (hfs : Function.Surjective f) (hf_closed : IsClosedMap f)(h₂ : ∀ y ∈ Y, IsCompact (p ⁻¹' {y})){X : Type} [TopologicalSpace X] {Y : Type} [TopologicalSpace Y] 
+(p : X → Y) (hp_cont : Continuous p) (hp_surj : Function.Surjective p) 
+(hp_closed : IsClosedMap p) (h_compact : ∀ y ∈ Y, IsCompact (p ⁻¹' {y}))(hY_compact : IsCompact Y) : IsCompact X(hYc : IsCompact Y){X : Type*} [TopologicalSpace X] [CompactSpace X]{X Y : Type*}[TopologicalSpace X] : {Y : Type*} [TopologicalSpace Y] := 
+countably_compact X := ∀ (U : ℕ → set X), (∀ n, is_open (U n)) → (X ⊆ ⋃ n, U n) → ∃ (F : finset ℕ), X ⊆ ⋃ n ∈ F, U n{X : Type*} [TopologicalSpace X] [T1Space X] : theorem countably_compact_iff_limit_point_compact {X : Type*} [TopologicalSpace X] :
+  countably_compact X ↔ (∀ (A : Set X), Infinite A → ∃ (x : X), x ∈ closure A) := := 
+{X : Type*} [MetricSpace X]{f : X → X} (h : ∀ x y : X, d (f x) (f y) = d x y)(is_isometry f){X : Type*} [MetricSpace X] [CompactSpace X] {f : X → X} (h : is_isometry f) : (bijective f) (homeomorphism f) := 
+(Set.Icc 0 1) ^ ω : ¬LocallyCompactSpace (UniformSpace X) := 
+(h : ∃ (f : ℕ → Type), ∀ n, f n = X)(h : ∀ (X : Type), ∃ (s : Set X), Countable s ∧ Dense s) : (h : ∃ (s : Set X), Countable s ∧ Dense s) := 
+{X : Type*} [TopologicalSpace X] [RegularSpace X]∀ (x y : X), : ∀ (x y : X), ∃ (U V : Set X), IsOpen U ∧ IsOpen V ∧ x ∈ U ∧ y ∈ V ∧ closure U ∩ closure V = ∅ := 
+orderTopology : Regular H := 
+(h2 : T2Space (Π i, X i))(h : ∀ i, Nonempty (X i))∀ i, T2Space (X i) : ∀ i, X i := 
+(h2 : NormalSpace (Π i, X i))(h3 : ∀ i, NormalSpace (X i))(h : ∀ i, Nonempty (X i)) : (Π i, X i) := 
+{X : Type*} [TopologicalSpace X] (hX : LocallyCompactSpace X) (hX' : T2Space X) : [TopologicalSpace X] [RegularSpace X] (h : ∀ x A, IsClosed A ∧ ¬ x ∈ A →
+  ∃ (f : X → I), Continuous f ∧ f x = (1 : I) ∧ f '' A = {0}) := 
+{X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X](X1 X2 : Set X) (hX1 : IsClosed X1) (hX2 : IsClosed X2) (hUnion : X = X1 ∪ X2)(MetrizableSpace X1) (MetrizableSpace X2) : MetrizableSpace X := 
+{X : Type*} [MetricSpace X] {Y : Type*} [MetricSpace Y][CompleteSpace Y]{A : Set X}{f : A → Y} (hf : UniformContinuous f) : ∃! g : Closure A → Y, Continuous g ∧ UniformContinuous g ∧ ∀ x ∈ A, g x = f x := 
+{n : ℕ} (h : ∑ i in (range (n - 1)), 1 / (i + 2))¬(∃ n : ℕ, a = n) : ∀ n : ℕ, 1 < n → ¬(∃ m : ℤ, ∑ i in range (n - 1), 1 / (i + 2) = m) := 
+{a : ℤ} (h : a ≠ 0)(n m : ℕ) (hnm : m < n) : (a^2^n + 1, a^2^m + 1) = if a % 2 = 0 then 2 else 1 := 
+ : theorem square_free_sum_diverges : ¬ ∃ (S : ℝ), ∀ ε > 0, ∃ N : ℕ, ∀ n > N, (∑' k in {k : ℕ | square_free k}, 1 / (k : ℝ)) < S + ε :=
+begin
+  -- proof goes here
+end := 
+ : ¬ ∃ x y : ℤ, 3*x^2 + 2 = y^2 := 
+¬ Nat.Prime n(n-1)! ≡ 0 [MOD n](n ≠ 4) : (n - 1)! ≡ 0 [MOD n] (n ≠ 4) := 
+{p t : ℕ} (hp0 : p.Prime) (hp1 : p = 4*t + 1)IsPrimitiveRoot a p : IsPrimitiveRoot a p ↔ IsPrimitiveRoot (-a) p := 
+{p : ℕ} (hp : ∃ n : ℕ, p = 2^n + 1 ∧ p.Prime) : IsPrimitiveRoot 3 p := 
+∑ i in finset.range p, i ^ k(hl : ¬ (p - 1) ∣ k)(hpk : p - 1 ∣ k)∑ i in finset.range p, i ^ k ≡ 0 [MOD p] (hl : ¬ (p - 1) ∣ k)∑ i in finset.range p, i ^ k ≡ -1 [MOD p] (hpk : p - 1 ∣ k) : {p : ℕ} (hp : Nat.Prime p) := 
+{x : ℕ} (h0 : ∃ x, x^4 ≡ 2 [ZMOD p]){p : ℕ} (h0 : p ≡ 1 [ZMOD 4])(h : ∃ A B : ℕ, p = A^2 + 64 * B^2)∀ {p : ℕ}, (∃ x : ℕ, x^4 ≡ 2 [ZMOD p]) ↔ (p ≡ 1 [ZMOD 4] ∧ ∃ A B : ℕ, p = A^2 + 64 * B^2) : {p : ℕ} := 
+sin (Real.pi / 12)IsAlgebraic ℚ : IsAlgebraic ℚ (sin (Real.pi / 12)) := 
+{f : ℝ → ℝ} (hf : ContDiff ℝ ⊤ f)(hf3 : f 0 = 0)(hf4 : f 1 = 1)(hf2 : ∀ x : ℝ, 0 ≤ f x) : ∃ n : ℕ, ∃ x : ℝ, 0 < n ∧ fderiv ℝ^[n] f x < 0 := 
+∃ a : ℝ,(x : ℕ → ℝ) (h₀ : x 0 = 1) (h₁ : x 1 = a) (h₂ : x 2 = a) (h₃ : ∀ n ≥ 2, x (n + 1) = 2 * x n * x (n - 1) - x (n - 2)) : ∀ n, x n = 0 → ∃ p, ∀ m, x (m + p) = x m := 
+{p q r : ℕ} {G : Type*} [Group G] [Fintype G] : ∀ (j k : ℕ), j ≠ k → is_coprime (P j) (P k) := 
+ : ∃! (a n : ℕ), a^(n + 1) - (a + 1)^n = 2001 := 
+(f : ℝ → ℝ)(hf : ContDiff ℝ 3 f)(hf3 : ∀ x, 0 < f x ∧ 0 < f' x ∧ 0 < f'' x ∧ 0 < f''' x)(hf4 : ∀ x, f''' x ≤ f x) : (hf5 : ∀ x, f' x < 2 * f x) := 
+∀ (a b c : ℤ), : ∃ n : ℕ, n > 0 ∧ ∃ a b c : ℤ, ¬ ∃ k : ℤ, k^2 = n^3 + a * n^2 + b * n + c := 

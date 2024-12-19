@@ -13,6 +13,8 @@ import sys
 from typing import Dict
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from datasets.parser import parse_jsonl
+import pickle
+
 
 from dotenv import load_dotenv
 # Load environment variables from .env file
@@ -26,19 +28,45 @@ if not api_key:
 os.environ["OPENAI_API_KEY"] = api_key
 
 
-system_prompt = """You will be provided with two statements: an "informal_prefix" and a "formal_statement". The "informal_prefix" contains a natural language math statement, and the "formal_statement" contains a LEAN code representation of that statement. Each () in the LEAN code represents a math concept or expression in the natural language statement. Your task is to find all the correspondence for () in "formal_statement".
+# system_prompt = """You will be provided with two statements: an "informal_prefix" and a "formal_statement". The "informal_prefix" contains a natural language math statement, and the "formal_statement" contains a LEAN code representation of that statement. Each () in the LEAN code represents a math concept or expression in the natural language statement. Your task is to find all the correspondence for () in "formal_statement".
+# An example is as follows:
+# example user input:
+# {"informal_prefix": "/-- Suppose $E\\subset\\mathbb{R}^k$ is uncountable, and let $P$ be the set of condensation points of $E$. Prove that $P$ is perfect.-/\\n", "formal_statement": "theorem exercise_2_27a (k : ℕ) (E P : Set (EuclideanSpace ℝ (Fin k)))\\n  (hE : E.Nonempty ∧ ¬ Set.Countable E)\\n  (hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)}) :\\n  IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)} :="}
+# example output:
+# {"pairs": [("$E\\subset\\mathbb{R}^k$", "(E P : Set (EuclideanSpace ℝ (Fin k)))"),("uncountable", "(hE : E.Nonempty ∧ ¬ Set.Countable E)"),("let $P$ be the set of condensation points of $E$","(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)})"),("Prove that $P$ is perfect","IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)}")]}"
+# """
+
+# user_prompt = """{"informal_prefix": "/-- Let $\Omega$ be a bounded open subset of $\mathbb{C}$, and $\varphi: \Omega \rightarrow \Omega$ a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that $\varphi\left(z_{0}\right)=z_{0} \quad \text { and } \quad \varphi^{\prime}\left(z_{0}\right)=1$ then $\varphi$ is linear.-/", "formal_statement": "theorem exercise_2_9
+#   {f : ℂ → ℂ} (Ω : Set ℂ) (b : Bornology.IsBounded Ω) (h : IsOpen Ω)
+#   (hf : DifferentiableOn ℂ f Ω) (z : Ω) (hz : f z = z) (h'z : deriv f z = 1) :
+#   ∃ (f_lin : ℂ →L[ℂ] ℂ), ∀ x ∈ Ω, f x = f_lin x :="}
+# """
+
+system_prompt = """ You will first be provided with a natural language math statement. Then you will be provided with a list of hypotheses, and a goal, written in LEAN code. Your task is to find the correspondence between formal hypotheses and the components of the natural language statement, as well as the formal goal. Note that one component of the natural language statement may correspond to multiple formal hypotheses, and vice versa.
 An example is as follows:
+
 example user input:
-{"informal_prefix": "/-- Suppose $E\\subset\\mathbb{R}^k$ is uncountable, and let $P$ be the set of condensation points of $E$. Prove that $P$ is perfect.-/\\n", "formal_statement": "theorem exercise_2_27a (k : ℕ) (E P : Set (EuclideanSpace ℝ (Fin k)))\\n  (hE : E.Nonempty ∧ ¬ Set.Countable E)\\n  (hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)}) :\\n  IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)} :="}
+math statement: "/-- Suppose $E\\subset\\mathbb{R}^k$ is uncountable, and let $P$ be the set of condensation points of $E$. Prove that $P$ is perfect.-/\\n"
+hypotheses: ["(k : ℕ)", "(E P : Set (EuclideanSpace ℝ (Fin k)))", "(hE : E.Nonempty ∧ ¬ Set.Countable E)", "(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)})"]
+goal: "IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)}"
+
 example output:
-{"pairs": [("$E\\subset\\mathbb{R}^k$", "(E P : Set (EuclideanSpace ℝ (Fin k)))"),("uncountable", "(hE : E.Nonempty ∧ ¬ Set.Countable E)"),("let $P$ be the set of condensation points of $E$","(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)})"),("Prove that $P$ is perfect","IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)}")]}"
+{
+    "$E\\subset\\mathbb{R}^k$" : ["(k : ℕ)", "(E P : Set (EuclideanSpace ℝ (Fin k)))"],
+    "Suppose $E\\subset\\mathbb{R}^k$ is uncountable" : ["(hE : E.Nonempty ∧ ¬ Set.Countable E)"],
+    "let $P$ be the set of condensation points of $E$" : ["(hP : P = {x | ∀ U ∈ 𝓝 x, ¬ Set.Countable (P ∩ E)})"],
+    "Prove that $P$ is perfect" : ["IsClosed P ∧ P = {x | ClusterPt x (𝓟 P)}"]
+}
 """
 
-user_prompt = """{"informal_prefix": "/-- Let $\Omega$ be a bounded open subset of $\mathbb{C}$, and $\varphi: \Omega \rightarrow \Omega$ a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that $\varphi\left(z_{0}\right)=z_{0} \quad \text { and } \quad \varphi^{\prime}\left(z_{0}\right)=1$ then $\varphi$ is linear.-/", "formal_statement": "theorem exercise_2_9
-  {f : ℂ → ℂ} (Ω : Set ℂ) (b : Bornology.IsBounded Ω) (h : IsOpen Ω)
-  (hf : DifferentiableOn ℂ f Ω) (z : Ω) (hz : f z = z) (h'z : deriv f z = 1) :
-  ∃ (f_lin : ℂ →L[ℂ] ℂ), ∀ x ∈ Ω, f x = f_lin x :="}
+user_prompt = """
+math statement: "/-- Let $\Omega$ be a bounded open subset of $\mathbb{C}$, and $\varphi: \Omega \rightarrow \Omega$ a holomorphic function. Prove that if there exists a point $z_{0} \in \Omega$ such that $\varphi\left(z_{0}\right)=z_{0} \quad \text { and } \quad \varphi^{\prime}\left(z_{0}\right)=1$ then $\varphi$ is linear.-/"
+hypotheses: ["{f : ℂ → ℂ}", "(Ω : Set ℂ)", "(b : Bornology.IsBounded Ω)", "(h : IsOpen Ω)", "(hf : DifferentiableOn ℂ f Ω)", "(z : Ω)", "(hz : f z = z)", "(h'z : deriv f z = 1)"]
+goal: "∃ (f_lin : ℂ →L[ℂ] ℂ), ∀ x ∈ Ω, f x = f_lin x"
 """
+
+
+
 def parse_formal_statement(statement: str) -> Dict:
     """Parse a formal statement into its components.
     
@@ -101,6 +129,8 @@ def parse_formal_statement(statement: str) -> Dict:
             goal = remainder[i:].strip()
             if goal.endswith(":= by"):
                 goal = goal[1:-6].strip()  # Remove ":" prefix and ":= by" suffix
+            elif goal.endswith(":="):
+                goal = goal[1:-2].strip()  # Remove ":" prefix and ":=" suffix
             break
             
     return {
@@ -110,14 +140,26 @@ def parse_formal_statement(statement: str) -> Dict:
     }
 
 # # Example usage:
-# example = """theorem amc12a_2008_p8 (x y : ℝ) (h₀ : 0 < x ∧ 0 < y) (h₁ : y ^ 3 = 1)
-#   (h₂ : 6 * x ^ 2 = 2 * (6 * y ^ 2)) : x ^ 3 = 2 * Real.sqrt 2 := by"""
-
+# example = "theorem exercise_1_1_16 {G : Type*} [Group G]\n  (x : G) (hx : x ^ 2 = 1) :\n  orderOf x = 1 ∨ orderOf x = 2 :="
+# example = "theorem conjugate.mul_mem (hy : y ∈ {a : G | ∃ h, h ∈ H ∧ a = x * h * x⁻¹}) (hz : z ∈ {a : G | ∃ h, h ∈ H ∧ a = x * h * x⁻¹}) : y * z ∈ {a : G | ∃ h, h ∈ H ∧ a = x * h * x⁻¹} := by"
 # result = parse_formal_statement(example)
 # print(result)
 
+def entry_to_user_prompt(informal_prefix: str, formal_statement: str) -> str:
+    """
+    Transform a formal statement into example user prompt using parse_formal_statement.
+    """
+    parsed = parse_formal_statement(formal_statement)
+    return f"math statement: {informal_prefix}\nhypotheses: {parsed['hypotheses']}\ngoal: {parsed['goal']}"
 
-def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 256):
+def test_entry_prompt():
+    test = entry_to_user_prompt("/-- Suppose $U$ is a subspace of $V$. Prove that $U^{\\perp}=\\{0\\}$ if and only if $U=V$-/\n", "theorem exercise_6_16 {K V : Type*} [RCLike K] [NormedAddCommGroup V] [InnerProductSpace K V]\n  {U : Submodule K V} :\n  U.orthogonal = ⊥  ↔ U = ⊤ :=")
+    print(test)
+
+
+def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 1024):
+
+    client = OpenAI()
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
@@ -130,155 +172,369 @@ def get_chat_completion(system_prompt: str, user_prompt: str, max_tokens: int = 
                 "content": user_prompt
             }
         ],
-        temperature=0.7,
+        temperature=0.001,
         max_tokens=max_tokens,
         top_p=1
     )
     return response
 
-def process_dataset(dataset_path: str, save_path: str):
-    entries = parse_jsonl(dataset_path)
-    total = len(entries)
-    for i, entry in enumerate(entries):
-        print(f"Processing entry {i+1}/{total}...")
-        response = get_chat_completion(system_prompt, entry.informal_prefix, max_tokens=1024)
-        with open(save_path, 'a') as f:
-            json_obj = {
-                "name": entry.name,
-                "response": response.choices[0].message.content,
-                "header": entry.header
-            }
-            f.write(json.dumps(json_obj) + "\n")
-        print(f"Completed {i+1}/{total} entries ({((i+1)/total)*100:.1f}%)")
+def print_another_chat_completion():
+    user_prompt = entry_to_user_prompt("/-- Suppose $U$ is a subspace of $V$. Prove that $U^{\\perp}=\\{0\\}$ if and only if $U=V$-/\n", "theorem exercise_6_16 {K V : Type*} [RCLike K] [NormedAddCommGroup V] [InnerProductSpace K V]\n  {U : Submodule K V} :\n  U.orthogonal = ⊥  ↔ U = ⊤ :=")
+    test = get_chat_completion(system_prompt, user_prompt)
+    print(repr(test.choices[0].message.content))
+    
+# print_another_chat_completion()
 
-# process_dataset("../datasets/proofnet.jsonl", "../datasets/proofnet_RAG.jsonl")
+def print_chat_completion():
+    
+    test = get_chat_completion(system_prompt, user_prompt)
+    print(repr(test.choices[0].message.content)) # this repr prints without the unicode escape characters
+    # however, "\\" is introduced and should be further dealt with
+    
 
-def read_rag_dataset(dataset_path: str):
-    entries = []
-    with open(dataset_path, 'r') as f:
-        for line in f:
-            entry = json.loads(line)
-            entries.append(entry)
-    return entries
 
-# print(read_rag_dataset("../datasets/proofnet_RAG.jsonl")[0]["response"])
-
-def text_to_pairs(text: str) -> dict:
+# TODO: response postprocessing
+def post_process_llm_response(response: str) -> dict:
     """
-    Transform a text string containing pairs into a dictionary.
+    Process LLM response to extract clean dictionary by manually finding matched pairs.
     
     Args:
-        text: String in format {"pairs": [(informal1, formal1), (informal2, formal2), ...]}
-    
-    Returns:
-        Dictionary mapping informal statements to formal statements
-    """
-    # Extract content between square brackets
-    start = text.find("[")
-    end = text.rfind("]")
-    pairs_text = text[start+1:end]
-    
-    # Split into individual pair strings
-    pair_strings = pairs_text.split("),")
-    
-    # Parse each pair string into tuple
-    pairs_dict = {}
-    for pair in pair_strings:
-        # Clean up string and extract informal/formal parts
-        pair = pair.strip(" ()")
-        informal_end = pair.find('",')
-        informal = pair[pair.find('"')+1:informal_end].strip()
-        formal = pair[informal_end+4:-1].strip()
-        # Remove " :=" from end of formal statements if present
-        if formal.endswith(" :="):
-            formal = formal[:-3]
-        pairs_dict[informal] = formal
-        
-
-        
-    return pairs_dict
-
-def build_rag_dict(dataset_path: str) -> dict:
-    """
-    Build a dictionary mapping exercise names to their informal/formal statement pairs.
-    
-    Args:
-        dataset_path: Path to the RAG dataset JSON file
+        response: Raw LLM response string containing dictionary-like structure
         
     Returns:
-        Dictionary mapping exercise names to dictionaries of informal->formal pairs
+        Clean dictionary with extracted key-value pairs
     """
-    rag_dict = {}
-    entries = read_rag_dataset(dataset_path)
+    # Find the outermost {} pair
+    start_brace = response.find("{")
+    end_brace = response.rfind("}")
+    if start_brace == -1 or end_brace == -1:
+        raise ValueError("No valid dictionary structure found in response")
+        
+    dict_content = response[start_brace:end_brace+1]
+    result_dict = {}
     
+    # Track position while parsing
+    pos = 1  # Skip first {
+    while pos < len(dict_content)-1:  # Stop before final }
+        # Skip whitespace
+        while pos < len(dict_content) and dict_content[pos].isspace():
+            pos += 1
+            
+        # Find key
+        if dict_content[pos] == '"':
+            key_start = pos + 1
+            pos += 1
+            while pos < len(dict_content) and dict_content[pos] != '"':
+                pos += 1
+            key = dict_content[key_start:pos]
+            pos += 1
+            
+            # Skip to colon
+            while pos < len(dict_content) and dict_content[pos] != ':':
+                pos += 1
+            pos += 1
+            
+            # Skip whitespace
+            while pos < len(dict_content) and dict_content[pos].isspace():
+                pos += 1
+                
+            # Parse value
+            if dict_content[pos] == '[':
+                # List value
+                bracket_count = 1
+                value_start = pos
+                pos += 1
+                while pos < len(dict_content) and bracket_count > 0:
+                    if dict_content[pos] == '[':
+                        bracket_count += 1
+                    elif dict_content[pos] == ']':
+                        bracket_count -= 1
+                    pos += 1
+                value = dict_content[value_start:pos]
+                # Replace \x0b with \v in key string
+                key = key.replace('\x0b', '\\v')
+                
+                result_dict[key] = value
+            
+            # Skip comma
+            while pos < len(dict_content) and dict_content[pos] != ',':
+                pos += 1
+            pos += 1
+        else:
+            pos += 1
+    
+    return result_dict
+
+# test = get_chat_completion(system_prompt, user_prompt)
+# print(repr(post_process_llm_response(test.choices[0].message.content)))
+
+def build_proofnet_doc():
+    """Build proofnet document by extracting informal_prefix and formal_statement from proofnet dataset,
+    constructing user prompts, and writing to a new jsonl file.
+    """
+    # Get absolute path relative to this file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(current_dir, "..", "datasets", "proofnet.jsonl")
+    output_path = os.path.join(current_dir, "..", "datasets", "proofnet_prompt.jsonl")
+    
+    # Read proofnet dataset
+    entries = parse_jsonl(input_path)
+    
+    # Process each entry
+    processed_entries = []
     for entry in entries:
-        name = entry["name"]
-        response = entry["response"]
+
         try:
-            pairs = text_to_pairs(response)
-            rag_dict[name] = pairs
-        except:
+            # Convert entry to dict if needed
+            entry_dict = entry if isinstance(entry, dict) else entry.__dict__
+ 
+            # Extract informal_prefix and formal_statement
+            informal_prefix = entry_dict["informal_prefix"]
+            formal_statement = entry_dict["formal_statement"]
+            print(informal_prefix)
+            print(formal_statement)
+            # Construct user prompt
+            user_prompt = entry_to_user_prompt(informal_prefix, formal_statement)
+            
+            # Add prompt to entry
+            entry_dict["user_prompt"] = user_prompt
+            print(entry_dict["user_prompt"])
+            processed_entries.append(entry_dict)
+            
+        except Exception as e:
+            name = entry_dict["name"] if isinstance(entry, dict) else entry.name
             print(f"Failed to process entry: {name}")
+            print(f"Error: {str(e)}")
+            continue
+    
+    # Write processed entries to new file
+    with open(output_path, "w") as f:
+        for entry in processed_entries:
+            f.write(json.dumps(entry) + "\n")
+            
+    print(f"Successfully processed {len(processed_entries)} entries")
+
+# build_proofnet_doc()
+
+def build_minif2f_doc():
+    """Build minif2f document by extracting informal_prefix and formal_statement from minif2f dataset,
+    constructing user prompts, and writing to a new jsonl file.
+    """
+    # Get absolute path relative to this file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(current_dir, "..", "datasets", "minif2f.jsonl") 
+    output_path = os.path.join(current_dir, "..", "datasets", "minif2f_prompt.jsonl")
+    
+    # Read minif2f dataset
+    entries = parse_jsonl(input_path)
+    
+    # Process each entry
+    processed_entries = []
+    for entry in entries:
+        try:
+            # Convert entry to dict if needed
+            entry_dict = entry if isinstance(entry, dict) else entry.__dict__
+            
+            # Extract informal_prefix and formal_statement
+            informal_prefix = entry_dict["informal_prefix"]
+            formal_statement = entry_dict["formal_statement"]
+            print(informal_prefix)
+            print(formal_statement)
+            
+            # Construct user prompt
+            user_prompt = entry_to_user_prompt(informal_prefix, formal_statement)
+            
+            # Add prompt to entry
+            entry_dict["user_prompt"] = user_prompt
+            print(entry_dict["user_prompt"])
+            processed_entries.append(entry_dict)
+            
+        except Exception as e:
+            name = entry_dict["name"] if isinstance(entry, dict) else entry.name
+            print(f"Failed to process entry: {name}")
+            print(f"Error: {str(e)}")
+            continue
+    
+    # Write processed entries to new file
+    with open(output_path, "w") as f:
+        for entry in processed_entries:
+            f.write(json.dumps(entry) + "\n")
+            
+    print(f"Successfully processed {len(processed_entries)} entries")
+
+def build_proofnet_rag():
+    """Build RAG from proofnet dataset by extracting prompts, getting LLM responses,
+    and storing decomposed statements.
+    """
+    # Get absolute path relative to this file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(current_dir, "..", "datasets", "proofnet_prompt.jsonl")
+    output_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.jsonl")
+
+    # Read proofnet prompt dataset
+    with open(input_path, 'r') as f:
+        entries = [json.loads(line) for line in f if line.strip()]
+
+    total = len(entries)
+    # Store entries in a list for pickle
+    processed_entries = []
+    
+    # Process each entry
+    for i, entry in enumerate(entries):
+        try:
+
+            print(f"Processing entry {i+1}/{total}...")
+            # Convert entry to dict if needed
+            entry_dict = entry if isinstance(entry, dict) else entry.__dict__
+            # Get LLM response for the prompt
+            response = get_chat_completion(system_prompt, entry_dict["user_prompt"])
+            
+            # Post-process the response
+            decomposed = post_process_llm_response(response.choices[0].message.content)
+            
+            # Add decomposition to entry
+            entry_dict["decomposition"] = decomposed
+            
+            # Add to processed entries list
+            processed_entries.append(entry_dict)
+            
+            # Write entry to output file
+            with open(output_path, "a") as f:
+                f.write(json.dumps(entry_dict) + "\n")
+                
+            print(f"Completed {i+1}/{total} entries ({((i+1)/total)*100:.1f}%)")
+            
+        
+        except Exception as e:
+            name = entry_dict["name"] if isinstance(entry, dict) else entry.name
+            print(f"Failed to process entry: {name}")
+            print(f"Error: {str(e)}")
             continue
             
-    return rag_dict
+    print(f"Successfully processed {total} entries")
+    # Save processed entries to pickle file
+    pickle_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.pkl")
+    with open(pickle_path, "wb") as f:
+        pickle.dump(processed_entries, f)
+    print(f"Saved processed entries to {pickle_path}")
+
+def build_minif2f_rag():
+    """Build RAG from minif2f dataset by extracting prompts, getting LLM responses,
+    and storing decomposed statements.
+    """
+    # Get absolute path relative to this file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(current_dir, "..", "datasets", "minif2f_prompt.jsonl")
+    output_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.jsonl")
+
+    # Read minif2f prompt dataset
+    with open(input_path, 'r') as f:
+        entries = [json.loads(line) for line in f if line.strip()]
+
+    total = len(entries)
+    # Store entries in a list for pickle
+    processed_entries = []
+    
+    # Process each entry
+    for i, entry in enumerate(entries):
+        try:
+
+            print(f"Processing entry {i+1}/{total}...")
+            # Convert entry to dict if needed
+            entry_dict = entry if isinstance(entry, dict) else entry.__dict__
+            # Get LLM response for the prompt
+            response = get_chat_completion(system_prompt, entry_dict["user_prompt"])
+            
+            # Post-process the response
+            decomposed = post_process_llm_response(response.choices[0].message.content)
+            
+            # Add decomposition to entry
+            entry_dict["decomposition"] = decomposed
+            
+            # Add to processed entries list
+            processed_entries.append(entry_dict)
+            
+            # Write entry to output file
+            with open(output_path, "a") as f:
+                f.write(json.dumps(entry_dict) + "\n")
+                
+            print(f"Completed {i+1}/{total} entries ({((i+1)/total)*100:.1f}%)")
+            
+        
+        except Exception as e:
+            name = entry_dict["name"] if isinstance(entry, dict) else entry.name
+            print(f"Failed to process entry: {name}")
+            print(f"Error: {str(e)}")
+            continue
+            
+    print(f"Successfully processed {total} entries")
+    # Save processed entries to pickle file
+    pickle_path = os.path.join(current_dir, "..", "datasets", "minif2f_decomposed.pkl")
+    with open(pickle_path, "wb") as f:
+        pickle.dump(processed_entries, f)
+    print(f"Saved processed entries to {pickle_path}")
+
+def read_proofnet_decomposed():
+    """
+    Read and print entries from proofnet_decomposed.pkl
+    """
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    pickle_path = os.path.join(current_dir, "..", "datasets", "proofnet_decomposed.pkl")
+    
+    try:
+        with open(pickle_path, "rb") as f:
+            entries = pickle.load(f)
+            
+        print(f"Found {len(entries)} entries in {pickle_path}")
+        for i, entry in enumerate(entries):
+            print(f"\nEntry {i+1}:")
+            print(f"Name: {entry['name']}")
+            print(f"Split: {entry['split']}")
+            print(f"Informal prefix: {entry['informal_prefix']}")
+            print(f"Decomposition: {entry['decomposition']}")
+            print("-" * 80)
+            
+    except FileNotFoundError:
+        print(f"File not found: {pickle_path}")
+    except Exception as e:
+        print(f"Error reading pickle file: {str(e)}")
+
+
+
+
+
+# TODO: not every trail is valid, we propose a iterative approach to find the best decomposition that can recover the original statement.
+def iterative_decomposition():
+    pass
+
 
 
 if __name__ == "__main__":
-    import json
-    from pathlib import Path
+    # import json
+    # from pathlib import Path
     
-    # Read and parse the proofnet dataset
-    dataset_path = "../datasets/proofnet.jsonl"
-    output_path = "../datasets/proofnet_parsed.jsonl"
+    # # Read and parse the proofnet dataset
+    # dataset_path = "../datasets/proofnet.jsonl"
+    # output_path = "../datasets/proofnet_parsed.jsonl"
     
-    parsed_statements = []
-    with open(dataset_path, 'r') as f:
-        for line in f:
-            entry = json.loads(line)
-            try:
-                parsed = parse_formal_statement(entry['formal_statement'])
-                entry['parsed_formal'] = parsed
-                parsed_statements.append(entry)
-            except Exception as e:
-                print(f"Failed to parse statement: {entry.get('id', 'unknown')}")
-                print(f"Error: {str(e)}")
-                continue
+    # parsed_statements = []
+    # with open(dataset_path, 'r') as f:
+    #     for line in f:
+    #         entry = json.loads(line)
+    #         try:
+    #             parsed = parse_formal_statement(entry['formal_statement'])
+    #             entry['parsed_formal'] = parsed
+    #             parsed_statements.append(entry)
+    #         except Exception as e:
+    #             print(f"Failed to parse statement: {entry.get('id', 'unknown')}")
+    #             print(f"Error: {str(e)}")
+    #             continue
     
-    # Save parsed results
-    with open(output_path, 'w') as f:
-        for entry in parsed_statements:
-            f.write(json.dumps(entry) + '\n')
+    # # Save parsed results
+    # with open(output_path, 'w') as f:
+    #     for entry in parsed_statements:
+    #         f.write(json.dumps(entry) + '\n')
             
-    print(f"Successfully parsed and saved {len(parsed_statements)} statements to {output_path}")
-
-
-#     # Save RAG dictionary to pickle file
-#     import pickle
-    
-#     def save_rag_dict(rag_dict: dict, output_path: str = "rag_dict.pkl") -> None:
-#         """
-#         Save the RAG dictionary to a pickle file.
-        
-#         Args:
-#             rag_dict: Dictionary mapping exercise names to informal->formal pairs
-#             output_path: Path where pickle file should be saved
-#         """
-#         with open(output_path, 'wb') as f:
-#             pickle.dump(rag_dict, f)
-            
-#     if __name__ == "__main__":
-#         # Build and save the RAG dictionary
-#         dataset_path = "../datasets/proofnet_RAG.jsonl" 
-#         rag_dict = build_rag_dict(dataset_path)
-#         save_rag_dict(rag_dict)
-#         print(f"Saved RAG dictionary with {len(rag_dict)} entries")
-#         # Print some example entries
-#         print("\nExample entries:")
-#         for name in list(rag_dict.keys())[:3]:
-#             print(f"\nExercise: {name}")
-#             pairs = rag_dict[name]
-#             print("Pairs:")
-#             for informal, formal in pairs.items():
-#                 print(f"\nInformal: {informal}")
-#                 print(f"Formal: {formal}")
+    # print(f"Successfully parsed and saved {len(parsed_statements)} statements to {output_path}")
+    # build_minif2f_rag()
+    pass

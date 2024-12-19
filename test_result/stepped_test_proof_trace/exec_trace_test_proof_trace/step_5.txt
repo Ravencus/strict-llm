@@ -1,0 +1,11 @@
+Step 5:
+File: test_result/stepped_test_proof_trace/stepped_lean_test_proof_trace/step_5.lean
+Output:
+step_5.lean:13:2: error: unsolved goals
+case h
+ε : ℝ
+hε : 0 < ε
+n : ℕ
+hn : 100 ≤ n
+⊢ 0 < ε
+Exit Code: 1

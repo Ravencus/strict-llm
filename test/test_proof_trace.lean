@@ -12,8 +12,7 @@ theorem tendsTo_def {a : ℕ → ℝ} {t : ℝ} :
 
 -- begin target
 /-- The limit of the constant sequence with value 37 is 37. -/
-theorem tendsTo_thirtyseven : TendsTo (fun n ↦ 37) 37 :=
-  by
+theorem tendsTo_thirtyseven : TendsTo (fun n ↦ 37) 37 := by
   rw [tendsTo_def]
   intro ε hε
   use 100
